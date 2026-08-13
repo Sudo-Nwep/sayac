@@ -9,25 +9,30 @@
 
 ## 📌 GÜNCEL DURUM (her zaman en güncel — önce bunu oku)
 
-- **Versiyon:** v1.0
-- **Aşama:** {{ASAMA}} — fiilen: `HEDEF.md` **küme A kapandı** (madde 1 + madde 2), madde 3 sırada
+- **Versiyon:** v1.5
+- **Aşama:** {{ASAMA}} — fiilen: madde 1 · 2 · 3 kapandı; **kurulabilir eklenti var**, madde 4 (arayüz) sırada
 - **Amaç:** {{AMAC}}
 - **Kapsam:** {{KAPSAM}}
-- **Depo/çalışır mı:** **evet — ürünün ilk gerçek parçası var.** İki üretilebilir kanıt:
-  `npm test` → `GECEN: 20 · KALAN: 0`, çıkış 0 · `npm run mutasyon` → 7/7 bozma yakalandı,
-  çıkış 0 · `node test-yolu\kanit-kosusu.mjs mv2` → çıkış 0.
-  **Kurulabilir eklenti hâlâ YOK** — sayaç mantığı ile tarayıcı arası bağ kurulmadı.
+- **Depo/çalışır mı:** **evet — kurulabilir bir Firefox eklentisi var.** Üretilebilir kanıtlar:
+  `npm run eklenti:test` → çıkış 0 (on hücre, **sekizi yeşil**, gerçek YouTube dâhil) ·
+  `npm run eklenti:kontrol` → çıkış 0 (üretim senkron) · `npm test` → `KALAN: 0`, çıkış 0 ·
+  `npm run mutasyon` → 7/7, çıkış 0.
+  **Arayüz YOK** — kullanıcı sayaçları henüz göremez; bu turda makine okudu (madde 4).
 - **Seçilen test yolu:** `playwright-webextext` · yedek: Mozilla `web-ext` RDP ·
   elenen: Playwright'ın kendi Firefox desteği. Gerekçe + rakamlar `TEST_YOLU.md`.
 - **Zaman mantığı:** `mantik/sayac.mjs` — saf (statik **ve** dinamik olarak ölçüldü),
   değişmez, serileştirilebilir; tek sayaç birimi modeller. Ayrıntı `MANTIK.md`.
-- **Açık işler:** `PROJE_KUNYESI.md`'deki ⛔ boyutlar + doldurulmamış ELDE yer tutucuları.
-  **Hiçbir boyut kapanmadı**; ürün boyutunun *"sıradaki tek somut adım"* sütunu artık dolu.
-- **Sıradaki adım:** `HEDEF.md` madde 3 — eklenti (LibreWolf + YouTube). `mantik/sayac.mjs`'in
-  N örneğiyle sekme başına çoğullanacak ve `gece-yarısı` olayını **üretecek taraf orası**.
-- **⚠️ Madde 3'e devreden sözleşme:** `gece-yarısı`'nın zaman damgası **çağıranın**
-  sorumluluğudur — modül saf olduğu için 00:00'ı bilemez; olay geç gelirse fark eski güne
-  yazılır ve silinir.
+- **Eklenti:** `eklenti/` — MV2, **hiçbir host izni yok**, içerik betiği yalnız YouTube'a
+  enjekte olur. `eklenti/sayac.js` çekirdekten **üretilir**, senkronluk SHA-256'yla kanıtlı.
+  Ayrıntı `EKLENTI.md`.
+- **Açık işler:** `PROJE_KUNYESI.md`'deki boyutlar + doldurulmamış ELDE yer tutucuları.
+  **ürün** boyutu ⛔ → 🟡 oldu (kod ve doğrulaması var; arayüz yok, LibreWolf kurulumu ölçülemedi).
+- **Sıradaki adım:** `HEDEF.md` madde 4 — arayüz (üç sayaç, iki buton, Türkçe). Mesaj API'si
+  hazır; MOLA'nın videoyu duraklatması orada yazılır.
+- **⚠️ Bilinen açıklar:** ⑴ **LibreWolf'a kurulum ÖLÇÜLEMEDİ** (RDP `ECONNREFUSED`) — teslim
+  ölçütü LibreWolf, madde 5'in işi · ⑵ **arka plandaki sekme kutusu ÖLÇÜLEMEDİ**
+  (`visibilityState` `hidden` yapılamadı) · ⑶ tarayıcı yeniden başlarsa sayaçlar **kaybolur**
+  (durum bellekte, depolama eklenmedi).
 - **⚠️ Madde 3 için bilinen engel:** LibreWolf bu makinede **kurulu değil** — *"LibreWolf'a
   kurulur"* kanıtı bugün üretilemez. Kararı madde 3'ün turu verecek.
 
@@ -41,6 +46,20 @@
 - **`PROJE_KUNYESI.md`** — **ne YOK** dosyası: ⛔ çevre boyutları + doldurulmamış ELDE yer tutucuları.
 - **`.gitignore`** — repoya girmeyecekler (secret dahil). `test-yolu/kanit/*.log` bilerek
   **muaf** tutuldu: kanıt depoya girer.
+- **`EKLENTI.md`** — **madde 3'ün raporu:** mimari (kim damgalar, durum nerede yaşar) ·
+  **madde 4'ün kullanacağı mesaj API'si sözleşmesi** · on hücrenin tablosu (rakamlarıyla) ·
+  iki cetvelin yan yana çıktısı · dört açık kararın kapanışı · ölçülemeyenler tablosu.
+- **`eklenti/`** — **ÜRÜN.** LibreWolf'a olduğu gibi kurulacak olan. MV2, host izni yok.
+  - `manifest.json` — `content_scripts` yalnız YouTube; `background.scripts` sırası
+    **`sayac.js` önce, `arkaplan.js` sonra** (üst düzey `const`'lar sonraki betiğe görünsün).
+  - `sayac.js` — **ÜRETİLEN**; elle düzenlenmez. Kaynak `mantik/sayac.mjs`.
+  - `arkaplan.js` — sekme başına `Map`, tek saat, gece yarısı nöbeti, mesaj API'si.
+  - `icerik.js` — `document` üzerinde **yakalama fazı** dinleyicisi; yalnız "ne oldu" der.
+  - `uret.mjs` — üretici + `--kontrol` (SHA-256 senkron kanıtı) + `--kanit` (kontrolü bozarak sınar).
+- **`test-yolu/` (madde 3 eki)** — `ortak/sunucu-eklenti.mjs` · `ortak/eklenti-testi.mjs` ·
+  `ortak/hucre.mjs` (TOLERANS burada, koşumdan önce sabit) · `sonda/` (ürüne ait **değil**) ·
+  `eklenti-e2e.mjs` · `karsit-izin.mjs` · `eklenti-youtube.mjs` · `librewolf.mjs` ·
+  `eklenti-kosum.mjs`. Kanıt `kanit/eklenti-*.log|json` — **düz**, alt klasörsüz.
 - **`MANTIK.md`** — **madde 2'nin raporu:** durum modeli · olay etki tablosu · 16 kutunun
   senaryo karşılıkları · saflık ölçümünün çıktısı · 8 kombinasyon tablosu · mutasyon sonuçları ·
   **madde 3'e devreden sözleşme** (`gece-yarısı` damgası kimin işi, çoğullama nerede yapılır).
@@ -123,6 +142,44 @@
      Kurulabilir eklenti hâlâ yok, hiçbir ⛔ boyut kapanmadı. Sıradaki adım: madde 3 —
      eklenti; `mantik/sayac.mjs` sekme başına çoğullanacak ve `gece-yarısı` olayını üretecek
      taraf orası olacak. Bilinen engel: LibreWolf makinede kurulu değil.
+
+* **v1.5 · 14/08/2026** — eklenti yazıldı: sekme başına ayrı sayaç, on hücrede **ölçülerek** kanıtlandı.
+   > **Karar — sayaç mantığı ikinci kez YAZILMADI.** `eklenti/sayac.js`, `mantik/sayac.mjs`'ten
+   > **üretilir** (7 `export ` öneki soyulur) ve senkronluk SHA-256'yla kanıtlanır. Elenen iki yol:
+   > dinamik `import()` (arka plan başlatması asenkron olurdu, Firefox geçici eklenti bağlamında
+   > **ölçülmemiş** risk) ve elle kopyalama (madde 2'nin 20 senaryo + 7/7 mutasyon kanıtını
+   > ürünün dışında bırakırdı). **Kontrolün kendisi bozularak sınandı:** tek bayt → çıkış 1 →
+   > geri alındı → hash birebir aynı.
+   > **Ürün sınırı:** `permissions` ve `host_permissions` **YOK** (`SAYAC_TEKLIF.md:44`);
+   > sonda/port/saat kayması yalnız **geçici test kopyasına** enjekte edilir, kaynak kirletilmez.
+   > **Mimari:** zaman damgasını **yalnız arka plan** basar; durum arka plan belleğinde
+   > `Map<sekmeId, durum>`; olay yakalama `document` üzerinde **yakalama fazında** (sonradan
+   > yaratılan `<video>`'lar da yakalanır — YouTube SPA için şart).
+   > **Ölçüm:** `npm run eklenti:test` → **çıkış 0**. On hücre: **Y1** 2795/2795 · 2524/2524 ·
+   > 2776/2776 · **Y2** sekmeId 1↔2, A izleniyor 7231 / B izleniyor **0** · **Y3** 3229 → **6476**
+   > (sıfırlanmadı) · **Y5** `gunBasiMs` +86.400.000, {3231,26,0} → **{133,0,0}** ·
+   > **Y6** Δmola 2753/2753, diğer ikisi tam 0 · **Y7** MV3 de geçti · **Y9** **gerçek YouTube**
+   > 2806/2806 ve 2755/2755. **Her yeşil hücrede sapma tam 0** (tolerans 250 ms, koşumdan önce sabit).
+   > **Y8 — tur 001'in bir iddiası ÇÜRÜTÜLDÜ:** *"host_permissions etkili oldu, izin olmadan
+   > geçemezdi"* (`001.result.md:23`) **yanlıştır**. MV2 · izin YOK · ACAO VAR hücresinde `fetch`
+   > **çözüldü**; ACAO başlığı tek başına yetiyor ve tur 001'in sunucusu o başlığı koyuyordu.
+   > Ayrıca MV3 satırları izni **hiç ölçmüyor** — `playwright-webextext` kökenleri profile
+   > önceden izin olarak yazıyor.
+   > **İki kutu ÖLÇÜLEMEDİ, adıyla:** **Y4** arka plandaki sekme — `visibilityState` `hidden`
+   > yapılamadı, headless **ve** headed'da `"visible"` ölçüldü · **Y10** LibreWolf — ikili indi
+   > (162 MB) ve açıldı, RDP `ECONNREFUSED`; üç sertleştirme katmanı (`librewolf.cfg:547`,
+   > profil-dizini override, `policies.json` HttpsOnlyMode) adreslendi, aşılamadı.
+   > *"Kurulabilir"* iddiası **kanıtsız yazılmadı**.
+   > **Madde 2 kırılmadı:** `npm test` → `KALAN: 0` çıkış 0 · `npm run mutasyon` → 7/7 çıkış 0.
+   > `mantik/` ve madde 1'in dosyalarına **hiç yazılmadı** (istisna yok).
+   > **Yeni dosyalar:** `EKLENTI.md` · `eklenti/` (5 dosya) · `test-yolu/` eki (9 dosya + `sonda/`)
+   > + `kanit/eklenti-*` (22 dosya). `package.json`'a 4 betik **eklendi** (mevcut ikisine dokunulmadı),
+   > `KONTROL_DOSYASI.md` ve `PROJE_KUNYESI.md` güncellendi. **Yeni bağımlılık YOK.**
+   > **`commit: 612ae7a`**
+   - **Güncel durum:** kurulabilir eklenti var ve çalıştığı rakamla doğrulandı; **arayüz yok**
+     (madde 4). ürün boyutu ⛔ → 🟡. Sıradaki adım: madde 4 — açılır pencere, üç sayaç, iki buton,
+     Türkçe; mesaj API'si hazır. Bilinen açıklar: LibreWolf kurulumu ölçülemedi (madde 5'e girdi),
+     arka plan sekmesi kutusu ölçülemedi, tarayıcı yeniden başlarsa sayaçlar kaybolur.
 
 * *(Bir sonraki madde buraya eklenecek — aşağıdaki kurallara göre.)*
 
