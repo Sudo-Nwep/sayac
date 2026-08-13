@@ -49,4 +49,8 @@ test-yolu/gecici/
 test-log/
 
 # Kanit repoya GIRER — yukaridaki *.log kuralindan muaf tutulur.
+# Her yeni kanit klasoru icin AYRI bir negatif kural sart: `*.log` genel kurali
+# yoksa kaniti sessizce yutar ve "calisma agaci temiz" kontrolu kanitin VARLIGINI
+# degil YOKLUGUNU olcer (G22).
 !test-yolu/kanit/*.log
+!mantik/kanit/*.log

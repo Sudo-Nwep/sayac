@@ -8,7 +8,27 @@
 
 ## 🔵 Şu ANKİ TEK İŞ
 
-> **Madde 1 kapandı — Firefox eklenti test yolu ölçüldü ve seçildi.**
+> **Madde 2 kapandı — saf zaman mantığı yazıldı ve bozularak sınandı.**
+>
+> `mantik/sayac.mjs` — tarayıcıya, gerçek saate, zamanlayıcıya, global duruma **bağlı
+> olmayan** saf çekirdek. Zaman modüle parametre olarak girer.
+> **Ölçüm:** `npm test` → `GECEN: 20 · KALAN: 0`, çıkış 0 (eşik 12, koşucuya gömülü) ·
+> `npm run mutasyon` → 4 kod mutantı + 3 tablo bozması = **7/7 yakalandı**, çıkış 0,
+> her bozmadan sonra SHA-256 birebir geri geldi.
+> **Saflık iddia edilmedi, ölçüldü:** statik tarama `bulunan=[]` **ve** 14 global
+> erişildiğinde fırlatan sahtelerle değiştirilip 20/20 senaryo yine geçti (`tuzak
+> tetiklendi: 0`). Ayrıntı: `MANTIK.md`.
+>
+> **Madde 3'e devreden sözleşme:** `gece-yarısı` olayının zaman damgası **çağıranın**
+> sorumluluğudur (modül saf olduğu için 00:00'ı bilemez) · modül **tek** sayaç birimini
+> modeller, sekme başına çoğullama madde 3'ün işidir · durum nesnesi değişmez ve
+> serileştirilebilir, çoğullama+depolama orada bedavaya gelir.
+>
+> **Sıradaki tek iş:** madde 3 — eklenti (LibreWolf + YouTube). Küme A bitti, küme B başlıyor.
+>
+> ---
+>
+> **Madde 1 (kapandı) — Firefox eklenti test yolu ölçüldü ve seçildi.**
 >
 > **Seçilen yol: `playwright-webextext`** (Aday A) — `test-yolu/aday-a.mjs`,
 > kanıt koşusu `test-yolu/kanit-kosusu.mjs`.
@@ -28,10 +48,7 @@
 > **Elenen: Playwright'ın kendi Firefox desteği (Aday C)** — ölçülerek elendi, hata metni
 > ve artefakt kanıtı `TEST_YOLU.md`'de.
 >
-> **Sıradaki tek iş:** madde 2 (saf zaman mantığı) — madde 1'den bağımsızdır
-> (`HEDEF.md` → Toplu koşma, küme A).
-
-**Tarih:** 14/08/2026 · **Dal:** `main` · **Ayrıntı:** `TEST_YOLU.md`
+**Tarih:** 14/08/2026 · **Dal:** `main` · **Ayrıntı:** `MANTIK.md` (madde 2) · `TEST_YOLU.md` (madde 1)
 
 ---
 
@@ -39,10 +56,11 @@
 
 | # | İş | Durum | Not |
 |---|---|---|---|
-| 1 | Madde 2 — saf zaman mantığı (tarayıcısız sınanabilir modül) | ⚪ sırada | `HEDEF.md` küme A; madde 1'i beklemiyordu, artık tek açık iş |
-| 2 | Madde 3 — eklenti, LibreWolf + YouTube | ⚪ sırada | ⚠️ LibreWolf bu makinede **kurulu değil**; kanıt bugün üretilemez (`TEST_YOLU.md`) |
-| 3 | Madde 4 — arayüz (üç sayaç, iki buton) | ⚪ sırada | Seçilen test yolu Playwright eli verdiği için buton ölçümü mümkün |
-| 4 | Madde 5 — private GitHub deposu, README, etiket | ⚪ sırada | `git push` yalnız burada, önceden yetkili |
+| 1 | Madde 3 — eklenti, LibreWolf + YouTube | 🔵 bugün | `mantik/sayac.mjs`'in N örneğiyle sekme başına çoğullanır; `gece-yarısı` olayını **üretecek taraf burası**. ⚠️ LibreWolf bu makinede **kurulu değil**; o kanıt bugün üretilemez (`TEST_YOLU.md`) |
+| 2 | Madde 4 — arayüz (üç sayaç, iki buton) | ⚪ sırada | Seçilen test yolu Playwright eli verdiği için buton ölçümü mümkün. DUR/DEVAM ET tek `ana-kapat` olayı gönderir (toggle) |
+| 3 | Madde 5 — private GitHub deposu, README, etiket | ⚪ sırada | `git push` yalnız burada, önceden yetkili |
+
+**Biten:** madde 1 (`TEST_YOLU.md`) · madde 2 (`MANTIK.md`) — küme A kapandı.
 
 **Durum kodları:** 🔵 bugün · ⚪ sırada · 🔴 takıldı · ✅ bitti (→ arşive)
 

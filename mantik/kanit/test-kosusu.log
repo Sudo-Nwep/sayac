@@ -1,0 +1,74 @@
+=== SAYAC — mantik/kosucu.mjs ham çıktısı ===
+komut: npm test  (node mantik/kosucu.mjs)
+node=v26.5.0 platform=win32
+======================================================================
+
+======================================================================
+BÖLÜM A — SAFLIK ÖLÇÜMÜ (iddia değil, ölçüm)
+======================================================================
+A1 statik tarama — dosya: mantik/sayac.mjs (6292 bayt, 189 satır)
+   taranan yasaklı belirteç listesi (17): Date · performance · setTimeout · setInterval · Math.random · process · fetch · window · document · localStorage · browser. · chrome. · import · require · globalThis · eval · new Function
+   bulunan=[]
+   yükleme satırı sayısı (import/require): 0
+   ✓ statik: temiz
+
+A2 dinamik global tuzağı — erişildiğinde fırlatan sahtelerle değiştirildi
+   tuzaklanan global: 14 (Date · performance · setTimeout · setInterval · setImmediate · fetch · localStorage · sessionStorage · document · window · browser · chrome · XMLHttpRequest · Math.random)
+   tuzak altında geçen senaryo: 20/20
+   tuzak tetiklendi: 0
+   NOT: "process" tuzağa DAHİL EDİLMEDİ — koşucunun kendi çıkış/akış yazma yolu ona bağlı;
+        statik tarama (A1) onu zaten kapsıyor ve bulunan=[] döndürdü.
+   ✓ dinamik: global'ler zehirliyken bile tüm senaryolar koştu
+
+A3 determinizm — aynı senaryolar iki kez koşuldu
+   1. koşu 1604 bayt · 2. koşu 1604 bayt · birebir aynı: true
+   ✓ determinizm: birebir aynı
+
+A4 durum çakışması — 2×2×2 = 8 bayrak kombinasyonu
+   | anaKapali | molada | videoOynuyor | durumAdi()    | dört addan tam biri |
+   |-----------|--------|--------------|---------------|---------------------|
+   | false     | false  | false        | DURAKLATILDI  | evet |
+   | false     | false  | true         | İZLENİYOR     | evet |
+   | false     | true   | false        | MOLA          | evet |
+   | false     | true   | true         | MOLA          | evet |
+   | true      | false  | false        | KAPALI        | evet |
+   | true      | false  | true         | KAPALI        | evet |
+   | true      | true   | false        | KAPALI        | evet |
+   | true      | true   | true         | KAPALI        | evet |
+   ihlal denemesi — üç bayrak birden true → tek değer: "KAPALI"
+   ✓ 8/8 kombinasyon tek ad döndürdü; çakışma yapısal olarak imkânsız
+
+======================================================================
+BÖLÜM B — TABLO DOĞRULAMA (katı)
+======================================================================
+B  şema: üst düzey alanlar surum/birim/senaryolar · senaryo alanları id/aciklama/baslangic/olaylar/son/beklenen/beklenenDurum
+   olay alanları t/tur/hiz (zorunlu: t/tur)
+   senaryo sayısı: 20 (en az 12 zorunlu — HEDEF.md:73)
+   benzersiz id: 20
+   ✓ tablo şeması geçerli
+
+======================================================================
+BÖLÜM C — KOŞUM (beklenen değer + beklenen durum + çakışma/kayıp invaryantı)
+======================================================================
+  ✓ S01-yalniz-izleniyor                       izleniyor= 10000 duraklatildi=     0 mola=     0 durum=İZLENİYOR
+  ✓ S02-yalniz-duraklatildi                    izleniyor=     0 duraklatildi= 10000 mola=     0 durum=DURAKLATILDI
+  ✓ S03-karisik-dizi                           izleniyor=  9000 duraklatildi=  3000 mola=     0 durum=İZLENİYOR
+  ✓ S04-mola-ucuncu-sayac-isler                izleniyor=  4000 duraklatildi=  3000 mola=  6000 durum=DURAKLATILDI
+  ✓ S05-mola-kapaninca-kaldigi-yerden          izleniyor=  5000 duraklatildi=     0 mola=  5000 durum=İZLENİYOR
+  ✓ S06-mola-sirasinda-oynatma                 izleniyor=  3000 duraklatildi=  1000 mola=  5000 durum=İZLENİYOR
+  ✓ S07-ana-kapali-ucu-de-durur                izleniyor=  3000 duraklatildi=     0 mola=     0 durum=KAPALI
+  ✓ S08a-ayni-dizi-mola-kipinde                izleniyor=  2000 duraklatildi=     0 mola= 10000 durum=MOLA
+  ✓ S08b-ayni-dizi-kapali-kipinde              izleniyor=  2000 duraklatildi=     0 mola=     0 durum=KAPALI
+  ✓ S09-ana-anahtar-kapat-ac                   izleniyor=  4000 duraklatildi=     0 mola=     0 durum=İZLENİYOR
+  ✓ S10-gece-yarisi-izlenirken                 izleniyor=  3000 duraklatildi=     0 mola=     0 durum=İZLENİYOR
+  ✓ S11-gece-yarisi-mola-sirasinda             izleniyor=     0 duraklatildi=     0 mola=  3000 durum=MOLA
+  ✓ S12-gece-yarisi-ana-kapaliyken             izleniyor=     0 duraklatildi=     0 mola=     0 durum=KAPALI
+  ✓ S13a-oynatma-hizi-bir                      izleniyor= 10000 duraklatildi=  2000 mola=     0 durum=İZLENİYOR
+  ✓ S13b-oynatma-hizi-dort                     izleniyor= 10000 duraklatildi=  2000 mola=     0 durum=İZLENİYOR
+  ✓ S14-ust-uste-oynat-etkisiz                 izleniyor=  8000 duraklatildi=  1000 mola=     0 durum=İZLENİYOR
+  ✓ S15-ust-uste-mola-etkisiz                  izleniyor=     0 duraklatildi=  5000 mola=  5000 durum=DURAKLATILDI
+  ✓ S16-sifir-sureli-aralik                    izleniyor=     0 duraklatildi=  5000 mola=     0 durum=İZLENİYOR
+  ✓ S17-kapaliyken-mola-ac                     izleniyor=  2000 duraklatildi=     0 mola=  3000 durum=MOLA
+  ✓ S18-uzun-karma-sifirdan-farkli-baslangic   izleniyor=  4000 duraklatildi=     0 mola=     0 durum=İZLENİYOR
+
+GECEN: 20 · KALAN: 0 · TOPLAM: 20

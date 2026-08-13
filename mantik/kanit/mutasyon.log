@@ -1,0 +1,94 @@
+=== SAYAC — mantik/mutasyon.mjs ham çıktısı ===
+komut: npm run mutasyon  (node mantik/mutasyon.mjs)
+node=v26.5.0 platform=win32
+======================================================================
+
+======================================================================
+MUTASYON KOŞUSU — sınama gerçekten ölçüyor mu?
+======================================================================
+node=v26.5.0 · her mutant AYRI çocuk süreçte · sert sayaç 30000 ms
+sayac.mjs        SHA-256 (başlangıç): ad848d21f22916de80c2b5ab9f6c17a8872b93e83070860487438fed12ec38ac
+senaryolar.json  SHA-256 (başlangıç): 4b853417cc8bdf7e51572e78b18066ef9653c65f2a6f9e395c341c381800ab46
+
+### A — KOD MUTANTLARI (sayac.mjs) — senaryolar gerçekten mantığa bağlı mı?
+
+── M1 — MOLA önceliği kaldırıldı (molada video oynuyorsa İZLENİYOR sayılır) ──
+   tür        : KOD mutantı · dosya: mantik/sayac.mjs
+   koşucu     : çıkış kodu 1 · beklenen ≠ 0 → TAMAM
+   kırdığı    : S05-mola-kapaninca-kaldigi-yerden, S06-mola-sirasinda-oynatma, S11-gece-yarisi-mola-sirasinda, S17-kapaliyken-mola-ac
+   kırmalıydı : S05, S06, S11, S17 → TAMAM
+   SHA-256 önce : ad848d21f22916de80c2b5ab9f6c17a8872b93e83070860487438fed12ec38ac
+   SHA-256 sonra: ad848d21f22916de80c2b5ab9f6c17a8872b93e83070860487438fed12ec38ac
+   geri alındı : EVET (hash birebir aynı)
+   SONUÇ      : ✓ mutant yakalandı
+
+── M2 — gece-yarısı sıfırlamayı atlıyor ──
+   tür        : KOD mutantı · dosya: mantik/sayac.mjs
+   koşucu     : çıkış kodu 1 · beklenen ≠ 0 → TAMAM
+   kırdığı    : S10-gece-yarisi-izlenirken, S11-gece-yarisi-mola-sirasinda, S12-gece-yarisi-ana-kapaliyken, S18-uzun-karma-sifirdan-farkli-baslangic
+   kırmalıydı : S10, S11, S18 → TAMAM
+   SHA-256 önce : ad848d21f22916de80c2b5ab9f6c17a8872b93e83070860487438fed12ec38ac
+   SHA-256 sonra: ad848d21f22916de80c2b5ab9f6c17a8872b93e83070860487438fed12ec38ac
+   geri alındı : EVET (hash birebir aynı)
+   SONUÇ      : ✓ mutant yakalandı
+
+── M3 — KAPALI'da geçen süre duraklatildi kovasına yazılıyor ──
+   tür        : KOD mutantı · dosya: mantik/sayac.mjs
+   koşucu     : çıkış kodu 1 · beklenen ≠ 0 → TAMAM
+   kırdığı    : S07-ana-kapali-ucu-de-durur, S08b-ayni-dizi-kapali-kipinde, S09-ana-anahtar-kapat-ac, S12-gece-yarisi-ana-kapaliyken, S17-kapaliyken-mola-ac
+   kırmalıydı : S07, S08b, S09 → TAMAM
+   SHA-256 önce : ad848d21f22916de80c2b5ab9f6c17a8872b93e83070860487438fed12ec38ac
+   SHA-256 sonra: ad848d21f22916de80c2b5ab9f6c17a8872b93e83070860487438fed12ec38ac
+   geri alındı : EVET (hash birebir aynı)
+   SONUÇ      : ✓ mutant yakalandı
+
+── M4 — oynatma hızı çarpan olarak kullanılıyor (gerçek zaman bozulur) ──
+   tür        : KOD mutantı · dosya: mantik/sayac.mjs
+   koşucu     : çıkış kodu 1 · beklenen ≠ 0 → TAMAM
+   kırdığı    : S13b-oynatma-hizi-dort
+   kırmalıydı : S13b → TAMAM
+   SHA-256 önce : ad848d21f22916de80c2b5ab9f6c17a8872b93e83070860487438fed12ec38ac
+   SHA-256 sonra: ad848d21f22916de80c2b5ab9f6c17a8872b93e83070860487438fed12ec38ac
+   geri alındı : EVET (hash birebir aynı)
+   SONUÇ      : ✓ mutant yakalandı
+
+### B — TABLO BOZMALARI (senaryolar.json) — koşucu gerçekten KATI mı?
+
+── T1 — beklenen değer değiştirildi (S01.beklenen.izleniyor: 10000 → 9999) ──
+   tür        : TABLO bozması · dosya: mantik/senaryolar.json
+   koşucu     : çıkış kodu 1 · beklenen 1 → TAMAM
+   kırdığı    : S01-yalniz-izleniyor
+   SHA-256 önce : 4b853417cc8bdf7e51572e78b18066ef9653c65f2a6f9e395c341c381800ab46
+   SHA-256 sonra: 4b853417cc8bdf7e51572e78b18066ef9653c65f2a6f9e395c341c381800ab46
+   geri alındı : EVET (hash birebir aynı)
+   SONUÇ      : ✓ mutant yakalandı
+
+── T2 — zorunlu alan silindi (S03.beklenenDurum) ──
+   tür        : TABLO bozması · dosya: mantik/senaryolar.json
+   koşucu     : çıkış kodu 1 · beklenen 1 → TAMAM
+   kırdığı    : (şema reddi — 2 hata)
+   SHA-256 önce : 4b853417cc8bdf7e51572e78b18066ef9653c65f2a6f9e395c341c381800ab46
+   SHA-256 sonra: 4b853417cc8bdf7e51572e78b18066ef9653c65f2a6f9e395c341c381800ab46
+   geri alındı : EVET (hash birebir aynı)
+   SONUÇ      : ✓ mutant yakalandı
+
+── T3 — alan adına yazım hatası (S05.beklenen → beklenenn) ──
+   tür        : TABLO bozması · dosya: mantik/senaryolar.json
+   koşucu     : çıkış kodu 1 · beklenen 1 → TAMAM
+   kırdığı    : (şema reddi — 3 hata)
+   SHA-256 önce : 4b853417cc8bdf7e51572e78b18066ef9653c65f2a6f9e395c341c381800ab46
+   SHA-256 sonra: 4b853417cc8bdf7e51572e78b18066ef9653c65f2a6f9e395c341c381800ab46
+   geri alındı : EVET (hash birebir aynı)
+   SONUÇ      : ✓ mutant yakalandı
+
+======================================================================
+ÖZET
+======================================================================
+kod mutantı   : 4 · yakalanan: 4
+tablo bozması : 3 · yakalanan: 3
+test boşluğu (hiçbir senaryoyu kırmayan mutant): 0
+sayac.mjs       SHA-256 (bitiş): ad848d21f22916de80c2b5ab9f6c17a8872b93e83070860487438fed12ec38ac
+senaryolar.json SHA-256 (bitiş): 4b853417cc8bdf7e51572e78b18066ef9653c65f2a6f9e395c341c381800ab46
+geri alma: sayac.mjs BİREBİR AYNI · senaryolar.json BİREBİR AYNI
+
+SONUÇ: 7/7 bozma beklendiği gibi yakalandı

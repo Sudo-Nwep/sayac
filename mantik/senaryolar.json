@@ -1,0 +1,265 @@
+{
+  "surum": "1.0",
+  "birim": "milisaniye",
+  "senaryolar": [
+    {
+      "id": "S01-yalniz-izleniyor",
+      "aciklama": "Video basindan sonuna oynuyor. Yalniz izlenen sayac isler.",
+      "baslangic": { "t": 0 },
+      "olaylar": [{ "t": 0, "tur": "oynat" }],
+      "son": 10000,
+      "beklenen": { "izleniyor": 10000, "duraklatildi": 0, "mola": 0 },
+      "beklenenDurum": "İZLENİYOR"
+    },
+    {
+      "id": "S02-yalniz-duraklatildi",
+      "aciklama": "Hic oynatma yok. Bastan sona duraklatilmis sayilir; varsayilan durum duraklatilmistir.",
+      "baslangic": { "t": 0 },
+      "olaylar": [{ "t": 1000, "tur": "duraklat" }],
+      "son": 10000,
+      "beklenen": { "izleniyor": 0, "duraklatildi": 10000, "mola": 0 },
+      "beklenenDurum": "DURAKLATILDI"
+    },
+    {
+      "id": "S03-karisik-dizi",
+      "aciklama": "Oynat, duraklat, tekrar oynat. Iki sayac sirayla isler, sure kaybolmaz.",
+      "baslangic": { "t": 0 },
+      "olaylar": [
+        { "t": 0, "tur": "oynat" },
+        { "t": 5000, "tur": "duraklat" },
+        { "t": 8000, "tur": "oynat" }
+      ],
+      "son": 12000,
+      "beklenen": { "izleniyor": 9000, "duraklatildi": 3000, "mola": 0 },
+      "beklenenDurum": "İZLENİYOR"
+    },
+    {
+      "id": "S04-mola-ucuncu-sayac-isler",
+      "aciklama": "Mola acilinca video duraklatilir; izlenen ve duraklatilan sayaclar durur, ucuncusu isler. Mola kapaninca video hala durakli oldugu icin duraklatilan sayac devam eder.",
+      "baslangic": { "t": 0 },
+      "olaylar": [
+        { "t": 0, "tur": "oynat" },
+        { "t": 4000, "tur": "mola-aç" },
+        { "t": 4000, "tur": "duraklat" },
+        { "t": 10000, "tur": "mola-kapat" }
+      ],
+      "son": 13000,
+      "beklenen": { "izleniyor": 4000, "duraklatildi": 3000, "mola": 6000 },
+      "beklenenDurum": "DURAKLATILDI"
+    },
+    {
+      "id": "S05-mola-kapaninca-kaldigi-yerden",
+      "aciklama": "Mola kapaninca video hala oynuyorsa izlenen sayac kaldigi yerden devam eder; sifirlanmaz.",
+      "baslangic": { "t": 0 },
+      "olaylar": [
+        { "t": 0, "tur": "oynat" },
+        { "t": 2000, "tur": "mola-aç" },
+        { "t": 7000, "tur": "mola-kapat" }
+      ],
+      "son": 10000,
+      "beklenen": { "izleniyor": 5000, "duraklatildi": 0, "mola": 5000 },
+      "beklenenDurum": "İZLENİYOR"
+    },
+    {
+      "id": "S06-mola-sirasinda-oynatma",
+      "aciklama": "Mola sirasinda video oynamaya baslarsa mola bozulmaz; sure molaya yazilmaya devam eder. Mola kapaninca izlenen duruma gecilir.",
+      "baslangic": { "t": 0 },
+      "olaylar": [
+        { "t": 0, "tur": "duraklat" },
+        { "t": 1000, "tur": "mola-aç" },
+        { "t": 3000, "tur": "oynat" },
+        { "t": 6000, "tur": "mola-kapat" }
+      ],
+      "son": 9000,
+      "beklenen": { "izleniyor": 3000, "duraklatildi": 1000, "mola": 5000 },
+      "beklenenDurum": "İZLENİYOR"
+    },
+    {
+      "id": "S07-ana-kapali-ucu-de-durur",
+      "aciklama": "Ana anahtar kapaliyken uc sayacin ucu de durur; gecen sure hicbir kaleme yazilmaz.",
+      "baslangic": { "t": 0 },
+      "olaylar": [
+        { "t": 0, "tur": "oynat" },
+        { "t": 3000, "tur": "ana-kapat" }
+      ],
+      "son": 13000,
+      "beklenen": { "izleniyor": 3000, "duraklatildi": 0, "mola": 0 },
+      "beklenenDurum": "KAPALI"
+    },
+    {
+      "id": "S08a-ayni-dizi-mola-kipinde",
+      "aciklama": "S08b ile ayni olay dizisi, tek fark kip: burada mola acilir. On bin birimlik sure ucuncu kaleme yazilir. S08b ile yan yana okunmalidir.",
+      "baslangic": { "t": 0 },
+      "olaylar": [
+        { "t": 0, "tur": "oynat" },
+        { "t": 2000, "tur": "mola-aç" },
+        { "t": 2000, "tur": "duraklat" }
+      ],
+      "son": 12000,
+      "beklenen": { "izleniyor": 2000, "duraklatildi": 0, "mola": 10000 },
+      "beklenenDurum": "MOLA"
+    },
+    {
+      "id": "S08b-ayni-dizi-kapali-kipinde",
+      "aciklama": "S08a ile ayni olay dizisi, tek fark kip: burada ana anahtar kapatilir. Ayni on bin birimlik sure HICBIR kaleme yazilmaz. Molanin kapaliya farki tam olarak budur.",
+      "baslangic": { "t": 0 },
+      "olaylar": [
+        { "t": 0, "tur": "oynat" },
+        { "t": 2000, "tur": "ana-kapat" },
+        { "t": 2000, "tur": "duraklat" }
+      ],
+      "son": 12000,
+      "beklenen": { "izleniyor": 2000, "duraklatildi": 0, "mola": 0 },
+      "beklenenDurum": "KAPALI"
+    },
+    {
+      "id": "S09-ana-anahtar-kapat-ac",
+      "aciklama": "Ana anahtar tek anahtardir, iki konumu vardir: ayni olay kapatir ve tekrar acar. Kapali gecen sure hicbir kaleme yazilmaz; acilinca onceki oynatma durumu korunur.",
+      "baslangic": { "t": 0 },
+      "olaylar": [
+        { "t": 0, "tur": "oynat" },
+        { "t": 2000, "tur": "ana-kapat" },
+        { "t": 9000, "tur": "ana-kapat" }
+      ],
+      "son": 11000,
+      "beklenen": { "izleniyor": 4000, "duraklatildi": 0, "mola": 0 },
+      "beklenenDurum": "İZLENİYOR"
+    },
+    {
+      "id": "S10-gece-yarisi-izlenirken",
+      "aciklama": "Gun sonunda uc sayac da sifirlanir; video oynamaya devam ettigi icin izlenen sayac SIFIRDAN devam eder. Gecmis gun saklanmaz.",
+      "baslangic": { "t": 0 },
+      "olaylar": [
+        { "t": 0, "tur": "oynat" },
+        { "t": 10000, "tur": "gece-yarısı" }
+      ],
+      "son": 13000,
+      "beklenen": { "izleniyor": 3000, "duraklatildi": 0, "mola": 0 },
+      "beklenenDurum": "İZLENİYOR"
+    },
+    {
+      "id": "S11-gece-yarisi-mola-sirasinda",
+      "aciklama": "Gun sonu mola sirasinda gelirse uc sayac sifirlanir ama mola kipi korunur; mola sayaci sifirdan devam eder.",
+      "baslangic": { "t": 0 },
+      "olaylar": [
+        { "t": 0, "tur": "oynat" },
+        { "t": 2000, "tur": "mola-aç" },
+        { "t": 8000, "tur": "gece-yarısı" }
+      ],
+      "son": 11000,
+      "beklenen": { "izleniyor": 0, "duraklatildi": 0, "mola": 3000 },
+      "beklenenDurum": "MOLA"
+    },
+    {
+      "id": "S12-gece-yarisi-ana-kapaliyken",
+      "aciklama": "Gun sonu ana anahtar kapaliyken gelirse uc sayac sifirlanir ve kapali kipi korunur; hicbir sayac islemez, ucu de sifir kalir.",
+      "baslangic": { "t": 0 },
+      "olaylar": [
+        { "t": 0, "tur": "oynat" },
+        { "t": 3000, "tur": "ana-kapat" },
+        { "t": 9000, "tur": "gece-yarısı" }
+      ],
+      "son": 14000,
+      "beklenen": { "izleniyor": 0, "duraklatildi": 0, "mola": 0 },
+      "beklenenDurum": "KAPALI"
+    },
+    {
+      "id": "S13a-oynatma-hizi-bir",
+      "aciklama": "Normal hizda oynatma. S13b ile ayni zaman damgalari, tek fark oynatma hizi bilgisi. Iki senaryonun beklenen toplamlari AYNIDIR: sayilan sey gercek zamandir.",
+      "baslangic": { "t": 0 },
+      "olaylar": [
+        { "t": 0, "tur": "oynat", "hiz": 1 },
+        { "t": 6000, "tur": "duraklat" },
+        { "t": 8000, "tur": "oynat", "hiz": 1 }
+      ],
+      "son": 12000,
+      "beklenen": { "izleniyor": 10000, "duraklatildi": 2000, "mola": 0 },
+      "beklenenDurum": "İZLENİYOR"
+    },
+    {
+      "id": "S13b-oynatma-hizi-dort",
+      "aciklama": "Dort kat hizda oynatma. S13a ile ayni zaman damgalari. Beklenen toplamlar S13a ile BIREBIR AYNI: oynatma hizi hesaba girmez, harcanan gercek sure sayilir.",
+      "baslangic": { "t": 0 },
+      "olaylar": [
+        { "t": 0, "tur": "oynat", "hiz": 4 },
+        { "t": 6000, "tur": "duraklat" },
+        { "t": 8000, "tur": "oynat", "hiz": 4 }
+      ],
+      "son": 12000,
+      "beklenen": { "izleniyor": 10000, "duraklatildi": 2000, "mola": 0 },
+      "beklenenDurum": "İZLENİYOR"
+    },
+    {
+      "id": "S14-ust-uste-oynat-etkisiz",
+      "aciklama": "Ayni yonde iki oynatma olayi ust uste gelirse ikincisi etkisizdir; tek oynatma gibi davranir.",
+      "baslangic": { "t": 0 },
+      "olaylar": [
+        { "t": 1000, "tur": "oynat" },
+        { "t": 1000, "tur": "oynat" },
+        { "t": 5000, "tur": "oynat" }
+      ],
+      "son": 9000,
+      "beklenen": { "izleniyor": 8000, "duraklatildi": 1000, "mola": 0 },
+      "beklenenDurum": "İZLENİYOR"
+    },
+    {
+      "id": "S15-ust-uste-mola-etkisiz",
+      "aciklama": "Mola acma ve kapatma olaylari da ust uste geldiginde ikincisi etkisizdir.",
+      "baslangic": { "t": 0 },
+      "olaylar": [
+        { "t": 1000, "tur": "mola-aç" },
+        { "t": 3000, "tur": "mola-aç" },
+        { "t": 6000, "tur": "mola-kapat" },
+        { "t": 8000, "tur": "mola-kapat" }
+      ],
+      "son": 10000,
+      "beklenen": { "izleniyor": 0, "duraklatildi": 5000, "mola": 5000 },
+      "beklenenDurum": "DURAKLATILDI"
+    },
+    {
+      "id": "S16-sifir-sureli-aralik",
+      "aciklama": "Ayni ana denk gelen olaylar sifir sureli araliklar uretir; toplamlari degistirmez ama son durumu belirler.",
+      "baslangic": { "t": 0 },
+      "olaylar": [
+        { "t": 5000, "tur": "oynat" },
+        { "t": 5000, "tur": "duraklat" },
+        { "t": 5000, "tur": "oynat" }
+      ],
+      "son": 5000,
+      "beklenen": { "izleniyor": 0, "duraklatildi": 5000, "mola": 0 },
+      "beklenenDurum": "İZLENİYOR"
+    },
+    {
+      "id": "S17-kapaliyken-mola-ac",
+      "aciklama": "Ana anahtar kapaliyken mola acilirsa gorunen durum KAPALI kalir, hicbir sayac islemez. Ana anahtar tekrar acilinca MOLA kipine donulur: mola bilgisi hatirlanmistir.",
+      "baslangic": { "t": 0 },
+      "olaylar": [
+        { "t": 0, "tur": "oynat" },
+        { "t": 2000, "tur": "ana-kapat" },
+        { "t": 5000, "tur": "mola-aç" },
+        { "t": 9000, "tur": "ana-kapat" }
+      ],
+      "son": 12000,
+      "beklenen": { "izleniyor": 2000, "duraklatildi": 0, "mola": 3000 },
+      "beklenenDurum": "MOLA"
+    },
+    {
+      "id": "S18-uzun-karma-sifirdan-farkli-baslangic",
+      "aciklama": "Alti olay turunun hepsi tek dizide; baslangic ani sifir DEGILDIR. Gun sonu en sonda gelir ve birikimi siler.",
+      "baslangic": { "t": 1000 },
+      "olaylar": [
+        { "t": 1000, "tur": "oynat" },
+        { "t": 4000, "tur": "mola-aç" },
+        { "t": 6000, "tur": "mola-kapat" },
+        { "t": 9000, "tur": "duraklat" },
+        { "t": 11000, "tur": "ana-kapat" },
+        { "t": 14000, "tur": "ana-kapat" },
+        { "t": 14000, "tur": "oynat" },
+        { "t": 16000, "tur": "gece-yarısı" }
+      ],
+      "son": 20000,
+      "beklenen": { "izleniyor": 4000, "duraklatildi": 0, "mola": 0 },
+      "beklenenDurum": "İZLENİYOR"
+    }
+  ]
+}
