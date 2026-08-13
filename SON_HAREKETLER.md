@@ -9,19 +9,25 @@
 
 ## 📌 GÜNCEL DURUM (her zaman en güncel — önce bunu oku)
 
-- **Versiyon:** v0.5
-- **Aşama:** {{ASAMA}} — fiilen: `HEDEF.md` madde 1 kapandı, madde 2 sırada
+- **Versiyon:** v1.0
+- **Aşama:** {{ASAMA}} — fiilen: `HEDEF.md` **küme A kapandı** (madde 1 + madde 2), madde 3 sırada
 - **Amaç:** {{AMAC}}
 - **Kapsam:** {{KAPSAM}}
-- **Depo/çalışır mı:** **evet — ilk çalışan parça var.** Firefox eklenti test yolu ölçüldü,
-  seçildi ve kanıtlandı: boş sınama eklentisi yükleniyor, iki olay okunuyor
-  (`node test-yolu\kanit-kosusu.mjs mv2` → çıkış kodu 0). Ürünün kendisi (sayaç) **henüz yok**.
+- **Depo/çalışır mı:** **evet — ürünün ilk gerçek parçası var.** İki üretilebilir kanıt:
+  `npm test` → `GECEN: 20 · KALAN: 0`, çıkış 0 · `npm run mutasyon` → 7/7 bozma yakalandı,
+  çıkış 0 · `node test-yolu\kanit-kosusu.mjs mv2` → çıkış 0.
+  **Kurulabilir eklenti hâlâ YOK** — sayaç mantığı ile tarayıcı arası bağ kurulmadı.
 - **Seçilen test yolu:** `playwright-webextext` · yedek: Mozilla `web-ext` RDP ·
   elenen: Playwright'ın kendi Firefox desteği. Gerekçe + rakamlar `TEST_YOLU.md`.
-- **Açık işler:** `PROJE_KUNYESI.md`'deki ⛔ boyutlar + doldurulmamış ELDE yer tutucuları
-  (bu turda **hiçbiri kapanmadı** — ürün hâlâ yok, künye değişmedi).
-- **Sıradaki adım:** `HEDEF.md` madde 2 — saf zaman mantığı (tarayıcısız sınanabilir modül).
-  Madde 1'den bağımsızdır; küme A'nın ikinci yarısıdır.
+- **Zaman mantığı:** `mantik/sayac.mjs` — saf (statik **ve** dinamik olarak ölçüldü),
+  değişmez, serileştirilebilir; tek sayaç birimi modeller. Ayrıntı `MANTIK.md`.
+- **Açık işler:** `PROJE_KUNYESI.md`'deki ⛔ boyutlar + doldurulmamış ELDE yer tutucuları.
+  **Hiçbir boyut kapanmadı**; ürün boyutunun *"sıradaki tek somut adım"* sütunu artık dolu.
+- **Sıradaki adım:** `HEDEF.md` madde 3 — eklenti (LibreWolf + YouTube). `mantik/sayac.mjs`'in
+  N örneğiyle sekme başına çoğullanacak ve `gece-yarısı` olayını **üretecek taraf orası**.
+- **⚠️ Madde 3'e devreden sözleşme:** `gece-yarısı`'nın zaman damgası **çağıranın**
+  sorumluluğudur — modül saf olduğu için 00:00'ı bilemez; olay geç gelirse fark eski güne
+  yazılır ve silinir.
 - **⚠️ Madde 3 için bilinen engel:** LibreWolf bu makinede **kurulu değil** — *"LibreWolf'a
   kurulur"* kanıtı bugün üretilemez. Kararı madde 3'ün turu verecek.
 
@@ -35,6 +41,15 @@
 - **`PROJE_KUNYESI.md`** — **ne YOK** dosyası: ⛔ çevre boyutları + doldurulmamış ELDE yer tutucuları.
 - **`.gitignore`** — repoya girmeyecekler (secret dahil). `test-yolu/kanit/*.log` bilerek
   **muaf** tutuldu: kanıt depoya girer.
+- **`MANTIK.md`** — **madde 2'nin raporu:** durum modeli · olay etki tablosu · 16 kutunun
+  senaryo karşılıkları · saflık ölçümünün çıktısı · 8 kombinasyon tablosu · mutasyon sonuçları ·
+  **madde 3'e devreden sözleşme** (`gece-yarısı` damgası kimin işi, çoğullama nerede yapılır).
+- **`mantik/`** — ürünün saf çekirdeği. Tarayıcı yok, ağ yok, zamanlayıcı yok:
+  - `sayac.mjs` — **SAF** çekirdek; tek dosya, hiçbir yükleme satırı yok. Zaman parametre olarak girer.
+  - `senaryolar.json` — doğruluğun tek kaynağı; **dilden bağımsız** 20 senaryo (K10).
+  - `kosucu.mjs` — **katı** koşucu (`npm test`): saflık ölçümü + şema reddi + çakışma invaryantı.
+  - `mutasyon.mjs` — kod mutantları + tablo bozmaları (`npm run mutasyon`); her mutant ayrı çocuk süreçte.
+  - `kanit/` — `test-kosusu.log` + `mutasyon.log`, UTF-8. **Depoya girer** (`.gitignore:56`).
 - **`TEST_YOLU.md`** — **madde 1'in raporu:** 3 aday × 2 manifest tablosu, elenen adayın
   birebir hata metinleri, seçim gerekçesi, kanıt koşusunun komutu ve çıktısı.
 - **`package.json` / `package-lock.json`** — `"type": "module"`, yalnız `devDependencies`.
@@ -80,6 +95,34 @@
    - **Güncel durum:** madde 1 kapandı, kanıtı üretilebilir (`node test-yolu\kanit-kosusu.mjs mv2`
      → çıkış kodu 0, iki olay okunur). Ürünün kendisi (sayaç) henüz yok, hiçbir ⛔ boyut kapanmadı.
      Sıradaki adım: madde 2 — saf zaman mantığı. Bilinen engel: LibreWolf makinede kurulu değil.
+
+* **v1.0 · 14/08/2026** — saf zaman mantığı çekirdeği yazıldı ve **bozularak** sınandı; ürünün ilk gerçek parçası.
+   > **Karar — durum temsili:** üç bağımsız bayrak + öncelikli türetme
+   > (`anaKapali` > `molada` > `videoOynuyor`). Düz dört-durumlu FSM **elendi**: molaya ve
+   > ana kapatmaya girmeden önceki durumu hatırlamak zorunda kalır, gizli bir ikinci eksen
+   > doğar ve *"ikisi aynı anda olamaz"* garantisi tekrar konvansiyona bağlanırdı. Seçilen
+   > temsille çakışma bir test sonucu değil, **yapısal imkânsızlık**: 8 bayrak kombinasyonunun
+   > sekizi de dört addan tam birini döndürdü, tabloyla basıldı.
+   > **Ölçüm:** `npm test` → **`GECEN: 20 · KALAN: 0`**, çıkış 0 (eşik 12 koşucuya gömülü) ·
+   > `npm run mutasyon` → **7/7** bozma yakalandı, çıkış 0.
+   > **Saflık iddia edilmedi, ölçüldü:** statik tarama 17 yasaklı belirteç → `bulunan=[]`,
+   > yükleme satırı 0 · dinamik tuzak 14 global erişildiğinde fırlatan sahtelerle değiştirildi
+   > → **20/20 senaryo yine geçti, tuzak tetiklendi: 0** · determinizm birebir aynı.
+   > `process` tuzağa bilerek dâhil edilmedi (koşucunun kendi çıkış yolu ona bağlı) ve bu **yazıldı**.
+   > **Mutasyon:** M1 mola önceliği · M2 gece-yarısı sıfırlama · M3 KAPALI süresi · M4 hız çarpanı
+   > → dördü de koşucuyu çıkış 1'e düşürdü. T1 değer · T2 alan silme · T3 alan adı yazım hatası
+   > → üçü de çıkış 1. **Test boşluğu 0.** Her bozmadan sonra SHA-256 birebir geri geldi.
+   > **Düzeltme (test boşluğu DEĞİL):** M1'in ilk beklenti listesi yanlıştı (`S08a` duyarsız —
+   > mola sırasında video duraklı); liste türetmeyle düzeltildi, senaryo eklenmedi.
+   > **Yeni bağımlılık YOK** — saf JS + Node yerleşikleri yetti.
+   > **Yeni dosyalar:** `MANTIK.md` · `mantik/` (`sayac.mjs`, `senaryolar.json`, `kosucu.mjs`,
+   > `mutasyon.mjs`, `kanit/` ×2 log). `.gitignore` (`!mantik/kanit/*.log`),
+   > `package.json` (`test` + `mutasyon` betikleri), `KONTROL_DOSYASI.md`, `PROJE_KUNYESI.md` güncellendi.
+   > **`commit: 8489444`**
+   - **Güncel durum:** küme A kapandı (madde 1 + madde 2), ikisinin de kanıtı üretilebilir.
+     Kurulabilir eklenti hâlâ yok, hiçbir ⛔ boyut kapanmadı. Sıradaki adım: madde 3 —
+     eklenti; `mantik/sayac.mjs` sekme başına çoğullanacak ve `gece-yarısı` olayını üretecek
+     taraf orası olacak. Bilinen engel: LibreWolf makinede kurulu değil.
 
 * *(Bir sonraki madde buraya eklenecek — aşağıdaki kurallara göre.)*
 
