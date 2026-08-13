@@ -1,0 +1,33 @@
+# Sayac — repoya girmeyecekler
+# ORKESTRA kod şablonundan kuruldu (13/08/2026).
+
+# --- sırlar (ASLA commit'lenmez) ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# --- işletim sistemi / editör ---
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/
+
+# --- bağımlılıklar ve build çıktısı ---
+node_modules/
+dist/
+build/
+out/
+coverage/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# --- loglar ve geçici ---
+*.log
+npm-debug.log*
+tmp/
+.cache/
