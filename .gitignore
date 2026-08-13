@@ -31,3 +31,22 @@ venv/
 npm-debug.log*
 tmp/
 .cache/
+
+# sir tasir - ORKESTRA bildirim ayari
+bildirim.json
+
+# --- ORKESTRA otonom dongu calisma durumu (makineye ozel, proje kaynagi degil) ---
+.claude/loop/
+
+# --- Firefox eklenti test yolu ---
+# Indirilen tarayici ikilileri ve gecici profil/eklenti dizinleri repoya girmez.
+# (Playwright'in Firefox'u zaten repo disinda: %LOCALAPPDATA%\ms-playwright)
+tarayicilar/
+.playwright-browsers/
+ms-playwright/
+web-ext-artifacts/
+test-yolu/gecici/
+test-log/
+
+# Kanit repoya GIRER — yukaridaki *.log kuralindan muaf tutulur.
+!test-yolu/kanit/*.log

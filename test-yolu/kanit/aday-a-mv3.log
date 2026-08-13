@@ -1,0 +1,23 @@
+=== SAYAC — Firefox eklenti test yolu olcumu ===
+aday=a manifest=mv3
+komut: "C:\Program Files\nodejs\node.exe" "C:\Users\kadio\Documents\Claude\Projects\Sayac\test-yolu\aday-a.mjs" mv3
+node=v26.5.0 platform=win32
+sure=3477 ms · cikis kodu=0 · sinyal=null
+============================================================
+
+[+000000ms] aday=a (playwright-webextext) manifest=mv3
+[+000007ms] isaret sunucusu ayakta: http://127.0.0.1:51123
+[+000015ms] eklenti gecici kopya: C:\Users\kadio\AppData\Local\Temp\sayac-ekl-a-mv3-XUhUNB
+[+000015ms] firefox ikilisi: C:\Users\kadio\AppData\Local\ms-playwright\firefox-1538\firefox\firefox.exe
+[+000015ms] tek kullanimlik profil: C:\Users\kadio\AppData\Local\Temp\sayac-profil-a-mv3-vONrhe
+[+001653ms] KUTU1 E :: launchPersistentContext çözüldü → _BrowserContext; installAddons() istisna atmadı (RDP installTemporaryAddon başarılı), acik sayfa sayisi=1
+[+001656ms] ISARET <- {"aday":"a","manifest":"mv3","kutu":"2","kaynak":"arkaplan","ms":1786655464905}
+[+001866ms] KUTU2 E :: işaret sunucusuna düşen istek: {"aday":"a","manifest":"mv3","kutu":"2","kaynak":"arkaplan","ms":1786655464905}
+[+001918ms] sayfa acildi: http://127.0.0.1:51123/test.html
+[+001920ms] ISARET <- {"aday":"a","manifest":"mv3","tani":"icerik-yuklendi","ms":1786655465169}
+[+002131ms] ISARET <- {"aday":"a","manifest":"mv3","kutu":"3","kaynak":"icerik","tur":"play","uretim":"gercek","ms":1786655465380}
+[+002335ms] KUTU3 E :: işaret sunucusuna düşen istek: {"aday":"a","manifest":"mv3","kutu":"3","kaynak":"icerik","tur":"play","uretim":"gercek","ms":1786655465380}
+[+002336ms] kapatiliyor: playwright BrowserContext
+[+002663ms] kapatiliyor: profil dizini
+[+002672ms] isaret sunucusu kapatildi
+[+002673ms] SONUC {"aday":"a","adayAdi":"playwright-webextext","manifest":"mv3","ikili":"C:\\Users\\kadio\\AppData\\Local\\ms-playwright\\firefox-1538\\firefox\\firefox.exe","kutu1":"E","kutu1Kanit":"launchPersistentContext çözüldü → _BrowserContext; installAddons() istisna atmadı (RDP installTemporaryAddon başarılı), acik sayfa sayisi=1","kutu2":"E","kutu2Kanit":"işaret sunucusuna düşen istek: {\"aday\":\"a\",\"manifest\":\"mv3\",\"kutu\":\"2\",\"kaynak\":\"arkaplan\",\"ms\":1786655464905}","kutu3":"E","kutu3Kanit":"işaret sunucusuna düşen istek: {\"aday\":\"a\",\"manifest\":\"mv3\",\"kutu\":\"3\",\"kaynak\":\"icerik\",\"tur\":\"play\",\"uretim\":\"gercek\",\"ms\":1786655465380}","uretim":"gercek","tani":"icerik-yuklendi","hata":"","sureMs":2673,"isaretler":[{"aday":"a","manifest":"mv3","kutu":"2","kaynak":"arkaplan","ms":1786655464905},{"aday":"a","manifest":"mv3","tani":"icerik-yuklendi","ms":1786655465169},{"aday":"a","manifest":"mv3","kutu":"3","kaynak":"icerik","tur":"play","uretim":"gercek","ms":1786655465380}]}

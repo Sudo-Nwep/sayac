@@ -8,9 +8,30 @@
 
 ## 🔵 Şu ANKİ TEK İŞ
 
-> _(henüz seçilmedi — `PROJE_KUNYESI.md`'deki ilk ⛔ boyut iyi bir başlangıçtır)_
+> **Madde 1 kapandı — Firefox eklenti test yolu ölçüldü ve seçildi.**
+>
+> **Seçilen yol: `playwright-webextext`** (Aday A) — `test-yolu/aday-a.mjs`,
+> kanıt koşusu `test-yolu/kanit-kosusu.mjs`.
+>
+> **Neden seçildi:** üç adaydan ikisi (A ve B) üç kutuyu da **iki manifestte de** geçti.
+> Eşitliği bozan ölçüt ①'dir: **A, Playwright eli veriyor** — dönen nesne gerçek bir
+> `BrowserContext` olduğu için `page.evaluate()` / `page.click()` çalışıyor (ölçüldü:
+> `currentTime: 0.192, readyState: 4, paused: false`). `HEDEF.md` madde 3 *"sayaçlar
+> doğru yönde ilerler, rakamla"* ve madde 4 *"iki butonun üç durumu da ölçülür"* diyor;
+> ikisi de sayfayı sürmeyi gerektirir. Aday B'de (`web-ext`) tarayıcıyı web-ext açar,
+> Playwright tutamacı yoktur — aynı kanıt için ürüne test kancası koymak gerekirdi (G20 ihlali).
+>
+> **Yedek: Mozilla `web-ext` RDP (Aday B)** — o da altı kutuyu geçti, `test-yolu/aday-b.mjs`
+> çalışır hâlde depoda. A'nın bilinen kırılganlığı (sürüm `0.0.5`, ~2 yıllık, RDP aktör
+> adlarına bağlı) gerçekleşirse geçiş maliyeti düşük.
+>
+> **Elenen: Playwright'ın kendi Firefox desteği (Aday C)** — ölçülerek elendi, hata metni
+> ve artefakt kanıtı `TEST_YOLU.md`'de.
+>
+> **Sıradaki tek iş:** madde 2 (saf zaman mantığı) — madde 1'den bağımsızdır
+> (`HEDEF.md` → Toplu koşma, küme A).
 
-**Tarih:** 13/08/2026 · **Dal:** `main`
+**Tarih:** 14/08/2026 · **Dal:** `main` · **Ayrıntı:** `TEST_YOLU.md`
 
 ---
 
@@ -18,7 +39,10 @@
 
 | # | İş | Durum | Not |
 |---|---|---|---|
-| 1 | _(boş)_ | ⚪ sırada | — |
+| 1 | Madde 2 — saf zaman mantığı (tarayıcısız sınanabilir modül) | ⚪ sırada | `HEDEF.md` küme A; madde 1'i beklemiyordu, artık tek açık iş |
+| 2 | Madde 3 — eklenti, LibreWolf + YouTube | ⚪ sırada | ⚠️ LibreWolf bu makinede **kurulu değil**; kanıt bugün üretilemez (`TEST_YOLU.md`) |
+| 3 | Madde 4 — arayüz (üç sayaç, iki buton) | ⚪ sırada | Seçilen test yolu Playwright eli verdiği için buton ölçümü mümkün |
+| 4 | Madde 5 — private GitHub deposu, README, etiket | ⚪ sırada | `git push` yalnız burada, önceden yetkili |
 
 **Durum kodları:** 🔵 bugün · ⚪ sırada · 🔴 takıldı · ✅ bitti (→ arşive)
 
@@ -47,9 +71,16 @@ Değerler `.env` dosyasında ve `.gitignore`'dadır.
 
 ## 📦 Bağımlılıklar (neden var)
 
+Sürümler `npm ls --depth=0` çıktısından okundu, tahmin edilmedi. Hepsi `devDependencies` —
+ürün çalışma zamanında hiçbiri gerekmez (eklenti saf tarayıcı kodudur).
+
 | Paket | Sürüm | Neden gerekli |
 |---|---|---|
-| _(boş)_ | — | — |
+| `playwright` | `1.62.1` | Firefox ikilisini sistem geneline kurmadan indirir (`npx playwright install firefox` → Firefox 153.0) ve sayfayı süren `BrowserContext`'i verir. **Seçilen test yolunun taşıyıcısı.** |
+| `playwright-webextext` | `0.0.5` | **Seçilen test yolu.** Playwright'ın başlattığı Firefox'un RDP'sine bağlanıp geçici eklenti yükler; Playwright eli korunur. ⚠️ `tslib` ve `@playwright/test`'i bağımlılık olarak **bildirmiyor** — ikisi elle eklendi. |
+| `tslib` | `2.8.1` | `playwright-webextext@0.0.5`'in bildirilmemiş çalışma-zamanı bağımlılığı. Yoksa `Cannot find module 'tslib'` ile düşer (`TEST_YOLU.md`'de birebir hata metni). |
+| `@playwright/test` | `1.62.1` | `playwright-webextext`'in `dist/index.js`'i `fixtures.js`'i koşulsuz yüklüyor, o da bunu `require` ediyor. Yoksa `Cannot find module '@playwright/test'`. Sürüm `playwright` ile eşitlendi. |
+| `web-ext` | `10.6.0` | **Yedek test yolu (Aday B)** — Mozilla'nın referans uygulaması. Ayrıca Aday C'nin ölçümünde imzasız XPI üretmek için `cmd.build` kullanıldı. Yalnız Node API ile koşulur, CLI olarak **asla** (G24). |
 
 ---
 

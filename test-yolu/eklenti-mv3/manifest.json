@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Sayac Sinama",
+  "version": "0.1",
+  "description": "Firefox eklenti test yolu olcumu icin bos sinama eklentisi. Sayac tutmaz, arayuz acmaz.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "sinama@sayac.local"
+    }
+  },
+  "host_permissions": ["http://127.0.0.1/*"],
+  "background": {
+    "scripts": ["port.js", "arkaplan.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://127.0.0.1/*"],
+      "js": ["port.js", "icerik.js"],
+      "run_at": "document_end",
+      "all_frames": false
+    }
+  ]
+}

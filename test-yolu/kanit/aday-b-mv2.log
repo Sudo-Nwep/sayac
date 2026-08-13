@@ -1,0 +1,29 @@
+=== SAYAC — Firefox eklenti test yolu olcumu ===
+aday=b manifest=mv2
+komut: "C:\Program Files\nodejs\node.exe" "C:\Users\kadio\Documents\Claude\Projects\Sayac\test-yolu\aday-b.mjs" mv2
+node=v26.5.0 platform=win32
+sure=2505 ms · cikis kodu=0 · sinyal=null
+============================================================
+
+[+000000ms] aday=b (Mozilla web-ext RDP (Node API)) manifest=mv2
+[+000007ms] isaret sunucusu ayakta: http://127.0.0.1:51134
+[+000013ms] eklenti gecici kopya: C:\Users\kadio\AppData\Local\Temp\sayac-ekl-b-mv2-IRQtTb
+[+000014ms] firefox ikilisi: C:\Users\kadio\AppData\Local\ms-playwright\firefox-1538\firefox\firefox.exe
+Running web extension from C:\Users\kadio\AppData\Local\Temp\sayac-ekl-b-mv2-IRQtTb
+Setting custom Firefox preferences: {
+  "media.autoplay.default": 0,
+  "media.autoplay.blocking_policy": 0,
+  "xpinstall.signatures.required": false
+}
+Use --verbose or --devtools to see logging
+[+001271ms] ISARET <- {"aday":"b","manifest":"mv2","tani":"icerik-yuklendi","ms":1786655468117}
+Installed C:\Users\kadio\AppData\Local\Temp\sayac-ekl-b-mv2-IRQtTb as a temporary add-on
+Automatic extension reloading has been disabled
+[+001365ms] KUTU1 E :: cmd.run çözüldü: MultiExtensionRunner; RDP installTemporaryAddon sonucu: Firefox Desktop → addonId=sinama@sayac.local (C:\Users\kadio\AppData\Local\Temp\sayac-ekl-b-mv2-IRQtTb)
+[+001399ms] ISARET <- {"aday":"b","manifest":"mv2","kutu":"2","kaynak":"arkaplan","ms":1786655468245}
+[+001448ms] ISARET <- {"aday":"b","manifest":"mv2","kutu":"3","kaynak":"icerik","tur":"play","uretim":"gercek","ms":1786655468294}
+[+001568ms] KUTU2 E :: işaret sunucusuna düşen istek: {"aday":"b","manifest":"mv2","kutu":"2","kaynak":"arkaplan","ms":1786655468245}
+[+001568ms] KUTU3 E :: işaret sunucusuna düşen istek: {"aday":"b","manifest":"mv2","kutu":"3","kaynak":"icerik","tur":"play","uretim":"gercek","ms":1786655468294}
+[+001568ms] kapatiliyor: web-ext extensionRunner
+[+001569ms] isaret sunucusu kapatildi
+[+001572ms] SONUC {"aday":"b","adayAdi":"Mozilla web-ext RDP (Node API)","manifest":"mv2","ikili":"C:\\Users\\kadio\\AppData\\Local\\ms-playwright\\firefox-1538\\firefox\\firefox.exe","kutu1":"E","kutu1Kanit":"cmd.run çözüldü: MultiExtensionRunner; RDP installTemporaryAddon sonucu: Firefox Desktop → addonId=sinama@sayac.local (C:\\Users\\kadio\\AppData\\Local\\Temp\\sayac-ekl-b-mv2-IRQtTb)","kutu2":"E","kutu2Kanit":"işaret sunucusuna düşen istek: {\"aday\":\"b\",\"manifest\":\"mv2\",\"kutu\":\"2\",\"kaynak\":\"arkaplan\",\"ms\":1786655468245}","kutu3":"E","kutu3Kanit":"işaret sunucusuna düşen istek: {\"aday\":\"b\",\"manifest\":\"mv2\",\"kutu\":\"3\",\"kaynak\":\"icerik\",\"tur\":\"play\",\"uretim\":\"gercek\",\"ms\":1786655468294}","uretim":"gercek","tani":"icerik-yuklendi","hata":"","sureMs":1571,"isaretler":[{"aday":"b","manifest":"mv2","tani":"icerik-yuklendi","ms":1786655468117},{"aday":"b","manifest":"mv2","kutu":"2","kaynak":"arkaplan","ms":1786655468245},{"aday":"b","manifest":"mv2","kutu":"3","kaynak":"icerik","tur":"play","uretim":"gercek","ms":1786655468294}]}

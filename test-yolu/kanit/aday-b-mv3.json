@@ -1,0 +1,40 @@
+{
+  "aday": "b",
+  "adayAdi": "Mozilla web-ext RDP (Node API)",
+  "manifest": "mv3",
+  "ikili": "C:\\Users\\kadio\\AppData\\Local\\ms-playwright\\firefox-1538\\firefox\\firefox.exe",
+  "kutu1": "E",
+  "kutu1Kanit": "cmd.run çözüldü: MultiExtensionRunner; RDP installTemporaryAddon sonucu: Firefox Desktop → addonId=sinama@sayac.local (C:\\Users\\kadio\\AppData\\Local\\Temp\\sayac-ekl-b-mv3-wVq9jY)",
+  "kutu2": "E",
+  "kutu2Kanit": "işaret sunucusuna düşen istek: {\"aday\":\"b\",\"manifest\":\"mv3\",\"kutu\":\"2\",\"kaynak\":\"arkaplan\",\"ms\":1786655470675}",
+  "kutu3": "E",
+  "kutu3Kanit": "işaret sunucusuna düşen istek: {\"aday\":\"b\",\"manifest\":\"mv3\",\"kutu\":\"3\",\"kaynak\":\"icerik\",\"tur\":\"play\",\"uretim\":\"gercek\",\"ms\":1786655470820}",
+  "uretim": "gercek",
+  "tani": "icerik-yuklendi",
+  "hata": "",
+  "sureMs": 1476,
+  "isaretler": [
+    {
+      "aday": "b",
+      "manifest": "mv3",
+      "tani": "icerik-yuklendi",
+      "ms": 1786655470644
+    },
+    {
+      "aday": "b",
+      "manifest": "mv3",
+      "kutu": "2",
+      "kaynak": "arkaplan",
+      "ms": 1786655470675
+    },
+    {
+      "aday": "b",
+      "manifest": "mv3",
+      "kutu": "3",
+      "kaynak": "icerik",
+      "tur": "play",
+      "uretim": "gercek",
+      "ms": 1786655470820
+    }
+  ]
+}

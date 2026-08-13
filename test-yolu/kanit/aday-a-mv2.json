@@ -1,0 +1,40 @@
+{
+  "aday": "a",
+  "adayAdi": "playwright-webextext",
+  "manifest": "mv2",
+  "ikili": "C:\\Users\\kadio\\AppData\\Local\\ms-playwright\\firefox-1538\\firefox\\firefox.exe",
+  "kutu1": "E",
+  "kutu1Kanit": "launchPersistentContext çözüldü → _BrowserContext; installAddons() istisna atmadı (RDP installTemporaryAddon başarılı), acik sayfa sayisi=1",
+  "kutu2": "E",
+  "kutu2Kanit": "işaret sunucusuna düşen istek: {\"aday\":\"a\",\"manifest\":\"mv2\",\"kutu\":\"2\",\"kaynak\":\"arkaplan\",\"ms\":1786655461403}",
+  "kutu3": "E",
+  "kutu3Kanit": "işaret sunucusuna düşen istek: {\"aday\":\"a\",\"manifest\":\"mv2\",\"kutu\":\"3\",\"kaynak\":\"icerik\",\"tur\":\"play\",\"uretim\":\"gercek\",\"ms\":1786655461868}",
+  "uretim": "gercek",
+  "tani": "icerik-yuklendi",
+  "hata": "",
+  "sureMs": 2770,
+  "isaretler": [
+    {
+      "aday": "a",
+      "manifest": "mv2",
+      "kutu": "2",
+      "kaynak": "arkaplan",
+      "ms": 1786655461403
+    },
+    {
+      "aday": "a",
+      "manifest": "mv2",
+      "tani": "icerik-yuklendi",
+      "ms": 1786655461652
+    },
+    {
+      "aday": "a",
+      "manifest": "mv2",
+      "kutu": "3",
+      "kaynak": "icerik",
+      "tur": "play",
+      "uretim": "gercek",
+      "ms": 1786655461868
+    }
+  ]
+}

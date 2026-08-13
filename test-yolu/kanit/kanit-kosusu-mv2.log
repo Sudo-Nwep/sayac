@@ -1,0 +1,22 @@
+=== SAYAC — KANIT KOSUSU (secilen yol) ===
+komut: node test-yolu/kanit-kosusu.mjs mv2
+node=v26.5.0 platform=win32
+============================================================
+
+[+000000ms] KANIT KOSUSU — secilen yol: playwright-webextext · manifest=mv2
+[+000000ms] firefox ikilisi: C:\Users\kadio\AppData\Local\ms-playwright\firefox-1538\firefox\firefox.exe
+[+000007ms] isaret sunucusu ayakta: http://127.0.0.1:51213
+[+000014ms] bos sinama eklentisi (gecici kopya): C:\Users\kadio\AppData\Local\Temp\sayac-ekl-kanit-mv2-NvFge3
+[+000014ms] tek kullanimlik profil: C:\Users\kadio\AppData\Local\Temp\sayac-profil-kanit-mv2-jraezM
+[+001770ms] EKLENTI YUKLENDI — launchPersistentContext cozuldu (_BrowserContext)
+[+001773ms] ISARET <- {"aday":"kanit","manifest":"mv2","kutu":"2","kaynak":"arkaplan","ms":1786655634139}
+[+001823ms] sayfa acildi: http://127.0.0.1:51213/test.html
+[+001824ms] OLAY 1/2 (arka plan): {"aday":"kanit","manifest":"mv2","kutu":"2","kaynak":"arkaplan","ms":1786655634139}
+[+001825ms] ISARET <- {"aday":"kanit","manifest":"mv2","tani":"icerik-yuklendi","ms":1786655634191}
+[+002028ms] ISARET <- {"aday":"kanit","manifest":"mv2","kutu":"3","kaynak":"icerik","tur":"play","uretim":"gercek","ms":1786655634394}
+[+002229ms] OLAY 2/2 (sayfa->icerik->arkaplan): {"aday":"kanit","manifest":"mv2","kutu":"3","kaynak":"icerik","tur":"play","uretim":"gercek","ms":1786655634394}
+[+002235ms] PLAYWRIGHT ELI (page.evaluate ile sayfa durumu): {"baslik":"Sayac — sinama sayfasi","videoVar":true,"currentTime":0.192,"readyState":4,"paused":false,"uretim":"gercek","durum":"play olayi ucti"}
+[+002314ms] PLAYWRIGHT ELI (page.click('h1') sorunsuz dondu) — madde 3/4 icin sayfa surulebilir
+[+002314ms] SONUC: eklenti yuklendi=true · okunan olay sayisi=2/2 · GECTI=true
+[+002670ms] isaret sunucusu kapatildi
+[+002679ms] temizlik bitti

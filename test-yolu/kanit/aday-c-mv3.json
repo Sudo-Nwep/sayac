@@ -1,0 +1,19 @@
+{
+  "aday": "c",
+  "adayAdi": "Playwright kendi Firefox destegi (profile dusurme)",
+  "manifest": "mv3",
+  "ikili": "C:\\Users\\kadio\\AppData\\Local\\ms-playwright\\firefox-1538\\firefox\\firefox.exe",
+  "kutu1": "H",
+  "kutu1Kanit": "2a XPI: C:\\Users\\kadio\\AppData\\Local\\Temp\\sayac-profil-c-mv3-p2LRqQ\\extensions.json icinde \"sinama@sayac.local\" YOK. Dosyadaki id listesi: [\"formautofill@mozilla.org\",\"ipp-activator@mozilla.com\",\"newtab@mozilla.org\",\"pictureinpicture@mozilla.org\",\"addons-search-detection@mozilla.com\",\"webcompat@mozilla.org\",\"default-theme@mozilla.org\",\"firefox-compact-light@mozilla.org\",\"firefox-compact-dark@mozilla.org\",\"firefox-alpenglow@mozilla.org\"]  ||  2b paketlenmemis dizin: C:\\Users\\kadio\\AppData\\Local\\Temp\\sayac-profil-c-mv3-p2LRqQ\\extensions.json icinde \"sinama@sayac.local\" YOK. Dosyadaki id listesi: [\"formautofill@mozilla.org\",\"ipp-activator@mozilla.com\",\"newtab@mozilla.org\",\"pictureinpicture@mozilla.org\",\"addons-search-detection@mozilla.com\",\"webcompat@mozilla.org\",\"default-theme@mozilla.org\",\"firefox-compact-light@mozilla.org\",\"firefox-compact-dark@mozilla.org\",\"firefox-alpenglow@mozilla.org\"]",
+  "kutu2": "H",
+  "kutu2Kanit": "/olay?kutu=2 isteği hiç gelmedi (sıfır bayt) — arka plan betiği koşmadı",
+  "kutu3": "H",
+  "kutu3Kanit": "/olay?kutu=3 isteği hiç gelmedi (sıfır bayt). Sayfa durumu: zaman-asimi / play olayi ucti — sayfa oynatmayı yaptı, işareti taşıyacak eklenti yoktu (cetvel çalışıyor, H adayın)",
+  "uretim": "-",
+  "tani": "icerik betigi hic yuklenmedi",
+  "hata": "",
+  "sureMs": 50385,
+  "yoklama1": "playwright=1.62.1 · executablePath=C:\\Users\\kadio\\AppData\\Local\\ms-playwright\\firefox-1538\\firefox\\firefox.exe (diskte=true) · playwright-core/types/types.d.ts (1110782 bayt) icinde eklenti yukleme parametresi aramasi [\"loadExtension\",\"extensionPath\",\"addonPath\",\"installTemporaryAddon\",\"firefoxExtensions\",\"webExtensions\",\"--load-extension\"] → bulunan=[]",
+  "prefDogrulama": "xpinstall.signatures.required=prefs.js'te VAR · extensions.autoDisableScopes=prefs.js'te VAR · extensions.enabledScopes=prefs.js'te VAR · extensions.startupScanScopes=prefs.js'te VAR · media.autoplay.default=prefs.js'te VAR · media.autoplay.blocking_policy=prefs.js'te YOK",
+  "isaretler": []
+}
