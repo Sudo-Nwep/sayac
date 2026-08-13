@@ -312,6 +312,26 @@ kökenli hem karışık içeriktir. **Ürüne veya test kopyasına YouTube host 
 **Sistem geneline kurulum YAPILMADI:** `.msi`/`.exe` kurucu çalıştırılmadı, PATH değişmedi,
 kayıt defterine dokunulmadı. Zip `os.tmpdir()` altına açıldı.
 
+> ### ⚠️ Tur 001'in bir ölçümü ÇÜRÜDÜ — LibreWolf bu makinede KURULU
+>
+> `TEST_YOLU.md:286-290` (tur 001) *"LibreWolf KURULU DEĞİL"* diye kaydetmişti.
+> **Bu tur bunun aksini ölçtü:** `Test-Path 'C:\Program Files\LibreWolf\librewolf.exe'` → **True**,
+> ve tur sonu süreç kontrolünde o yoldan çalışan **10 LibreWolf süreci** bulundu
+> (başlangıç 14/08 **00:40:42** — bu turun LibreWolf koşularından ~1.5 saat **önce**).
+> Yani LibreWolf kurulu **ve Mustafa tarafından kullanılıyor**.
+>
+> **Kurulu ikiliye karşı Y10 tekrar KOŞULMADI — gerekçe:**
+> ⑴ RDP engeli **yapı düzeyindedir** (`librewolf.cfg:547` ikilinin yanında gelir), taşınabilir
+> kopyada aşılamayan engel kurulu kopyada da aynıdır — aynı hata 5. kez beklenirdi;
+> ⑵ **daha önemlisi:** Mustafa'nın LibreWolf'u **o anda açıktı**. Gecko ailesinde ikinci bir
+> örneği başlatmak, `-no-remote` garanti değilse çalışan örneğe **iliştirebilir** ve
+> **Mustafa'nın oturum açmış profilinde** sekme açardı — `HEDEF.md:121-123`'ün açık yasağı.
+> Riski almadım.
+>
+> **Madde 5'e girdi:** teslim hedefi LibreWolf ve **kurulu**. Kurulum kanıtı, tarayıcı kapalıyken
+> ve **temiz tek kullanımlık profille**, RDP'siz bir yolla (imzalı XPI ya da `about:debugging`
+> üzerinden elle) üretilebilir. Hiçbiri bu turda ölçülmedi.
+
 ---
 
 ## Dört açık karar
@@ -406,6 +426,23 @@ test-yolu/kanit/eklenti-Y1.log … eklenti-Y10.log · eklenti-rapor.json   (22 d
   durumu **DURAKLATILDI** olarak birikir — `SAYAC_TEKLIF.md:20-21` ile uyumlu.
 - Sekme kapanınca birikmiş süre **silinir** (`tabs.onRemoved`) — geçmiş gün/oturum kaydı
   kapsam dışı (`SAYAC_TEKLIF.md:81`).
+
+## Süreç hijyeni (G23)
+
+Tur bitiminde kontrol edildi. **Bu turun başlattığı hiçbir süreç ayakta değil:**
+`firefox.exe` yok · `geckodriver.exe` yok · geçici kopyadan (`…\Temp\sayac-librewolf-*\…`)
+çalışan `librewolf.exe` yok.
+
+**Ayakta bulunan ve DOKUNULMAYAN süreçler — bu turun ürünü değildir:**
+
+| Süreç | Neden dokunulmadı |
+|---|---|
+| 10 × `C:\Program Files\LibreWolf\librewolf.exe` | **Mustafa'nın kendi tarayıcısı.** Başlangıç 00:40:42 — bu turun LibreWolf koşularından ~1.5 saat önce. Yolu benim geçici kopyam değil. Öldürmek kullanıcının açık tarayıcısını kapatırdı. |
+| `node … ORKESTRA\sunucu.mjs --port 4318` | ORKESTRA panel sunucusu |
+| `node … ORKESTRA/defter-denetim.mjs` | ORKESTRA defter denetimi |
+
+⚠️ **Öldürmeden önce yol doğrulandı.** İlk bakışta bu 10 süreç Y10'un artığı sanılabilirdi;
+`ExecutablePath` ve `StartTime` ölçülmeden kapatılsaydı kullanıcının tarayıcısı kapanacaktı.
 
 ## Donmuş dosyalar
 

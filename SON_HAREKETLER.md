@@ -33,6 +33,11 @@
   ölçütü LibreWolf, madde 5'in işi · ⑵ **arka plandaki sekme kutusu ÖLÇÜLEMEDİ**
   (`visibilityState` `hidden` yapılamadı) · ⑶ tarayıcı yeniden başlarsa sayaçlar **kaybolur**
   (durum bellekte, depolama eklenmedi).
+- **🔧 DÜZELTME — LibreWolf bu makinede KURULU.** Tur 001 *"kurulu değil"* diye ölçmüştü
+  (`TEST_YOLU.md:286-290`); madde 3 turunda `C:\Program Files\LibreWolf\librewolf.exe` bulundu
+  ve o yoldan çalışan 10 süreç ölçüldü (Mustafa'nın açık tarayıcısı). Kurulu ikiliye karşı test
+  **koşulmadı**: tarayıcı açıktı ve ikinci örnek Mustafa'nın oturum açmış profiline
+  iliştirebilirdi (`HEDEF.md:121-123`). Madde 5'e girdi — ayrıntı `EKLENTI.md` → Y10.
 - **⚠️ Madde 3 için bilinen engel:** LibreWolf bu makinede **kurulu değil** — *"LibreWolf'a
   kurulur"* kanıtı bugün üretilemez. Kararı madde 3'ün turu verecek.
 

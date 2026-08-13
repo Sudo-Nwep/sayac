@@ -285,7 +285,11 @@ video gerçekten oynuyor ve Playwright sayfa durumunu doğrudan okuyabiliyor.
    olgun. **Bu turda karar verilmedi** — madde 3'ün turuna girdi olarak bırakıldı.
 3. **LibreWolf bu makinede kurulu değil** (`Program Files\**\librewolf.exe` → sonuç yok,
    `AppData\Local\LibreWolf` → yok). Madde 3'ün *"LibreWolf'a kurulur"* kanıtı bu makinede
-   **bugün üretilemez**. Bu turda dokunulmadı (G20); kararı madde 3'ün turu verecek.
+   **bugün üretilemez**.
+   > ⚠️ **DÜZELTME (madde 3 turu, 14/08/2026):** bu satır artık **yanlıştır**. Madde 3'ün süreç
+   > kontrolünde `C:\Program Files\LibreWolf\librewolf.exe` **bulundu** (`Test-Path` → True) ve
+   > o yoldan çalışan 10 süreç ölçüldü. Yukarıdaki ölçüm ya eskimiştir ya da glob'u kaçırmıştır.
+   > Ayrıntı ve madde 5'e girdi: `EKLENTI.md` → Y10. *(Özgün ölçüm silinmedi — G09: iki hafıza.)* Bu turda dokunulmadı (G20); kararı madde 3'ün turu verecek.
    Not: seçilen yol LibreWolf'a da uygulanabilir — `playwright-webextext` bir `BrowserType`
    sarar, `web-ext` ise `firefox: '<ikili yolu>'` ile herhangi bir Gecko ikilisine yönlenir.
 4. **Aynı iskele madde 3'e devroluyor.** `<video>`'lu yerel sahte sayfa madde 3'ün ①
