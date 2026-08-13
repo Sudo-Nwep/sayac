@@ -45,7 +45,7 @@ Denetim üç soru sorar: (1) bu boyutun bir **dosyası** var mı · (2) son **30
 
 | Durum | Boyut | "Var" ölçütü | Sıradaki tek somut adım |
 |---|---|---|---|
-| ⛔ | **ürün** | Repoda çalışan kod + çalıştığını gösteren doğrulama | `mantik/sayac.mjs`'i eklentiye bağla: sekme başına bir örnek, `<video>` olaylarını modülün altı olayına çevir, `gece-yarısı`'nı 00:00'da üret — `HEDEF.md` madde 3. **Boyut hâlâ ⛔:** çekirdek mantık ve doğrulaması var (`MANTIK.md`, 20 senaryo + 7/7 mutasyon) ama **kurulabilir eklenti yok**, yani "çalışan ürün" ölçütü karşılanmadı. |
+| 🟡 | **ürün** | Repoda çalışan kod + çalıştığını gösteren doğrulama | **Ölçüt karşılandı:** `eklenti/` yüklenebilir bir Firefox eklentisidir ve çalıştığı **rakamla** doğrulanmıştır (`EKLENTI.md` — on hücre, sekizi yeşil, gerçek YouTube dâhil; `npm run eklenti:test` → çıkış 0). **✅ değil 🟡:** ⑴ arayüz yok — kullanıcı sayaçları göremez (`HEDEF.md` madde 4), ⑵ **LibreWolf'a kurulum ölçülemedi** (Y10), oysa teslim ölçütü LibreWolf'tur. **Sıradaki tek somut adım:** madde 4 — açılır pencere: üç sayaç kutusu + MOLA + DUR/DEVAM ET, Türkçe; mesaj API'si hazır (`EKLENTI.md` → Mesaj API'si). |
 | ⛔ | **veri/gizlilik** | Aydınlatma/rıza metni veya veri saklama kararı yazılı | _(yazılmadı)_ |
 | ⛔ | **maliyet** | Ölçülmüş rakam + tavan mekanizması | _(yazılmadı)_ |
 | ⛔ | **operasyon** | Yedeğin **geri yüklendiği kanıtlanmış**; çökünce haber veren bir şey var | _(yazılmadı)_ |

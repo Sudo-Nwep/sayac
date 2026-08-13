@@ -1,0 +1,26 @@
+=== SAYAC — madde 3 · hucre Y3 ===
+ne olcer: aynı sekmede ikinci video — sayaç sıfırlanmıyor mu
+komut: "C:\Program Files\nodejs\node.exe" "C:\Users\kadio\Documents\Claude\Projects\Sayac\test-yolu\eklenti-e2e.mjs" Y3
+node=v26.5.0 platform=win32
+sure=9651 ms · cikis kodu=0 · sinyal=null
+======================================================================
+
+[+000000ms] hucre=Y3 · TOLERANS=250 ms · FAZ=2500 ms (koşumdan ÖNCE sabit)
+[+000001ms] firefox ikilisi: C:\Users\kadio\AppData\Local\ms-playwright\firefox-1538\firefox\firefox.exe
+[+000007ms] isaret sunucusu ayakta: http://127.0.0.1:62824
+[+000023ms] test kopyasi: C:\Users\kadio\AppData\Local\Temp\sayac-ekl-Y3-lquuZF
+[+000023ms] yamali manifest: {"manifest_version":2,"name":"Sayaç","version":"0.1.0","description":"YouTube izleme süresini üç kalemde ayırır: izleniyor · duraklatıldı · mola.","browser_specific_settings":{"gecko":{"id":"sayac@sayac.local"}},"background":{"scripts":["sonda-ayar.js","sonda-arkaplan.js","sayac.js","arkaplan.js"],"persistent":true},"content_scripts":[{"matches":["*://*.youtube.com/*","http://127.0.0.1/*"],"js":["sonda-ayar.js","icerik.js","sonda-icerik.js"],"run_at":"document_idle","all_frames":false}]}
+[+000023ms] tek kullanimlik profil: C:\Users\kadio\AppData\Local\Temp\sayac-profil-Y3-HmDs3b
+[+001694ms] EKLENTI YUKLENDI — launchPersistentContext cozuldu (_BrowserContext) headless=true
+[+001761ms] sayfa A: http://127.0.0.1:62824/sayac.html · hazir=true
+[+001761ms]    ilk anlik goruntu: {"sekmeId":1,"durumAdi":"DURAKLATILDI","toplam":{"izleniyor":0,"duraklatildi":0,"mola":0},"anMs":1786664067546,"arkaPlanBaslangicMs":1786664067478,"gunBasiMs":1786654800000,"kelepceSayisi":0,"sekmeSayisi":1}
+[+005011ms]   FAZ ilk video oynuyor      Δan= 2755 ms | Δizleniyor= 2755 Δduraklatildi=    0 Δmola=    0 | durum=İZLENİYOR sekme=1 | ilerleyen: izleniyor
+[+005011ms]       CETVEL B (sayfa gerçeği): {"video":"v1","paused":false,"currentTime":3.221,"readyState":4,"visibilityState":"visible","icerikBetigi":"1"}
+[+005011ms] ONCESI kumulatif: {"izleniyor":3229,"duraklatildi":21,"mola":0}
+[+005018ms] ayni sekmede IKINCI <video> yaratildi (v2) — yakalama fazi onu da gormeli
+[+008318ms]   FAZ ikinci video oynuyor   Δan= 2754 ms | Δizleniyor= 2754 Δduraklatildi=    0 Δmola=    0 | durum=İZLENİYOR sekme=1 | ilerleyen: izleniyor
+[+008319ms]       CETVEL B (sayfa gerçeği): {"video":"v2","paused":false,"currentTime":3.285,"readyState":4,"visibilityState":"visible","icerikBetigi":"1"}
+[+008319ms] SONRASI kumulatif: {"izleniyor":6476,"duraklatildi":27,"mola":0}
+[+008319ms] ONCESI.izleniyor=3229 → SONRASI.izleniyor=6476 (sifirlanmadi mi: true)
+[+008958ms] isaret sunucusu kapatildi
+[+008994ms] SONUC YESIL

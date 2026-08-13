@@ -8,7 +8,30 @@
 
 ## 🔵 Şu ANKİ TEK İŞ
 
-> **Madde 2 kapandı — saf zaman mantığı yazıldı ve bozularak sınandı.**
+> **Madde 3 kapandı — kurulabilir eklenti var, sekme başına ayrı sayaç ölçüldü.**
+>
+> `eklenti/` — MV2, **hiçbir host izni yok**, içerik betiği yalnız YouTube'a enjekte olur.
+> Sayaç mantığı ikinci kez yazılmadı: `eklenti/sayac.js`, `mantik/sayac.mjs`'ten **üretilir**
+> ve senkronluk SHA-256 ile kanıtlanır (`npm run eklenti:kontrol` → çıkış 0).
+> **Ölçüm:** `npm run eklenti:test` → **çıkış 0** · on hücrenin **sekizi YEŞİL**, ikisi
+> "ölçülemedi" (Y4 arka plan sekmesi · Y10 LibreWolf), **hiçbiri KIRMIZI değil**.
+> Her yeşil hücrede sapma **tam 0** (Δkova = Δan; tolerans 250 ms, koşumdan önce sabit).
+> Gerçek YouTube duman testi de geçti (Y9). Ayrıntı: `EKLENTI.md`.
+>
+> **Madde 4'e devreden mesaj API'si:** `{tur:"olay", olay:<altı addan biri>}` ve
+> `{tur:"durum-iste"}` → `{sekmeId, durumAdi, toplam, anMs, gunBasiMs, …}`. Toplamlar **ham
+> milisaniye**; saat:dakika biçimlendirmesi madde 4'ün işi. DUR/DEVAM ET tek `ana-kapat`
+> olayı gönderir (toggle). **MOLA'nın videoyu duraklatması madde 4'te** — bu turda `mola-aç`
+> yalnız kaydedildi.
+>
+> **Bilinen açık:** tarayıcı yeniden başlarsa sayaçlar **kaybolur** (durum bellekte; depolama
+> eklenmedi). Karar madde 4/5'in.
+>
+> **Sıradaki tek iş:** madde 4 — arayüz (üç sayaç, iki buton, Türkçe).
+>
+> ---
+>
+> **Madde 2 (kapandı) — saf zaman mantığı yazıldı ve bozularak sınandı.**
 >
 > `mantik/sayac.mjs` — tarayıcıya, gerçek saate, zamanlayıcıya, global duruma **bağlı
 > olmayan** saf çekirdek. Zaman modüle parametre olarak girer.
@@ -23,8 +46,6 @@
 > sorumluluğudur (modül saf olduğu için 00:00'ı bilemez) · modül **tek** sayaç birimini
 > modeller, sekme başına çoğullama madde 3'ün işidir · durum nesnesi değişmez ve
 > serileştirilebilir, çoğullama+depolama orada bedavaya gelir.
->
-> **Sıradaki tek iş:** madde 3 — eklenti (LibreWolf + YouTube). Küme A bitti, küme B başlıyor.
 >
 > ---
 >
@@ -56,11 +77,11 @@
 
 | # | İş | Durum | Not |
 |---|---|---|---|
-| 1 | Madde 3 — eklenti, LibreWolf + YouTube | 🔵 bugün | `mantik/sayac.mjs`'in N örneğiyle sekme başına çoğullanır; `gece-yarısı` olayını **üretecek taraf burası**. ⚠️ LibreWolf bu makinede **kurulu değil**; o kanıt bugün üretilemez (`TEST_YOLU.md`) |
-| 2 | Madde 4 — arayüz (üç sayaç, iki buton) | ⚪ sırada | Seçilen test yolu Playwright eli verdiği için buton ölçümü mümkün. DUR/DEVAM ET tek `ana-kapat` olayı gönderir (toggle) |
-| 3 | Madde 5 — private GitHub deposu, README, etiket | ⚪ sırada | `git push` yalnız burada, önceden yetkili |
+| 1 | Madde 4 — arayüz (üç sayaç, iki buton, Türkçe) | 🔵 bugün | Mesaj API'si hazır (`EKLENTI.md`). Playwright eli var → iki butonun üç durumu ölçülebilir. MOLA'nın videoyu duraklatması **burada** yazılır |
+| 2 | Madde 5 — private GitHub deposu, README, etiket | ⚪ sırada | `git push` yalnız burada, önceden yetkili. ⚠️ Y10 (LibreWolf kurulumu) ölçülemedi — sıradaki somut adım `EKLENTI.md` 7b'de |
 
-**Biten:** madde 1 (`TEST_YOLU.md`) · madde 2 (`MANTIK.md`) — küme A kapandı.
+**Biten:** madde 1 (`TEST_YOLU.md`) · madde 2 (`MANTIK.md`) · madde 3 (`EKLENTI.md`) —
+küme A kapandı, küme B'nin ilk yarısı bitti.
 
 **Durum kodları:** 🔵 bugün · ⚪ sırada · 🔴 takıldı · ✅ bitti (→ arşive)
 

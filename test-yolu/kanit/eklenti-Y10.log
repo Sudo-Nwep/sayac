@@ -1,0 +1,61 @@
+=== SAYAC — madde 3 · hucre Y10 ===
+ne olcer: LibreWolf taşınabilir (Aday B yolu) → ya kanıt ya ölçülemedi
+komut: "C:\Program Files\nodejs\node.exe" "C:\Users\kadio\Documents\Claude\Projects\Sayac\test-yolu\librewolf.mjs"
+node=v26.5.0 platform=win32
+sure=50044 ms · cikis kodu=0 · sinyal=null
+======================================================================
+
+[+000000ms] Y10 — LibreWolf (tasinabilir) uzerinde eklenti yukleme denemesi
+[+000001ms] YOL: Aday B (web-ext Node API). Aday A uygulanamaz — Playwright'in Firefox'u yamali.
+[+000004ms] onbellekten kullaniliyor: C:\Users\kadio\AppData\Local\Temp\sayac-librewolf-onbellek\librewolf-153.0.4-1-x86_64-portable.zip (162887896 bayt)
+[+001117ms] ikili bulundu: C:\Users\kadio\AppData\Local\Temp\sayac-librewolf-BJcDH9\librewolf-153.0.4-1\LibreWolf\librewolf.exe (512040 bayt)
+[+001117ms] kurulum dizini: C:\Users\kadio\AppData\Local\Temp\sayac-librewolf-BJcDH9\librewolf-153.0.4-1\LibreWolf
+[+001117ms] kurulum icerigi (ust duzey): ["AccessibleMarshal.dll","application.ini","browser","CoreMessagingXP.dll","defaults","dependentlibs.list","desktop-launcher","distribution","dxcompiler.dll","firefox.VisualElementsManifest.xml","fonts","freebl3.dll","gkcodecs.dll","gmp-clearkey","InstallationDirLayout.dll","installation_dir_layout","lgpllibs.dll","libEGL.dll","libGLESv2.dll","librewolf.cfg","librewolf.exe","librewolf.ico","marshal.dll","Microsoft.InputStateManager.dll","Microsoft.Internal.FrameworkUdk.dll","Microsoft.UI.Composition.OSSupport.dll","Microsoft.UI.Input.dll","Microsoft.UI.Windowing.Core.dll","Microsoft.UI.Windowing.dll","mozavcodec.dll","mozavutil.dll","mozglue.dll","mozinference.dll","msvcp140.dll","msvcp140_atomic_wait.dll","nmhproxy.exe","notificationserver.dll","nss3.dll","omni.ja","platform.ini"]
+[+001118ms] distribution/: ["policies.json"]
+[+001118ms] policies.json (2888 bayt): {
+    "__COMMENT__ More Information": "https://github.com/mozilla/policy-templates/blob/master/README.md",
+    "policies": {
+        "AIControls": {
+            "Translations": {
+                "Value": "available"
+            },
+            "PDFAltText": {
+                "Value": "blocked"
+            },
+            "SmartTabGroups": {
+                "Value": "blocked"
+            },
+            "LinkPreviewKeyPoints": {
+                "Value": "blocked"
+            },
+            "SidebarChatbot": {
+                "Value": "blocked"
+            },
+            "SmartWindow": {
+          
+[+001118ms] kurulumda .cfg dosyalari: ["librewolf.cfg"]
+[+001120ms] policies.json yamalandi (gecici kopya): HttpsOnlyMode "enabled" → "disabled" · WebsiteFilter silindi · LocalNetworkAccess.EnablePrompting=false
+[+001126ms] isaret sunucusu ayakta: http://127.0.0.1:57876
+[+001138ms] test kopyasi: C:\Users\kadio\AppData\Local\Temp\sayac-ekl-Y10-Bf3xz5
+[+001138ms] yamali manifest: {"manifest_version":2,"name":"Sayaç","version":"0.1.0","description":"YouTube izleme süresini üç kalemde ayırır: izleniyor · duraklatıldı · mola.","browser_specific_settings":{"gecko":{"id":"sayac@sayac.local"}},"background":{"scripts":["sonda-ayar.js","sonda-arkaplan.js","sayac.js","arkaplan.js"],"persistent":true},"content_scripts":[{"matches":["*://*.youtube.com/*","http://127.0.0.1/*"],"js":["sonda-ayar.js","icerik.js","sonda-icerik.js"],"run_at":"document_idle","all_frames":false}]}
+[+001138ms] web-ext ile aciliyor · startUrl=http://127.0.0.1:57876/sayac.html?otomatik=1
+[+001138ms] librewolf.overrides.cfg PROFILE yazildi: C:\Users\kadio\AppData\Local\Temp\sayac-librewolf-profil-lsO2hg\librewolf.overrides.cfg
+Running web extension from C:\Users\kadio\AppData\Local\Temp\sayac-ekl-Y10-Bf3xz5
+Profile directory C:\Users\kadio\AppData\Local\Temp\sayac-librewolf-profil-lsO2hg already exists
+Setting custom Firefox preferences: {
+  "media.autoplay.default": 0,
+  "xpinstall.signatures.required": false,
+  "devtools.debugger.remote-enabled": true,
+  "devtools.debugger.prompt-connection": false
+}
+Use --verbose or --devtools to see logging
+[+032726ms] DUSTU — BIREBIR HATA: [adim: web-ext ile yukleme] Error: connect ECONNREFUSED 127.0.0.1:57877
+[+032727ms] isaret sunucusu kapatildi
+[+049254ms] 
+[+049255ms] KUTU OLCULEMEDI — sebep yukarida. Secilen yolun LibreWolf'a uygulanmasi:
+[+049255ms]   · Aday A (playwright-webextext) UYGULANAMAZ — Playwright'in Firefox'u Juggler
+[+049255ms]     protokollu yamali bir yapidir; stok Gecko ikilisi o yolla surulemez.
+[+049255ms]   · Aday B (web-ext Node API) UYGULANABILIR — firefox:'<librewolf yolu>' ile
+[+049255ms]     herhangi bir Gecko ikilisine yonlenir (TEST_YOLU.md:126-128).
+[+049255ms]   'Kurulabilir' iddiasi KANITSIZ YAZILMAZ (HEDEF.md:146-147).
+[+049256ms] SONUC ölçülemedi — [adim: web-ext ile yukleme] Error: connect ECONNREFUSED 127.0.0.1:57877

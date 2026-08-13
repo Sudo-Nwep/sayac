@@ -1,0 +1,17 @@
+{
+  "hucre": "Y10",
+  "durum": "ölçülemedi",
+  "sebep": "[adim: web-ext ile yukleme] Error: connect ECONNREFUSED 127.0.0.1:57877",
+  "yol": "Aday B — Mozilla web-ext RDP (Aday A uygulanamaz: Playwright'ın Firefox'u yamalı)",
+  "surum": "153.0.4-1",
+  "url": "https://dl.librewolf.net/librewolf/153.0.4-1/librewolf-153.0.4-1-windows-x86_64-portable.zip",
+  "ikili": "C:\\Users\\kadio\\AppData\\Local\\Temp\\sayac-librewolf-BJcDH9\\librewolf-153.0.4-1\\LibreWolf\\librewolf.exe",
+  "adim": "web-ext ile yukleme",
+  "olcum": null,
+  "policies": "{\n    \"__COMMENT__ More Information\": \"https://github.com/mozilla/policy-templates/blob/master/README.md\",\n    \"policies\": {\n        \"AIControls\": {\n            \"Translations\": {\n                \"Value\": \"available\"\n            },\n            \"PDFAltText\": {\n                \"Value\": \"blocked\"\n            },\n            \"SmartTabGroups\": {\n                \"Value\": \"blocked\"\n            },\n            \"LinkPreviewKeyPoints\": {\n                \"Value\": \"blocked\"\n            },\n            \"SidebarChatbot\": {\n                \"Value\": \"blocked\"\n            },\n            \"SmartWindow\": {\n                \"Value\": \"blocked\"\n            }\n        },\n        \"AppUpdateURL\": \"https://localhost\",\n        \"DisableAppUpdate\": true,\n        \"DisableDefaultBrowserAgent\": true,\n        \"DisableFeedbackCommands\": true,\n        \"DisableFirefoxStudies\": true,\n        \"DisableRemoteImprovements\": true,\n        \"DisableSetDesktopBackground\": false,\n        \"DisableTelemetry\": true,\n        \"DontCheckDefaultBrowser\": true,\n        \"WebsiteFilter\": {\n            \"Block\": [\n                \"https://localhost/*\"\n            ],\n            \"Exceptions\": [\n                \"https://localhost/*\"\n            ]\n        },\n        \"EncryptedMediaExtensions\": {\n            \"Enabled\": false\n        },\n        \"ExtensionSettings\": {\n            \"*\": {\n                \"blocked_install_message\": \"LibreWolf does not allow installing Language Packs.\",\n                \"installation_mode\": \"allowed\",\n                \"allowed_types\": [\"dictionary\", \"extension\", \"sitepermission\", \"theme\"]\n            },\n            \"uBlock0@raymondhill.net\": {\n                \"install_url\": \"https://addons.mozilla.org/firefox/downloads/latest/uBlock0@raymondhill.net/latest.xpi\",\n                \"installation_mode\": \"normal_installed\",\n                \"private_browsing\": true\n            }\n        },\n        \"FirefoxHome\": {\n            \"Weather\": false,\n            \"TopSites\": false,\n            \"SponsoredTopSites\": false,\n ",
+  "policyYamasi": {
+    "HttpsOnlyMode": "enabled → disabled",
+    "WebsiteFilter": "silindi"
+  },
+  "overrideYazildi": "C:\\Users\\kadio\\AppData\\Local\\Temp\\sayac-librewolf-profil-lsO2hg\\librewolf.overrides.cfg"
+}

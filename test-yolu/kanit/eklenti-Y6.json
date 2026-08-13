@@ -1,0 +1,104 @@
+{
+  "hucre": "Y6",
+  "durum": "YESIL",
+  "sebep": "",
+  "tolerans": {
+    "TOLERANS_MS": 250,
+    "FAZ_MS": 2500,
+    "YERLESME_MS": 400
+  },
+  "olcumler": [
+    {
+      "ad": "mola oncesi oynuyor",
+      "dAn": 2754,
+      "d": {
+        "izleniyor": 2754,
+        "duraklatildi": 0,
+        "mola": 0
+      },
+      "durum": "İZLENİYOR",
+      "cetvelB": {
+        "video": "v1",
+        "paused": false,
+        "currentTime": 3.285,
+        "readyState": 4,
+        "visibilityState": "visible",
+        "icerikBetigi": "1"
+      }
+    },
+    {
+      "ad": "mola acik",
+      "dAn": 2753,
+      "d": {
+        "izleniyor": 0,
+        "duraklatildi": 0,
+        "mola": 2753
+      },
+      "durum": "MOLA",
+      "cetvelB": {
+        "video": "v1",
+        "paused": false,
+        "currentTime": 7.04,
+        "readyState": 4,
+        "visibilityState": "visible",
+        "icerikBetigi": "1"
+      }
+    },
+    {
+      "ad": "mola kapali",
+      "dAn": 2754,
+      "d": {
+        "izleniyor": 2754,
+        "duraklatildi": 0,
+        "mola": 0
+      },
+      "durum": "İZLENİYOR",
+      "cetvelB": {
+        "video": "v1",
+        "paused": false,
+        "currentTime": 10.741,
+        "readyState": 4,
+        "visibilityState": "visible",
+        "icerikBetigi": "1"
+      }
+    }
+  ],
+  "sorunlar": [],
+  "sureMs": 13446,
+  "manifest": {
+    "manifest_version": 2,
+    "name": "Sayaç",
+    "version": "0.1.0",
+    "description": "YouTube izleme süresini üç kalemde ayırır: izleniyor · duraklatıldı · mola.",
+    "browser_specific_settings": {
+      "gecko": {
+        "id": "sayac@sayac.local"
+      }
+    },
+    "background": {
+      "scripts": [
+        "sonda-ayar.js",
+        "sonda-arkaplan.js",
+        "sayac.js",
+        "arkaplan.js"
+      ],
+      "persistent": true
+    },
+    "content_scripts": [
+      {
+        "matches": [
+          "*://*.youtube.com/*",
+          "http://127.0.0.1/*"
+        ],
+        "js": [
+          "sonda-ayar.js",
+          "icerik.js",
+          "sonda-icerik.js"
+        ],
+        "run_at": "document_idle",
+        "all_frames": false
+      }
+    ]
+  },
+  "isaretSayisi": 44
+}

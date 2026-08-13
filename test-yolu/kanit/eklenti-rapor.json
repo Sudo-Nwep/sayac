@@ -1,0 +1,913 @@
+[
+  {
+    "hucre": "Y1",
+    "durum": "YESIL",
+    "sebep": "",
+    "tolerans": {
+      "TOLERANS_MS": 250,
+      "FAZ_MS": 2500,
+      "YERLESME_MS": 400
+    },
+    "olcumler": [
+      {
+        "ad": "oynat",
+        "dAn": 2795,
+        "d": {
+          "izleniyor": 2795,
+          "duraklatildi": 0,
+          "mola": 0
+        },
+        "durum": "İZLENİYOR",
+        "cetvelB": {
+          "video": "v1",
+          "paused": false,
+          "currentTime": 3.285,
+          "readyState": 4,
+          "visibilityState": "visible",
+          "icerikBetigi": "1"
+        }
+      },
+      {
+        "ad": "duraklat",
+        "dAn": 2524,
+        "d": {
+          "izleniyor": 0,
+          "duraklatildi": 2524,
+          "mola": 0
+        },
+        "durum": "DURAKLATILDI",
+        "cetvelB": {
+          "video": "v1",
+          "paused": true,
+          "currentTime": 3.285,
+          "readyState": 4,
+          "visibilityState": "visible",
+          "icerikBetigi": "1"
+        }
+      },
+      {
+        "ad": "tekrar oynat",
+        "dAn": 2776,
+        "d": {
+          "izleniyor": 2776,
+          "duraklatildi": 0,
+          "mola": 0
+        },
+        "durum": "İZLENİYOR",
+        "cetvelB": {
+          "video": "v1",
+          "paused": false,
+          "currentTime": 6.507,
+          "readyState": 4,
+          "visibilityState": "visible",
+          "icerikBetigi": "1"
+        }
+      }
+    ],
+    "sorunlar": [],
+    "sureMs": 12206,
+    "manifest": {
+      "manifest_version": 2,
+      "name": "Sayaç",
+      "version": "0.1.0",
+      "description": "YouTube izleme süresini üç kalemde ayırır: izleniyor · duraklatıldı · mola.",
+      "browser_specific_settings": {
+        "gecko": {
+          "id": "sayac@sayac.local"
+        }
+      },
+      "background": {
+        "scripts": [
+          "sonda-ayar.js",
+          "sonda-arkaplan.js",
+          "sayac.js",
+          "arkaplan.js"
+        ],
+        "persistent": true
+      },
+      "content_scripts": [
+        {
+          "matches": [
+            "*://*.youtube.com/*",
+            "http://127.0.0.1/*"
+          ],
+          "js": [
+            "sonda-ayar.js",
+            "icerik.js",
+            "sonda-icerik.js"
+          ],
+          "run_at": "document_idle",
+          "all_frames": false
+        }
+      ]
+    },
+    "manifestSurumu": 2,
+    "isaretSayisi": 39,
+    "ne": "yerel uçtan uca (MV2): oynat→duraklat→oynat",
+    "zorunlu": true,
+    "cikisKodu": 0,
+    "ebeveynSure": 12830,
+    "log": "test-yolu/kanit/eklenti-Y1.log"
+  },
+  {
+    "hucre": "Y2",
+    "durum": "YESIL",
+    "sebep": "",
+    "tolerans": {
+      "TOLERANS_MS": 250,
+      "FAZ_MS": 2500,
+      "YERLESME_MS": 400
+    },
+    "olcumler": [
+      {
+        "ad": "A: oynuyor",
+        "dAn": 2754,
+        "d": {
+          "izleniyor": 2754,
+          "duraklatildi": 0,
+          "mola": 0
+        },
+        "sekmeId": 1,
+        "cetvelB": {
+          "video": "v1",
+          "paused": false,
+          "currentTime": 7.221,
+          "readyState": 4,
+          "visibilityState": "visible",
+          "icerikBetigi": "1"
+        }
+      },
+      {
+        "ad": "B: durakli",
+        "dAn": 2754,
+        "d": {
+          "izleniyor": 0,
+          "duraklatildi": 2754,
+          "mola": 0
+        },
+        "sekmeId": 2,
+        "cetvelB": {
+          "video": "v1",
+          "paused": true,
+          "currentTime": 0,
+          "readyState": 4,
+          "visibilityState": "visible",
+          "icerikBetigi": "1"
+        }
+      }
+    ],
+    "sorunlar": [],
+    "sureMs": 9826,
+    "manifest": {
+      "manifest_version": 2,
+      "name": "Sayaç",
+      "version": "0.1.0",
+      "description": "YouTube izleme süresini üç kalemde ayırır: izleniyor · duraklatıldı · mola.",
+      "browser_specific_settings": {
+        "gecko": {
+          "id": "sayac@sayac.local"
+        }
+      },
+      "background": {
+        "scripts": [
+          "sonda-ayar.js",
+          "sonda-arkaplan.js",
+          "sayac.js",
+          "arkaplan.js"
+        ],
+        "persistent": true
+      },
+      "content_scripts": [
+        {
+          "matches": [
+            "*://*.youtube.com/*",
+            "http://127.0.0.1/*"
+          ],
+          "js": [
+            "sonda-ayar.js",
+            "icerik.js",
+            "sonda-icerik.js"
+          ],
+          "run_at": "document_idle",
+          "all_frames": false
+        }
+      ]
+    },
+    "sekmeler": {
+      "A": {
+        "sekmeId": 1,
+        "toplam": {
+          "izleniyor": 7231,
+          "duraklatildi": 24,
+          "mola": 0
+        }
+      },
+      "B": {
+        "sekmeId": 2,
+        "toplam": {
+          "izleniyor": 0,
+          "duraklatildi": 3742,
+          "mola": 0
+        }
+      }
+    },
+    "isaretSayisi": 46,
+    "ne": "iki sekme aynı anda — karışmıyorlar mı",
+    "zorunlu": true,
+    "cikisKodu": 0,
+    "ebeveynSure": 10463,
+    "log": "test-yolu/kanit/eklenti-Y2.log"
+  },
+  {
+    "hucre": "Y3",
+    "durum": "YESIL",
+    "sebep": "",
+    "tolerans": {
+      "TOLERANS_MS": 250,
+      "FAZ_MS": 2500,
+      "YERLESME_MS": 400
+    },
+    "olcumler": [
+      {
+        "ad": "ilk video oynuyor",
+        "dAn": 2755,
+        "d": {
+          "izleniyor": 2755,
+          "duraklatildi": 0,
+          "mola": 0
+        },
+        "cetvelB": {
+          "video": "v1",
+          "paused": false,
+          "currentTime": 3.221,
+          "readyState": 4,
+          "visibilityState": "visible",
+          "icerikBetigi": "1"
+        }
+      },
+      {
+        "ad": "ikinci video oynuyor",
+        "dAn": 2754,
+        "d": {
+          "izleniyor": 2754,
+          "duraklatildi": 0,
+          "mola": 0
+        },
+        "cetvelB": {
+          "video": "v2",
+          "paused": false,
+          "currentTime": 3.285,
+          "readyState": 4,
+          "visibilityState": "visible",
+          "icerikBetigi": "1"
+        }
+      }
+    ],
+    "sorunlar": [],
+    "sureMs": 8994,
+    "manifest": {
+      "manifest_version": 2,
+      "name": "Sayaç",
+      "version": "0.1.0",
+      "description": "YouTube izleme süresini üç kalemde ayırır: izleniyor · duraklatıldı · mola.",
+      "browser_specific_settings": {
+        "gecko": {
+          "id": "sayac@sayac.local"
+        }
+      },
+      "background": {
+        "scripts": [
+          "sonda-ayar.js",
+          "sonda-arkaplan.js",
+          "sayac.js",
+          "arkaplan.js"
+        ],
+        "persistent": true
+      },
+      "content_scripts": [
+        {
+          "matches": [
+            "*://*.youtube.com/*",
+            "http://127.0.0.1/*"
+          ],
+          "js": [
+            "sonda-ayar.js",
+            "icerik.js",
+            "sonda-icerik.js"
+          ],
+          "run_at": "document_idle",
+          "all_frames": false
+        }
+      ]
+    },
+    "oncesiSonrasi": {
+      "oncesi": {
+        "izleniyor": 3229,
+        "duraklatildi": 21,
+        "mola": 0
+      },
+      "sonrasi": {
+        "izleniyor": 6476,
+        "duraklatildi": 27,
+        "mola": 0
+      }
+    },
+    "isaretSayisi": 27,
+    "ne": "aynı sekmede ikinci video — sayaç sıfırlanmıyor mu",
+    "zorunlu": true,
+    "cikisKodu": 0,
+    "ebeveynSure": 9651,
+    "log": "test-yolu/kanit/eklenti-Y3.log"
+  },
+  {
+    "hucre": "Y4",
+    "durum": "ölçülemedi",
+    "sebep": "sekme arka plana alinamadi — olculen visibilityState: \"visible\" (headless=false)",
+    "tolerans": {
+      "TOLERANS_MS": 250,
+      "FAZ_MS": 2500,
+      "YERLESME_MS": 400
+    },
+    "olcumler": [],
+    "sorunlar": [],
+    "sureMs": 8237,
+    "manifest": {
+      "manifest_version": 2,
+      "name": "Sayaç",
+      "version": "0.1.0",
+      "description": "YouTube izleme süresini üç kalemde ayırır: izleniyor · duraklatıldı · mola.",
+      "browser_specific_settings": {
+        "gecko": {
+          "id": "sayac@sayac.local"
+        }
+      },
+      "background": {
+        "scripts": [
+          "sonda-ayar.js",
+          "sonda-arkaplan.js",
+          "sayac.js",
+          "arkaplan.js"
+        ],
+        "persistent": true
+      },
+      "content_scripts": [
+        {
+          "matches": [
+            "*://*.youtube.com/*",
+            "http://127.0.0.1/*"
+          ],
+          "js": [
+            "sonda-ayar.js",
+            "icerik.js",
+            "sonda-icerik.js"
+          ],
+          "run_at": "document_idle",
+          "all_frames": false
+        }
+      ]
+    },
+    "visibilityState": "visible",
+    "kismiOlcum": {
+      "not": "visibilityState 'hidden' YAPILAMADI; asagidaki rakam yalnizca 'A sekmesi one alinmis DEGIL' kosulunda olculdu — 'arka plandaki sekme' kanIti DEGILDIR",
+      "ad": "onde olmayan sekmede oynuyor",
+      "dAn": 2753,
+      "d": {
+        "izleniyor": 2753,
+        "duraklatildi": 0,
+        "mola": 0
+      },
+      "cetvelB": {
+        "video": "v1",
+        "paused": false,
+        "currentTime": 3.605,
+        "readyState": 4,
+        "visibilityState": "visible",
+        "icerikBetigi": "1"
+      },
+      "sorunlar": []
+    },
+    "onSekmeSayisi": 2,
+    "isaretSayisi": 18,
+    "ne": "arka plandaki sekme — visibilityState hidden",
+    "zorunlu": true,
+    "cikisKodu": 0,
+    "ebeveynSure": 8861,
+    "log": "test-yolu/kanit/eklenti-Y4.log",
+    "headlessDenemesi": {
+      "durum": "ölçülemedi",
+      "sebep": "sekme arka plana alinamadi — olculen visibilityState: \"visible\" (headless=true)",
+      "visibilityState": "visible"
+    }
+  },
+  {
+    "hucre": "Y5",
+    "durum": "YESIL",
+    "sebep": "",
+    "tolerans": {
+      "TOLERANS_MS": 250,
+      "FAZ_MS": 2500,
+      "YERLESME_MS": 400
+    },
+    "olcumler": [
+      {
+        "ad": "devir oncesi oynuyor",
+        "dAn": 2762,
+        "d": {
+          "izleniyor": 2762,
+          "duraklatildi": 0,
+          "mola": 0
+        },
+        "cetvelB": {
+          "video": "v1",
+          "paused": false,
+          "currentTime": 3.253,
+          "readyState": 4,
+          "visibilityState": "visible",
+          "icerikBetigi": "1"
+        }
+      },
+      {
+        "ad": "devir sonrasi oynuyor",
+        "dAn": 2753,
+        "d": {
+          "izleniyor": 2753,
+          "duraklatildi": 0,
+          "mola": 0
+        },
+        "cetvelB": {
+          "video": "v1",
+          "paused": false,
+          "currentTime": 26.741,
+          "readyState": 4,
+          "visibilityState": "visible",
+          "icerikBetigi": "1"
+        }
+      }
+    ],
+    "sorunlar": [],
+    "sureMs": 29253,
+    "manifest": {
+      "manifest_version": 2,
+      "name": "Sayaç",
+      "version": "0.1.0",
+      "description": "YouTube izleme süresini üç kalemde ayırır: izleniyor · duraklatıldı · mola.",
+      "browser_specific_settings": {
+        "gecko": {
+          "id": "sayac@sayac.local"
+        }
+      },
+      "background": {
+        "scripts": [
+          "sonda-ayar.js",
+          "sonda-arkaplan.js",
+          "sayac.js",
+          "arkaplan.js"
+        ],
+        "persistent": true
+      },
+      "content_scripts": [
+        {
+          "matches": [
+            "*://*.youtube.com/*",
+            "http://127.0.0.1/*"
+          ],
+          "js": [
+            "sonda-ayar.js",
+            "icerik.js",
+            "sonda-icerik.js"
+          ],
+          "run_at": "document_idle",
+          "all_frames": false
+        }
+      ]
+    },
+    "geceYarisi": {
+      "oncesi": {
+        "toplam": {
+          "izleniyor": 3231,
+          "duraklatildi": 26,
+          "mola": 0
+        },
+        "gunBasiMs": 1786654800000,
+        "anMs": 1786741180104,
+        "durumAdi": "İZLENİYOR"
+      },
+      "sonrasi": {
+        "toplam": {
+          "izleniyor": 133,
+          "duraklatildi": 0,
+          "mola": 0
+        },
+        "gunBasiMs": 1786741200000,
+        "anMs": 1786741200133,
+        "durumAdi": "İZLENİYOR"
+      },
+      "gunBasiFarki": 86400000,
+      "kelepceSayisi": 0
+    },
+    "isaretSayisi": 108,
+    "ne": "gece yarısı — üç sayaç sıfırlanıyor mu",
+    "zorunlu": true,
+    "cikisKodu": 0,
+    "ebeveynSure": 29889,
+    "log": "test-yolu/kanit/eklenti-Y5.log"
+  },
+  {
+    "hucre": "Y6",
+    "durum": "YESIL",
+    "sebep": "",
+    "tolerans": {
+      "TOLERANS_MS": 250,
+      "FAZ_MS": 2500,
+      "YERLESME_MS": 400
+    },
+    "olcumler": [
+      {
+        "ad": "mola oncesi oynuyor",
+        "dAn": 2754,
+        "d": {
+          "izleniyor": 2754,
+          "duraklatildi": 0,
+          "mola": 0
+        },
+        "durum": "İZLENİYOR",
+        "cetvelB": {
+          "video": "v1",
+          "paused": false,
+          "currentTime": 3.285,
+          "readyState": 4,
+          "visibilityState": "visible",
+          "icerikBetigi": "1"
+        }
+      },
+      {
+        "ad": "mola acik",
+        "dAn": 2753,
+        "d": {
+          "izleniyor": 0,
+          "duraklatildi": 0,
+          "mola": 2753
+        },
+        "durum": "MOLA",
+        "cetvelB": {
+          "video": "v1",
+          "paused": false,
+          "currentTime": 7.04,
+          "readyState": 4,
+          "visibilityState": "visible",
+          "icerikBetigi": "1"
+        }
+      },
+      {
+        "ad": "mola kapali",
+        "dAn": 2754,
+        "d": {
+          "izleniyor": 2754,
+          "duraklatildi": 0,
+          "mola": 0
+        },
+        "durum": "İZLENİYOR",
+        "cetvelB": {
+          "video": "v1",
+          "paused": false,
+          "currentTime": 10.741,
+          "readyState": 4,
+          "visibilityState": "visible",
+          "icerikBetigi": "1"
+        }
+      }
+    ],
+    "sorunlar": [],
+    "sureMs": 13446,
+    "manifest": {
+      "manifest_version": 2,
+      "name": "Sayaç",
+      "version": "0.1.0",
+      "description": "YouTube izleme süresini üç kalemde ayırır: izleniyor · duraklatıldı · mola.",
+      "browser_specific_settings": {
+        "gecko": {
+          "id": "sayac@sayac.local"
+        }
+      },
+      "background": {
+        "scripts": [
+          "sonda-ayar.js",
+          "sonda-arkaplan.js",
+          "sayac.js",
+          "arkaplan.js"
+        ],
+        "persistent": true
+      },
+      "content_scripts": [
+        {
+          "matches": [
+            "*://*.youtube.com/*",
+            "http://127.0.0.1/*"
+          ],
+          "js": [
+            "sonda-ayar.js",
+            "icerik.js",
+            "sonda-icerik.js"
+          ],
+          "run_at": "document_idle",
+          "all_frames": false
+        }
+      ]
+    },
+    "isaretSayisi": 44,
+    "ne": "mola — üçüncü kova (API çağrısı, arayüz değil)",
+    "zorunlu": true,
+    "cikisKodu": 0,
+    "ebeveynSure": 14061,
+    "log": "test-yolu/kanit/eklenti-Y6.log"
+  },
+  {
+    "hucre": "Y7",
+    "durum": "YESIL",
+    "sebep": "",
+    "tolerans": {
+      "TOLERANS_MS": 250,
+      "FAZ_MS": 2500,
+      "YERLESME_MS": 400
+    },
+    "olcumler": [
+      {
+        "ad": "oynat",
+        "dAn": 2753,
+        "d": {
+          "izleniyor": 2753,
+          "duraklatildi": 0,
+          "mola": 0
+        },
+        "durum": "İZLENİYOR",
+        "cetvelB": {
+          "video": "v1",
+          "paused": false,
+          "currentTime": 3.275,
+          "readyState": 4,
+          "visibilityState": "visible",
+          "icerikBetigi": "1"
+        }
+      },
+      {
+        "ad": "duraklat",
+        "dAn": 2752,
+        "d": {
+          "izleniyor": 0,
+          "duraklatildi": 2752,
+          "mola": 0
+        },
+        "durum": "DURAKLATILDI",
+        "cetvelB": {
+          "video": "v1",
+          "paused": true,
+          "currentTime": 3.275,
+          "readyState": 4,
+          "visibilityState": "visible",
+          "icerikBetigi": "1"
+        }
+      },
+      {
+        "ad": "tekrar oynat",
+        "dAn": 2752,
+        "d": {
+          "izleniyor": 2752,
+          "duraklatildi": 0,
+          "mola": 0
+        },
+        "durum": "İZLENİYOR",
+        "cetvelB": {
+          "video": "v1",
+          "paused": false,
+          "currentTime": 6.507,
+          "readyState": 4,
+          "visibilityState": "visible",
+          "icerikBetigi": "1"
+        }
+      }
+    ],
+    "sorunlar": [],
+    "sureMs": 12422,
+    "manifest": {
+      "manifest_version": 3,
+      "name": "Sayaç",
+      "version": "0.1.0",
+      "description": "YouTube izleme süresini üç kalemde ayırır: izleniyor · duraklatıldı · mola.",
+      "browser_specific_settings": {
+        "gecko": {
+          "id": "sayac@sayac.local"
+        }
+      },
+      "background": {
+        "scripts": [
+          "sonda-ayar.js",
+          "sonda-arkaplan.js",
+          "sayac.js",
+          "arkaplan.js"
+        ]
+      },
+      "content_scripts": [
+        {
+          "matches": [
+            "*://*.youtube.com/*",
+            "http://127.0.0.1/*"
+          ],
+          "js": [
+            "sonda-ayar.js",
+            "icerik.js",
+            "sonda-icerik.js"
+          ],
+          "run_at": "document_idle",
+          "all_frames": false
+        }
+      ]
+    },
+    "manifestSurumu": 3,
+    "isaretSayisi": 40,
+    "ne": "Y1'in aynısı, MV3 varyant manifestle",
+    "zorunlu": true,
+    "cikisKodu": 0,
+    "ebeveynSure": 13067,
+    "log": "test-yolu/kanit/eklenti-Y7.log"
+  },
+  {
+    "hucre": "Y8",
+    "durum": "YESIL",
+    "sebep": "",
+    "tablo": [
+      {
+        "etiket": "MV2 · izin=VAR · ACAO=VAR",
+        "mv": 2,
+        "izin": true,
+        "acao": true,
+        "fetch": "gecti",
+        "hata": "",
+        "status": 204,
+        "sunucuyaUlasti": true
+      },
+      {
+        "etiket": "MV2 · izin=VAR · ACAO=YOK",
+        "mv": 2,
+        "izin": true,
+        "acao": false,
+        "fetch": "gecti",
+        "hata": "",
+        "status": 204,
+        "sunucuyaUlasti": true
+      },
+      {
+        "etiket": "MV2 · izin=YOK · ACAO=VAR",
+        "mv": 2,
+        "izin": false,
+        "acao": true,
+        "fetch": "gecti",
+        "hata": "",
+        "status": 204,
+        "sunucuyaUlasti": true
+      },
+      {
+        "etiket": "MV2 · izin=YOK · ACAO=YOK",
+        "mv": 2,
+        "izin": false,
+        "acao": false,
+        "fetch": "dustu",
+        "hata": "NetworkError when attempting to fetch resource.",
+        "status": null,
+        "sunucuyaUlasti": true
+      },
+      {
+        "etiket": "MV3 · izin=VAR · ACAO=VAR",
+        "mv": 3,
+        "izin": true,
+        "acao": true,
+        "fetch": "gecti",
+        "hata": "",
+        "status": 204,
+        "sunucuyaUlasti": true
+      },
+      {
+        "etiket": "MV3 · izin=VAR · ACAO=YOK",
+        "mv": 3,
+        "izin": true,
+        "acao": false,
+        "fetch": "gecti",
+        "hata": "",
+        "status": 204,
+        "sunucuyaUlasti": true
+      },
+      {
+        "etiket": "MV3 · izin=YOK · ACAO=VAR",
+        "mv": 3,
+        "izin": false,
+        "acao": true,
+        "fetch": "gecti",
+        "hata": "",
+        "status": 204,
+        "sunucuyaUlasti": true
+      },
+      {
+        "etiket": "MV3 · izin=YOK · ACAO=YOK",
+        "mv": 3,
+        "izin": false,
+        "acao": false,
+        "fetch": "gecti",
+        "hata": "",
+        "status": 204,
+        "sunucuyaUlasti": true
+      }
+    ],
+    "yorum": "ÇÜRÜTÜLDÜ: MV2 · izin YOK · ACAO VAR hücresinde fetch ÇÖZÜLDÜ. Yani \"izin olmadan geçemezdi\" cümlesi yanlıştır: ACAO başlığı tek başına çapraz kökenli okumaya yetiyor. Tur 001'in sunucusu (sunucu.mjs:77) o başlığı koyuyordu → oradaki \"E\" izin gücünün kanıtı DEĞİLDİ. | İZNİN GERÇEK ETKİSİ (ACAO'suz uçta): izin VAR → fetch=gecti · izin YOK → fetch=dustu. Host izni CORS'u atlatıyor — ayırt edici hücre budur.",
+    "ne": "host_permissions karşıt deneyi (2×2 × MV2/MV3)",
+    "zorunlu": true,
+    "cikisKodu": 0,
+    "ebeveynSure": 18874,
+    "log": "test-yolu/kanit/eklenti-Y8.log"
+  },
+  {
+    "hucre": "Y9",
+    "durum": "YESIL",
+    "sebep": "",
+    "ortam": false,
+    "tolerans": {
+      "TOLERANS_MS": 250,
+      "FAZ_MS": 2500
+    },
+    "denemeler": [
+      {
+        "no": 1,
+        "adim": "bitti",
+        "hata": "",
+        "url": "https://www.youtube.com/watch?v=0muHFBSiybw&pp=ygUEbG9maQ%3D%3D"
+      }
+    ],
+    "olcumler": [
+      {
+        "ad": "youtube: oynuyor",
+        "dAn": 2806,
+        "d": {
+          "izleniyor": 2806,
+          "duraklatildi": 0,
+          "mola": 0
+        },
+        "cetvelB": {
+          "videoVar": true,
+          "paused": false,
+          "currentTime": 46794.134,
+          "readyState": 4,
+          "visibilityState": "visible",
+          "icerikBetigi": "1",
+          "url": "https://www.youtube.com/watch?v=0muHFBSiybw"
+        },
+        "sekmeId": 1
+      },
+      {
+        "ad": "youtube: durakli",
+        "dAn": 2755,
+        "d": {
+          "izleniyor": 0,
+          "duraklatildi": 2755,
+          "mola": 0
+        },
+        "cetvelB": {
+          "videoVar": true,
+          "paused": true,
+          "currentTime": 46794.134,
+          "readyState": 4,
+          "visibilityState": "visible",
+          "icerikBetigi": "1",
+          "url": "https://www.youtube.com/watch?v=0muHFBSiybw"
+        },
+        "sekmeId": 1
+      }
+    ],
+    "videoUrl": "https://www.youtube.com/watch?v=0muHFBSiybw&pp=ygUEbG9maQ%3D%3D",
+    "sorunlar": [],
+    "ne": "bir gerçek YouTube duman testi (kırılgan → ortam)",
+    "zorunlu": false,
+    "cikisKodu": 0,
+    "ebeveynSure": 18223,
+    "log": "test-yolu/kanit/eklenti-Y9.log"
+  },
+  {
+    "hucre": "Y10",
+    "durum": "ölçülemedi",
+    "sebep": "[adim: web-ext ile yukleme] Error: connect ECONNREFUSED 127.0.0.1:57877",
+    "yol": "Aday B — Mozilla web-ext RDP (Aday A uygulanamaz: Playwright'ın Firefox'u yamalı)",
+    "surum": "153.0.4-1",
+    "url": "https://dl.librewolf.net/librewolf/153.0.4-1/librewolf-153.0.4-1-windows-x86_64-portable.zip",
+    "ikili": "C:\\Users\\kadio\\AppData\\Local\\Temp\\sayac-librewolf-BJcDH9\\librewolf-153.0.4-1\\LibreWolf\\librewolf.exe",
+    "adim": "web-ext ile yukleme",
+    "olcum": null,
+    "policies": "{\n    \"__COMMENT__ More Information\": \"https://github.com/mozilla/policy-templates/blob/master/README.md\",\n    \"policies\": {\n        \"AIControls\": {\n            \"Translations\": {\n                \"Value\": \"available\"\n            },\n            \"PDFAltText\": {\n                \"Value\": \"blocked\"\n            },\n            \"SmartTabGroups\": {\n                \"Value\": \"blocked\"\n            },\n            \"LinkPreviewKeyPoints\": {\n                \"Value\": \"blocked\"\n            },\n            \"SidebarChatbot\": {\n                \"Value\": \"blocked\"\n            },\n            \"SmartWindow\": {\n                \"Value\": \"blocked\"\n            }\n        },\n        \"AppUpdateURL\": \"https://localhost\",\n        \"DisableAppUpdate\": true,\n        \"DisableDefaultBrowserAgent\": true,\n        \"DisableFeedbackCommands\": true,\n        \"DisableFirefoxStudies\": true,\n        \"DisableRemoteImprovements\": true,\n        \"DisableSetDesktopBackground\": false,\n        \"DisableTelemetry\": true,\n        \"DontCheckDefaultBrowser\": true,\n        \"WebsiteFilter\": {\n            \"Block\": [\n                \"https://localhost/*\"\n            ],\n            \"Exceptions\": [\n                \"https://localhost/*\"\n            ]\n        },\n        \"EncryptedMediaExtensions\": {\n            \"Enabled\": false\n        },\n        \"ExtensionSettings\": {\n            \"*\": {\n                \"blocked_install_message\": \"LibreWolf does not allow installing Language Packs.\",\n                \"installation_mode\": \"allowed\",\n                \"allowed_types\": [\"dictionary\", \"extension\", \"sitepermission\", \"theme\"]\n            },\n            \"uBlock0@raymondhill.net\": {\n                \"install_url\": \"https://addons.mozilla.org/firefox/downloads/latest/uBlock0@raymondhill.net/latest.xpi\",\n                \"installation_mode\": \"normal_installed\",\n                \"private_browsing\": true\n            }\n        },\n        \"FirefoxHome\": {\n            \"Weather\": false,\n            \"TopSites\": false,\n            \"SponsoredTopSites\": false,\n ",
+    "policyYamasi": {
+      "HttpsOnlyMode": "enabled → disabled",
+      "WebsiteFilter": "silindi"
+    },
+    "overrideYazildi": "C:\\Users\\kadio\\AppData\\Local\\Temp\\sayac-librewolf-profil-lsO2hg\\librewolf.overrides.cfg",
+    "ne": "LibreWolf taşınabilir (Aday B yolu) → ya kanıt ya ölçülemedi",
+    "zorunlu": false,
+    "cikisKodu": 0,
+    "ebeveynSure": 50044,
+    "log": "test-yolu/kanit/eklenti-Y10.log"
+  }
+]

@@ -1,0 +1,24 @@
+=== SAYAC — madde 3 · hucre Y4 ===
+ne olcer: arka plandaki sekme — visibilityState hidden
+komut: "C:\Program Files\nodejs\node.exe" "C:\Users\kadio\Documents\Claude\Projects\Sayac\test-yolu\eklenti-e2e.mjs" Y4 headed
+node=v26.5.0 platform=win32
+sure=8861 ms · cikis kodu=0 · sinyal=null
+======================================================================
+
+[+000000ms] hucre=Y4-headed · TOLERANS=250 ms · FAZ=2500 ms (koşumdan ÖNCE sabit)
+[+000000ms] firefox ikilisi: C:\Users\kadio\AppData\Local\ms-playwright\firefox-1538\firefox\firefox.exe
+[+000006ms] isaret sunucusu ayakta: http://127.0.0.1:62844
+[+000018ms] test kopyasi: C:\Users\kadio\AppData\Local\Temp\sayac-ekl-Y4-headed-wXu52U
+[+000019ms] yamali manifest: {"manifest_version":2,"name":"Sayaç","version":"0.1.0","description":"YouTube izleme süresini üç kalemde ayırır: izleniyor · duraklatıldı · mola.","browser_specific_settings":{"gecko":{"id":"sayac@sayac.local"}},"background":{"scripts":["sonda-ayar.js","sonda-arkaplan.js","sayac.js","arkaplan.js"],"persistent":true},"content_scripts":[{"matches":["*://*.youtube.com/*","http://127.0.0.1/*"],"js":["sonda-ayar.js","icerik.js","sonda-icerik.js"],"run_at":"document_idle","all_frames":false}]}
+[+000019ms] tek kullanimlik profil: C:\Users\kadio\AppData\Local\Temp\sayac-profil-Y4-headed-yeUaqG
+[+002783ms] EKLENTI YUKLENDI — launchPersistentContext cozuldu (_BrowserContext) headless=false
+[+003262ms] sayfa A: http://127.0.0.1:62844/sayac.html · hazir=true
+[+003262ms]    ilk anlik goruntu: {"sekmeId":1,"durumAdi":"DURAKLATILDI","toplam":{"izleniyor":0,"duraklatildi":0,"mola":0},"anMs":1786664085631,"arkaPlanBaslangicMs":1786664085156,"gunBasiMs":1786654800000,"kelepceSayisi":0,"sekmeSayisi":1}
+[+003304ms] arkaya almadan once visibilityState=visible
+[+004335ms] OLCULEN document.visibilityState (A sekmesi) = "visible" · headless=false
+[+007560ms]   FAZ onde olmayan sekmede oynuyor Δan= 2753 ms | Δizleniyor= 2753 Δduraklatildi=    0 Δmola=    0 | durum=İZLENİYOR sekme=1 | ilerleyen: izleniyor
+[+007560ms]       CETVEL B (sayfa gerçeği): {"video":"v1","paused":false,"currentTime":3.605,"readyState":4,"visibilityState":"visible","icerikBetigi":"1"}
+[+007560ms] KUTU OLCULEMEDI: sekme arka plana alinamadi — olculen visibilityState: "visible" (headless=false)
+[+007560ms]   KISMI OLCUM (kanit DEGIL): one alinmamis sekmede Δizleniyor=2753 Δan=2753 · tolerans sorunu: yok
+[+008198ms] isaret sunucusu kapatildi
+[+008238ms] SONUC ölçülemedi — sekme arka plana alinamadi — olculen visibilityState: "visible" (headless=false)

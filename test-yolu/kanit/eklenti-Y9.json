@@ -1,0 +1,60 @@
+{
+  "hucre": "Y9",
+  "durum": "YESIL",
+  "sebep": "",
+  "ortam": false,
+  "tolerans": {
+    "TOLERANS_MS": 250,
+    "FAZ_MS": 2500
+  },
+  "denemeler": [
+    {
+      "no": 1,
+      "adim": "bitti",
+      "hata": "",
+      "url": "https://www.youtube.com/watch?v=0muHFBSiybw&pp=ygUEbG9maQ%3D%3D"
+    }
+  ],
+  "olcumler": [
+    {
+      "ad": "youtube: oynuyor",
+      "dAn": 2806,
+      "d": {
+        "izleniyor": 2806,
+        "duraklatildi": 0,
+        "mola": 0
+      },
+      "cetvelB": {
+        "videoVar": true,
+        "paused": false,
+        "currentTime": 46794.134,
+        "readyState": 4,
+        "visibilityState": "visible",
+        "icerikBetigi": "1",
+        "url": "https://www.youtube.com/watch?v=0muHFBSiybw"
+      },
+      "sekmeId": 1
+    },
+    {
+      "ad": "youtube: durakli",
+      "dAn": 2755,
+      "d": {
+        "izleniyor": 0,
+        "duraklatildi": 2755,
+        "mola": 0
+      },
+      "cetvelB": {
+        "videoVar": true,
+        "paused": true,
+        "currentTime": 46794.134,
+        "readyState": 4,
+        "visibilityState": "visible",
+        "icerikBetigi": "1",
+        "url": "https://www.youtube.com/watch?v=0muHFBSiybw"
+      },
+      "sekmeId": 1
+    }
+  ],
+  "videoUrl": "https://www.youtube.com/watch?v=0muHFBSiybw&pp=ygUEbG9maQ%3D%3D",
+  "sorunlar": []
+}

@@ -1,0 +1,104 @@
+{
+  "hucre": "Y2",
+  "durum": "YESIL",
+  "sebep": "",
+  "tolerans": {
+    "TOLERANS_MS": 250,
+    "FAZ_MS": 2500,
+    "YERLESME_MS": 400
+  },
+  "olcumler": [
+    {
+      "ad": "A: oynuyor",
+      "dAn": 2754,
+      "d": {
+        "izleniyor": 2754,
+        "duraklatildi": 0,
+        "mola": 0
+      },
+      "sekmeId": 1,
+      "cetvelB": {
+        "video": "v1",
+        "paused": false,
+        "currentTime": 7.221,
+        "readyState": 4,
+        "visibilityState": "visible",
+        "icerikBetigi": "1"
+      }
+    },
+    {
+      "ad": "B: durakli",
+      "dAn": 2754,
+      "d": {
+        "izleniyor": 0,
+        "duraklatildi": 2754,
+        "mola": 0
+      },
+      "sekmeId": 2,
+      "cetvelB": {
+        "video": "v1",
+        "paused": true,
+        "currentTime": 0,
+        "readyState": 4,
+        "visibilityState": "visible",
+        "icerikBetigi": "1"
+      }
+    }
+  ],
+  "sorunlar": [],
+  "sureMs": 9826,
+  "manifest": {
+    "manifest_version": 2,
+    "name": "Sayaç",
+    "version": "0.1.0",
+    "description": "YouTube izleme süresini üç kalemde ayırır: izleniyor · duraklatıldı · mola.",
+    "browser_specific_settings": {
+      "gecko": {
+        "id": "sayac@sayac.local"
+      }
+    },
+    "background": {
+      "scripts": [
+        "sonda-ayar.js",
+        "sonda-arkaplan.js",
+        "sayac.js",
+        "arkaplan.js"
+      ],
+      "persistent": true
+    },
+    "content_scripts": [
+      {
+        "matches": [
+          "*://*.youtube.com/*",
+          "http://127.0.0.1/*"
+        ],
+        "js": [
+          "sonda-ayar.js",
+          "icerik.js",
+          "sonda-icerik.js"
+        ],
+        "run_at": "document_idle",
+        "all_frames": false
+      }
+    ]
+  },
+  "sekmeler": {
+    "A": {
+      "sekmeId": 1,
+      "toplam": {
+        "izleniyor": 7231,
+        "duraklatildi": 24,
+        "mola": 0
+      }
+    },
+    "B": {
+      "sekmeId": 2,
+      "toplam": {
+        "izleniyor": 0,
+        "duraklatildi": 3742,
+        "mola": 0
+      }
+    }
+  },
+  "isaretSayisi": 46
+}

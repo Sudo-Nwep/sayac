@@ -1,0 +1,34 @@
+=== SAYAC — madde 3 · hucre Y8 ===
+ne olcer: host_permissions karşıt deneyi (2×2 × MV2/MV3)
+komut: "C:\Program Files\nodejs\node.exe" "C:\Users\kadio\Documents\Claude\Projects\Sayac\test-yolu\karsit-izin.mjs"
+node=v26.5.0 platform=win32
+sure=18874 ms · cikis kodu=0 · sinyal=null
+======================================================================
+
+[+000000ms] Y8 — host izni karsit deneyi · 2x2 x {MV2, MV3} = 8 hucre
+[+000000ms] OLCULEN: arka plandaki fetch COZULDU mu? (sunucuya ulasma degil)
+[+000006ms] isaret sunucusu ayakta: http://127.0.0.1:57034
+[+001768ms] MV2 · izin=VAR · ACAO=VAR              → fetch=gecti      sunucuya ulasti=true
+[+004409ms] MV2 · izin=VAR · ACAO=YOK              → fetch=gecti      sunucuya ulasti=true
+[+006831ms] MV2 · izin=YOK · ACAO=VAR              → fetch=gecti      sunucuya ulasti=true
+[+008969ms] MV2 · izin=YOK · ACAO=YOK              → fetch=dustu      sunucuya ulasti=true · NetworkError when attempting to fetch resource.
+[+011210ms] MV3 · izin=VAR · ACAO=VAR              → fetch=gecti      sunucuya ulasti=true
+[+013431ms] MV3 · izin=VAR · ACAO=YOK              → fetch=gecti      sunucuya ulasti=true
+[+015541ms] MV3 · izin=YOK · ACAO=VAR              → fetch=gecti      sunucuya ulasti=true
+[+017742ms] MV3 · izin=YOK · ACAO=YOK              → fetch=gecti      sunucuya ulasti=true
+[+018234ms] isaret sunucusu kapatildi
+[+018235ms] 
+[+018235ms] === Y8 TABLOSU ===
+[+018235ms] | manifest | host izni | ACAO | fetch | sunucuya ulasti |
+[+018235ms] |---|---|---|---|---|
+[+018235ms] | MV2 | VAR | VAR | **gecti** | true |
+[+018235ms] | MV2 | VAR | YOK | **gecti** | true |
+[+018235ms] | MV2 | YOK | VAR | **gecti** | true |
+[+018235ms] | MV2 | YOK | YOK | **dustu** | true |
+[+018235ms] | MV3 | VAR | VAR | **gecti** | true |
+[+018235ms] | MV3 | VAR | YOK | **gecti** | true |
+[+018235ms] | MV3 | YOK | VAR | **gecti** | true |
+[+018235ms] | MV3 | YOK | YOK | **gecti** | true |
+[+018235ms] 
+[+018235ms] YORUM: ÇÜRÜTÜLDÜ: MV2 · izin YOK · ACAO VAR hücresinde fetch ÇÖZÜLDÜ. Yani "izin olmadan geçemezdi" cümlesi yanlıştır: ACAO başlığı tek başına çapraz kökenli okumaya yetiyor. Tur 001'in sunucusu (sunucu.mjs:77) o başlığı koyuyordu → oradaki "E" izin gücünün kanıtı DEĞİLDİ. | İZNİN GERÇEK ETKİSİ (ACAO'suz uçta): izin VAR → fetch=gecti · izin YOK → fetch=dustu. Host izni CORS'u atlatıyor — ayırt edici hücre budur.
+[+018236ms] SONUC YESIL

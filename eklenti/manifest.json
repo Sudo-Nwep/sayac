@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "name": "Sayaç",
+  "version": "0.1.0",
+  "description": "YouTube izleme süresini üç kalemde ayırır: izleniyor · duraklatıldı · mola.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "sayac@sayac.local"
+    }
+  },
+  "background": {
+    "scripts": ["sayac.js", "arkaplan.js"],
+    "persistent": true
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["icerik.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ]
+}

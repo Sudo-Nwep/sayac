@@ -1,0 +1,88 @@
+{
+  "hucre": "Y8",
+  "durum": "YESIL",
+  "sebep": "",
+  "tablo": [
+    {
+      "etiket": "MV2 · izin=VAR · ACAO=VAR",
+      "mv": 2,
+      "izin": true,
+      "acao": true,
+      "fetch": "gecti",
+      "hata": "",
+      "status": 204,
+      "sunucuyaUlasti": true
+    },
+    {
+      "etiket": "MV2 · izin=VAR · ACAO=YOK",
+      "mv": 2,
+      "izin": true,
+      "acao": false,
+      "fetch": "gecti",
+      "hata": "",
+      "status": 204,
+      "sunucuyaUlasti": true
+    },
+    {
+      "etiket": "MV2 · izin=YOK · ACAO=VAR",
+      "mv": 2,
+      "izin": false,
+      "acao": true,
+      "fetch": "gecti",
+      "hata": "",
+      "status": 204,
+      "sunucuyaUlasti": true
+    },
+    {
+      "etiket": "MV2 · izin=YOK · ACAO=YOK",
+      "mv": 2,
+      "izin": false,
+      "acao": false,
+      "fetch": "dustu",
+      "hata": "NetworkError when attempting to fetch resource.",
+      "status": null,
+      "sunucuyaUlasti": true
+    },
+    {
+      "etiket": "MV3 · izin=VAR · ACAO=VAR",
+      "mv": 3,
+      "izin": true,
+      "acao": true,
+      "fetch": "gecti",
+      "hata": "",
+      "status": 204,
+      "sunucuyaUlasti": true
+    },
+    {
+      "etiket": "MV3 · izin=VAR · ACAO=YOK",
+      "mv": 3,
+      "izin": true,
+      "acao": false,
+      "fetch": "gecti",
+      "hata": "",
+      "status": 204,
+      "sunucuyaUlasti": true
+    },
+    {
+      "etiket": "MV3 · izin=YOK · ACAO=VAR",
+      "mv": 3,
+      "izin": false,
+      "acao": true,
+      "fetch": "gecti",
+      "hata": "",
+      "status": 204,
+      "sunucuyaUlasti": true
+    },
+    {
+      "etiket": "MV3 · izin=YOK · ACAO=YOK",
+      "mv": 3,
+      "izin": false,
+      "acao": false,
+      "fetch": "gecti",
+      "hata": "",
+      "status": 204,
+      "sunucuyaUlasti": true
+    }
+  ],
+  "yorum": "ÇÜRÜTÜLDÜ: MV2 · izin YOK · ACAO VAR hücresinde fetch ÇÖZÜLDÜ. Yani \"izin olmadan geçemezdi\" cümlesi yanlıştır: ACAO başlığı tek başına çapraz kökenli okumaya yetiyor. Tur 001'in sunucusu (sunucu.mjs:77) o başlığı koyuyordu → oradaki \"E\" izin gücünün kanıtı DEĞİLDİ. | İZNİN GERÇEK ETKİSİ (ACAO'suz uçta): izin VAR → fetch=gecti · izin YOK → fetch=dustu. Host izni CORS'u atlatıyor — ayırt edici hücre budur."
+}

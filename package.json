@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "node mantik/kosucu.mjs",
-    "mutasyon": "node mantik/mutasyon.mjs"
+    "mutasyon": "node mantik/mutasyon.mjs",
+    "eklenti:uret": "node eklenti/uret.mjs",
+    "eklenti:kontrol": "node eklenti/uret.mjs --kontrol",
+    "eklenti:kanit": "node eklenti/uret.mjs --kanit",
+    "eklenti:test": "node test-yolu/eklenti-kosum.mjs"
   },
   "keywords": [],
   "author": "",
