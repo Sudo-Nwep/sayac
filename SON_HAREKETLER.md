@@ -9,15 +9,17 @@
 
 ## 📌 GÜNCEL DURUM (her zaman en güncel — önce bunu oku)
 
-- **Versiyon:** v1.5
-- **Aşama:** {{ASAMA}} — fiilen: madde 1 · 2 · 3 kapandı; **kurulabilir eklenti var**, madde 4 (arayüz) sırada
+- **Versiyon:** v2.0
+- **Aşama:** {{ASAMA}} — fiilen: madde 1 · 2 · 3 · 4 kapandı; **arayüzlü, kurulabilir eklenti var**, madde 5 (teslim) sırada
 - **Amaç:** {{AMAC}}
 - **Kapsam:** {{KAPSAM}}
 - **Depo/çalışır mı:** **evet — kurulabilir bir Firefox eklentisi var.** Üretilebilir kanıtlar:
   `npm run eklenti:test` → çıkış 0 (on hücre, **sekizi yeşil**, gerçek YouTube dâhil) ·
   `npm run eklenti:kontrol` → çıkış 0 (üretim senkron) · `npm test` → `KALAN: 0`, çıkış 0 ·
   `npm run mutasyon` → 7/7, çıkış 0.
-  **Arayüz YOK** — kullanıcı sayaçları henüz göremez; bu turda makine okudu (madde 4).
+- **Arayüz VAR:** açılır pencerede üç sayaç (`İzleniyor · Duraklatıldı · Mola`), **MOLA** ve
+  **DUR / DEVAM ET** butonları, Türkçe. MOLA oynayan videoyu **gerçekten duraklatıyor**
+  (ölçüldü: `video.paused=true`). İzin eklenmedi. Ayrıntı `ARAYUZ.md`.
 - **Seçilen test yolu:** `playwright-webextext` · yedek: Mozilla `web-ext` RDP ·
   elenen: Playwright'ın kendi Firefox desteği. Gerekçe + rakamlar `TEST_YOLU.md`.
 - **Zaman mantığı:** `mantik/sayac.mjs` — saf (statik **ve** dinamik olarak ölçüldü),
@@ -27,12 +29,17 @@
   Ayrıntı `EKLENTI.md`.
 - **Açık işler:** `PROJE_KUNYESI.md`'deki boyutlar + doldurulmamış ELDE yer tutucuları.
   **ürün** boyutu ⛔ → 🟡 oldu (kod ve doğrulaması var; arayüz yok, LibreWolf kurulumu ölçülemedi).
-- **Sıradaki adım:** `HEDEF.md` madde 4 — arayüz (üç sayaç, iki buton, Türkçe). Mesaj API'si
-  hazır; MOLA'nın videoyu duraklatması orada yazılır.
-- **⚠️ Bilinen açıklar:** ⑴ **LibreWolf'a kurulum ÖLÇÜLEMEDİ** (RDP `ECONNREFUSED`) — teslim
+- **Sıradaki adım:** `HEDEF.md` madde 5 — private GitHub deposu, README, ilk sürüm etiketi,
+  gizli taraması. `git push` yalnız orada, önceden yetkili.
+- **⚠️ Bilinen açıklar:** ⑴ **LibreWolf'a kurulum ÖLÇÜLEMEDİ** (RDP `ECONNREFUSED` ×4) — teslim
   ölçütü LibreWolf, madde 5'in işi · ⑵ **arka plandaki sekme kutusu ÖLÇÜLEMEDİ**
   (`visibilityState` `hidden` yapılamadı) · ⑶ tarayıcı yeniden başlarsa sayaçlar **kaybolur**
-  (durum bellekte, depolama eklenmedi).
+  (durum bellekte, depolama eklenmedi) · ⑷ **butonların ARAYÜZDEN çalıştığı ölçülemedi** —
+  Playwright `moz-extension://` sayfasını süremiyor (dört yol birebir hata metniyle elendi);
+  davranışları mesaj API'si yolundan **yeşil ölçüldü** (`ARAYUZ.md` → Y6) · ⑸ **sekme kimliği
+  zinciri ölçülemedi** — `arkaplan.js:73-78` önceliği `msg.sekmeId`'yi **gölgeliyor**
+  (`999999` gönderildi, `1` döndü). *"Pencere hedef sekmeyi kendiliğinden buluyor"* cümlesi
+  **yazılmadı.**
 - **🔧 DÜZELTME — LibreWolf bu makinede KURULU.** Tur 001 *"kurulu değil"* diye ölçmüştü
   (`TEST_YOLU.md:286-290`); madde 3 turunda `C:\Program Files\LibreWolf\librewolf.exe` bulundu
   ve o yoldan çalışan 10 süreç ölçüldü (Mustafa'nın açık tarayıcısı). Kurulu ikiliye karşı test
@@ -51,6 +58,15 @@
 - **`PROJE_KUNYESI.md`** — **ne YOK** dosyası: ⛔ çevre boyutları + doldurulmamış ELDE yer tutucuları.
 - **`.gitignore`** — repoya girmeyecekler (secret dahil). `test-yolu/kanit/*.log` bilerek
   **muaf** tutuldu: kanıt depoya girer.
+- **`ARAYUZ.md`** — **madde 4'ün raporu:** hücre tablosu · **sekme kimliği zinciri** (karşıt
+  deney + pozitif kontrol) · MOLA↔KAPALI tablosu · on bir Türkçe dize · altı karar · izin
+  bütçesi · ürün↔test kopyası farkı · **arayüzden ölçümün neden yapılamadığı** (dört yol,
+  birebir hata metinleriyle) · ölçülemeyenler tablosu.
+- **`eklenti/pencere.html` · `pencere.js` · `bicim.js`** — **arayüz.** Satır içi betik yok (CSP);
+  `bicim.js` `document`/`window`'a dokunmaz, `node:vm` ile tarayıcısız sınanır.
+- **`test-yolu/` (madde 4 eki)** — `arayuz-e2e.mjs` (Y11·Y12·Y13·Y16) · `arayuz-izin.mjs` (Y14,
+  kendi süreç ömrünü yönetir) · `bicim-testi.mjs` (Y15) · `sonda/sonda-pencere.js` (ürüne ait
+  **değil**; karşıt deney ve komut kanalı burada).
 - **`EKLENTI.md`** — **madde 3'ün raporu:** mimari (kim damgalar, durum nerede yaşar) ·
   **madde 4'ün kullanacağı mesaj API'si sözleşmesi** · on hücrenin tablosu (rakamlarıyla) ·
   iki cetvelin yan yana çıktısı · dört açık kararın kapanışı · ölçülemeyenler tablosu.
@@ -185,6 +201,45 @@
      (madde 4). ürün boyutu ⛔ → 🟡. Sıradaki adım: madde 4 — açılır pencere, üç sayaç, iki buton,
      Türkçe; mesaj API'si hazır. Bilinen açıklar: LibreWolf kurulumu ölçülemedi (madde 5'e girdi),
      arka plan sekmesi kutusu ölçülemedi, tarayıcı yeniden başlarsa sayaçlar kaybolur.
+
+* **v2.0 · 14/08/2026** — arayüz yazıldı: açılır pencere, üç sayaç, MOLA ve DUR/DEVAM ET, Türkçe.
+   > **Karar — pencere hiçbir süre aritmetiği yapmaz.** Üç toplamı arka plandan hazır alır,
+   > yalnız biçimlendirir (`bicim.js`). Doğruluğun tek kaynağı `mantik/sayac.mjs` kaldı.
+   > **Karar — MOLA videoyu gerçekten duraklatır** (`SAYAC_TEKLIF.md:50-51`): içerik betiği
+   > `runtime.connect` ile port açar, arka plan MOLA'ya geçince o porta `video-duraklat`
+   > yollar. Bağlantıyı **içerik betiği** başlattığı için hiçbir izin gerekmez; idempotenttir.
+   > **Karar — mola kapanınca video devam ETTİRİLMEZ** (kaynakta yazılı değil, G20).
+   > **İzin eklenmedi.** Y14 karşıt deneyi: izinsizken `tabs.query` sekme kimliğini döndürdü
+   > (`sorguId=2`), `tabs` izinliyle **birebir aynı** — izin hiçbir fark yaratmadı.
+   > **Ölçümler:** `npm run eklenti:test` → **çıkış 0, zorunlu kırmızı 0**. Y15 **13/13** ·
+   > Y6 (mesaj API'si yolu) **5 faz, sapma tam 0** — molada üçüncü kova 2508/2508, **KAPALI'da
+   > üçü de tam 0** (canlılık Δan=2753), `video.paused=true`, kümülatif sıfırlanmadı ·
+   > Y11 **9/9 Türkçe dize birebir** + manifest bildirimi + **ürünün bozulma kelepçesi çalıştı** ·
+   > Y1/Y7 eklenti hâlâ yükleniyor (MV2 ve MV3).
+   > **⚠️ ÖLÇÜLEMEDİ, adıyla:** butonların **arayüzden** üç durumu — Playwright
+   > `moz-extension://` sayfasını süremiyor; **dört yol** birebir hata metniyle elendi
+   > (WAR iframe'de `API.tabs` **undefined** · `page.goto` zaman aşımı · `window.open`'a
+   > bağlanamıyor · sonda kanalı yarışlı). **Sekme kimliği zinciri:** `arkaplan.js:73-78`
+   > önceliği `msg.sekmeId`'yi **gölgeliyor** (`999999`→`1`, `888888`→`1`); pozitif kontrol
+   > deneyin **ayırt edici** olduğunu ölçtü (kendi sekmesinde `999999`→`2`).
+   > ***"Pencere hedef sekmeyi kendiliğinden buluyor" cümlesi YAZILMADI.***
+   > **Bir ara sürümde Y12 KIRMIZI çıktı ve o kırmızı geçerli sayılmadı:** canlı bağlamda
+   > pencere sekme **1**'i hedefliyor, arka plan sekme **3**'ü yanıtlıyor. Koşucuya ölçülmüş
+   > bir kapı kondu — `pencereHedef !== bgSekmeId` ise hücre "ölçülemedi" diye, iki kimliği de
+   > yazarak kapanır (G22). Kutu hâlâ kırmızıya dönebilir.
+   > **Y6'nın beklentisi değişti — tolerans DEĞİL, beklenen kova:** ürün davranışı kaynakta
+   > yazılı biçimde değişti; ayrıca `durumAdi` ve `video.paused` kontrolleri **eklendi**
+   > (hücre güçlendi). **Y10 atlandı**, gerekçesi tabloda görünür.
+   > **Çekirdek donmuş kaldı:** `mantik/sayac.mjs` SHA-256 tur başı = tur sonu = `ad848d21…38ac`.
+   > `npm test` → `KALAN: 0` · `npm run mutasyon` → 7/7 · `eklenti:kontrol` → senkron.
+   > **Yeni dosyalar:** `ARAYUZ.md` · `eklenti/pencere.html|pencere.js|bicim.js` ·
+   > `test-yolu/arayuz-e2e.mjs|arayuz-izin.mjs|bicim-testi.mjs|sonda/sonda-pencere.js` +
+   > `kanit/eklenti-Y1[1-6]` (12 dosya). **Yeni bağımlılık YOK.**
+   > **`commit: 665316a`**
+   - **Güncel durum:** arayüzlü, kurulabilir eklenti var; davranışı rakamla doğrulanmış.
+     Sıradaki adım: madde 5 — private depo, README, etiket, gizli taraması. Madde 5'e giren
+     açıklar: LibreWolf kurulumu (Y10) · arka plandaki sekme (Y4) · gerçek araç çubuğu paneli
+     bağlamı · butonların arayüzden ölçümü.
 
 * *(Bir sonraki madde buraya eklenecek — aşağıdaki kurallara göre.)*
 
