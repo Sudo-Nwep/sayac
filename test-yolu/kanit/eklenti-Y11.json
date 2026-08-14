@@ -1,0 +1,178 @@
+{
+  "hucre": "Y11",
+  "durum": "ölçülemedi",
+  "sebep": "pencere CANLI baglamda acilamadi: pencere sekme 1 numarali sekmeyi HEDEFLIYOR ama arka plan sekme 3 icin yanit veriyor (arkaplan.js:73-78 golgelemesi). Bu baglamda arayuzden okunan rakam urunun amacladigi yolu OLCMEZ.",
+  "tolerans": {
+    "TOLERANS_MS": 250,
+    "FAZ_MS": 2500,
+    "YERLESME_MS": 400
+  },
+  "olcumler": [],
+  "sorunlar": [],
+  "sureMs": 23765,
+  "manifest": {
+    "manifest_version": 2,
+    "name": "Sayaç",
+    "version": "0.1.0",
+    "description": "YouTube izleme süresini üç kalemde ayırır: izleniyor · duraklatıldı · mola.",
+    "browser_specific_settings": {
+      "gecko": {
+        "id": "sayac@sayac.local"
+      }
+    },
+    "browser_action": {
+      "default_popup": "pencere.html",
+      "default_title": "Sayaç"
+    },
+    "background": {
+      "scripts": [
+        "sonda-ayar.js",
+        "sonda-arkaplan.js",
+        "sayac.js",
+        "arkaplan.js"
+      ],
+      "persistent": true
+    },
+    "content_scripts": [
+      {
+        "matches": [
+          "*://*.youtube.com/*",
+          "http://127.0.0.1/*"
+        ],
+        "js": [
+          "sonda-ayar.js",
+          "icerik.js",
+          "sonda-icerik.js"
+        ],
+        "run_at": "document_idle",
+        "all_frames": false
+      }
+    ],
+    "web_accessible_resources": [
+      "pencere.html"
+    ]
+  },
+  "yedekYolB": {
+    "sebep": "pencere sekme 1 numarali sekmeyi HEDEFLIYOR ama arka plan sekme 3 icin yanit veriyor (arkaplan.js:73-78 golgelemesi). Bu baglamda arayuzden okunan rakam urunun amacladigi yolu OLCMEZ.",
+    "rapor": {
+      "deney": "pencere",
+      "tur": "21",
+      "ust": "0",
+      "getCurrent": "hata:can't access property \"getCurrent\", API.tabs is undefined",
+      "baglam": "iframe",
+      "tabsTipi": "undefined",
+      "sorguUzunluk": "yok",
+      "sorguId": "yok",
+      "urlTipi": "yok",
+      "sorguHata": "can't access property \"query\", API.tabs is undefined",
+      "urlSuzgec": "hata:can't access property \"query\", API.tabs is undefined",
+      "pencereHedef": "yok",
+      "bicimTipi": "function",
+      "yoklamaVar": "0",
+      "probe1Gonderilen": "999999",
+      "probe1Donen": "1",
+      "probe1Izleniyor": "0",
+      "probe2Gonderilen": "888888",
+      "probe2Donen": "1",
+      "probe2Izleniyor": "0",
+      "bgSekmeId": "1",
+      "bgAn": "1786724410458",
+      "bgIzleniyor": "0",
+      "bgDuraklatildi": "20970",
+      "bgMola": "0",
+      "bgDurum": "DURAKLATILDI",
+      "mfPopup": "moz-extension://ede052c7-4fdd-4132-a416-a22ac35a2a80/pencere.html",
+      "mfBaslik": "Sayaç",
+      "openPopup": "denenmedi",
+      "sIzleniyor": "0:00:00",
+      "sDuraklatildi": "0:00:00",
+      "sMola": "0:00:00",
+      "sDurum": "",
+      "sBtnMola": "MOLA",
+      "sBtnAna": "DUR",
+      "sUyari": "Hedef sekme belirlenemedi.",
+      "sBaslik": "Sayaç",
+      "sEtiketler": "İzleniyor|Duraklatıldı|Mola|Durum:",
+      "uc": "/olay",
+      "ms": 1786724410460
+    }
+  },
+  "dizeler": [
+    {
+      "alan": "baslik",
+      "beklenen": "Sayaç",
+      "okunan": "Sayaç",
+      "ok": true
+    },
+    {
+      "alan": "etIzleniyor",
+      "beklenen": "İzleniyor",
+      "okunan": "İzleniyor",
+      "ok": true
+    },
+    {
+      "alan": "etDuraklatildi",
+      "beklenen": "Duraklatıldı",
+      "okunan": "Duraklatıldı",
+      "ok": true
+    },
+    {
+      "alan": "etMola",
+      "beklenen": "Mola",
+      "okunan": "Mola",
+      "ok": true
+    },
+    {
+      "alan": "etDurum",
+      "beklenen": "Durum:",
+      "okunan": "Durum:",
+      "ok": true
+    },
+    {
+      "alan": "btnMola",
+      "beklenen": "MOLA",
+      "okunan": "MOLA",
+      "ok": true
+    },
+    {
+      "alan": "btnAna",
+      "beklenen": "DUR",
+      "okunan": "DUR",
+      "ok": true
+    },
+    {
+      "alan": "uyari(kelepce)",
+      "beklenen": "Hedef sekme belirlenemedi.",
+      "okunan": "Hedef sekme belirlenemedi.",
+      "ok": true
+    },
+    {
+      "alan": "mfBaslik",
+      "beklenen": "Sayaç",
+      "okunan": "Sayaç",
+      "ok": true
+    }
+  ],
+  "manifestBildirimi": {
+    "mfPopup": "moz-extension://ede052c7-4fdd-4132-a416-a22ac35a2a80/pencere.html",
+    "mfBaslik": "Sayaç",
+    "popupTamam": true
+  },
+  "kelepce": {
+    "uyari": "Hedef sekme belirlenemedi.",
+    "sayaclar": [
+      "0:00:00",
+      "0:00:00",
+      "0:00:00"
+    ],
+    "calisti": true,
+    "sebep": "can't access property \"query\", API.tabs is undefined"
+  },
+  "olculemeyen": {
+    "kriter 2 — iki cetvelin ortusmesi": "pencere canli sayi gostermedigi icin olculemedi",
+    "kriter 3 — MOLA butonunun uc durumu": "butona tiklanamadi (asagidaki dort yol da olculerek dustu)",
+    "kriter 4 — DUR/DEVAM ET'in uc durumu": "ayni sebep",
+    "kriter 5 — MOLA videoyu duraklatti mi (arayuzden)": "ayni sebep; DAVRANIS olcumu Y6'da"
+  },
+  "isaretSayisi": 137
+}

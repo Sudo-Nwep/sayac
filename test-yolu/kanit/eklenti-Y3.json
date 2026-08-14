@@ -10,16 +10,16 @@
   "olcumler": [
     {
       "ad": "ilk video oynuyor",
-      "dAn": 2755,
+      "dAn": 2772,
       "d": {
-        "izleniyor": 2755,
+        "izleniyor": 2772,
         "duraklatildi": 0,
         "mola": 0
       },
       "cetvelB": {
         "video": "v1",
         "paused": false,
-        "currentTime": 3.221,
+        "currentTime": 3.275,
         "readyState": 4,
         "visibilityState": "visible",
         "icerikBetigi": "1"
@@ -27,16 +27,16 @@
     },
     {
       "ad": "ikinci video oynuyor",
-      "dAn": 2754,
+      "dAn": 2769,
       "d": {
-        "izleniyor": 2754,
+        "izleniyor": 2769,
         "duraklatildi": 0,
         "mola": 0
       },
       "cetvelB": {
         "video": "v2",
         "paused": false,
-        "currentTime": 3.285,
+        "currentTime": 3.221,
         "readyState": 4,
         "visibilityState": "visible",
         "icerikBetigi": "1"
@@ -44,7 +44,7 @@
     }
   ],
   "sorunlar": [],
-  "sureMs": 8994,
+  "sureMs": 9303,
   "manifest": {
     "manifest_version": 2,
     "name": "Sayaç",
@@ -54,6 +54,10 @@
       "gecko": {
         "id": "sayac@sayac.local"
       }
+    },
+    "browser_action": {
+      "default_popup": "pencere.html",
+      "default_title": "Sayaç"
     },
     "background": {
       "scripts": [
@@ -82,13 +86,13 @@
   },
   "oncesiSonrasi": {
     "oncesi": {
-      "izleniyor": 3229,
-      "duraklatildi": 21,
+      "izleniyor": 3242,
+      "duraklatildi": 30,
       "mola": 0
     },
     "sonrasi": {
-      "izleniyor": 6476,
-      "duraklatildi": 27,
+      "izleniyor": 6502,
+      "duraklatildi": 39,
       "mola": 0
     }
   },

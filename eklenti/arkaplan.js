@@ -12,6 +12,7 @@
 var API = typeof browser !== "undefined" ? browser : chrome;
 
 var sekmeler = new Map(); // sekmeId -> sayac.js durumu (donmuş nesne)
+var kanallar = new Map(); // sekmeId -> içerik betiğinin açtığı port
 var arkaPlanBaslangicMs = Date.now();
 var sonGunBasi = gunBasi(Date.now());
 var kelepceSayisi = 0; // saat geriye gitti / gece yarısı damgası kelepçelendi
@@ -88,6 +89,19 @@ function mesajIsle(msg, sender) {
     var t = simdi(d);
     d = uygula(d, { tur: msg.olay, t: t });
     sekmeler.set(sekmeId, d);
+    // MOLA'ya geçildiyse oynayan video duraklatılır (SAYAC_TEKLIF.md:50-51).
+    // Tetikleme GÖRÜNEN DURUMA bakar, bayrağa değil: ana anahtar kapalıyken görünen
+    // durum KAPALI'dır ve video duraklatılmaz. Bu bilinçlidir.
+    if (durumAdi(d) === DURUMLAR.MOLA) {
+      var p = kanallar.get(sekmeId);
+      if (p) {
+        try {
+          p.postMessage({ tur: "video-duraklat" });
+        } catch (e) {
+          /* port kopmuş — onDisconnect temizler */
+        }
+      }
+    }
     return { tamam: true, sekmeId: sekmeId, durumAdi: durumAdi(d), anMs: t };
   }
 
@@ -114,10 +128,24 @@ API.runtime.onMessage.addListener(function (msg, sender) {
   return Promise.resolve(mesajIsle(msg, sender));
 });
 
+// Bağlantıyı İÇERİK BETİĞİ başlatır → hiçbir izin gerekmez.
+API.runtime.onConnect.addListener(function (port) {
+  if (!port || port.name !== "sayac") return;
+  var id = port.sender && port.sender.tab && typeof port.sender.tab.id === "number"
+    ? port.sender.tab.id
+    : null;
+  if (id === null) return;
+  kanallar.set(id, port);
+  port.onDisconnect.addListener(function () {
+    if (kanallar.get(id) === port) kanallar.delete(id);
+  });
+});
+
 // Sekme kapanınca birikmiş süre silinir — geçmiş gün/oturum kaydı kapsam dışı
 // (SAYAC_TEKLIF.md:81). "tabs" izni gerekmez.
 if (API.tabs && API.tabs.onRemoved) {
   API.tabs.onRemoved.addListener(function (sekmeId) {
     sekmeler.delete(sekmeId);
+    kanallar.delete(sekmeId); // port sızıntısı olmasın
   });
 }

@@ -8,7 +8,31 @@
 
 ## 🔵 Şu ANKİ TEK İŞ
 
-> **Madde 3 kapandı — kurulabilir eklenti var, sekme başına ayrı sayaç ölçüldü.**
+> **Madde 4 — arayüz yazıldı; davranış ölçüldü, arayüzden ölçüm kısmen ölçülemedi.**
+>
+> `eklenti/pencere.html` + `pencere.js` + `bicim.js`; manifest `browser_action.default_popup`
+> bildiriyor. **İzin eklenmedi** — Y14 karşıt deneyi: izinsizken `tabs.query` sekme kimliğini
+> döndürdü (`sorguId=2`), `tabs` izniyle **birebir aynı**.
+> **Ölçülenler:** Y15 biçimlendirici **13/13** · Y6 (mesaj API'si yolu) **5 faz, sapma tam 0** —
+> molada üçüncü kova işledi, **KAPALI'da üçü de tam 0**, video **gerçekten duraklatıldı**
+> (`video.paused=true`), kümülatif sıfırlanmadı · Y11 **9/9 Türkçe dize birebir** + manifest
+> bildirimi + ürünün bozulma kelepçesi çalıştı · Y1/Y7 eklenti hâlâ yükleniyor (MV2 ve MV3).
+> `npm run eklenti:test` → **çıkış 0**, zorunlu kırmızı **0**.
+>
+> **⚠️ ÖLÇÜLEMEDİ (adıyla):** butonlara Playwright ile tıklanamadı — **dört yol** birebir hata
+> metinleriyle elendi (WAR iframe'de `API.tabs` **undefined** · `page.goto` zaman aşımı ·
+> `window.open`'a Playwright bağlanamıyor · sonda kanalı **yarışlı**). Bu yüzden MOLA ve
+> DUR/DEVAM ET'in üç durumu **arayüzden** ölçülemedi; **davranışları** Y6'da ölçüldü.
+> Sekme kimliği zinciri de ölçülemedi: `arkaplan.js:73-78` önceliği `msg.sekmeId`'yi
+> **gölgeliyor** (`999999` gönderildi, `1` döndü). Ayrıntı: `ARAYUZ.md`.
+>
+> **Sıradaki tek iş:** madde 5 — private GitHub deposu, README, etiket, gizli taraması.
+> Madde 5'e giren açıklar: Y10 (LibreWolf kurulumu) · Y4 (arka plandaki sekme) ·
+> gerçek araç çubuğu paneli bağlamı.
+>
+> ---
+>
+> **Madde 3 (kapandı) — kurulabilir eklenti var, sekme başına ayrı sayaç ölçüldü.**
 >
 > `eklenti/` — MV2, **hiçbir host izni yok**, içerik betiği yalnız YouTube'a enjekte olur.
 > Sayaç mantığı ikinci kez yazılmadı: `eklenti/sayac.js`, `mantik/sayac.mjs`'ten **üretilir**
@@ -77,10 +101,10 @@
 
 | # | İş | Durum | Not |
 |---|---|---|---|
-| 1 | Madde 4 — arayüz (üç sayaç, iki buton, Türkçe) | 🔵 bugün | Mesaj API'si hazır (`EKLENTI.md`). Playwright eli var → iki butonun üç durumu ölçülebilir. MOLA'nın videoyu duraklatması **burada** yazılır |
-| 2 | Madde 5 — private GitHub deposu, README, etiket | ⚪ sırada | `git push` yalnız burada, önceden yetkili. ⚠️ Y10 (LibreWolf kurulumu) ölçülemedi — sıradaki somut adım `EKLENTI.md` 7b'de |
+| 1 | Madde 5 — private GitHub deposu, README, etiket, gizli taraması | 🔵 bugün | `git push` yalnız burada, önceden yetkili. Açıklar: Y10 (LibreWolf kurulumu, `EKLENTI.md` 7b) · Y4 (arka plandaki sekme) · gerçek araç çubuğu paneli bağlamı (`ARAYUZ.md`) |
 
-**Biten:** madde 1 (`TEST_YOLU.md`) · madde 2 (`MANTIK.md`) · madde 3 (`EKLENTI.md`) —
+**Biten:** madde 1 (`TEST_YOLU.md`) · madde 2 (`MANTIK.md`) · madde 3 (`EKLENTI.md`) ·
+madde 4 (`ARAYUZ.md`) —
 küme A kapandı, küme B'nin ilk yarısı bitti.
 
 **Durum kodları:** 🔵 bugün · ⚪ sırada · 🔴 takıldı · ✅ bitti (→ arşive)

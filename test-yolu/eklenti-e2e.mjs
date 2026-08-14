@@ -264,14 +264,65 @@ async function y6(ctx) {
   if (f2.g2 && f2.g2.durumAdi !== "MOLA")
     sorunlar.push(`mola acikken durum "${f2.g2.durumAdi}", "MOLA" olmaliydi`);
 
+  // ⚠️ MADDE 4'TE EKLENDİ — kontrol GÜÇLENDİRİLDİ, gevşetilmedi:
+  // MOLA artık oynayan videoyu GERÇEKTEN duraklatır (SAYAC_TEKLIF.md:50-51).
+  // Sayfa gerçeğinden okunur, ürünün raporundan değil (K09).
+  if (f2.cetvelB && f2.cetvelB.paused !== true)
+    sorunlar.push(`[mola acik] video.paused=${f2.cetvelB.paused}, true olmaliydi — URUN videoyu duraklatmadi`);
+  sonuc.videoDuraklatma = f2.cetvelB ? { paused: f2.cetvelB.paused, currentTime: f2.cetvelB.currentTime } : null;
+
+  // ⚠️ BEKLENEN KOVA DEGISTI — tolerans DEGISMEDI.
+  // Tur 003'te "mola-aç" yalnizca KAYDEDILIYORDU (EKLENTI.md:230-233), video oynamaya
+  // devam ediyordu, bu yuzden mola kapaninca ilerleyen kova "izleniyor" idi.
+  // Madde 4'te urun videoyu duraklatiyor → mola kapaninca gorunen durum DURAKLATILDI
+  // olur ve ilerleyen kova "duraklatildi"dir. Kaynak: SAYAC_TEKLIF.md:50-51 + :55.
+  // Ayrica durumAdi kontrolu EKLENDI (once yoktu) → hucre guclendi.
   const f3 = await faz(sayfa, "mola kapali", async () => {
     await sayfa.evaluate(() => window.sayacKomut("mola-kapat"));
     await bekle(400);
   });
-  fazYaz(yaz, f3, "izleniyor");
-  sorunlar.push(...fazKontrol(f3, "izleniyor").map((s) => `[mola kapali] ${s}`));
+  fazYaz(yaz, f3, "duraklatildi");
+  sorunlar.push(...fazKontrol(f3, "duraklatildi").map((s) => `[mola kapali] ${s}`));
+  if (f3.g2 && f3.g2.durumAdi !== "DURAKLATILDI")
+    sorunlar.push(`[mola kapali] durum "${f3.g2.durumAdi}", "DURAKLATILDI" olmaliydi (video devam ETTIRILMEZ karari)`);
+  if (f3.cetvelB && f3.cetvelB.paused !== true)
+    sorunlar.push(`[mola kapali] video.paused=${f3.cetvelB.paused} — karar geregi hala true olmaliydi`);
 
-  sonuc.olcumler = [f1, f2, f3].map((f) => ({ ad: f.ad, dAn: f.dAn, d: f.d, durum: f.g2 && f.g2.durumAdi, cetvelB: f.cetvelB }));
+  // ── DUR / DEVAM ET davranisi (madde 4, kriter 4) ──
+  // Arayuz butonuna Playwright ile tiklanamadi (dort yol olculerek dustu, ARAYUZ.md).
+  // Bu yuzden ayni davranis mesaj API'si yolundan olculur. ARAYUZ DEGIL, DAVRANIS.
+  await sayfa.evaluate(() => window.oynat("v1"));
+  await bekle(400);
+  const f4 = await faz(sayfa, "ana kapali", async () => {
+    await sayfa.evaluate(() => window.sayacKomut("ana-kapat"));
+    await bekle(400);
+  });
+  fazYaz(yaz, f4, null); // UCU DE tam 0 beklenir
+  sorunlar.push(...fazKontrol(f4, null).map((s) => `[ana kapali] ${s}`));
+  if (f4.g2 && f4.g2.durumAdi !== "KAPALI")
+    sorunlar.push(`[ana kapali] durum "${f4.g2.durumAdi}", "KAPALI" olmaliydi`);
+  // CANLILIK: "her sey durdu" ile "baglanti koptu" ayni rakami verir → Δan olculur.
+  const canli = f4.dAn > 2000;
+  yaz(`  CANLILIK (ana kapali): Δan=${f4.dAn} ms → ${canli ? "arka plan CANLI" : "OLCULEMEDI"}`);
+  if (!canli) sorunlar.push(`[ana kapali] canlilik kanitlanamadi: Δan=${f4.dAn} ms (>2000 gerekir)`);
+
+  const T1 = f4.g2 ? f4.g2.toplam : null;
+  const f5 = await faz(sayfa, "ana tekrar acik", async () => {
+    await sayfa.evaluate(() => window.sayacKomut("ana-kapat")); // TEK toggle
+    await bekle(400);
+  });
+  fazYaz(yaz, f5, "izleniyor");
+  sorunlar.push(...fazKontrol(f5, "izleniyor").map((s) => `[ana tekrar acik] ${s}`));
+  if (f5.g2 && f5.g2.durumAdi !== "İZLENİYOR")
+    sorunlar.push(`[ana tekrar acik] durum "${f5.g2.durumAdi}", "İZLENİYOR" olmaliydi`);
+  const T2 = f5.g2 ? f5.g2.toplam : null;
+  if (T1 && T2) {
+    yaz(`  KUMULATIF T1=${JSON.stringify(T1)} → T2=${JSON.stringify(T2)} (sifirlanmadi mi: ${T2.izleniyor >= T1.izleniyor})`);
+    sonuc.anaKapatKumulatif = { T1, T2, sifirlanmadi: T2.izleniyor >= T1.izleniyor };
+    if (T2.izleniyor < T1.izleniyor) sorunlar.push(`[ana tekrar acik] kumulatif SIFIRLANDI: ${T1.izleniyor} → ${T2.izleniyor}`);
+  }
+
+  sonuc.olcumler = [f1, f2, f3, f4, f5].map((f) => ({ ad: f.ad, dAn: f.dAn, d: f.d, durum: f.g2 && f.g2.durumAdi, cetvelB: f.cetvelB }));
   bitir(sonuc, sorunlar);
 }
 

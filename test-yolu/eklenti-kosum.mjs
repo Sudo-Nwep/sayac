@@ -23,11 +23,26 @@ const HUCRELER = [
   { ad: "Y7", betik: "eklenti-e2e.mjs", arg: ["Y7"], sure: 180000, zorunlu: true, ne: "Y1'in aynısı, MV3 varyant manifestle" },
   { ad: "Y8", betik: "karsit-izin.mjs", arg: [], sure: 240000, zorunlu: true, ne: "host_permissions karşıt deneyi (2×2 × MV2/MV3)" },
   { ad: "Y9", betik: "eklenti-youtube.mjs", arg: [], sure: 240000, zorunlu: false, ne: "bir gerçek YouTube duman testi (kırılgan → ortam)" },
-  { ad: "Y10", betik: "librewolf.mjs", arg: [], sure: 540000, zorunlu: false, ne: "LibreWolf taşınabilir (Aday B yolu) → ya kanıt ya ölçülemedi" },
+  { ad: "Y10", betik: "librewolf.mjs", arg: [], sure: 540000, zorunlu: false, varsayilan: false, ne: "LibreWolf taşınabilir (Aday B yolu) → ya kanıt ya ölçülemedi" },
+  // ── madde 4 (arayüz) ──
+  { ad: "Y15", betik: "bicim-testi.mjs", arg: [], sure: 60000, zorunlu: true, ne: "sureBicim doğruluk tablosu (tarayıcısız, node:vm)" },
+  { ad: "Y16", betik: "arayuz-e2e.mjs", arg: ["Y16"], sure: 240000, zorunlu: true, ne: "SEKME KİMLİĞİ ZİNCİRİ — karşıt deney + pozitif kontrol" },
+  { ad: "Y11", betik: "arayuz-e2e.mjs", arg: ["Y11"], sure: 240000, zorunlu: true, ne: "pencere yüklendi · üç sayaç · iki cetvel · Türkçe dizeler" },
+  { ad: "Y12", betik: "arayuz-e2e.mjs", arg: ["Y12"], sure: 240000, zorunlu: true, ne: "MOLA butonu — üç durum + video gerçekten duraklatıldı" },
+  { ad: "Y13", betik: "arayuz-e2e.mjs", arg: ["Y13"], sure: 240000, zorunlu: true, ne: "DUR/DEVAM ET — üç durum + birikmiş toplam sıfırlanmadı" },
+  { ad: "Y14", betik: "arayuz-izin.mjs", arg: [], sure: 300000, zorunlu: true, ne: "izin bütçesi — karşıt deney (izinsiz ↔ tabs izinli)" },
 ];
 
+const ATLANAN_GEREKCE = {
+  Y10: "ayni RDP hatasi (ECONNREFUSED) 4 kez alindi; 5. kez durma esigidir (HEDEF.md:156). Y10, 005 turunun isi.",
+};
+
 const secili = process.argv.slice(2).map((s) => s.toUpperCase());
-const kosulacak = secili.length ? HUCRELER.filter((h) => secili.includes(h.ad)) : HUCRELER;
+const kosulacak = secili.length
+  ? HUCRELER.filter((h) => secili.includes(h.ad))
+  : HUCRELER.filter((h) => h.varsayilan !== false);
+// SESSİZ KIRPMA YOK: atlanan hücre adıyla ve gerekçesiyle tabloya girer.
+const atlanan = secili.length ? [] : HUCRELER.filter((h) => h.varsayilan === false);
 
 fs.mkdirSync(KANIT, { recursive: true });
 
@@ -93,6 +108,16 @@ for (const h of kosulacak) {
   }
   rapor.push(s);
   process.stdout.write(`    durum=${s.durum}${s.sebep ? " — " + s.sebep.split("\n")[0] : ""} (${s.ebeveynSure} ms)\n`);
+}
+
+for (const h of atlanan) {
+  const s = {
+    hucre: h.ad, durum: "atlandı", zorunlu: h.zorunlu, ne: h.ne,
+    sebep: ATLANAN_GEREKCE[h.ad] || "varsayilan kosumda atlanir",
+    ebeveynSure: 0, log: "—",
+  };
+  rapor.push(s);
+  process.stdout.write(`\n>>> HUCRE ${h.ad} — ATLANDI: ${s.sebep}\n`);
 }
 
 fs.writeFileSync(path.join(KANIT, "eklenti-rapor.json"), JSON.stringify(rapor, null, 2), "utf8");

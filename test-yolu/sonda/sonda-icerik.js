@@ -13,6 +13,15 @@
     typeof SAYAC_TEST !== "undefined" && SAYAC_TEST.aralikMs ? SAYAC_TEST.aralikMs : 250;
   var sunucu = typeof SAYAC_TEST !== "undefined" ? SAYAC_TEST.sunucu : null;
 
+  // Pencerenin moz-extension:// adresini sayfadan okunabilir kıl.
+  // UUID profil başına RASTGELEDİR — sabitlenmez, OKUNUR. Hiçbir pref, hiçbir tahmin.
+  try {
+    document.documentElement.setAttribute(
+      "data-sayac-pencere",
+      API.runtime.getURL("pencere.html")
+    );
+  } catch (e) {}
+
   function yay(g) {
     if (!g || g.hata) return;
     try {

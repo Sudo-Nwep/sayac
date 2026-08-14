@@ -1,0 +1,102 @@
+{
+  "hucre": "Y15",
+  "durum": "YESIL",
+  "sebep": "",
+  "satirlar": [
+    {
+      "girdi": "0",
+      "beklenen": "0:00:00",
+      "okunan": "0:00:00",
+      "gecti": true
+    },
+    {
+      "girdi": "999",
+      "beklenen": "0:00:00",
+      "okunan": "0:00:00",
+      "gecti": true
+    },
+    {
+      "girdi": "1000",
+      "beklenen": "0:00:01",
+      "okunan": "0:00:01",
+      "gecti": true
+    },
+    {
+      "girdi": "59999",
+      "beklenen": "0:00:59",
+      "okunan": "0:00:59",
+      "gecti": true
+    },
+    {
+      "girdi": "60000",
+      "beklenen": "0:01:00",
+      "okunan": "0:01:00",
+      "gecti": true
+    },
+    {
+      "girdi": "3599999",
+      "beklenen": "0:59:59",
+      "okunan": "0:59:59",
+      "gecti": true
+    },
+    {
+      "girdi": "3600000",
+      "beklenen": "1:00:00",
+      "okunan": "1:00:00",
+      "gecti": true
+    },
+    {
+      "girdi": "86399000",
+      "beklenen": "23:59:59",
+      "okunan": "23:59:59",
+      "gecti": true
+    },
+    {
+      "girdi": "86400000",
+      "beklenen": "24:00:00",
+      "okunan": "24:00:00",
+      "gecti": true
+    },
+    {
+      "girdi": "-1",
+      "beklenen": "0:00:00",
+      "okunan": "0:00:00",
+      "gecti": true
+    },
+    {
+      "girdi": "NaN",
+      "beklenen": "0:00:00",
+      "okunan": "0:00:00",
+      "gecti": true
+    },
+    {
+      "girdi": "null",
+      "beklenen": "0:00:00",
+      "okunan": "0:00:00",
+      "gecti": true
+    },
+    {
+      "girdi": "\"abc\"",
+      "beklenen": "0:00:00",
+      "okunan": "0:00:00",
+      "gecti": true
+    }
+  ],
+  "gecen": 13,
+  "kalan": 0,
+  "saflik": {
+    "yasakli": [
+      "document",
+      "window",
+      "fetch",
+      "localStorage",
+      "browser.",
+      "chrome."
+    ],
+    "bulunan": [],
+    "hamBulunan": [
+      "document",
+      "window"
+    ]
+  }
+}

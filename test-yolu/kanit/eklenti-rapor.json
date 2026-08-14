@@ -11,9 +11,9 @@
     "olcumler": [
       {
         "ad": "oynat",
-        "dAn": 2795,
+        "dAn": 2754,
         "d": {
-          "izleniyor": 2795,
+          "izleniyor": 2754,
           "duraklatildi": 0,
           "mola": 0
         },
@@ -21,7 +21,7 @@
         "cetvelB": {
           "video": "v1",
           "paused": false,
-          "currentTime": 3.285,
+          "currentTime": 3.264,
           "readyState": 4,
           "visibilityState": "visible",
           "icerikBetigi": "1"
@@ -29,17 +29,17 @@
       },
       {
         "ad": "duraklat",
-        "dAn": 2524,
+        "dAn": 2756,
         "d": {
           "izleniyor": 0,
-          "duraklatildi": 2524,
+          "duraklatildi": 2756,
           "mola": 0
         },
         "durum": "DURAKLATILDI",
         "cetvelB": {
           "video": "v1",
           "paused": true,
-          "currentTime": 3.285,
+          "currentTime": 3.264,
           "readyState": 4,
           "visibilityState": "visible",
           "icerikBetigi": "1"
@@ -47,9 +47,9 @@
       },
       {
         "ad": "tekrar oynat",
-        "dAn": 2776,
+        "dAn": 2753,
         "d": {
-          "izleniyor": 2776,
+          "izleniyor": 2753,
           "duraklatildi": 0,
           "mola": 0
         },
@@ -57,7 +57,7 @@
         "cetvelB": {
           "video": "v1",
           "paused": false,
-          "currentTime": 6.507,
+          "currentTime": 6.485,
           "readyState": 4,
           "visibilityState": "visible",
           "icerikBetigi": "1"
@@ -65,7 +65,7 @@
       }
     ],
     "sorunlar": [],
-    "sureMs": 12206,
+    "sureMs": 12524,
     "manifest": {
       "manifest_version": 2,
       "name": "Sayaç",
@@ -75,6 +75,10 @@
         "gecko": {
           "id": "sayac@sayac.local"
         }
+      },
+      "browser_action": {
+        "default_popup": "pencere.html",
+        "default_title": "Sayaç"
       },
       "background": {
         "scripts": [
@@ -102,11 +106,11 @@
       ]
     },
     "manifestSurumu": 2,
-    "isaretSayisi": 39,
+    "isaretSayisi": 40,
     "ne": "yerel uçtan uca (MV2): oynat→duraklat→oynat",
     "zorunlu": true,
     "cikisKodu": 0,
-    "ebeveynSure": 12830,
+    "ebeveynSure": 13177,
     "log": "test-yolu/kanit/eklenti-Y1.log"
   },
   {
@@ -121,9 +125,9 @@
     "olcumler": [
       {
         "ad": "A: oynuyor",
-        "dAn": 2754,
+        "dAn": 2755,
         "d": {
-          "izleniyor": 2754,
+          "izleniyor": 2755,
           "duraklatildi": 0,
           "mola": 0
         },
@@ -131,7 +135,7 @@
         "cetvelB": {
           "video": "v1",
           "paused": false,
-          "currentTime": 7.221,
+          "currentTime": 7.264,
           "readyState": 4,
           "visibilityState": "visible",
           "icerikBetigi": "1"
@@ -139,10 +143,10 @@
       },
       {
         "ad": "B: durakli",
-        "dAn": 2754,
+        "dAn": 2755,
         "d": {
           "izleniyor": 0,
-          "duraklatildi": 2754,
+          "duraklatildi": 2755,
           "mola": 0
         },
         "sekmeId": 2,
@@ -157,7 +161,7 @@
       }
     ],
     "sorunlar": [],
-    "sureMs": 9826,
+    "sureMs": 9981,
     "manifest": {
       "manifest_version": 2,
       "name": "Sayaç",
@@ -167,6 +171,10 @@
         "gecko": {
           "id": "sayac@sayac.local"
         }
+      },
+      "browser_action": {
+        "default_popup": "pencere.html",
+        "default_title": "Sayaç"
       },
       "background": {
         "scripts": [
@@ -197,8 +205,8 @@
       "A": {
         "sekmeId": 1,
         "toplam": {
-          "izleniyor": 7231,
-          "duraklatildi": 24,
+          "izleniyor": 7225,
+          "duraklatildi": 35,
           "mola": 0
         }
       },
@@ -206,7 +214,7 @@
         "sekmeId": 2,
         "toplam": {
           "izleniyor": 0,
-          "duraklatildi": 3742,
+          "duraklatildi": 3733,
           "mola": 0
         }
       }
@@ -215,7 +223,7 @@
     "ne": "iki sekme aynı anda — karışmıyorlar mı",
     "zorunlu": true,
     "cikisKodu": 0,
-    "ebeveynSure": 10463,
+    "ebeveynSure": 10652,
     "log": "test-yolu/kanit/eklenti-Y2.log"
   },
   {
@@ -230,16 +238,16 @@
     "olcumler": [
       {
         "ad": "ilk video oynuyor",
-        "dAn": 2755,
+        "dAn": 2772,
         "d": {
-          "izleniyor": 2755,
+          "izleniyor": 2772,
           "duraklatildi": 0,
           "mola": 0
         },
         "cetvelB": {
           "video": "v1",
           "paused": false,
-          "currentTime": 3.221,
+          "currentTime": 3.275,
           "readyState": 4,
           "visibilityState": "visible",
           "icerikBetigi": "1"
@@ -247,16 +255,16 @@
       },
       {
         "ad": "ikinci video oynuyor",
-        "dAn": 2754,
+        "dAn": 2769,
         "d": {
-          "izleniyor": 2754,
+          "izleniyor": 2769,
           "duraklatildi": 0,
           "mola": 0
         },
         "cetvelB": {
           "video": "v2",
           "paused": false,
-          "currentTime": 3.285,
+          "currentTime": 3.221,
           "readyState": 4,
           "visibilityState": "visible",
           "icerikBetigi": "1"
@@ -264,7 +272,7 @@
       }
     ],
     "sorunlar": [],
-    "sureMs": 8994,
+    "sureMs": 9303,
     "manifest": {
       "manifest_version": 2,
       "name": "Sayaç",
@@ -274,6 +282,10 @@
         "gecko": {
           "id": "sayac@sayac.local"
         }
+      },
+      "browser_action": {
+        "default_popup": "pencere.html",
+        "default_title": "Sayaç"
       },
       "background": {
         "scripts": [
@@ -302,13 +314,13 @@
     },
     "oncesiSonrasi": {
       "oncesi": {
-        "izleniyor": 3229,
-        "duraklatildi": 21,
+        "izleniyor": 3242,
+        "duraklatildi": 30,
         "mola": 0
       },
       "sonrasi": {
-        "izleniyor": 6476,
-        "duraklatildi": 27,
+        "izleniyor": 6502,
+        "duraklatildi": 39,
         "mola": 0
       }
     },
@@ -316,7 +328,7 @@
     "ne": "aynı sekmede ikinci video — sayaç sıfırlanmıyor mu",
     "zorunlu": true,
     "cikisKodu": 0,
-    "ebeveynSure": 9651,
+    "ebeveynSure": 9953,
     "log": "test-yolu/kanit/eklenti-Y3.log"
   },
   {
@@ -330,7 +342,7 @@
     },
     "olcumler": [],
     "sorunlar": [],
-    "sureMs": 8237,
+    "sureMs": 8517,
     "manifest": {
       "manifest_version": 2,
       "name": "Sayaç",
@@ -340,6 +352,10 @@
         "gecko": {
           "id": "sayac@sayac.local"
         }
+      },
+      "browser_action": {
+        "default_popup": "pencere.html",
+        "default_title": "Sayaç"
       },
       "background": {
         "scripts": [
@@ -370,16 +386,16 @@
     "kismiOlcum": {
       "not": "visibilityState 'hidden' YAPILAMADI; asagidaki rakam yalnizca 'A sekmesi one alinmis DEGIL' kosulunda olculdu — 'arka plandaki sekme' kanIti DEGILDIR",
       "ad": "onde olmayan sekmede oynuyor",
-      "dAn": 2753,
+      "dAn": 2771,
       "d": {
-        "izleniyor": 2753,
+        "izleniyor": 2771,
         "duraklatildi": 0,
         "mola": 0
       },
       "cetvelB": {
         "video": "v1",
         "paused": false,
-        "currentTime": 3.605,
+        "currentTime": 3.883,
         "readyState": 4,
         "visibilityState": "visible",
         "icerikBetigi": "1"
@@ -387,11 +403,11 @@
       "sorunlar": []
     },
     "onSekmeSayisi": 2,
-    "isaretSayisi": 18,
+    "isaretSayisi": 19,
     "ne": "arka plandaki sekme — visibilityState hidden",
     "zorunlu": true,
     "cikisKodu": 0,
-    "ebeveynSure": 8861,
+    "ebeveynSure": 9180,
     "log": "test-yolu/kanit/eklenti-Y4.log",
     "headlessDenemesi": {
       "durum": "ölçülemedi",
@@ -411,16 +427,16 @@
     "olcumler": [
       {
         "ad": "devir oncesi oynuyor",
-        "dAn": 2762,
+        "dAn": 2754,
         "d": {
-          "izleniyor": 2762,
+          "izleniyor": 2754,
           "duraklatildi": 0,
           "mola": 0
         },
         "cetvelB": {
           "video": "v1",
           "paused": false,
-          "currentTime": 3.253,
+          "currentTime": 3.211,
           "readyState": 4,
           "visibilityState": "visible",
           "icerikBetigi": "1"
@@ -428,16 +444,16 @@
       },
       {
         "ad": "devir sonrasi oynuyor",
-        "dAn": 2753,
+        "dAn": 2756,
         "d": {
-          "izleniyor": 2753,
+          "izleniyor": 2756,
           "duraklatildi": 0,
           "mola": 0
         },
         "cetvelB": {
           "video": "v1",
           "paused": false,
-          "currentTime": 26.741,
+          "currentTime": 26.56,
           "readyState": 4,
           "visibilityState": "visible",
           "icerikBetigi": "1"
@@ -445,7 +461,7 @@
       }
     ],
     "sorunlar": [],
-    "sureMs": 29253,
+    "sureMs": 29260,
     "manifest": {
       "manifest_version": 2,
       "name": "Sayaç",
@@ -455,6 +471,10 @@
         "gecko": {
           "id": "sayac@sayac.local"
         }
+      },
+      "browser_action": {
+        "default_popup": "pencere.html",
+        "default_title": "Sayaç"
       },
       "background": {
         "scripts": [
@@ -484,32 +504,32 @@
     "geceYarisi": {
       "oncesi": {
         "toplam": {
-          "izleniyor": 3231,
-          "duraklatildi": 26,
+          "izleniyor": 3217,
+          "duraklatildi": 34,
           "mola": 0
         },
         "gunBasiMs": 1786654800000,
-        "anMs": 1786741180104,
+        "anMs": 1786741180318,
         "durumAdi": "İZLENİYOR"
       },
       "sonrasi": {
         "toplam": {
-          "izleniyor": 133,
+          "izleniyor": 106,
           "duraklatildi": 0,
           "mola": 0
         },
         "gunBasiMs": 1786741200000,
-        "anMs": 1786741200133,
+        "anMs": 1786741200106,
         "durumAdi": "İZLENİYOR"
       },
       "gunBasiFarki": 86400000,
       "kelepceSayisi": 0
     },
-    "isaretSayisi": 108,
+    "isaretSayisi": 107,
     "ne": "gece yarısı — üç sayaç sıfırlanıyor mu",
     "zorunlu": true,
     "cikisKodu": 0,
-    "ebeveynSure": 29889,
+    "ebeveynSure": 29921,
     "log": "test-yolu/kanit/eklenti-Y5.log"
   },
   {
@@ -524,9 +544,9 @@
     "olcumler": [
       {
         "ad": "mola oncesi oynuyor",
-        "dAn": 2754,
+        "dAn": 2753,
         "d": {
-          "izleniyor": 2754,
+          "izleniyor": 2753,
           "duraklatildi": 0,
           "mola": 0
         },
@@ -534,7 +554,7 @@
         "cetvelB": {
           "video": "v1",
           "paused": false,
-          "currentTime": 3.285,
+          "currentTime": 3.211,
           "readyState": 4,
           "visibilityState": "visible",
           "icerikBetigi": "1"
@@ -542,17 +562,17 @@
       },
       {
         "ad": "mola acik",
-        "dAn": 2753,
+        "dAn": 2754,
         "d": {
           "izleniyor": 0,
           "duraklatildi": 0,
-          "mola": 2753
+          "mola": 2754
         },
         "durum": "MOLA",
         "cetvelB": {
           "video": "v1",
-          "paused": false,
-          "currentTime": 7.04,
+          "paused": true,
+          "currentTime": 3.456,
           "readyState": 4,
           "visibilityState": "visible",
           "icerikBetigi": "1"
@@ -560,6 +580,42 @@
       },
       {
         "ad": "mola kapali",
+        "dAn": 2753,
+        "d": {
+          "izleniyor": 0,
+          "duraklatildi": 2753,
+          "mola": 0
+        },
+        "durum": "DURAKLATILDI",
+        "cetvelB": {
+          "video": "v1",
+          "paused": true,
+          "currentTime": 3.456,
+          "readyState": 4,
+          "visibilityState": "visible",
+          "icerikBetigi": "1"
+        }
+      },
+      {
+        "ad": "ana kapali",
+        "dAn": 2766,
+        "d": {
+          "izleniyor": 0,
+          "duraklatildi": 0,
+          "mola": 0
+        },
+        "durum": "KAPALI",
+        "cetvelB": {
+          "video": "v1",
+          "paused": false,
+          "currentTime": 7.701,
+          "readyState": 4,
+          "visibilityState": "visible",
+          "icerikBetigi": "1"
+        }
+      },
+      {
+        "ad": "ana tekrar acik",
         "dAn": 2754,
         "d": {
           "izleniyor": 2754,
@@ -570,7 +626,7 @@
         "cetvelB": {
           "video": "v1",
           "paused": false,
-          "currentTime": 10.741,
+          "currentTime": 11.467,
           "readyState": 4,
           "visibilityState": "visible",
           "icerikBetigi": "1"
@@ -578,7 +634,7 @@
       }
     ],
     "sorunlar": [],
-    "sureMs": 13446,
+    "sureMs": 21551,
     "manifest": {
       "manifest_version": 2,
       "name": "Sayaç",
@@ -588,6 +644,10 @@
         "gecko": {
           "id": "sayac@sayac.local"
         }
+      },
+      "browser_action": {
+        "default_popup": "pencere.html",
+        "default_title": "Sayaç"
       },
       "background": {
         "scripts": [
@@ -614,11 +674,28 @@
         }
       ]
     },
-    "isaretSayisi": 44,
+    "videoDuraklatma": {
+      "paused": true,
+      "currentTime": 3.456
+    },
+    "anaKapatKumulatif": {
+      "T1": {
+        "izleniyor": 3909,
+        "duraklatildi": 3602,
+        "mola": 3754
+      },
+      "T2": {
+        "izleniyor": 7414,
+        "duraklatildi": 3602,
+        "mola": 3754
+      },
+      "sifirlanmadi": true
+    },
+    "isaretSayisi": 76,
     "ne": "mola — üçüncü kova (API çağrısı, arayüz değil)",
     "zorunlu": true,
     "cikisKodu": 0,
-    "ebeveynSure": 14061,
+    "ebeveynSure": 22204,
     "log": "test-yolu/kanit/eklenti-Y6.log"
   },
   {
@@ -633,9 +710,9 @@
     "olcumler": [
       {
         "ad": "oynat",
-        "dAn": 2753,
+        "dAn": 2754,
         "d": {
-          "izleniyor": 2753,
+          "izleniyor": 2754,
           "duraklatildi": 0,
           "mola": 0
         },
@@ -643,7 +720,7 @@
         "cetvelB": {
           "video": "v1",
           "paused": false,
-          "currentTime": 3.275,
+          "currentTime": 3.264,
           "readyState": 4,
           "visibilityState": "visible",
           "icerikBetigi": "1"
@@ -651,17 +728,17 @@
       },
       {
         "ad": "duraklat",
-        "dAn": 2752,
+        "dAn": 2758,
         "d": {
           "izleniyor": 0,
-          "duraklatildi": 2752,
+          "duraklatildi": 2758,
           "mola": 0
         },
         "durum": "DURAKLATILDI",
         "cetvelB": {
           "video": "v1",
           "paused": true,
-          "currentTime": 3.275,
+          "currentTime": 3.264,
           "readyState": 4,
           "visibilityState": "visible",
           "icerikBetigi": "1"
@@ -679,7 +756,7 @@
         "cetvelB": {
           "video": "v1",
           "paused": false,
-          "currentTime": 6.507,
+          "currentTime": 6.475,
           "readyState": 4,
           "visibilityState": "visible",
           "icerikBetigi": "1"
@@ -687,7 +764,7 @@
       }
     ],
     "sorunlar": [],
-    "sureMs": 12422,
+    "sureMs": 12588,
     "manifest": {
       "manifest_version": 3,
       "name": "Sayaç",
@@ -720,14 +797,18 @@
           "run_at": "document_idle",
           "all_frames": false
         }
-      ]
+      ],
+      "action": {
+        "default_popup": "pencere.html",
+        "default_title": "Sayaç"
+      }
     },
     "manifestSurumu": 3,
     "isaretSayisi": 40,
     "ne": "Y1'in aynısı, MV3 varyant manifestle",
     "zorunlu": true,
     "cikisKodu": 0,
-    "ebeveynSure": 13067,
+    "ebeveynSure": 13284,
     "log": "test-yolu/kanit/eklenti-Y7.log"
   },
   {
@@ -820,7 +901,7 @@
     "ne": "host_permissions karşıt deneyi (2×2 × MV2/MV3)",
     "zorunlu": true,
     "cikisKodu": 0,
-    "ebeveynSure": 18874,
+    "ebeveynSure": 21481,
     "log": "test-yolu/kanit/eklenti-Y8.log"
   },
   {
@@ -843,16 +924,16 @@
     "olcumler": [
       {
         "ad": "youtube: oynuyor",
-        "dAn": 2806,
+        "dAn": 2822,
         "d": {
-          "izleniyor": 2806,
+          "izleniyor": 2822,
           "duraklatildi": 0,
           "mola": 0
         },
         "cetvelB": {
           "videoVar": true,
           "paused": false,
-          "currentTime": 46794.134,
+          "currentTime": 0.721,
           "readyState": 4,
           "visibilityState": "visible",
           "icerikBetigi": "1",
@@ -862,16 +943,16 @@
       },
       {
         "ad": "youtube: durakli",
-        "dAn": 2755,
+        "dAn": 2758,
         "d": {
           "izleniyor": 0,
-          "duraklatildi": 2755,
+          "duraklatildi": 2758,
           "mola": 0
         },
         "cetvelB": {
           "videoVar": true,
           "paused": true,
-          "currentTime": 46794.134,
+          "currentTime": 0.721,
           "readyState": 4,
           "visibilityState": "visible",
           "icerikBetigi": "1",
@@ -885,29 +966,751 @@
     "ne": "bir gerçek YouTube duman testi (kırılgan → ortam)",
     "zorunlu": false,
     "cikisKodu": 0,
-    "ebeveynSure": 18223,
+    "ebeveynSure": 21971,
     "log": "test-yolu/kanit/eklenti-Y9.log"
   },
   {
-    "hucre": "Y10",
-    "durum": "ölçülemedi",
-    "sebep": "[adim: web-ext ile yukleme] Error: connect ECONNREFUSED 127.0.0.1:57877",
-    "yol": "Aday B — Mozilla web-ext RDP (Aday A uygulanamaz: Playwright'ın Firefox'u yamalı)",
-    "surum": "153.0.4-1",
-    "url": "https://dl.librewolf.net/librewolf/153.0.4-1/librewolf-153.0.4-1-windows-x86_64-portable.zip",
-    "ikili": "C:\\Users\\kadio\\AppData\\Local\\Temp\\sayac-librewolf-BJcDH9\\librewolf-153.0.4-1\\LibreWolf\\librewolf.exe",
-    "adim": "web-ext ile yukleme",
-    "olcum": null,
-    "policies": "{\n    \"__COMMENT__ More Information\": \"https://github.com/mozilla/policy-templates/blob/master/README.md\",\n    \"policies\": {\n        \"AIControls\": {\n            \"Translations\": {\n                \"Value\": \"available\"\n            },\n            \"PDFAltText\": {\n                \"Value\": \"blocked\"\n            },\n            \"SmartTabGroups\": {\n                \"Value\": \"blocked\"\n            },\n            \"LinkPreviewKeyPoints\": {\n                \"Value\": \"blocked\"\n            },\n            \"SidebarChatbot\": {\n                \"Value\": \"blocked\"\n            },\n            \"SmartWindow\": {\n                \"Value\": \"blocked\"\n            }\n        },\n        \"AppUpdateURL\": \"https://localhost\",\n        \"DisableAppUpdate\": true,\n        \"DisableDefaultBrowserAgent\": true,\n        \"DisableFeedbackCommands\": true,\n        \"DisableFirefoxStudies\": true,\n        \"DisableRemoteImprovements\": true,\n        \"DisableSetDesktopBackground\": false,\n        \"DisableTelemetry\": true,\n        \"DontCheckDefaultBrowser\": true,\n        \"WebsiteFilter\": {\n            \"Block\": [\n                \"https://localhost/*\"\n            ],\n            \"Exceptions\": [\n                \"https://localhost/*\"\n            ]\n        },\n        \"EncryptedMediaExtensions\": {\n            \"Enabled\": false\n        },\n        \"ExtensionSettings\": {\n            \"*\": {\n                \"blocked_install_message\": \"LibreWolf does not allow installing Language Packs.\",\n                \"installation_mode\": \"allowed\",\n                \"allowed_types\": [\"dictionary\", \"extension\", \"sitepermission\", \"theme\"]\n            },\n            \"uBlock0@raymondhill.net\": {\n                \"install_url\": \"https://addons.mozilla.org/firefox/downloads/latest/uBlock0@raymondhill.net/latest.xpi\",\n                \"installation_mode\": \"normal_installed\",\n                \"private_browsing\": true\n            }\n        },\n        \"FirefoxHome\": {\n            \"Weather\": false,\n            \"TopSites\": false,\n            \"SponsoredTopSites\": false,\n ",
-    "policyYamasi": {
-      "HttpsOnlyMode": "enabled → disabled",
-      "WebsiteFilter": "silindi"
+    "hucre": "Y15",
+    "durum": "YESIL",
+    "sebep": "",
+    "satirlar": [
+      {
+        "girdi": "0",
+        "beklenen": "0:00:00",
+        "okunan": "0:00:00",
+        "gecti": true
+      },
+      {
+        "girdi": "999",
+        "beklenen": "0:00:00",
+        "okunan": "0:00:00",
+        "gecti": true
+      },
+      {
+        "girdi": "1000",
+        "beklenen": "0:00:01",
+        "okunan": "0:00:01",
+        "gecti": true
+      },
+      {
+        "girdi": "59999",
+        "beklenen": "0:00:59",
+        "okunan": "0:00:59",
+        "gecti": true
+      },
+      {
+        "girdi": "60000",
+        "beklenen": "0:01:00",
+        "okunan": "0:01:00",
+        "gecti": true
+      },
+      {
+        "girdi": "3599999",
+        "beklenen": "0:59:59",
+        "okunan": "0:59:59",
+        "gecti": true
+      },
+      {
+        "girdi": "3600000",
+        "beklenen": "1:00:00",
+        "okunan": "1:00:00",
+        "gecti": true
+      },
+      {
+        "girdi": "86399000",
+        "beklenen": "23:59:59",
+        "okunan": "23:59:59",
+        "gecti": true
+      },
+      {
+        "girdi": "86400000",
+        "beklenen": "24:00:00",
+        "okunan": "24:00:00",
+        "gecti": true
+      },
+      {
+        "girdi": "-1",
+        "beklenen": "0:00:00",
+        "okunan": "0:00:00",
+        "gecti": true
+      },
+      {
+        "girdi": "NaN",
+        "beklenen": "0:00:00",
+        "okunan": "0:00:00",
+        "gecti": true
+      },
+      {
+        "girdi": "null",
+        "beklenen": "0:00:00",
+        "okunan": "0:00:00",
+        "gecti": true
+      },
+      {
+        "girdi": "\"abc\"",
+        "beklenen": "0:00:00",
+        "okunan": "0:00:00",
+        "gecti": true
+      }
+    ],
+    "gecen": 13,
+    "kalan": 0,
+    "saflik": {
+      "yasakli": [
+        "document",
+        "window",
+        "fetch",
+        "localStorage",
+        "browser.",
+        "chrome."
+      ],
+      "bulunan": [],
+      "hamBulunan": [
+        "document",
+        "window"
+      ]
     },
-    "overrideYazildi": "C:\\Users\\kadio\\AppData\\Local\\Temp\\sayac-librewolf-profil-lsO2hg\\librewolf.overrides.cfg",
-    "ne": "LibreWolf taşınabilir (Aday B yolu) → ya kanıt ya ölçülemedi",
-    "zorunlu": false,
+    "ne": "sureBicim doğruluk tablosu (tarayıcısız, node:vm)",
+    "zorunlu": true,
     "cikisKodu": 0,
-    "ebeveynSure": 50044,
-    "log": "test-yolu/kanit/eklenti-Y10.log"
+    "ebeveynSure": 53,
+    "log": "test-yolu/kanit/eklenti-Y15.log"
+  },
+  {
+    "hucre": "Y16",
+    "durum": "olculemedi",
+    "sebep": "OLCULEMEDI - iki katman birden: (1) arkaplan.js:73-78 onceligi msg.sekmeId'yi golgeliyor (gonderilen 999999 -> donen 1); (2) WAR iframe baglaminda API.tabs UNDEFINED (\"can't access property \"query\", API.tabs is undefined\") oldugu icin pencere kimlik BILE cozemiyor ve urunun kelepcesi devreye giriyor. Olculen: tabs.query -> yok, sonda -> 1. Pencerenin kimlik cozumu bu baglamda SINANAMAZ.",
+    "tolerans": {
+      "TOLERANS_MS": 250,
+      "FAZ_MS": 2500,
+      "YERLESME_MS": 400
+    },
+    "olcumler": [],
+    "sorunlar": [],
+    "sureMs": 16132,
+    "manifest": {
+      "manifest_version": 2,
+      "name": "Sayaç",
+      "version": "0.1.0",
+      "description": "YouTube izleme süresini üç kalemde ayırır: izleniyor · duraklatıldı · mola.",
+      "browser_specific_settings": {
+        "gecko": {
+          "id": "sayac@sayac.local"
+        }
+      },
+      "browser_action": {
+        "default_popup": "pencere.html",
+        "default_title": "Sayaç"
+      },
+      "background": {
+        "scripts": [
+          "sonda-ayar.js",
+          "sonda-arkaplan.js",
+          "sayac.js",
+          "arkaplan.js"
+        ],
+        "persistent": true
+      },
+      "content_scripts": [
+        {
+          "matches": [
+            "*://*.youtube.com/*",
+            "http://127.0.0.1/*"
+          ],
+          "js": [
+            "sonda-ayar.js",
+            "icerik.js",
+            "sonda-icerik.js"
+          ],
+          "run_at": "document_idle",
+          "all_frames": false
+        }
+      ],
+      "web_accessible_resources": [
+        "pencere.html"
+      ]
+    },
+    "adimlar": {
+      "16a": {
+        "durum": "ölçüldü",
+        "probe1": {
+          "gonderilen": "999999",
+          "donen": "1",
+          "esit": false,
+          "izleniyor": "1799"
+        },
+        "probe2": {
+          "gonderilen": "888888",
+          "donen": "1",
+          "esit": false,
+          "izleniyor": "1800"
+        },
+        "gercekSekmeId": "1",
+        "gercekIzleniyor": "2449",
+        "golgeleme": true,
+        "hamRapor": {
+          "deney": "pencere",
+          "tur": "3",
+          "ust": "0",
+          "getCurrent": "hata:can't access property \"getCurrent\", API.tabs is undefined",
+          "baglam": "iframe",
+          "tabsTipi": "undefined",
+          "sorguUzunluk": "yok",
+          "sorguId": "yok",
+          "urlTipi": "yok",
+          "sorguHata": "can't access property \"query\", API.tabs is undefined",
+          "urlSuzgec": "hata:can't access property \"query\", API.tabs is undefined",
+          "pencereHedef": "yok",
+          "bicimTipi": "function",
+          "yoklamaVar": "0",
+          "probe1Gonderilen": "999999",
+          "probe1Donen": "1",
+          "probe1Izleniyor": "1799",
+          "probe2Gonderilen": "888888",
+          "probe2Donen": "1",
+          "probe2Izleniyor": "1800",
+          "bgSekmeId": "1",
+          "bgAn": "1786724374758",
+          "bgIzleniyor": "1801",
+          "bgDuraklatildi": "303",
+          "bgMola": "0",
+          "bgDurum": "İZLENİYOR",
+          "mfPopup": "moz-extension://4025e28b-1fac-480a-96bc-8b35c7cddedd/pencere.html",
+          "mfBaslik": "Sayaç",
+          "openPopup": "denenmedi",
+          "sIzleniyor": "0:00:00",
+          "sDuraklatildi": "0:00:00",
+          "sMola": "0:00:00",
+          "sDurum": "",
+          "sBtnMola": "MOLA",
+          "sBtnAna": "DUR",
+          "sUyari": "Hedef sekme belirlenemedi.",
+          "sBaslik": "Sayaç",
+          "sEtiketler": "İzleniyor|Duraklatıldı|Mola|Durum:",
+          "uc": "/olay",
+          "ms": 1786724374761
+        }
+      },
+      "16b": {
+        "durum": "ölçüldü",
+        "pencereHedef": "null",
+        "sorguId": "yok",
+        "sondaSekmeId": "1"
+      },
+      "16c": {
+        "durum": "ölçüldü",
+        "ayirtEdici": true,
+        "probe1Gonderilen": "999999",
+        "probe1Donen": "2",
+        "getCurrent": "2",
+        "sorguId": "2",
+        "uyariMetni": "Hedef sekme belirlenemedi.",
+        "kelepceCalisti": true,
+        "sayaclar": [
+          "0:00:00",
+          "0:00:00",
+          "0:00:00"
+        ],
+        "hamRapor": {
+          "deney": "pencere",
+          "tur": "1",
+          "ust": "1",
+          "getCurrent": "2",
+          "baglam": "sekme",
+          "tabsTipi": "object",
+          "sorguUzunluk": "1",
+          "sorguId": "2",
+          "urlTipi": "string",
+          "sorguHata": "",
+          "urlSuzgec": "sonuc:0",
+          "pencereHedef": "yok",
+          "bicimTipi": "function",
+          "yoklamaVar": "0",
+          "probe1Gonderilen": "999999",
+          "probe1Donen": "2",
+          "probe1Izleniyor": "0",
+          "probe2Gonderilen": "888888",
+          "probe2Donen": "2",
+          "probe2Izleniyor": "0",
+          "bgSekmeId": "2",
+          "bgAn": "1786724376017",
+          "bgIzleniyor": "0",
+          "bgDuraklatildi": "2",
+          "bgMola": "0",
+          "bgDurum": "DURAKLATILDI",
+          "mfPopup": "moz-extension://4025e28b-1fac-480a-96bc-8b35c7cddedd/pencere.html",
+          "mfBaslik": "Sayaç",
+          "openPopup": "denenmedi",
+          "sIzleniyor": "0:00:00",
+          "sDuraklatildi": "0:00:00",
+          "sMola": "0:00:00",
+          "sDurum": "",
+          "sBtnMola": "MOLA",
+          "sBtnAna": "DUR",
+          "sUyari": "Hedef sekme belirlenemedi.",
+          "sBaslik": "Sayaç",
+          "sEtiketler": "İzleniyor|Duraklatıldı|Mola|Durum:",
+          "uc": "/olay",
+          "ms": 1786724376019
+        }
+      },
+      "16d": {
+        "durum": "ölçülemedi",
+        "sebep": "panel baglamindan rapor dusmedi",
+        "openPopup": "donus:null"
+      }
+    },
+    "karar": "OLCULEMEDI - iki katman birden: (1) arkaplan.js:73-78 onceligi msg.sekmeId'yi golgeliyor (gonderilen 999999 -> donen 1); (2) WAR iframe baglaminda API.tabs UNDEFINED (\"can't access property \"query\", API.tabs is undefined\") oldugu icin pencere kimlik BILE cozemiyor ve urunun kelepcesi devreye giriyor. Olculen: tabs.query -> yok, sonda -> 1. Pencerenin kimlik cozumu bu baglamda SINANAMAZ.",
+    "isaretSayisi": 78,
+    "ne": "SEKME KİMLİĞİ ZİNCİRİ — karşıt deney + pozitif kontrol",
+    "zorunlu": true,
+    "cikisKodu": 0,
+    "ebeveynSure": 16787,
+    "log": "test-yolu/kanit/eklenti-Y16.log"
+  },
+  {
+    "hucre": "Y11",
+    "durum": "ölçülemedi",
+    "sebep": "pencere CANLI baglamda acilamadi: pencere sekme 1 numarali sekmeyi HEDEFLIYOR ama arka plan sekme 3 icin yanit veriyor (arkaplan.js:73-78 golgelemesi). Bu baglamda arayuzden okunan rakam urunun amacladigi yolu OLCMEZ.",
+    "tolerans": {
+      "TOLERANS_MS": 250,
+      "FAZ_MS": 2500,
+      "YERLESME_MS": 400
+    },
+    "olcumler": [],
+    "sorunlar": [],
+    "sureMs": 23765,
+    "manifest": {
+      "manifest_version": 2,
+      "name": "Sayaç",
+      "version": "0.1.0",
+      "description": "YouTube izleme süresini üç kalemde ayırır: izleniyor · duraklatıldı · mola.",
+      "browser_specific_settings": {
+        "gecko": {
+          "id": "sayac@sayac.local"
+        }
+      },
+      "browser_action": {
+        "default_popup": "pencere.html",
+        "default_title": "Sayaç"
+      },
+      "background": {
+        "scripts": [
+          "sonda-ayar.js",
+          "sonda-arkaplan.js",
+          "sayac.js",
+          "arkaplan.js"
+        ],
+        "persistent": true
+      },
+      "content_scripts": [
+        {
+          "matches": [
+            "*://*.youtube.com/*",
+            "http://127.0.0.1/*"
+          ],
+          "js": [
+            "sonda-ayar.js",
+            "icerik.js",
+            "sonda-icerik.js"
+          ],
+          "run_at": "document_idle",
+          "all_frames": false
+        }
+      ],
+      "web_accessible_resources": [
+        "pencere.html"
+      ]
+    },
+    "yedekYolB": {
+      "sebep": "pencere sekme 1 numarali sekmeyi HEDEFLIYOR ama arka plan sekme 3 icin yanit veriyor (arkaplan.js:73-78 golgelemesi). Bu baglamda arayuzden okunan rakam urunun amacladigi yolu OLCMEZ.",
+      "rapor": {
+        "deney": "pencere",
+        "tur": "21",
+        "ust": "0",
+        "getCurrent": "hata:can't access property \"getCurrent\", API.tabs is undefined",
+        "baglam": "iframe",
+        "tabsTipi": "undefined",
+        "sorguUzunluk": "yok",
+        "sorguId": "yok",
+        "urlTipi": "yok",
+        "sorguHata": "can't access property \"query\", API.tabs is undefined",
+        "urlSuzgec": "hata:can't access property \"query\", API.tabs is undefined",
+        "pencereHedef": "yok",
+        "bicimTipi": "function",
+        "yoklamaVar": "0",
+        "probe1Gonderilen": "999999",
+        "probe1Donen": "1",
+        "probe1Izleniyor": "0",
+        "probe2Gonderilen": "888888",
+        "probe2Donen": "1",
+        "probe2Izleniyor": "0",
+        "bgSekmeId": "1",
+        "bgAn": "1786724410458",
+        "bgIzleniyor": "0",
+        "bgDuraklatildi": "20970",
+        "bgMola": "0",
+        "bgDurum": "DURAKLATILDI",
+        "mfPopup": "moz-extension://ede052c7-4fdd-4132-a416-a22ac35a2a80/pencere.html",
+        "mfBaslik": "Sayaç",
+        "openPopup": "denenmedi",
+        "sIzleniyor": "0:00:00",
+        "sDuraklatildi": "0:00:00",
+        "sMola": "0:00:00",
+        "sDurum": "",
+        "sBtnMola": "MOLA",
+        "sBtnAna": "DUR",
+        "sUyari": "Hedef sekme belirlenemedi.",
+        "sBaslik": "Sayaç",
+        "sEtiketler": "İzleniyor|Duraklatıldı|Mola|Durum:",
+        "uc": "/olay",
+        "ms": 1786724410460
+      }
+    },
+    "dizeler": [
+      {
+        "alan": "baslik",
+        "beklenen": "Sayaç",
+        "okunan": "Sayaç",
+        "ok": true
+      },
+      {
+        "alan": "etIzleniyor",
+        "beklenen": "İzleniyor",
+        "okunan": "İzleniyor",
+        "ok": true
+      },
+      {
+        "alan": "etDuraklatildi",
+        "beklenen": "Duraklatıldı",
+        "okunan": "Duraklatıldı",
+        "ok": true
+      },
+      {
+        "alan": "etMola",
+        "beklenen": "Mola",
+        "okunan": "Mola",
+        "ok": true
+      },
+      {
+        "alan": "etDurum",
+        "beklenen": "Durum:",
+        "okunan": "Durum:",
+        "ok": true
+      },
+      {
+        "alan": "btnMola",
+        "beklenen": "MOLA",
+        "okunan": "MOLA",
+        "ok": true
+      },
+      {
+        "alan": "btnAna",
+        "beklenen": "DUR",
+        "okunan": "DUR",
+        "ok": true
+      },
+      {
+        "alan": "uyari(kelepce)",
+        "beklenen": "Hedef sekme belirlenemedi.",
+        "okunan": "Hedef sekme belirlenemedi.",
+        "ok": true
+      },
+      {
+        "alan": "mfBaslik",
+        "beklenen": "Sayaç",
+        "okunan": "Sayaç",
+        "ok": true
+      }
+    ],
+    "manifestBildirimi": {
+      "mfPopup": "moz-extension://ede052c7-4fdd-4132-a416-a22ac35a2a80/pencere.html",
+      "mfBaslik": "Sayaç",
+      "popupTamam": true
+    },
+    "kelepce": {
+      "uyari": "Hedef sekme belirlenemedi.",
+      "sayaclar": [
+        "0:00:00",
+        "0:00:00",
+        "0:00:00"
+      ],
+      "calisti": true,
+      "sebep": "can't access property \"query\", API.tabs is undefined"
+    },
+    "olculemeyen": {
+      "kriter 2 — iki cetvelin ortusmesi": "pencere canli sayi gostermedigi icin olculemedi",
+      "kriter 3 — MOLA butonunun uc durumu": "butona tiklanamadi (asagidaki dort yol da olculerek dustu)",
+      "kriter 4 — DUR/DEVAM ET'in uc durumu": "ayni sebep",
+      "kriter 5 — MOLA videoyu duraklatti mi (arayuzden)": "ayni sebep; DAVRANIS olcumu Y6'da"
+    },
+    "isaretSayisi": 137,
+    "ne": "pencere yüklendi · üç sayaç · iki cetvel · Türkçe dizeler",
+    "zorunlu": true,
+    "cikisKodu": 0,
+    "ebeveynSure": 24504,
+    "log": "test-yolu/kanit/eklenti-Y11.log"
+  },
+  {
+    "hucre": "Y12",
+    "durum": "ölçülemedi",
+    "sebep": "MOLA butonuna tiklanamadi: pencere sekme 1 numarali sekmeyi HEDEFLIYOR ama arka plan sekme 3 icin yanit veriyor (arkaplan.js:73-78 golgelemesi). Bu baglamda arayuzden okunan rakam urunun amacladigi yolu OLCMEZ.",
+    "tolerans": {
+      "TOLERANS_MS": 250,
+      "FAZ_MS": 2500,
+      "YERLESME_MS": 400
+    },
+    "olcumler": [],
+    "sorunlar": [],
+    "sureMs": 23943,
+    "manifest": {
+      "manifest_version": 2,
+      "name": "Sayaç",
+      "version": "0.1.0",
+      "description": "YouTube izleme süresini üç kalemde ayırır: izleniyor · duraklatıldı · mola.",
+      "browser_specific_settings": {
+        "gecko": {
+          "id": "sayac@sayac.local"
+        }
+      },
+      "browser_action": {
+        "default_popup": "pencere.html",
+        "default_title": "Sayaç"
+      },
+      "background": {
+        "scripts": [
+          "sonda-ayar.js",
+          "sonda-arkaplan.js",
+          "sayac.js",
+          "arkaplan.js"
+        ],
+        "persistent": true
+      },
+      "content_scripts": [
+        {
+          "matches": [
+            "*://*.youtube.com/*",
+            "http://127.0.0.1/*"
+          ],
+          "js": [
+            "sonda-ayar.js",
+            "icerik.js",
+            "sonda-icerik.js"
+          ],
+          "run_at": "document_idle",
+          "all_frames": false
+        }
+      ],
+      "web_accessible_resources": [
+        "pencere.html"
+      ]
+    },
+    "yedekYolB": {
+      "sebep": "pencere sekme 1 numarali sekmeyi HEDEFLIYOR ama arka plan sekme 3 icin yanit veriyor (arkaplan.js:73-78 golgelemesi). Bu baglamda arayuzden okunan rakam urunun amacladigi yolu OLCMEZ.",
+      "rapor": {
+        "deney": "pencere",
+        "tur": "21",
+        "ust": "0",
+        "getCurrent": "hata:can't access property \"getCurrent\", API.tabs is undefined",
+        "baglam": "iframe",
+        "tabsTipi": "undefined",
+        "sorguUzunluk": "yok",
+        "sorguId": "yok",
+        "urlTipi": "yok",
+        "sorguHata": "can't access property \"query\", API.tabs is undefined",
+        "urlSuzgec": "hata:can't access property \"query\", API.tabs is undefined",
+        "pencereHedef": "yok",
+        "bicimTipi": "function",
+        "yoklamaVar": "0",
+        "probe1Gonderilen": "999999",
+        "probe1Donen": "1",
+        "probe1Izleniyor": "0",
+        "probe2Gonderilen": "888888",
+        "probe2Donen": "1",
+        "probe2Izleniyor": "0",
+        "bgSekmeId": "1",
+        "bgAn": "1786724435023",
+        "bgIzleniyor": "0",
+        "bgDuraklatildi": "20947",
+        "bgMola": "0",
+        "bgDurum": "DURAKLATILDI",
+        "mfPopup": "moz-extension://d32b461b-986b-4796-87fd-c4430598f352/pencere.html",
+        "mfBaslik": "Sayaç",
+        "openPopup": "denenmedi",
+        "sIzleniyor": "0:00:00",
+        "sDuraklatildi": "0:00:00",
+        "sMola": "0:00:00",
+        "sDurum": "",
+        "sBtnMola": "MOLA",
+        "sBtnAna": "DUR",
+        "sUyari": "Hedef sekme belirlenemedi.",
+        "sBaslik": "Sayaç",
+        "sEtiketler": "İzleniyor|Duraklatıldı|Mola|Durum:",
+        "uc": "/olay",
+        "ms": 1786724435025
+      }
+    },
+    "isaretSayisi": 137,
+    "ne": "MOLA butonu — üç durum + video gerçekten duraklatıldı",
+    "zorunlu": true,
+    "cikisKodu": 0,
+    "ebeveynSure": 24622,
+    "log": "test-yolu/kanit/eklenti-Y12.log"
+  },
+  {
+    "hucre": "Y13",
+    "durum": "ölçülemedi",
+    "sebep": "DUR/DEVAM ET butonuna tiklanamadi: urunun kelepcesi tetiklendi \u001d pencere hedef sekmeyi cozemedi. Son rapor: #uyari=\"Hedef sekme belirlenemedi.\" getCurrent=3 sorguId=1",
+    "tolerans": {
+      "TOLERANS_MS": 250,
+      "FAZ_MS": 2500,
+      "YERLESME_MS": 400
+    },
+    "olcumler": [],
+    "sorunlar": [],
+    "sureMs": 35414,
+    "manifest": {
+      "manifest_version": 2,
+      "name": "Sayaç",
+      "version": "0.1.0",
+      "description": "YouTube izleme süresini üç kalemde ayırır: izleniyor · duraklatıldı · mola.",
+      "browser_specific_settings": {
+        "gecko": {
+          "id": "sayac@sayac.local"
+        }
+      },
+      "browser_action": {
+        "default_popup": "pencere.html",
+        "default_title": "Sayaç"
+      },
+      "background": {
+        "scripts": [
+          "sonda-ayar.js",
+          "sonda-arkaplan.js",
+          "sayac.js",
+          "arkaplan.js"
+        ],
+        "persistent": true
+      },
+      "content_scripts": [
+        {
+          "matches": [
+            "*://*.youtube.com/*",
+            "http://127.0.0.1/*"
+          ],
+          "js": [
+            "sonda-ayar.js",
+            "icerik.js",
+            "sonda-icerik.js"
+          ],
+          "run_at": "document_idle",
+          "all_frames": false
+        }
+      ],
+      "web_accessible_resources": [
+        "pencere.html"
+      ]
+    },
+    "yedekYolB": {
+      "sebep": "urunun kelepcesi tetiklendi \u001d pencere hedef sekmeyi cozemedi. Son rapor: #uyari=\"Hedef sekme belirlenemedi.\" getCurrent=3 sorguId=1",
+      "rapor": {
+        "deney": "pencere",
+        "tur": "32",
+        "ust": "0",
+        "getCurrent": "hata:can't access property \"getCurrent\", API.tabs is undefined",
+        "baglam": "iframe",
+        "tabsTipi": "undefined",
+        "sorguUzunluk": "yok",
+        "sorguId": "yok",
+        "urlTipi": "yok",
+        "sorguHata": "can't access property \"query\", API.tabs is undefined",
+        "urlSuzgec": "hata:can't access property \"query\", API.tabs is undefined",
+        "pencereHedef": "yok",
+        "bicimTipi": "function",
+        "yoklamaVar": "0",
+        "probe1Gonderilen": "999999",
+        "probe1Donen": "1",
+        "probe1Izleniyor": "0",
+        "probe2Gonderilen": "888888",
+        "probe2Donen": "1",
+        "probe2Izleniyor": "0",
+        "bgSekmeId": "1",
+        "bgAn": "1786724470694",
+        "bgIzleniyor": "0",
+        "bgDuraklatildi": "31994",
+        "bgMola": "0",
+        "bgDurum": "DURAKLATILDI",
+        "mfPopup": "moz-extension://ec811df3-3768-4922-8e01-1bd15dce0cea/pencere.html",
+        "mfBaslik": "Sayaç",
+        "openPopup": "denenmedi",
+        "sIzleniyor": "0:00:00",
+        "sDuraklatildi": "0:00:00",
+        "sMola": "0:00:00",
+        "sDurum": "",
+        "sBtnMola": "MOLA",
+        "sBtnAna": "DUR",
+        "sUyari": "Hedef sekme belirlenemedi.",
+        "sBaslik": "Sayaç",
+        "sEtiketler": "İzleniyor|Duraklatıldı|Mola|Durum:",
+        "uc": "/olay",
+        "ms": 1786724470698
+      }
+    },
+    "isaretSayisi": 215,
+    "ne": "DUR/DEVAM ET — üç durum + birikmiş toplam sıfırlanmadı",
+    "zorunlu": true,
+    "cikisKodu": 0,
+    "ebeveynSure": 36103,
+    "log": "test-yolu/kanit/eklenti-Y13.log"
+  },
+  {
+    "hucre": "Y14",
+    "durum": "YESIL",
+    "sebep": "",
+    "tablo": [
+      {
+        "etiket": "A izinsiz",
+        "ekIzinler": "[]",
+        "manifestIzinleri": "null",
+        "tabsTipi": "object",
+        "sorguUzunluk": "1",
+        "sorguId": "2",
+        "urlTipi": "string",
+        "sorguHata": "",
+        "urlSuzgec": "sonuc:0",
+        "getCurrent": "2",
+        "pencereHedef": "yok",
+        "uyari": "Hedef sekme belirlenemedi."
+      },
+      {
+        "etiket": "B tabs izinli",
+        "ekIzinler": "[\"tabs\"]",
+        "manifestIzinleri": "[\"tabs\"]",
+        "tabsTipi": "object",
+        "sorguUzunluk": "1",
+        "sorguId": "2",
+        "urlTipi": "string",
+        "sorguHata": "",
+        "urlSuzgec": "sonuc:0",
+        "getCurrent": "2",
+        "pencereHedef": "yok",
+        "uyari": "Hedef sekme belirlenemedi."
+      }
+    ],
+    "yorum": "Arayuz YENI IZIN GEREKTIRMEDI: izinsiz manifestle tabs.query sekme kimligini DONDURDU (sorguId=2). IZNIN NE SATIN ALDIGI: urlTipi A=string → B=string; url suzgeci A=sonuc:0 → B=sonuc:0.",
+    "ne": "izin bütçesi — karşıt deney (izinsiz ↔ tabs izinli)",
+    "zorunlu": true,
+    "cikisKodu": 0,
+    "ebeveynSure": 8101,
+    "log": "test-yolu/kanit/eklenti-Y14.log"
+  },
+  {
+    "hucre": "Y10",
+    "durum": "atlandı",
+    "zorunlu": false,
+    "ne": "LibreWolf taşınabilir (Aday B yolu) → ya kanıt ya ölçülemedi",
+    "sebep": "ayni RDP hatasi (ECONNREFUSED) 4 kez alindi; 5. kez durma esigidir (HEDEF.md:156). Y10, 005 turunun isi.",
+    "ebeveynSure": 0,
+    "log": "—"
   }
 ]

@@ -1,0 +1,187 @@
+{
+  "hucre": "Y16",
+  "durum": "olculemedi",
+  "sebep": "OLCULEMEDI - iki katman birden: (1) arkaplan.js:73-78 onceligi msg.sekmeId'yi golgeliyor (gonderilen 999999 -> donen 1); (2) WAR iframe baglaminda API.tabs UNDEFINED (\"can't access property \"query\", API.tabs is undefined\") oldugu icin pencere kimlik BILE cozemiyor ve urunun kelepcesi devreye giriyor. Olculen: tabs.query -> yok, sonda -> 1. Pencerenin kimlik cozumu bu baglamda SINANAMAZ.",
+  "tolerans": {
+    "TOLERANS_MS": 250,
+    "FAZ_MS": 2500,
+    "YERLESME_MS": 400
+  },
+  "olcumler": [],
+  "sorunlar": [],
+  "sureMs": 16132,
+  "manifest": {
+    "manifest_version": 2,
+    "name": "Sayaç",
+    "version": "0.1.0",
+    "description": "YouTube izleme süresini üç kalemde ayırır: izleniyor · duraklatıldı · mola.",
+    "browser_specific_settings": {
+      "gecko": {
+        "id": "sayac@sayac.local"
+      }
+    },
+    "browser_action": {
+      "default_popup": "pencere.html",
+      "default_title": "Sayaç"
+    },
+    "background": {
+      "scripts": [
+        "sonda-ayar.js",
+        "sonda-arkaplan.js",
+        "sayac.js",
+        "arkaplan.js"
+      ],
+      "persistent": true
+    },
+    "content_scripts": [
+      {
+        "matches": [
+          "*://*.youtube.com/*",
+          "http://127.0.0.1/*"
+        ],
+        "js": [
+          "sonda-ayar.js",
+          "icerik.js",
+          "sonda-icerik.js"
+        ],
+        "run_at": "document_idle",
+        "all_frames": false
+      }
+    ],
+    "web_accessible_resources": [
+      "pencere.html"
+    ]
+  },
+  "adimlar": {
+    "16a": {
+      "durum": "ölçüldü",
+      "probe1": {
+        "gonderilen": "999999",
+        "donen": "1",
+        "esit": false,
+        "izleniyor": "1799"
+      },
+      "probe2": {
+        "gonderilen": "888888",
+        "donen": "1",
+        "esit": false,
+        "izleniyor": "1800"
+      },
+      "gercekSekmeId": "1",
+      "gercekIzleniyor": "2449",
+      "golgeleme": true,
+      "hamRapor": {
+        "deney": "pencere",
+        "tur": "3",
+        "ust": "0",
+        "getCurrent": "hata:can't access property \"getCurrent\", API.tabs is undefined",
+        "baglam": "iframe",
+        "tabsTipi": "undefined",
+        "sorguUzunluk": "yok",
+        "sorguId": "yok",
+        "urlTipi": "yok",
+        "sorguHata": "can't access property \"query\", API.tabs is undefined",
+        "urlSuzgec": "hata:can't access property \"query\", API.tabs is undefined",
+        "pencereHedef": "yok",
+        "bicimTipi": "function",
+        "yoklamaVar": "0",
+        "probe1Gonderilen": "999999",
+        "probe1Donen": "1",
+        "probe1Izleniyor": "1799",
+        "probe2Gonderilen": "888888",
+        "probe2Donen": "1",
+        "probe2Izleniyor": "1800",
+        "bgSekmeId": "1",
+        "bgAn": "1786724374758",
+        "bgIzleniyor": "1801",
+        "bgDuraklatildi": "303",
+        "bgMola": "0",
+        "bgDurum": "İZLENİYOR",
+        "mfPopup": "moz-extension://4025e28b-1fac-480a-96bc-8b35c7cddedd/pencere.html",
+        "mfBaslik": "Sayaç",
+        "openPopup": "denenmedi",
+        "sIzleniyor": "0:00:00",
+        "sDuraklatildi": "0:00:00",
+        "sMola": "0:00:00",
+        "sDurum": "",
+        "sBtnMola": "MOLA",
+        "sBtnAna": "DUR",
+        "sUyari": "Hedef sekme belirlenemedi.",
+        "sBaslik": "Sayaç",
+        "sEtiketler": "İzleniyor|Duraklatıldı|Mola|Durum:",
+        "uc": "/olay",
+        "ms": 1786724374761
+      }
+    },
+    "16b": {
+      "durum": "ölçüldü",
+      "pencereHedef": "null",
+      "sorguId": "yok",
+      "sondaSekmeId": "1"
+    },
+    "16c": {
+      "durum": "ölçüldü",
+      "ayirtEdici": true,
+      "probe1Gonderilen": "999999",
+      "probe1Donen": "2",
+      "getCurrent": "2",
+      "sorguId": "2",
+      "uyariMetni": "Hedef sekme belirlenemedi.",
+      "kelepceCalisti": true,
+      "sayaclar": [
+        "0:00:00",
+        "0:00:00",
+        "0:00:00"
+      ],
+      "hamRapor": {
+        "deney": "pencere",
+        "tur": "1",
+        "ust": "1",
+        "getCurrent": "2",
+        "baglam": "sekme",
+        "tabsTipi": "object",
+        "sorguUzunluk": "1",
+        "sorguId": "2",
+        "urlTipi": "string",
+        "sorguHata": "",
+        "urlSuzgec": "sonuc:0",
+        "pencereHedef": "yok",
+        "bicimTipi": "function",
+        "yoklamaVar": "0",
+        "probe1Gonderilen": "999999",
+        "probe1Donen": "2",
+        "probe1Izleniyor": "0",
+        "probe2Gonderilen": "888888",
+        "probe2Donen": "2",
+        "probe2Izleniyor": "0",
+        "bgSekmeId": "2",
+        "bgAn": "1786724376017",
+        "bgIzleniyor": "0",
+        "bgDuraklatildi": "2",
+        "bgMola": "0",
+        "bgDurum": "DURAKLATILDI",
+        "mfPopup": "moz-extension://4025e28b-1fac-480a-96bc-8b35c7cddedd/pencere.html",
+        "mfBaslik": "Sayaç",
+        "openPopup": "denenmedi",
+        "sIzleniyor": "0:00:00",
+        "sDuraklatildi": "0:00:00",
+        "sMola": "0:00:00",
+        "sDurum": "",
+        "sBtnMola": "MOLA",
+        "sBtnAna": "DUR",
+        "sUyari": "Hedef sekme belirlenemedi.",
+        "sBaslik": "Sayaç",
+        "sEtiketler": "İzleniyor|Duraklatıldı|Mola|Durum:",
+        "uc": "/olay",
+        "ms": 1786724376019
+      }
+    },
+    "16d": {
+      "durum": "ölçülemedi",
+      "sebep": "panel baglamindan rapor dusmedi",
+      "openPopup": "donus:null"
+    }
+  },
+  "karar": "OLCULEMEDI - iki katman birden: (1) arkaplan.js:73-78 onceligi msg.sekmeId'yi golgeliyor (gonderilen 999999 -> donen 1); (2) WAR iframe baglaminda API.tabs UNDEFINED (\"can't access property \"query\", API.tabs is undefined\") oldugu icin pencere kimlik BILE cozemiyor ve urunun kelepcesi devreye giriyor. Olculen: tabs.query -> yok, sonda -> 1. Pencerenin kimlik cozumu bu baglamda SINANAMAZ.",
+  "isaretSayisi": 78
+}

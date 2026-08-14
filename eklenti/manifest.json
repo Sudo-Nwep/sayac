@@ -8,6 +8,10 @@
       "id": "sayac@sayac.local"
     }
   },
+  "browser_action": {
+    "default_popup": "pencere.html",
+    "default_title": "Sayaç"
+  },
   "background": {
     "scripts": ["sayac.js", "arkaplan.js"],
     "persistent": true

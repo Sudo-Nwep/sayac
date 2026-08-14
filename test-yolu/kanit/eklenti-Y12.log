@@ -1,0 +1,32 @@
+=== SAYAC — madde 3 · hucre Y12 ===
+ne olcer: MOLA butonu — üç durum + video gerçekten duraklatıldı
+komut: "C:\Program Files\nodejs\node.exe" "C:\Users\kadio\Documents\Claude\Projects\Sayac\test-yolu\arayuz-e2e.mjs" Y12
+node=v26.5.0 platform=win32
+sure=24622 ms · cikis kodu=0 · sinyal=null
+======================================================================
+
+[+000000ms] hucre=Y12 · TOLERANS=250 ms · FAZ=2500 ms (koşumdan ÖNCE sabit)
+[+000001ms] firefox ikilisi: C:\Users\kadio\AppData\Local\ms-playwright\firefox-1538\firefox\firefox.exe
+[+000008ms] isaret sunucusu ayakta: http://127.0.0.1:50358
+[+000027ms] pencere sondasi enjekte edildi (YALNIZ test kopyasina)
+[+000027ms] test kopyasi: C:\Users\kadio\AppData\Local\Temp\sayac-ekl-Y12-XiFicr
+[+000027ms] yamali manifest: {"manifest_version":2,"name":"Sayaç","version":"0.1.0","description":"YouTube izleme süresini üç kalemde ayırır: izleniyor · duraklatıldı · mola.","browser_specific_settings":{"gecko":{"id":"sayac@sayac.local"}},"browser_action":{"default_popup":"pencere.html","default_title":"Sayaç"},"background":{"scripts":["sonda-ayar.js","sonda-arkaplan.js","sayac.js","arkaplan.js"],"persistent":true},"content_scripts":[{"matches":["*://*.youtube.com/*","http://127.0.0.1/*"],"js":["sonda-ayar.js","icerik.js","sonda-icerik.js"],"run_at":"document_idle","all_frames":false}],"web_accessible_resources":["pencere.html"]}
+[+000028ms] tek kullanimlik profil: C:\Users\kadio\AppData\Local\Temp\sayac-profil-Y12-LZqWSv
+[+002192ms] EKLENTI YUKLENDI — launchPersistentContext cozuldu (_BrowserContext) headless=true
+[+002331ms] ilk anlik goruntu: {"sekmeId":1,"durumAdi":"DURAKLATILDI","toplam":{"izleniyor":0,"duraklatildi":0,"mola":0},"anMs":1786724414076,"arkaPlanBaslangicMs":1786724413952,"gunBasiMs":1786654800000,"kelepceSayisi":0,"sekmeSayisi":1}
+[+002354ms] pencere adresi (sondadan OKUNDU, sabitlenmedi): moz-extension://d32b461b-986b-4796-87fd-c4430598f352/pencere.html
+[+002620ms] CERCEVE BULUNDU ve #btn-mola gorunur  birincil yol acik
+[+012826ms] YOL 1 tutmadi  birebir hata: TimeoutError: page.goto: Timeout 10000ms exceeded.
+Call log:
+[2m  - navigating to "moz-extension://d32b461b-986b-4796-87fd-c4430598f352/pencere.html", waiting until "commit"[22m
+
+[+012888ms] window.open donusu: pencere nesnesi dondu
+[+020842ms] YOL 2: Playwright sayfaya BAGLANAMADI (context 'page' olayi yok). context.pages(): ["http://127.0.0.1:50358/sayac.html","about:blank"]
+[+020842ms]   ->  sayfa yine de KOSUYOR; olcum ve tiklama sondanin kendi kanalindan yapilacak
+[+020842ms] pencere sekmesi kostu mu: EVET (sonda raporu dustu)
+[+022662ms] pencere sondaya ICERIDEN yeniletildi (__yenile komutu)
+[+023291ms] PENCERE CANLI · pencereHedef=1 · bgSekmeId=3 · getCurrent=3 sorguId=1 · bicimTipi=function · yoklamaVar=1 · DOM=0:00:00/0:00:09/0:00:00 durum="DURAKLATILDI"
+[+023291ms] YEDEK YOL B  cerceve surulemedi: pencere sekme 1 numarali sekmeyi HEDEFLIYOR ama arka plan sekme 3 icin yanit veriyor (arkaplan.js:73-78 golgelemesi). Bu baglamda arayuzden okunan rakam urunun amacladigi yolu OLCMEZ.
+[+023291ms]   sonda raporu (pencerenin KENDI baglamindan): {"deney":"pencere","tur":"21","ust":"0","getCurrent":"hata:can't access property \"getCurrent\", API.tabs is undefined","baglam":"iframe","tabsTipi":"undefined","sorguUzunluk":"yok","sorguId":"yok","urlTipi":"yok","sorguHata":"can't access property \"query\", API.tabs is undefined","urlSuzgec":"hata:can't access property \"query\", API.tabs is undefined","pencereHedef":"yok","bicimTipi":"function","yoklamaVar":"0","probe1Gonderilen":"999999","probe1Donen":"1","probe1Izleniyor":"0","probe2Gonderilen":"888888","probe2Donen":"1","probe2Izleniyor":"0","bgSekmeId":"1","bgAn":"1786724435023","bgIzleniyor":"0","bgDuraklatildi":"20947","bgMola":"0","bgDurum":"DURAKLATILDI","mfPopup":"moz-extension://d32b461b-986b-4796-87fd-c4430598f352/pencere.html","mfBaslik":"Sayaç","openPopup":"denenmedi","sIzleniyor":"0:00:00","sDuraklatildi":"0:00:00","sMola":"0:00:00","sDurum":"","sBtnMola":"MOLA","sBtnAna":"DUR","sUyari":"Hedef sekme belirlenemedi.","sBaslik":"Sayaç","sEtiketler":"İzleniyor|Duraklatıldı|Mola|Durum:","uc":"/olay","ms":1786724435025}
+[+023905ms] isaret sunucusu kapatildi
+[+023944ms] SONUC ölçülemedi — MOLA butonuna tiklanamadi: pencere sekme 1 numarali sekmeyi HEDEFLIYOR ama arka plan sekme 3 icin yanit veriyor (arkaplan.js:73-78 golgelemesi). Bu baglamda arayuzden okunan rakam urunun amacladigi yolu OLCMEZ.

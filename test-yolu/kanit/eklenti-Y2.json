@@ -10,9 +10,9 @@
   "olcumler": [
     {
       "ad": "A: oynuyor",
-      "dAn": 2754,
+      "dAn": 2755,
       "d": {
-        "izleniyor": 2754,
+        "izleniyor": 2755,
         "duraklatildi": 0,
         "mola": 0
       },
@@ -20,7 +20,7 @@
       "cetvelB": {
         "video": "v1",
         "paused": false,
-        "currentTime": 7.221,
+        "currentTime": 7.264,
         "readyState": 4,
         "visibilityState": "visible",
         "icerikBetigi": "1"
@@ -28,10 +28,10 @@
     },
     {
       "ad": "B: durakli",
-      "dAn": 2754,
+      "dAn": 2755,
       "d": {
         "izleniyor": 0,
-        "duraklatildi": 2754,
+        "duraklatildi": 2755,
         "mola": 0
       },
       "sekmeId": 2,
@@ -46,7 +46,7 @@
     }
   ],
   "sorunlar": [],
-  "sureMs": 9826,
+  "sureMs": 9981,
   "manifest": {
     "manifest_version": 2,
     "name": "Sayaç",
@@ -56,6 +56,10 @@
       "gecko": {
         "id": "sayac@sayac.local"
       }
+    },
+    "browser_action": {
+      "default_popup": "pencere.html",
+      "default_title": "Sayaç"
     },
     "background": {
       "scripts": [
@@ -86,8 +90,8 @@
     "A": {
       "sekmeId": 1,
       "toplam": {
-        "izleniyor": 7231,
-        "duraklatildi": 24,
+        "izleniyor": 7225,
+        "duraklatildi": 35,
         "mola": 0
       }
     },
@@ -95,7 +99,7 @@
       "sekmeId": 2,
       "toplam": {
         "izleniyor": 0,
-        "duraklatildi": 3742,
+        "duraklatildi": 3733,
         "mola": 0
       }
     }

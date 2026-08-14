@@ -2,28 +2,28 @@
 ne olcer: iki sekme aynı anda — karışmıyorlar mı
 komut: "C:\Program Files\nodejs\node.exe" "C:\Users\kadio\Documents\Claude\Projects\Sayac\test-yolu\eklenti-e2e.mjs" Y2
 node=v26.5.0 platform=win32
-sure=10463 ms · cikis kodu=0 · sinyal=null
+sure=10652 ms · cikis kodu=0 · sinyal=null
 ======================================================================
 
 [+000000ms] hucre=Y2 · TOLERANS=250 ms · FAZ=2500 ms (koşumdan ÖNCE sabit)
-[+000000ms] firefox ikilisi: C:\Users\kadio\AppData\Local\ms-playwright\firefox-1538\firefox\firefox.exe
-[+000006ms] isaret sunucusu ayakta: http://127.0.0.1:59257
-[+000022ms] test kopyasi: C:\Users\kadio\AppData\Local\Temp\sayac-ekl-Y2-Khm0JB
-[+000022ms] yamali manifest: {"manifest_version":2,"name":"Sayaç","version":"0.1.0","description":"YouTube izleme süresini üç kalemde ayırır: izleniyor · duraklatıldı · mola.","browser_specific_settings":{"gecko":{"id":"sayac@sayac.local"}},"background":{"scripts":["sonda-ayar.js","sonda-arkaplan.js","sayac.js","arkaplan.js"],"persistent":true},"content_scripts":[{"matches":["*://*.youtube.com/*","http://127.0.0.1/*"],"js":["sonda-ayar.js","icerik.js","sonda-icerik.js"],"run_at":"document_idle","all_frames":false}]}
-[+000022ms] tek kullanimlik profil: C:\Users\kadio\AppData\Local\Temp\sayac-profil-Y2-WLpI4j
-[+001902ms] EKLENTI YUKLENDI — launchPersistentContext cozuldu (_BrowserContext) headless=true
-[+001972ms] sayfa A: http://127.0.0.1:59257/sayac.html · hazir=true
-[+001972ms]    ilk anlik goruntu: {"sekmeId":1,"durumAdi":"DURAKLATILDI","toplam":{"izleniyor":0,"duraklatildi":1,"mola":0},"anMs":1786664057263,"arkaPlanBaslangicMs":1786664057192,"gunBasiMs":1786654800000,"kelepceSayisi":0,"sekmeSayisi":1}
-[+001988ms] A oynatiliyor — B acilmadan once 3000 ms birikiyor (farkli sureler)
-[+005325ms] sayfa B: http://127.0.0.1:59257/sayac.html · hazir=true
-[+005325ms]    ilk anlik goruntu: {"sekmeId":2,"durumAdi":"DURAKLATILDI","toplam":{"izleniyor":0,"duraklatildi":0,"mola":0},"anMs":1786664060612,"arkaPlanBaslangicMs":1786664057192,"gunBasiMs":1786654800000,"kelepceSayisi":0,"sekmeSayisi":2}
-[+009225ms]   FAZ A: oynuyor             Δan= 2754 ms | Δizleniyor= 2754 Δduraklatildi=    0 Δmola=    0 | durum=İZLENİYOR sekme=1 | ilerleyen: izleniyor
-[+009225ms]       CETVEL B (sayfa gerçeği): {"video":"v1","paused":false,"currentTime":7.221,"readyState":4,"visibilityState":"visible","icerikBetigi":"1"}
-[+009225ms]   FAZ B: durakli             Δan= 2754 ms | Δizleniyor=    0 Δduraklatildi= 2754 Δmola=    0 | durum=DURAKLATILDI sekme=2 | ilerleyen: duraklatildi
-[+009225ms]       CETVEL B (sayfa gerçeği): {"video":"v1","paused":true,"currentTime":0,"readyState":4,"visibilityState":"visible","icerikBetigi":"1"}
-[+009225ms] sekmeId A=1 · B=2 · farkli mi: true
-[+009225ms] KUMULATIF A: {"izleniyor":7231,"duraklatildi":24,"mola":0}
-[+009225ms] KUMULATIF B: {"izleniyor":0,"duraklatildi":3742,"mola":0}
-[+009225ms] A.izleniyor - B.izleniyor = 7231 ms (A ~3000 ms once oynamaya basladi)
-[+009794ms] isaret sunucusu kapatildi
-[+009827ms] SONUC YESIL
+[+000001ms] firefox ikilisi: C:\Users\kadio\AppData\Local\ms-playwright\firefox-1538\firefox\firefox.exe
+[+000007ms] isaret sunucusu ayakta: http://127.0.0.1:57318
+[+000024ms] test kopyasi: C:\Users\kadio\AppData\Local\Temp\sayac-ekl-Y2-CwxRdQ
+[+000024ms] yamali manifest: {"manifest_version":2,"name":"Sayaç","version":"0.1.0","description":"YouTube izleme süresini üç kalemde ayırır: izleniyor · duraklatıldı · mola.","browser_specific_settings":{"gecko":{"id":"sayac@sayac.local"}},"browser_action":{"default_popup":"pencere.html","default_title":"Sayaç"},"background":{"scripts":["sonda-ayar.js","sonda-arkaplan.js","sayac.js","arkaplan.js"],"persistent":true},"content_scripts":[{"matches":["*://*.youtube.com/*","http://127.0.0.1/*"],"js":["sonda-ayar.js","icerik.js","sonda-icerik.js"],"run_at":"document_idle","all_frames":false}]}
+[+000025ms] tek kullanimlik profil: C:\Users\kadio\AppData\Local\Temp\sayac-profil-Y2-5DOUEn
+[+001990ms] EKLENTI YUKLENDI — launchPersistentContext cozuldu (_BrowserContext) headless=true
+[+002084ms] sayfa A: http://127.0.0.1:57318/sayac.html · hazir=true
+[+002084ms]    ilk anlik goruntu: {"sekmeId":1,"durumAdi":"DURAKLATILDI","toplam":{"izleniyor":0,"duraklatildi":0,"mola":0},"anMs":1786724226082,"arkaPlanBaslangicMs":1786724225998,"gunBasiMs":1786654800000,"kelepceSayisi":0,"sekmeSayisi":1}
+[+002101ms] A oynatiliyor — B acilmadan once 3000 ms birikiyor (farkli sureler)
+[+005534ms] sayfa B: http://127.0.0.1:57318/sayac.html · hazir=true
+[+005534ms]    ilk anlik goruntu: {"sekmeId":2,"durumAdi":"DURAKLATILDI","toplam":{"izleniyor":0,"duraklatildi":0,"mola":0},"anMs":1786724229519,"arkaPlanBaslangicMs":1786724225998,"gunBasiMs":1786654800000,"kelepceSayisi":0,"sekmeSayisi":2}
+[+009374ms]   FAZ A: oynuyor             Δan= 2755 ms | Δizleniyor= 2755 Δduraklatildi=    0 Δmola=    0 | durum=İZLENİYOR sekme=1 | ilerleyen: izleniyor
+[+009374ms]       CETVEL B (sayfa gerçeği): {"video":"v1","paused":false,"currentTime":7.264,"readyState":4,"visibilityState":"visible","icerikBetigi":"1"}
+[+009374ms]   FAZ B: durakli             Δan= 2755 ms | Δizleniyor=    0 Δduraklatildi= 2755 Δmola=    0 | durum=DURAKLATILDI sekme=2 | ilerleyen: duraklatildi
+[+009374ms]       CETVEL B (sayfa gerçeği): {"video":"v1","paused":true,"currentTime":0,"readyState":4,"visibilityState":"visible","icerikBetigi":"1"}
+[+009374ms] sekmeId A=1 · B=2 · farkli mi: true
+[+009374ms] KUMULATIF A: {"izleniyor":7225,"duraklatildi":35,"mola":0}
+[+009374ms] KUMULATIF B: {"izleniyor":0,"duraklatildi":3733,"mola":0}
+[+009374ms] A.izleniyor - B.izleniyor = 7225 ms (A ~3000 ms once oynamaya basladi)
+[+009951ms] isaret sunucusu kapatildi
+[+009982ms] SONUC YESIL

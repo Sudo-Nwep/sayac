@@ -1,0 +1,101 @@
+{
+  "hucre": "Y12",
+  "durum": "ölçülemedi",
+  "sebep": "MOLA butonuna tiklanamadi: pencere sekme 1 numarali sekmeyi HEDEFLIYOR ama arka plan sekme 3 icin yanit veriyor (arkaplan.js:73-78 golgelemesi). Bu baglamda arayuzden okunan rakam urunun amacladigi yolu OLCMEZ.",
+  "tolerans": {
+    "TOLERANS_MS": 250,
+    "FAZ_MS": 2500,
+    "YERLESME_MS": 400
+  },
+  "olcumler": [],
+  "sorunlar": [],
+  "sureMs": 23943,
+  "manifest": {
+    "manifest_version": 2,
+    "name": "Sayaç",
+    "version": "0.1.0",
+    "description": "YouTube izleme süresini üç kalemde ayırır: izleniyor · duraklatıldı · mola.",
+    "browser_specific_settings": {
+      "gecko": {
+        "id": "sayac@sayac.local"
+      }
+    },
+    "browser_action": {
+      "default_popup": "pencere.html",
+      "default_title": "Sayaç"
+    },
+    "background": {
+      "scripts": [
+        "sonda-ayar.js",
+        "sonda-arkaplan.js",
+        "sayac.js",
+        "arkaplan.js"
+      ],
+      "persistent": true
+    },
+    "content_scripts": [
+      {
+        "matches": [
+          "*://*.youtube.com/*",
+          "http://127.0.0.1/*"
+        ],
+        "js": [
+          "sonda-ayar.js",
+          "icerik.js",
+          "sonda-icerik.js"
+        ],
+        "run_at": "document_idle",
+        "all_frames": false
+      }
+    ],
+    "web_accessible_resources": [
+      "pencere.html"
+    ]
+  },
+  "yedekYolB": {
+    "sebep": "pencere sekme 1 numarali sekmeyi HEDEFLIYOR ama arka plan sekme 3 icin yanit veriyor (arkaplan.js:73-78 golgelemesi). Bu baglamda arayuzden okunan rakam urunun amacladigi yolu OLCMEZ.",
+    "rapor": {
+      "deney": "pencere",
+      "tur": "21",
+      "ust": "0",
+      "getCurrent": "hata:can't access property \"getCurrent\", API.tabs is undefined",
+      "baglam": "iframe",
+      "tabsTipi": "undefined",
+      "sorguUzunluk": "yok",
+      "sorguId": "yok",
+      "urlTipi": "yok",
+      "sorguHata": "can't access property \"query\", API.tabs is undefined",
+      "urlSuzgec": "hata:can't access property \"query\", API.tabs is undefined",
+      "pencereHedef": "yok",
+      "bicimTipi": "function",
+      "yoklamaVar": "0",
+      "probe1Gonderilen": "999999",
+      "probe1Donen": "1",
+      "probe1Izleniyor": "0",
+      "probe2Gonderilen": "888888",
+      "probe2Donen": "1",
+      "probe2Izleniyor": "0",
+      "bgSekmeId": "1",
+      "bgAn": "1786724435023",
+      "bgIzleniyor": "0",
+      "bgDuraklatildi": "20947",
+      "bgMola": "0",
+      "bgDurum": "DURAKLATILDI",
+      "mfPopup": "moz-extension://d32b461b-986b-4796-87fd-c4430598f352/pencere.html",
+      "mfBaslik": "Sayaç",
+      "openPopup": "denenmedi",
+      "sIzleniyor": "0:00:00",
+      "sDuraklatildi": "0:00:00",
+      "sMola": "0:00:00",
+      "sDurum": "",
+      "sBtnMola": "MOLA",
+      "sBtnAna": "DUR",
+      "sUyari": "Hedef sekme belirlenemedi.",
+      "sBaslik": "Sayaç",
+      "sEtiketler": "İzleniyor|Duraklatıldı|Mola|Durum:",
+      "uc": "/olay",
+      "ms": 1786724435025
+    }
+  },
+  "isaretSayisi": 137
+}

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Sayaç</title>
+<style>
+  /* Eklenti CSP'si satır içi BETİĞE izin vermez; satır içi stil serbesttir.
+     "Sade tutulacak. Amaç bir kontrol paneli değil, bir cetvel." (SAYAC_TEKLIF.md:71) */
+  html { color-scheme: light dark; }
+  body {
+    width: 260px;
+    margin: 0;
+    padding: 12px 14px 10px;
+    font: 13px/1.45 system-ui, "Segoe UI", sans-serif;
+  }
+  #baslik {
+    margin: 0 0 10px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: .2px;
+  }
+  .satir {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 3px 0;
+  }
+  .satir + .satir { border-top: 1px solid rgba(128, 128, 128, .22); }
+  .deger {
+    font-variant-numeric: tabular-nums;
+    font-family: ui-monospace, Consolas, monospace;
+    font-size: 14px;
+  }
+  #durum-satiri { margin-top: 6px; }
+  #durum-adi { font-weight: 600; font-size: 12px; }
+  .butonlar { display: flex; gap: 8px; margin-top: 12px; }
+  .butonlar button {
+    flex: 1;
+    padding: 7px 4px;
+    font: inherit;
+    font-weight: 600;
+    font-size: 12px;
+    cursor: pointer;
+    border: 1px solid rgba(128, 128, 128, .45);
+    border-radius: 5px;
+    background: rgba(128, 128, 128, .10);
+  }
+  .butonlar button:hover { background: rgba(128, 128, 128, .20); }
+  #uyari {
+    margin: 9px 0 0;
+    min-height: 1em;
+    font-size: 12px;
+    color: #b3261e;
+  }
+  #uyari:empty { margin: 0; min-height: 0; }
+</style>
+</head>
+<body>
+<h1 id="baslik">Sayaç</h1>
+
+<div class="satir"><span id="etiket-izleniyor">İzleniyor</span><span class="deger" id="sayac-izleniyor">0:00:00</span></div>
+<div class="satir"><span id="etiket-duraklatildi">Duraklatıldı</span><span class="deger" id="sayac-duraklatildi">0:00:00</span></div>
+<div class="satir"><span id="etiket-mola">Mola</span><span class="deger" id="sayac-mola">0:00:00</span></div>
+
+<div class="satir" id="durum-satiri"><span id="etiket-durum">Durum:</span><span id="durum-adi"></span></div>
+
+<div class="butonlar">
+  <button id="btn-mola" type="button">MOLA</button>
+  <button id="btn-ana" type="button">DUR</button>
+</div>
+
+<p id="uyari"></p>
+
+<script src="bicim.js"></script>
+<script src="pencere.js"></script>
+</body>
+</html>

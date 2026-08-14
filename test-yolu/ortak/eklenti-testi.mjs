@@ -20,6 +20,8 @@ export async function testKopyasiHazirla({
   manifestSurumu = 2,
   izinEkle = false,
   yerelEslesme = true,
+  pencereErisimi = false,
+  ekIzinler = [],
   etiket = "hucre",
   yaz = () => {},
 }) {
@@ -51,10 +53,47 @@ export async function testKopyasiHazirla({
   if (manifestSurumu === 3) {
     m.manifest_version = 3;
     delete m.background.persistent; // MV3'te bu alan yok
+    // MV2'nin browser_action'ı MV3'te GEÇERSİZDİR — çevrilmezse manifest ayrıştırma
+    // hatası verir ve Y7 düşer.
+    if (m.browser_action) {
+      m.action = m.browser_action;
+      delete m.browser_action;
+    }
   }
   if (izinEkle) {
     if (manifestSurumu === 3) m.host_permissions = ["http://127.0.0.1/*"];
     else m.permissions = ["http://127.0.0.1/*"];
+  }
+  if (ekIzinler.length) {
+    m.permissions = (m.permissions || []).concat(ekIzinler);
+  }
+
+  // pencere.html'i test ölçümü için erişilebilir kıl — YALNIZ TEST KOPYASINDA.
+  // Ürüne EKLENMEZ: gerçek açılır pencerenin buna ihtiyacı yok ve eklemek pencereyi
+  // her web sayfasına açardı.
+  if (pencereErisimi) {
+    if (manifestSurumu === 3) {
+      m.web_accessible_resources = [
+        { resources: ["pencere.html"], matches: ["http://127.0.0.1/*"] },
+      ];
+    } else {
+      m.web_accessible_resources = ["pencere.html"];
+    }
+    await fsp.copyFile(path.join(SONDA, "sonda-pencere.js"), path.join(dizin, "sonda-pencere.js"));
+    const pYolu = path.join(dizin, "pencere.html");
+    const html = await fsp.readFile(pYolu, "utf8");
+    if (!html.includes("</body>")) {
+      throw new Error(`pencere.html içinde </body> bulunamadı — sonda enjekte edilemez: ${pYolu}`);
+    }
+    await fsp.writeFile(
+      pYolu,
+      html.replace(
+        "</body>",
+        '\n<script src="sonda-ayar.js"></script>\n<script src="sonda-pencere.js"></script>\n</body>'
+      ),
+      "utf8"
+    );
+    yaz("pencere sondasi enjekte edildi (YALNIZ test kopyasina)");
   }
 
   await fsp.writeFile(mYolu, JSON.stringify(m, null, 2) + "\n", "utf8");

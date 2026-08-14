@@ -18,16 +18,16 @@
   "olcumler": [
     {
       "ad": "youtube: oynuyor",
-      "dAn": 2806,
+      "dAn": 2822,
       "d": {
-        "izleniyor": 2806,
+        "izleniyor": 2822,
         "duraklatildi": 0,
         "mola": 0
       },
       "cetvelB": {
         "videoVar": true,
         "paused": false,
-        "currentTime": 46794.134,
+        "currentTime": 0.721,
         "readyState": 4,
         "visibilityState": "visible",
         "icerikBetigi": "1",
@@ -37,16 +37,16 @@
     },
     {
       "ad": "youtube: durakli",
-      "dAn": 2755,
+      "dAn": 2758,
       "d": {
         "izleniyor": 0,
-        "duraklatildi": 2755,
+        "duraklatildi": 2758,
         "mola": 0
       },
       "cetvelB": {
         "videoVar": true,
         "paused": true,
-        "currentTime": 46794.134,
+        "currentTime": 0.721,
         "readyState": 4,
         "visibilityState": "visible",
         "icerikBetigi": "1",

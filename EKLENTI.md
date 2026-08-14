@@ -231,6 +231,8 @@ ettiği için İZLENİYOR **sıfırdan devam etti** (devir sonrası fazı: Δan 
 yazılmadı** — açılır pencere ve butonlar madde 4'ün işidir.
 **Not:** mola açıkken cetvel B `paused: false` gösteriyor — doğru: MOLA'nın videoyu duraklatması
 `SAYAC_TEKLIF.md:50-51` gereği **madde 4'ün** işidir; bu turda `mola-aç` yalnız **kaydedilir**.
+> ⚠️ **Madde 4'te ölçüldü:** ürün artık videoyu duraklatıyor; Y6 genişletildi ve
+> `video.paused=true` ölçüldü. Bkz. `ARAYUZ.md` → Y6 tablosu.
 
 ### Y8 — host izni karşıt deneyi · tur 001'in iddiası ÇÜRÜTÜLDÜ
 
@@ -378,6 +380,10 @@ sonra damgalanan bir olay `olay.t < durum.t` ile `RangeError` fırlatırdı.
 
 `toplam` **canlı** okunur (`ozet()`); son olaydan bu yana geçen süre dâhildir.
 Sekme kimliği `sender.tab.id`'den gelir; açılır pencerede yoksa `msg.sekmeId` verilir.
+⚠️ **Bu cümle madde 4'te ölçüldü ve SINIRLANDIRILDI:** `sender.tab` varsa `msg.sekmeId`
+**hiç okunmaz** (`999999` gönderildi, `1` döndü). `msg.sekmeId` yolu yalnız gerçek araç
+çubuğu panelinde geçerli olabilir — o bağlam **ölçülemedi**.
+Bkz. `ARAYUZ.md` → Sekme kimliği zinciri.
 **Toplamlar ham milisaniyedir** — saat:dakika biçimlendirmesi madde 4'ün işidir.
 
 ---
@@ -416,7 +422,7 @@ test-yolu/kanit/eklenti-Y1.log … eklenti-Y10.log · eklenti-rapor.json   (22 d
 | **LibreWolf'a kurulum (Y10)** | RDP `ECONNREFUSED`; üç sertleştirme katmanı adreslendi, aşılamadı | 7b · madde 5 |
 | **Tarayıcı yeniden başlarsa sayaçlar** | Durum **bellekte** yaşar, yeniden başlatmada **kaybolur**. Depolama bu turda eklenmedi (`storage` izni yok, G19/G20). | madde 4/5 kararı |
 | **MV3'te `tabs.onRemoved` ve mesajlaşma farkı** | Y7 yalnız Y1'in senaryosunu koştu; MV3'te ek davranış **iddia edilmiyor** | 7a |
-| **MOLA'nın videoyu duraklatması** | `SAYAC_TEKLIF.md:50-51` — **madde 4'ün** işi | madde 4 |
+| **MOLA'nın videoyu duraklatması** | `SAYAC_TEKLIF.md:50-51` — **madde 4'ün** işi | **madde 4'te ÖLÇÜLDÜ** → `ARAYUZ.md` Y6 |
 | **Arayüz (açılır pencere, iki buton)** | Bu turun dışında (`HEDEF.md` madde 4) | madde 4 |
 
 **Kapsam dışı kalan davranışlar (kural yazılmadı, not düşüldü):**

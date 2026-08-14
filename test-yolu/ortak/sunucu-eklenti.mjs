@@ -93,8 +93,23 @@ export const SAYFA = `<!doctype html>
 
 export async function sunucuBaslat(yaz = () => {}) {
   const olaylar = [];
+  // Pencere sondasına komut kanalı. Playwright moz-extension:// sayfasına BAĞLANAMIYOR
+  // (üç yol ölçülerek düştü: iframe'de API.tabs undefined · page.goto zaman aşımı ·
+  // window.open'da "page" olayı gelmiyor). Buton tıklaması bu yüzden sondaya yaptırılır:
+  // tıklanan ÜRÜNÜN gerçek butonudur, tıklayan test kodudur.
+  const komutlar = [];
   const server = http.createServer((req, res) => {
     const u = new URL(req.url, "http://127.0.0.1");
+    if (u.pathname === "/pencere-komut") {
+      const k = komutlar.length ? komutlar.shift() : null;
+      res.writeHead(200, {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Cache-Control": "no-store",
+      });
+      res.end(JSON.stringify({ k }));
+      return;
+    }
     if (u.pathname === "/sayac.html") {
       res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
       res.end(SAYFA);
@@ -132,6 +147,9 @@ export async function sunucuBaslat(yaz = () => {}) {
     port,
     olaylar,
     url: `http://127.0.0.1:${port}/sayac.html`,
+    komutVer(elemanId) {
+      komutlar.push(elemanId);
+    },
     async kapat() {
       await new Promise((r) => server.close(r));
       yaz("isaret sunucusu kapatildi");

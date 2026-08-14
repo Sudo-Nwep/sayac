@@ -1,0 +1,36 @@
+{
+  "hucre": "Y14",
+  "durum": "YESIL",
+  "sebep": "",
+  "tablo": [
+    {
+      "etiket": "A izinsiz",
+      "ekIzinler": "[]",
+      "manifestIzinleri": "null",
+      "tabsTipi": "object",
+      "sorguUzunluk": "1",
+      "sorguId": "2",
+      "urlTipi": "string",
+      "sorguHata": "",
+      "urlSuzgec": "sonuc:0",
+      "getCurrent": "2",
+      "pencereHedef": "yok",
+      "uyari": "Hedef sekme belirlenemedi."
+    },
+    {
+      "etiket": "B tabs izinli",
+      "ekIzinler": "[\"tabs\"]",
+      "manifestIzinleri": "[\"tabs\"]",
+      "tabsTipi": "object",
+      "sorguUzunluk": "1",
+      "sorguId": "2",
+      "urlTipi": "string",
+      "sorguHata": "",
+      "urlSuzgec": "sonuc:0",
+      "getCurrent": "2",
+      "pencereHedef": "yok",
+      "uyari": "Hedef sekme belirlenemedi."
+    }
+  ],
+  "yorum": "Arayuz YENI IZIN GEREKTIRMEDI: izinsiz manifestle tabs.query sekme kimligini DONDURDU (sorguId=2). IZNIN NE SATIN ALDIGI: urlTipi A=string → B=string; url suzgeci A=sonuc:0 → B=sonuc:0."
+}

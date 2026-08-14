@@ -9,7 +9,7 @@
   },
   "olcumler": [],
   "sorunlar": [],
-  "sureMs": 6338,
+  "sureMs": 7048,
   "manifest": {
     "manifest_version": 2,
     "name": "Sayaç",
@@ -19,6 +19,10 @@
       "gecko": {
         "id": "sayac@sayac.local"
       }
+    },
+    "browser_action": {
+      "default_popup": "pencere.html",
+      "default_title": "Sayaç"
     },
     "background": {
       "scripts": [
@@ -49,16 +53,16 @@
   "kismiOlcum": {
     "not": "visibilityState 'hidden' YAPILAMADI; asagidaki rakam yalnizca 'A sekmesi one alinmis DEGIL' kosulunda olculdu — 'arka plandaki sekme' kanIti DEGILDIR",
     "ad": "onde olmayan sekmede oynuyor",
-    "dAn": 2753,
+    "dAn": 2754,
     "d": {
-      "izleniyor": 2753,
+      "izleniyor": 2754,
       "duraklatildi": 0,
       "mola": 0
     },
     "cetvelB": {
       "video": "v1",
       "paused": false,
-      "currentTime": 4,
+      "currentTime": 4.235,
       "readyState": 4,
       "visibilityState": "visible",
       "icerikBetigi": "1"
@@ -66,5 +70,5 @@
     "sorunlar": []
   },
   "onSekmeSayisi": 2,
-  "isaretSayisi": 17
+  "isaretSayisi": 18
 }

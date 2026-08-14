@@ -1,0 +1,34 @@
+=== SAYAC — madde 3 · hucre Y16 ===
+ne olcer: SEKME KİMLİĞİ ZİNCİRİ — karşıt deney + pozitif kontrol
+komut: "C:\Program Files\nodejs\node.exe" "C:\Users\kadio\Documents\Claude\Projects\Sayac\test-yolu\arayuz-e2e.mjs" Y16
+node=v26.5.0 platform=win32
+sure=16787 ms · cikis kodu=0 · sinyal=null
+======================================================================
+
+[+000000ms] hucre=Y16 · TOLERANS=250 ms · FAZ=2500 ms (koşumdan ÖNCE sabit)
+[+000001ms] firefox ikilisi: C:\Users\kadio\AppData\Local\ms-playwright\firefox-1538\firefox\firefox.exe
+[+000008ms] isaret sunucusu ayakta: http://127.0.0.1:50315
+[+000026ms] pencere sondasi enjekte edildi (YALNIZ test kopyasina)
+[+000026ms] test kopyasi: C:\Users\kadio\AppData\Local\Temp\sayac-ekl-Y16-djgcBO
+[+000027ms] yamali manifest: {"manifest_version":2,"name":"Sayaç","version":"0.1.0","description":"YouTube izleme süresini üç kalemde ayırır: izleniyor · duraklatıldı · mola.","browser_specific_settings":{"gecko":{"id":"sayac@sayac.local"}},"browser_action":{"default_popup":"pencere.html","default_title":"Sayaç"},"background":{"scripts":["sonda-ayar.js","sonda-arkaplan.js","sayac.js","arkaplan.js"],"persistent":true},"content_scripts":[{"matches":["*://*.youtube.com/*","http://127.0.0.1/*"],"js":["sonda-ayar.js","icerik.js","sonda-icerik.js"],"run_at":"document_idle","all_frames":false}],"web_accessible_resources":["pencere.html"]}
+[+000027ms] tek kullanimlik profil: C:\Users\kadio\AppData\Local\Temp\sayac-profil-Y16-QdYqgh
+[+002123ms] EKLENTI YUKLENDI — launchPersistentContext cozuldu (_BrowserContext) headless=true
+[+002211ms] ilk anlik goruntu: {"sekmeId":1,"durumAdi":"DURAKLATILDI","toplam":{"izleniyor":0,"duraklatildi":0,"mola":0},"anMs":1786724372654,"arkaPlanBaslangicMs":1786724372572,"gunBasiMs":1786654800000,"kelepceSayisi":0,"sekmeSayisi":1}
+[+002228ms] pencere adresi (sondadan OKUNDU, sabitlenmedi): moz-extension://4025e28b-1fac-480a-96bc-8b35c7cddedd/pencere.html
+[+002484ms] CERCEVE BULUNDU ve #btn-mola gorunur  birincil yol acik
+[+005006ms] 16a KARSIT DENEY: 999999 1 (esit=false, toplam.izleniyor=1799) · 888888 1 (esit=false, toplam.izleniyor=1800)
+[+005006ms]     gercek sekme: sekmeId=1 toplam.izleniyor=2449
+[+005006ms]     GOLGELEME: VAR  sender.tab onceligi msg.sekmeId'yi ezdi
+[+005006ms]     tabs yuzeyi: tabsTipi=undefined · sorguUzunluk=yok · sorguId=yok · urlTipi=yok · sorguHata="can't access property "query", API.tabs is undefined"
+[+005006ms]     ham iframe raporu: {"deney":"pencere","tur":"3","ust":"0","getCurrent":"hata:can't access property \"getCurrent\", API.tabs is undefined","baglam":"iframe","tabsTipi":"undefined","sorguUzunluk":"yok","sorguId":"yok","urlTipi":"yok","sorguHata":"can't access property \"query\", API.tabs is undefined","urlSuzgec":"hata:can't access property \"query\", API.tabs is undefined","pencereHedef":"yok","bicimTipi":"function","yoklamaVar":"0","probe1Gonderilen":"999999","probe1Donen":"1","probe1Izleniyor":"1799","probe2Gonderilen":"888888","probe2Donen":"1","probe2Izleniyor":"1800","bgSekmeId":"1","bgAn":"1786724374758","bgIzleniyor":"1801","bgDuraklatildi":"303","bgMola":"0","bgDurum":"İZLENİYOR","mfPopup":"moz-extension://4025e28b-1fac-480a-96bc-8b35c7cddedd/pencere.html","mfBaslik":"Sayaç","openPopup":"denenmedi","sIzleniyor":"0:00:00","sDuraklatildi":"0:00:00","sMola":"0:00:00","sDurum":"","sBtnMola":"MOLA","sBtnAna":"DUR","sUyari":"Hedef sekme belirlenemedi.","sBaslik":"Sayaç","sEtiketler":"İzleniyor|Duraklatıldı|Mola|Durum:","uc":"/olay","ms":1786724374761}
+[+005010ms] 16b UC KIMLIK: pencereHedef=null · tabs.query sorguId=yok · sonda sekmeId=1
+[+005706ms] 16c POZITIF KONTROL (kendi sekmesi): 999999 2 · ayirt edici mi=true · getCurrent=2 sorguId=2
+[+005706ms]     ham rapor: {"deney":"pencere","tur":"1","ust":"1","getCurrent":"2","baglam":"sekme","tabsTipi":"object","sorguUzunluk":"1","sorguId":"2","urlTipi":"string","sorguHata":"","urlSuzgec":"sonuc:0","pencereHedef":"yok","bicimTipi":"function","yoklamaVar":"0","probe1Gonderilen":"999999","probe1Donen":"2","probe1Izleniyor":"0","probe2Gonderilen":"888888","probe2Donen":"2","probe2Izleniyor":"0","bgSekmeId":"2","bgAn":"1786724376017","bgIzleniyor":"0","bgDuraklatildi":"2","bgMola":"0","bgDurum":"DURAKLATILDI","mfPopup":"moz-extension://4025e28b-1fac-480a-96bc-8b35c7cddedd/pencere.html","mfBaslik":"Sayaç","openPopup":"denenmedi","sIzleniyor":"0:00:00","sDuraklatildi":"0:00:00","sMola":"0:00:00","sDurum":"","sBtnMola":"MOLA","sBtnAna":"DUR","sUyari":"Hedef sekme belirlenemedi.","sBaslik":"Sayaç","sEtiketler":"İzleniyor|Duraklatıldı|Mola|Durum:","uc":"/olay","ms":1786724376019}
+[+005706ms]     URUN KELEPCESI: #uyari="Hedef sekme belirlenemedi." · sayaclar=["0:00:00","0:00:00","0:00:00"] ->  CALISTI
+[+015502ms] 16d OLCULEMEDI  openPopup birebir sonuc: donus:null
+[+015503ms] 
+[+015503ms] Y16 KARAR: olculemedi
+[+015503ms]   OLCULEMEDI - iki katman birden: (1) arkaplan.js:73-78 onceligi msg.sekmeId'yi golgeliyor (gonderilen 999999 -> donen 1); (2) WAR iframe baglaminda API.tabs UNDEFINED ("can't access property "query", API.tabs is undefined") oldugu icin pencere kimlik BILE cozemiyor ve urunun kelepcesi devreye giriyor. Olculen: tabs.query -> yok, sonda -> 1. Pencerenin kimlik cozumu bu baglamda SINANAMAZ.
+[+015503ms]   16d: gercek arac cubugu paneli baglami OLCULEMEDI  panel baglamindan rapor dusmedi · openPopup: donus:null
+[+016100ms] isaret sunucusu kapatildi
+[+016133ms] SONUC olculemedi — OLCULEMEDI - iki katman birden: (1) arkaplan.js:73-78 onceligi msg.sekmeId'yi golgeliyor (gonderilen 999999 -> donen 1); (2) WAR iframe baglaminda API.tabs UNDEFINED ("can't access property "query", API.tabs is undefined") oldugu icin pencere kimlik BILE cozemiyor ve urunun kelepcesi devreye giriyor. Olculen: tabs.query -> yok, sonda -> 1. Pencerenin kimlik cozumu bu baglamda SINANAMAZ.

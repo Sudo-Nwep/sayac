@@ -46,6 +46,33 @@ window.addEventListener("beforeunload", function () {
   if (v && !v.paused) gonder("oynat");
 })();
 
+// MOLA'ya basınca oynayan video DURAKLATILIR (SAYAC_TEKLIF.md:50-51).
+// Bağlantıyı içerik betiği başlatır → hiçbir izin gerekmez. Olay güdümlüdür,
+// yeni zamanlayıcı kurulmaz.
+//
+// Sonsuz döngü yok: pause() → tarayıcı "pause" olayı üretir → arka plana "duraklat"
+// gider → durum hâlâ MOLA → ikinci "video-duraklat" gelir → v.paused zaten true →
+// pause() çağrılmaz → yeni olay doğmaz. İdempotenttir.
+(function () {
+  var kanal;
+  try {
+    kanal = API.runtime.connect({ name: "sayac" });
+  } catch (e) {
+    return; // arka plan hazır değilse betik çökmesin
+  }
+  if (!kanal) return;
+  try {
+    kanal.onMessage.addListener(function (m) {
+      if (!m || m.tur !== "video-duraklat") return;
+      var v = document.querySelector("video");
+      if (v && !v.paused) v.pause();
+    });
+    // Kopmada sessizce bırak — yeniden bağlanma döngüsü KURULMAZ; sayfa yeniden
+    // yüklendiğinde bu betik zaten yeniden koşar.
+    kanal.onDisconnect.addListener(function () {});
+  } catch (e) {}
+})();
+
 // İçerik betiğinin gerçekten enjekte olduğunun sayfadan okunabilir kanıtı.
 // Geçici eklenti yükleme yarışına karşı testin bekleme çapası budur.
 document.documentElement.setAttribute("data-sayac-icerik", "1");
