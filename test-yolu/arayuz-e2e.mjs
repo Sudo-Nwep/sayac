@@ -4,6 +4,7 @@ import {
   tarayiciliHucre, hazirBekle, faz, fazKontrol, fazYaz, anlik,
   cetvelB, bekle, hataMetni, TOLERANS_MS, FAZ_MS, YERLESME_MS,
 } from "./ortak/hucre.mjs";
+import { OLCULEMEDI } from "./ortak/durum.mjs";
 
 const HUCRE = (process.argv[2] || "Y11").toUpperCase();
 
@@ -672,7 +673,7 @@ async function y16(ctx) {
   } else if (a.golgeleme && b.sorguId === "yok") {
       // "yok" YANLIS KIMLIK DEGILDIR - API hic yok demektir (olculdu: WAR iframe'de
       // API.tabs undefined). Kirmizi yazmak yanlis soruyu sormak olurdu (G22).
-      durum = "olculemedi";
+      durum = OLCULEMEDI;
       cumle =
         `OLCULEMEDI - iki katman birden: (1) arkaplan.js:73-78 onceligi msg.sekmeId'yi golgeliyor ` +
         `(gonderilen 999999 -> donen ${a.probe1.donen}); (2) WAR iframe baglaminda API.tabs UNDEFINED ` +

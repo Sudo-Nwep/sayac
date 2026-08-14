@@ -12,49 +12,49 @@
       "no": 1,
       "adim": "bitti",
       "hata": "",
-      "url": "https://www.youtube.com/watch?v=0muHFBSiybw&pp=ygUEbG9maQ%3D%3D"
+      "url": "https://www.youtube.com/watch?v=sF80I-TQiW0&list=RDsF80I-TQiW0&start_radio=1&pp=ygUEbG9maaAHAQ%3D%3D"
     }
   ],
   "olcumler": [
     {
       "ad": "youtube: oynuyor",
-      "dAn": 2822,
+      "dAn": 2898,
       "d": {
-        "izleniyor": 2822,
+        "izleniyor": 2898,
         "duraklatildi": 0,
         "mola": 0
       },
       "cetvelB": {
         "videoVar": true,
         "paused": false,
-        "currentTime": 0.721,
+        "currentTime": 4.407,
         "readyState": 4,
         "visibilityState": "visible",
         "icerikBetigi": "1",
-        "url": "https://www.youtube.com/watch?v=0muHFBSiybw"
+        "url": "https://www.youtube.com/watch?v=sF80I-TQiW0&list=RDsF80I-TQiW0&start_radio=1"
       },
       "sekmeId": 1
     },
     {
       "ad": "youtube: durakli",
-      "dAn": 2758,
+      "dAn": 2756,
       "d": {
         "izleniyor": 0,
-        "duraklatildi": 2758,
+        "duraklatildi": 2756,
         "mola": 0
       },
       "cetvelB": {
         "videoVar": true,
         "paused": true,
-        "currentTime": 0.721,
+        "currentTime": 4.407,
         "readyState": 4,
         "visibilityState": "visible",
         "icerikBetigi": "1",
-        "url": "https://www.youtube.com/watch?v=0muHFBSiybw"
+        "url": "https://www.youtube.com/watch?v=sF80I-TQiW0&list=RDsF80I-TQiW0&start_radio=1"
       },
       "sekmeId": 1
     }
   ],
-  "videoUrl": "https://www.youtube.com/watch?v=0muHFBSiybw&pp=ygUEbG9maQ%3D%3D",
+  "videoUrl": "https://www.youtube.com/watch?v=sF80I-TQiW0&list=RDsF80I-TQiW0&start_radio=1&pp=ygUEbG9maaAHAQ%3D%3D",
   "sorunlar": []
 }

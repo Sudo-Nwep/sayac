@@ -10,9 +10,9 @@
   "olcumler": [
     {
       "ad": "ilk video oynuyor",
-      "dAn": 2772,
+      "dAn": 2754,
       "d": {
-        "izleniyor": 2772,
+        "izleniyor": 2754,
         "duraklatildi": 0,
         "mola": 0
       },
@@ -27,9 +27,9 @@
     },
     {
       "ad": "ikinci video oynuyor",
-      "dAn": 2769,
+      "dAn": 2754,
       "d": {
-        "izleniyor": 2769,
+        "izleniyor": 2754,
         "duraklatildi": 0,
         "mola": 0
       },
@@ -44,7 +44,7 @@
     }
   ],
   "sorunlar": [],
-  "sureMs": 9303,
+  "sureMs": 8784,
   "manifest": {
     "manifest_version": 2,
     "name": "Sayaç",
@@ -86,13 +86,13 @@
   },
   "oncesiSonrasi": {
     "oncesi": {
-      "izleniyor": 3242,
-      "duraklatildi": 30,
+      "izleniyor": 3232,
+      "duraklatildi": 20,
       "mola": 0
     },
     "sonrasi": {
-      "izleniyor": 6502,
-      "duraklatildi": 39,
+      "izleniyor": 6479,
+      "duraklatildi": 29,
       "mola": 0
     }
   },

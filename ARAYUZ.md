@@ -55,6 +55,31 @@ gerçek gölgelemedir.
 çağrılamadı (`API.browserAction` de undefined; ölçülen dönüş `donus:null`), panel bağlamından
 rapor düşmedi. **ÖLÇÜLEMEDİ.**
 
+> ### ✅ DÜZELTME (tur 005) — GERÇEK PANEL BAĞLAMI ÖLÇÜLDÜ
+>
+> Madde 4'te panel bağlamı Playwright'ın Firefox'unda açılamamıştı. **005'te LibreWolf
+> kanalı açılınca mümkün oldu** (Y10 imzasız XPI sideload → gerçek, kalıcı kurulum).
+> Sondanın `browserAction.openPopup()` çağrısı **panel bağlamından rapor düşürdü** (4 rapor).
+>
+> | Ölçüm | Değer |
+> |---|---|
+> | karşıt deney ① | gönderilen `999999` → dönen **`999999`** |
+> | karşıt deney ② | gönderilen `888888` → dönen **`888888`** |
+> | `tabs.getCurrent()` | **`yok`** → panelde `sender.tab` **YOK** |
+> | `tabs.query` `sorguId` | **1** |
+> | pencerenin çözdüğü `hedefSekmeId` | **1** |
+> | panel DOM | `0:00:02` · `durum="DURAKLATILDI"` · `btnMola="MOLA"` · `btnAna="DUR"` · `#uyari` **boş** |
+>
+> **① `msg.sekmeId` yolu GEÇERLİDİR — ölçüldü.** Gerçek panelde `sender.tab` bulunmadığı
+> için arka plan gönderilen kimliği kullanıyor. `EKLENTI.md:380`'in *"açılır pencerede
+> yoksa `msg.sekmeId` verilir"* cümlesi artık **kanıtlıdır**.
+> **② Gölgeleme yalnız SEKME bağlamlarına özgüdür** — panelde YOK.
+> **③ Pencere hedef sekmeyi kendiliğinden buluyor** — `sorguId=1` ile `pencereHedef=1`
+> eşit ve `#uyari` boş; pencere canlı sayı gösteriyor. **Bu cümle artık ölçüme dayanıyor
+> ve YALNIZ panel bağlamı için yazılmıştır.**
+>
+> Kanıt: `test-yolu/kanit/eklenti-Y10.json` → `faz4.karsitDeney` ve `faz4.hamRaporlar`.
+
 ### 🔴 Y16 kararı — Y16 karar tablosundan seçildi
 
 > **ÖLÇÜLEMEDİ — iki katman birden:** ⑴ `arkaplan.js:73-78` önceliği `msg.sekmeId`'yi

@@ -1,7 +1,7 @@
 {
   "hucre": "Y12",
   "durum": "ölçülemedi",
-  "sebep": "MOLA butonuna tiklanamadi: pencere sekme 1 numarali sekmeyi HEDEFLIYOR ama arka plan sekme 3 icin yanit veriyor (arkaplan.js:73-78 golgelemesi). Bu baglamda arayuzden okunan rakam urunun amacladigi yolu OLCMEZ.",
+  "sebep": "MOLA butonuna tiklanamadi: urunun kelepcesi tetiklendi \u001d pencere hedef sekmeyi cozemedi. Son rapor: #uyari=\"Hedef sekme belirlenemedi.\" getCurrent=3 sorguId=1",
   "tolerans": {
     "TOLERANS_MS": 250,
     "FAZ_MS": 2500,
@@ -9,7 +9,7 @@
   },
   "olcumler": [],
   "sorunlar": [],
-  "sureMs": 23943,
+  "sureMs": 34540,
   "manifest": {
     "manifest_version": 2,
     "name": "Sayaç",
@@ -53,10 +53,10 @@
     ]
   },
   "yedekYolB": {
-    "sebep": "pencere sekme 1 numarali sekmeyi HEDEFLIYOR ama arka plan sekme 3 icin yanit veriyor (arkaplan.js:73-78 golgelemesi). Bu baglamda arayuzden okunan rakam urunun amacladigi yolu OLCMEZ.",
+    "sebep": "urunun kelepcesi tetiklendi \u001d pencere hedef sekmeyi cozemedi. Son rapor: #uyari=\"Hedef sekme belirlenemedi.\" getCurrent=3 sorguId=1",
     "rapor": {
       "deney": "pencere",
-      "tur": "21",
+      "tur": "32",
       "ust": "0",
       "getCurrent": "hata:can't access property \"getCurrent\", API.tabs is undefined",
       "baglam": "iframe",
@@ -76,12 +76,12 @@
       "probe2Donen": "1",
       "probe2Izleniyor": "0",
       "bgSekmeId": "1",
-      "bgAn": "1786724435023",
+      "bgAn": "1786729198512",
       "bgIzleniyor": "0",
-      "bgDuraklatildi": "20947",
+      "bgDuraklatildi": "31929",
       "bgMola": "0",
       "bgDurum": "DURAKLATILDI",
-      "mfPopup": "moz-extension://d32b461b-986b-4796-87fd-c4430598f352/pencere.html",
+      "mfPopup": "moz-extension://14fafa4a-bdb0-45cc-aab6-292a6a56b411/pencere.html",
       "mfBaslik": "Sayaç",
       "openPopup": "denenmedi",
       "sIzleniyor": "0:00:00",
@@ -94,8 +94,8 @@
       "sBaslik": "Sayaç",
       "sEtiketler": "İzleniyor|Duraklatıldı|Mola|Durum:",
       "uc": "/olay",
-      "ms": 1786724435025
+      "ms": 1786729198515
     }
   },
-  "isaretSayisi": 137
+  "isaretSayisi": 215
 }

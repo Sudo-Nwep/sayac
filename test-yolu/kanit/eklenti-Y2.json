@@ -10,9 +10,9 @@
   "olcumler": [
     {
       "ad": "A: oynuyor",
-      "dAn": 2755,
+      "dAn": 2522,
       "d": {
-        "izleniyor": 2755,
+        "izleniyor": 2522,
         "duraklatildi": 0,
         "mola": 0
       },
@@ -20,7 +20,7 @@
       "cetvelB": {
         "video": "v1",
         "paused": false,
-        "currentTime": 7.264,
+        "currentTime": 7.051,
         "readyState": 4,
         "visibilityState": "visible",
         "icerikBetigi": "1"
@@ -46,7 +46,7 @@
     }
   ],
   "sorunlar": [],
-  "sureMs": 9981,
+  "sureMs": 9697,
   "manifest": {
     "manifest_version": 2,
     "name": "Sayaç",
@@ -90,8 +90,8 @@
     "A": {
       "sekmeId": 1,
       "toplam": {
-        "izleniyor": 7225,
-        "duraklatildi": 35,
+        "izleniyor": 7006,
+        "duraklatildi": 24,
         "mola": 0
       }
     },
@@ -99,10 +99,10 @@
       "sekmeId": 2,
       "toplam": {
         "izleniyor": 0,
-        "duraklatildi": 3733,
+        "duraklatildi": 3750,
         "mola": 0
       }
     }
   },
-  "isaretSayisi": 46
+  "isaretSayisi": 45
 }

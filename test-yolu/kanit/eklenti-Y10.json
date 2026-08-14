@@ -1,17 +1,304 @@
 {
   "hucre": "Y10",
-  "durum": "ölçülemedi",
-  "sebep": "[adim: web-ext ile yukleme] Error: connect ECONNREFUSED 127.0.0.1:57877",
-  "yol": "Aday B — Mozilla web-ext RDP (Aday A uygulanamaz: Playwright'ın Firefox'u yamalı)",
+  "durum": "YESIL",
+  "sebep": "",
   "surum": "153.0.4-1",
   "url": "https://dl.librewolf.net/librewolf/153.0.4-1/librewolf-153.0.4-1-windows-x86_64-portable.zip",
-  "ikili": "C:\\Users\\kadio\\AppData\\Local\\Temp\\sayac-librewolf-BJcDH9\\librewolf-153.0.4-1\\LibreWolf\\librewolf.exe",
-  "adim": "web-ext ile yukleme",
-  "olcum": null,
-  "policies": "{\n    \"__COMMENT__ More Information\": \"https://github.com/mozilla/policy-templates/blob/master/README.md\",\n    \"policies\": {\n        \"AIControls\": {\n            \"Translations\": {\n                \"Value\": \"available\"\n            },\n            \"PDFAltText\": {\n                \"Value\": \"blocked\"\n            },\n            \"SmartTabGroups\": {\n                \"Value\": \"blocked\"\n            },\n            \"LinkPreviewKeyPoints\": {\n                \"Value\": \"blocked\"\n            },\n            \"SidebarChatbot\": {\n                \"Value\": \"blocked\"\n            },\n            \"SmartWindow\": {\n                \"Value\": \"blocked\"\n            }\n        },\n        \"AppUpdateURL\": \"https://localhost\",\n        \"DisableAppUpdate\": true,\n        \"DisableDefaultBrowserAgent\": true,\n        \"DisableFeedbackCommands\": true,\n        \"DisableFirefoxStudies\": true,\n        \"DisableRemoteImprovements\": true,\n        \"DisableSetDesktopBackground\": false,\n        \"DisableTelemetry\": true,\n        \"DontCheckDefaultBrowser\": true,\n        \"WebsiteFilter\": {\n            \"Block\": [\n                \"https://localhost/*\"\n            ],\n            \"Exceptions\": [\n                \"https://localhost/*\"\n            ]\n        },\n        \"EncryptedMediaExtensions\": {\n            \"Enabled\": false\n        },\n        \"ExtensionSettings\": {\n            \"*\": {\n                \"blocked_install_message\": \"LibreWolf does not allow installing Language Packs.\",\n                \"installation_mode\": \"allowed\",\n                \"allowed_types\": [\"dictionary\", \"extension\", \"sitepermission\", \"theme\"]\n            },\n            \"uBlock0@raymondhill.net\": {\n                \"install_url\": \"https://addons.mozilla.org/firefox/downloads/latest/uBlock0@raymondhill.net/latest.xpi\",\n                \"installation_mode\": \"normal_installed\",\n                \"private_browsing\": true\n            }\n        },\n        \"FirefoxHome\": {\n            \"Weather\": false,\n            \"TopSites\": false,\n            \"SponsoredTopSites\": false,\n ",
-  "policyYamasi": {
-    "HttpsOnlyMode": "enabled → disabled",
-    "WebsiteFilter": "silindi"
+  "ikili": "C:\\Users\\kadio\\AppData\\Local\\Temp\\sayac-librewolf-8Fku7y\\librewolf-153.0.4-1\\LibreWolf\\librewolf.exe",
+  "denemeler": [
+    {
+      "yol": "Aday A / A1 (duz Playwright, RDP YOK)",
+      "adim": "launchPersistentContext",
+      "komut": "firefox.launchPersistentContext(profil, { executablePath: \"C:\\Users\\kadio\\AppData\\Local\\Temp\\sayac-librewolf-8Fku7y\\librewolf-153.0.4-1\\LibreWolf\\librewolf.exe\", args: [\"-no-remote\"], headless: true })",
+      "executablePath": "C:\\Users\\kadio\\AppData\\Local\\Temp\\sayac-librewolf-8Fku7y\\librewolf-153.0.4-1\\LibreWolf\\librewolf.exe",
+      "sonuc": "FIRLATTI — iddia OLCULEREK dogrulandi. RDP'ye HIC dokunulmadi, ECONNREFUSED sayaci ARTMADI.",
+      "birebirHata": "TimeoutError: browserType.launchPersistentContext: Timeout 45000ms exceeded.\nCall log:\n\u001b[2m  - <launching> C:\\Users\\kadio\\AppData\\Local\\Temp\\sayac-librewolf-8Fku7y\\librewolf-153.0.4-1\\LibreWolf\\librewolf.exe -no-remote -headless -profile C:\\Users\\kadio\\AppData\\Local\\Temp\\sayac-lw-profil-A1-9iqah6 -juggler-pipe -no-remote about:blank\u001b[22m\n\u001b[2m  - <launched> pid=27404\u001b[22m\n\u001b[2m  - [pid=27404][err] *** You are running in headless mode.\u001b[22m\n\u001b[2m  - [pid=27404][out] Crash Annotation GraphicsCriticalError: |[0][GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt (t=1.22149) [GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt\u001b[22m\n\u001b[2m  - [pid=27404][err] *** You are running in background task mode. ***\u001b[22m\n\u001b[2m  - [pid=27404][err] *** You are running in headless mode.\u001b[22m\n"
+    },
+    {
+      "yol": "Aday A / A2 (withExtension, RDP devrede)",
+      "adim": "atlandi",
+      "komut": "-",
+      "sonuc": "A1 firlattigi icin girilmedi — RDP'ye HIC dokunulmadi",
+      "birebirHata": ""
+    },
+    {
+      "yol": "Y10-B (RDP YOK — profile imzasiz XPI sideload)",
+      "adim": "extensions.json kaydi VAR",
+      "komut": "\"C:\\Users\\kadio\\AppData\\Local\\Temp\\sayac-librewolf-8Fku7y\\librewolf-153.0.4-1\\LibreWolf\\librewolf.exe\" -no-remote -profile C:\\Users\\kadio\\AppData\\Local\\Temp\\sayac-lw-profil-B-eRpDGj -headless http://127.0.0.1:53969/sayac.html?otomatik=1   (env MOZ_NO_REMOTE=1)",
+      "sonuc": "KAYIT: {\"id\":\"sayac@sayac.local\",\"active\":true,\"location\":\"app-profile\",\"signedState\":0,\"appDisabled\":false,\"userDisabled\":false,\"type\":\"extension\"} · sondadan isaret=15",
+      "birebirHata": "",
+      "extensionsJson": {
+        "yol": "C:\\Users\\kadio\\AppData\\Local\\Temp\\sayac-lw-profil-B-eRpDGj\\extensions.json",
+        "var": true,
+        "bulundu": true,
+        "kayit": {
+          "id": "sayac@sayac.local",
+          "active": true,
+          "location": "app-profile",
+          "signedState": 0,
+          "appDisabled": false,
+          "userDisabled": false,
+          "type": "extension"
+        }
+      }
+    },
+    {
+      "yol": "FAZ 4 — gercek arac cubugu paneli (browserAction.openPopup)",
+      "adim": "panel baglamindan rapor DUSTU",
+      "komut": "\"C:\\Users\\kadio\\AppData\\Local\\Temp\\sayac-librewolf-8Fku7y\\librewolf-153.0.4-1\\LibreWolf\\librewolf.exe\" -no-remote -profile C:\\Users\\kadio\\AppData\\Local\\Temp\\sayac-lw-profil-panel-9dhqLN -headless http://127.0.0.1:53969/sayac.html?otomatik=1&panel=1   (env MOZ_NO_REMOTE=1)",
+      "sonuc": "PANEL ACILDI — 4 rapor; sender.tab olcumu icin rapor icerigi kanit dosyasinda",
+      "birebirHata": ""
+    },
+    {
+      "yol": "web-ext RDP",
+      "adim": "DENENMEDI",
+      "komut": "-",
+      "sonuc": "005 kritik yasak 2: ayni ECONNREFUSED 4 kez alindi, 5. kez durma esigi (HEDEF.md:156). Bilerek denenmedi.",
+      "birebirHata": ""
+    },
+    {
+      "yol": "about:debugging ile elle yukleme",
+      "adim": "DENENMEDI",
+      "komut": "-",
+      "sonuc": "Makine kanali yok — ELLE gezinme gerektirir. Otomatiklestirilemedigi icin OLCULEMEDI; 'calismiyor' DEGIL.",
+      "birebirHata": ""
+    },
+    {
+      "yol": "AMO imzalatma",
+      "adim": "DENENMEDI",
+      "komut": "-",
+      "sonuc": "Ag + hesap gerektirir, kapsam disi (SAYAC_TEKLIF.md).",
+      "birebirHata": ""
+    }
+  ],
+  "artefakt": {
+    "imzaSatirlari": [],
+    "extensionsSatirlari": [
+      "defaultPref(\"extensions.getAddons.langpacks.url\", \"\");",
+      "defaultPref(\"extensions.ui.mlmodel.hidden\", true);",
+      "defaultPref(\"extensions.webextensions.restrictedDomains\", \"\");",
+      "defaultPref(\"extensions.enabledScopes\", 5); // hidden",
+      "defaultPref(\"extensions.postDownloadThirdPartyPrompt\", false);",
+      "defaultPref(\"extensions.formautofill.addresses.enabled\", false);",
+      "defaultPref(\"extensions.formautofill.creditCards.enabled\", false);",
+      "defaultPref(\"extensions.htmlaboutaddons.recommendations.enabled\", false);",
+      "defaultPref(\"extensions.getAddons.showPane\", false);"
+    ],
+    "policiesUzunluk": 2888,
+    "policyAnahtarlari": [
+      "AIControls",
+      "AppUpdateURL",
+      "DisableAppUpdate",
+      "DisableDefaultBrowserAgent",
+      "DisableFeedbackCommands",
+      "DisableFirefoxStudies",
+      "DisableRemoteImprovements",
+      "DisableSetDesktopBackground",
+      "DisableTelemetry",
+      "DontCheckDefaultBrowser",
+      "WebsiteFilter",
+      "EncryptedMediaExtensions",
+      "ExtensionSettings",
+      "FirefoxHome",
+      "FirefoxSuggest",
+      "HttpsOnlyMode",
+      "LocalNetworkAccess",
+      "NoDefaultBookmarks",
+      "OverridePostUpdatePage",
+      "SkipTermsOfUse",
+      "SupportMenu",
+      "UserMessaging"
+    ]
   },
-  "overrideYazildi": "C:\\Users\\kadio\\AppData\\Local\\Temp\\sayac-librewolf-profil-lsO2hg\\librewolf.overrides.cfg"
+  "kuruluPidOnce": [],
+  "kuruluPidSonra": [],
+  "a1Cozuldu": false,
+  "bIsaret": 15,
+  "olcum": {
+    "isaretSayisi": 15,
+    "gecen": 11,
+    "kalan": 0,
+    "durumlar": [
+      "DURAKLATILDI",
+      "İZLENİYOR"
+    ],
+    "ornekler": [
+      {
+        "durum": "İZLENİYOR",
+        "dAn": 248,
+        "d": {
+          "izleniyor": 248,
+          "duraklatildi": 0,
+          "mola": 0
+        },
+        "dogru": true
+      },
+      {
+        "durum": "İZLENİYOR",
+        "dAn": 280,
+        "d": {
+          "izleniyor": 280,
+          "duraklatildi": 0,
+          "mola": 0
+        },
+        "dogru": true
+      },
+      {
+        "durum": "İZLENİYOR",
+        "dAn": 220,
+        "d": {
+          "izleniyor": 220,
+          "duraklatildi": 0,
+          "mola": 0
+        },
+        "dogru": true
+      },
+      {
+        "durum": "İZLENİYOR",
+        "dAn": 251,
+        "d": {
+          "izleniyor": 251,
+          "duraklatildi": 0,
+          "mola": 0
+        },
+        "dogru": true
+      },
+      {
+        "durum": "İZLENİYOR",
+        "dAn": 250,
+        "d": {
+          "izleniyor": 250,
+          "duraklatildi": 0,
+          "mola": 0
+        },
+        "dogru": true
+      },
+      {
+        "durum": "İZLENİYOR",
+        "dAn": 970,
+        "d": {
+          "izleniyor": 970,
+          "duraklatildi": 0,
+          "mola": 0
+        },
+        "dogru": true
+      }
+    ],
+    "sonToplam": {
+      "izleniyor": 2498,
+      "duraklatildi": 945,
+      "mola": 0
+    }
+  },
+  "faz4": {
+    "panelRaporSayisi": 4,
+    "isaret": 16,
+    "panelSonuc": "rapor dusmedi",
+    "karsitDeney": {
+      "baglam": "panel",
+      "ust": "1",
+      "getCurrent": "yok",
+      "tabsTipi": "object",
+      "sorguId": "1",
+      "pencereHedef": "1",
+      "probe1Gonderilen": "999999",
+      "probe1Donen": "999999",
+      "probe2Gonderilen": "888888",
+      "probe2Donen": "888888",
+      "bgSekmeId": "yok",
+      "sIzleniyor": "0:00:02",
+      "sDurum": "DURAKLATILDI",
+      "sBtnMola": "MOLA",
+      "sBtnAna": "DUR",
+      "sUyari": ""
+    },
+    "hamRaporlar": [
+      {
+        "deney": "pencere",
+        "tur": "3",
+        "ust": "1",
+        "getCurrent": "yok",
+        "baglam": "panel",
+        "tabsTipi": "object",
+        "sorguUzunluk": "1",
+        "sorguId": "1",
+        "urlTipi": "undefined",
+        "sorguHata": "",
+        "urlSuzgec": "sonuc:0",
+        "pencereHedef": "1",
+        "bicimTipi": "function",
+        "yoklamaVar": "1",
+        "probe1Gonderilen": "999999",
+        "probe1Donen": "999999",
+        "probe1Izleniyor": "0",
+        "probe2Gonderilen": "888888",
+        "probe2Donen": "888888",
+        "probe2Izleniyor": "0",
+        "bgSekmeId": "yok",
+        "bgAn": "yok",
+        "bgIzleniyor": "yok",
+        "bgDuraklatildi": "yok",
+        "bgMola": "yok",
+        "bgDurum": "hata:sekme kimligi yok",
+        "mfPopup": "moz-extension://6dbd69e2-65bf-44e8-a32c-20d8c6d87259/pencere.html",
+        "mfBaslik": "Sayaç",
+        "openPopup": "denenmedi",
+        "sIzleniyor": "0:00:02",
+        "sDuraklatildi": "0:00:00",
+        "sMola": "0:00:00",
+        "sDurum": "İZLENİYOR",
+        "sBtnMola": "MOLA",
+        "sBtnAna": "DUR",
+        "sUyari": "",
+        "sBaslik": "Sayaç",
+        "sEtiketler": "İzleniyor|Duraklatıldı|Mola|Durum:",
+        "uc": "/olay",
+        "ms": 1786728214339
+      },
+      {
+        "deney": "pencere",
+        "tur": "4",
+        "ust": "1",
+        "getCurrent": "yok",
+        "baglam": "panel",
+        "tabsTipi": "object",
+        "sorguUzunluk": "1",
+        "sorguId": "1",
+        "urlTipi": "undefined",
+        "sorguHata": "",
+        "urlSuzgec": "sonuc:0",
+        "pencereHedef": "1",
+        "bicimTipi": "function",
+        "yoklamaVar": "1",
+        "probe1Gonderilen": "999999",
+        "probe1Donen": "999999",
+        "probe1Izleniyor": "0",
+        "probe2Gonderilen": "888888",
+        "probe2Donen": "888888",
+        "probe2Izleniyor": "0",
+        "bgSekmeId": "yok",
+        "bgAn": "yok",
+        "bgIzleniyor": "yok",
+        "bgDuraklatildi": "yok",
+        "bgMola": "yok",
+        "bgDurum": "hata:sekme kimligi yok",
+        "mfPopup": "moz-extension://6dbd69e2-65bf-44e8-a32c-20d8c6d87259/pencere.html",
+        "mfBaslik": "Sayaç",
+        "openPopup": "denenmedi",
+        "sIzleniyor": "0:00:02",
+        "sDuraklatildi": "0:00:01",
+        "sMola": "0:00:00",
+        "sDurum": "DURAKLATILDI",
+        "sBtnMola": "MOLA",
+        "sBtnAna": "DUR",
+        "sUyari": "",
+        "sBaslik": "Sayaç",
+        "sEtiketler": "İzleniyor|Duraklatıldı|Mola|Durum:",
+        "uc": "/olay",
+        "ms": 1786728215789
+      }
+    ],
+    "golgeleme": false
+  },
+  "kumeAyni": true
 }

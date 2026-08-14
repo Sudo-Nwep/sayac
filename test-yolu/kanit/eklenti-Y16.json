@@ -1,6 +1,6 @@
 {
   "hucre": "Y16",
-  "durum": "olculemedi",
+  "durum": "ölçülemedi",
   "sebep": "OLCULEMEDI - iki katman birden: (1) arkaplan.js:73-78 onceligi msg.sekmeId'yi golgeliyor (gonderilen 999999 -> donen 1); (2) WAR iframe baglaminda API.tabs UNDEFINED (\"can't access property \"query\", API.tabs is undefined\") oldugu icin pencere kimlik BILE cozemiyor ve urunun kelepcesi devreye giriyor. Olculen: tabs.query -> yok, sonda -> 1. Pencerenin kimlik cozumu bu baglamda SINANAMAZ.",
   "tolerans": {
     "TOLERANS_MS": 250,
@@ -9,7 +9,7 @@
   },
   "olcumler": [],
   "sorunlar": [],
-  "sureMs": 16132,
+  "sureMs": 15650,
   "manifest": {
     "manifest_version": 2,
     "name": "Sayaç",
@@ -59,16 +59,16 @@
         "gonderilen": "999999",
         "donen": "1",
         "esit": false,
-        "izleniyor": "1799"
+        "izleniyor": "1826"
       },
       "probe2": {
         "gonderilen": "888888",
         "donen": "1",
         "esit": false,
-        "izleniyor": "1800"
+        "izleniyor": "1827"
       },
       "gercekSekmeId": "1",
-      "gercekIzleniyor": "2449",
+      "gercekIzleniyor": "2479",
       "golgeleme": true,
       "hamRapor": {
         "deney": "pencere",
@@ -87,17 +87,17 @@
         "yoklamaVar": "0",
         "probe1Gonderilen": "999999",
         "probe1Donen": "1",
-        "probe1Izleniyor": "1799",
+        "probe1Izleniyor": "1826",
         "probe2Gonderilen": "888888",
         "probe2Donen": "1",
-        "probe2Izleniyor": "1800",
+        "probe2Izleniyor": "1827",
         "bgSekmeId": "1",
-        "bgAn": "1786724374758",
-        "bgIzleniyor": "1801",
-        "bgDuraklatildi": "303",
+        "bgAn": "1786729117075",
+        "bgIzleniyor": "1828",
+        "bgDuraklatildi": "283",
         "bgMola": "0",
         "bgDurum": "İZLENİYOR",
-        "mfPopup": "moz-extension://4025e28b-1fac-480a-96bc-8b35c7cddedd/pencere.html",
+        "mfPopup": "moz-extension://578e8ed8-e2bd-458f-b8dc-7cb2163726dd/pencere.html",
         "mfBaslik": "Sayaç",
         "openPopup": "denenmedi",
         "sIzleniyor": "0:00:00",
@@ -110,7 +110,7 @@
         "sBaslik": "Sayaç",
         "sEtiketler": "İzleniyor|Duraklatıldı|Mola|Durum:",
         "uc": "/olay",
-        "ms": 1786724374761
+        "ms": 1786729117078
       }
     },
     "16b": {
@@ -155,12 +155,12 @@
         "probe2Donen": "2",
         "probe2Izleniyor": "0",
         "bgSekmeId": "2",
-        "bgAn": "1786724376017",
+        "bgAn": "1786729118294",
         "bgIzleniyor": "0",
-        "bgDuraklatildi": "2",
+        "bgDuraklatildi": "1",
         "bgMola": "0",
         "bgDurum": "DURAKLATILDI",
-        "mfPopup": "moz-extension://4025e28b-1fac-480a-96bc-8b35c7cddedd/pencere.html",
+        "mfPopup": "moz-extension://578e8ed8-e2bd-458f-b8dc-7cb2163726dd/pencere.html",
         "mfBaslik": "Sayaç",
         "openPopup": "denenmedi",
         "sIzleniyor": "0:00:00",
@@ -173,7 +173,7 @@
         "sBaslik": "Sayaç",
         "sEtiketler": "İzleniyor|Duraklatıldı|Mola|Durum:",
         "uc": "/olay",
-        "ms": 1786724376019
+        "ms": 1786729118295
       }
     },
     "16d": {
@@ -183,5 +183,5 @@
     }
   },
   "karar": "OLCULEMEDI - iki katman birden: (1) arkaplan.js:73-78 onceligi msg.sekmeId'yi golgeliyor (gonderilen 999999 -> donen 1); (2) WAR iframe baglaminda API.tabs UNDEFINED (\"can't access property \"query\", API.tabs is undefined\") oldugu icin pencere kimlik BILE cozemiyor ve urunun kelepcesi devreye giriyor. Olculen: tabs.query -> yok, sonda -> 1. Pencerenin kimlik cozumu bu baglamda SINANAMAZ.",
-  "isaretSayisi": 78
+  "isaretSayisi": 79
 }

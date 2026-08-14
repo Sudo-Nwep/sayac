@@ -10,6 +10,42 @@
   "olcumler": [
     {
       "ad": "oynat",
+      "dAn": 2755,
+      "d": {
+        "izleniyor": 2755,
+        "duraklatildi": 0,
+        "mola": 0
+      },
+      "durum": "İZLENİYOR",
+      "cetvelB": {
+        "video": "v1",
+        "paused": false,
+        "currentTime": 3.221,
+        "readyState": 4,
+        "visibilityState": "visible",
+        "icerikBetigi": "1"
+      }
+    },
+    {
+      "ad": "duraklat",
+      "dAn": 2755,
+      "d": {
+        "izleniyor": 0,
+        "duraklatildi": 2755,
+        "mola": 0
+      },
+      "durum": "DURAKLATILDI",
+      "cetvelB": {
+        "video": "v1",
+        "paused": true,
+        "currentTime": 3.221,
+        "readyState": 4,
+        "visibilityState": "visible",
+        "icerikBetigi": "1"
+      }
+    },
+    {
+      "ad": "tekrar oynat",
       "dAn": 2754,
       "d": {
         "izleniyor": 2754,
@@ -20,43 +56,7 @@
       "cetvelB": {
         "video": "v1",
         "paused": false,
-        "currentTime": 3.264,
-        "readyState": 4,
-        "visibilityState": "visible",
-        "icerikBetigi": "1"
-      }
-    },
-    {
-      "ad": "duraklat",
-      "dAn": 2756,
-      "d": {
-        "izleniyor": 0,
-        "duraklatildi": 2756,
-        "mola": 0
-      },
-      "durum": "DURAKLATILDI",
-      "cetvelB": {
-        "video": "v1",
-        "paused": true,
-        "currentTime": 3.264,
-        "readyState": 4,
-        "visibilityState": "visible",
-        "icerikBetigi": "1"
-      }
-    },
-    {
-      "ad": "tekrar oynat",
-      "dAn": 2753,
-      "d": {
-        "izleniyor": 2753,
-        "duraklatildi": 0,
-        "mola": 0
-      },
-      "durum": "İZLENİYOR",
-      "cetvelB": {
-        "video": "v1",
-        "paused": false,
-        "currentTime": 6.485,
+        "currentTime": 6.464,
         "readyState": 4,
         "visibilityState": "visible",
         "icerikBetigi": "1"
@@ -64,7 +64,7 @@
     }
   ],
   "sorunlar": [],
-  "sureMs": 12524,
+  "sureMs": 12088,
   "manifest": {
     "manifest_version": 2,
     "name": "Sayaç",

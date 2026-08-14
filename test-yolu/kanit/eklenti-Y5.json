@@ -10,16 +10,16 @@
   "olcumler": [
     {
       "ad": "devir oncesi oynuyor",
-      "dAn": 2754,
+      "dAn": 2753,
       "d": {
-        "izleniyor": 2754,
+        "izleniyor": 2753,
         "duraklatildi": 0,
         "mola": 0
       },
       "cetvelB": {
         "video": "v1",
         "paused": false,
-        "currentTime": 3.211,
+        "currentTime": 3.275,
         "readyState": 4,
         "visibilityState": "visible",
         "icerikBetigi": "1"
@@ -27,16 +27,16 @@
     },
     {
       "ad": "devir sonrasi oynuyor",
-      "dAn": 2756,
+      "dAn": 2755,
       "d": {
-        "izleniyor": 2756,
+        "izleniyor": 2755,
         "duraklatildi": 0,
         "mola": 0
       },
       "cetvelB": {
         "video": "v1",
         "paused": false,
-        "currentTime": 26.56,
+        "currentTime": 26.795,
         "readyState": 4,
         "visibilityState": "visible",
         "icerikBetigi": "1"
@@ -44,7 +44,7 @@
     }
   ],
   "sorunlar": [],
-  "sureMs": 29260,
+  "sureMs": 29151,
   "manifest": {
     "manifest_version": 2,
     "name": "Sayaç",
@@ -87,26 +87,26 @@
   "geceYarisi": {
     "oncesi": {
       "toplam": {
-        "izleniyor": 3217,
-        "duraklatildi": 34,
+        "izleniyor": 3228,
+        "duraklatildi": 25,
         "mola": 0
       },
       "gunBasiMs": 1786654800000,
-      "anMs": 1786741180318,
+      "anMs": 1786741180023,
       "durumAdi": "İZLENİYOR"
     },
     "sonrasi": {
       "toplam": {
-        "izleniyor": 106,
+        "izleniyor": 60,
         "duraklatildi": 0,
         "mola": 0
       },
       "gunBasiMs": 1786741200000,
-      "anMs": 1786741200106,
+      "anMs": 1786741200060,
       "durumAdi": "İZLENİYOR"
     },
     "gunBasiFarki": 86400000,
     "kelepceSayisi": 0
   },
-  "isaretSayisi": 107
+  "isaretSayisi": 108
 }

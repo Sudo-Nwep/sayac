@@ -292,6 +292,17 @@ video gerçekten oynuyor ve Playwright sayfa durumunu doğrudan okuyabiliyor.
    > Ayrıntı ve madde 5'e girdi: `EKLENTI.md` → Y10. *(Özgün ölçüm silinmedi — G09: iki hafıza.)* Bu turda dokunulmadı (G20); kararı madde 3'ün turu verecek.
    Not: seçilen yol LibreWolf'a da uygulanabilir — `playwright-webextext` bir `BrowserType`
    sarar, `web-ext` ise `firefox: '<ikili yolu>'` ile herhangi bir Gecko ikilisine yönlenir.
+   > ✅ **DÜZELTME (tur 005'te ÖLÇÜLDÜ):** bu not **kanıtsız olgu kipindeydi**, artık ölçüme
+   > bağlı. ⑴ `playwright-webextext`'in sardığı Playwright, taşınabilir LibreWolf ikilisiyle
+   > **açılmadı**: `executablePath` verildi (destekleniyor) ama
+   > `TimeoutError: browserType.launchPersistentContext: Timeout 45000ms exceeded.` —
+   > engel **launch adımında**, RDP'de değil. ⑵ `web-ext` **RDP** yolu bu turda **bilerek
+   > denenmedi** (aynı `ECONNREFUSED` 4 kez alındı, 5. kez durma eşiği — `HEDEF.md:156`).
+   > ⑶ **Kurulum yine de KANITLANDI, RDP'siz:** imzasız XPI profile düşürüldü ve LibreWolf
+   > `-no-remote -profile` ile başlatıldı → `extensions.json`: `active:true, signedState:0,
+   > appDisabled:false`; sondadan 15 işaret, `gecen=11 kalan=0`.
+   > Ayrıntı: `EKLENTI.md` → Y10 DÜZELTME · `test-yolu/kanit/eklenti-Y10.json`.
+   > *(Özgün not silinmedi — G09: iki hafıza.)*
 4. **Aynı iskele madde 3'e devroluyor.** `<video>`'lu yerel sahte sayfa madde 3'ün ①
    kanıtının tam olarak istediği şeydir; işaret sunucusu + tek kullanımlık profil + sert
    sayaç düzeneği olduğu gibi kullanılabilir.

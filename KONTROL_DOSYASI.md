@@ -8,7 +8,36 @@
 
 ## 🔵 Şu ANKİ TEK İŞ
 
-> **Madde 4 — arayüz yazıldı; davranış ölçüldü, arayüzden ölçüm kısmen ölçülemedi.**
+> **005 — madde 3'ün iki açık kutusu kapandı, ölçüm kaydı düzeltildi.**
+>
+> **✅ Y10 YEŞİL — LibreWolf'a kurulabilirlik KANITLANDI.** RDP kullanılmadan: imzasız XPI
+> `<profil>\extensions\sayac@sayac.local.xpi` olarak düşürüldü, taşınabilir LibreWolf
+> `-no-remote -profile … -headless` ile başlatıldı. Artefakt: `extensions.json` →
+> `active:true · signedState:0 · appDisabled:false · location:"app-profile"`.
+> Sondadan 15 işaret; ölçüm `gecen=11 · kalan=0`, iki durum görüldü.
+> **Aday A ölçülerek elendi** (düz Playwright + LibreWolf `executablePath` →
+> `TimeoutError: launchPersistentContext: Timeout 45000ms`) — **RDP'ye hiç varılmadı**,
+> `ECONNREFUSED` sayacı **artmadı** (4/5'te kaldı).
+>
+> **✅ Sekme kimliği zinciri GERÇEK PANELDE ölçüldü** (Faz 4, LibreWolf kanalı açıldığı için
+> mümkün oldu): karşıt deney `999999 → 999999` · `888888 → 888888` · `getCurrent=yok` →
+> panelde `sender.tab` **yok**, `msg.sekmeId` yolu **geçerli**. `pencereHedef=1 = sorguId=1`,
+> panel DOM canlı (`0:00:02`, `#uyari` boş, `btnMola="MOLA"`). `EKLENTI.md:380`'in
+> doğrulanmamış iddiası **kapandı**.
+>
+> **⚠️ Y4 ÖLÇÜLEMEDİ, üç yol da denendi:** Y4a `window.open` · Y4b sondadan
+> `tabs.create({active:true})` (gerçekten yeni aktif sekme açtı, `id=3`) · Y4c
+> `newPage+bringToFront` → **üçünde de `visibilityState="visible"`**. Taklit yapılmadı.
+>
+> **🔧 Sayaç düzeltildi + bozularak sınandı:** `ZORUNLU OLCULEMEDI` satırı Y16'yı
+> saymıyordu (tam dize karşılaştırması, Y16 ASCII yazıyordu). `test-yolu/ortak/durum.mjs`
+> tek kaynak oldu; sapma artık **bağırılıyor**. `npm run eklenti:sayac-kanit` → **3/3, çıkış 0**.
+>
+> **Sıradaki tek iş:** madde 5 — private GitHub deposu, README, etiket, gizli taraması.
+>
+> ---
+>
+> **Madde 4 (kapandı) — arayüz yazıldı; davranış ölçüldü.**
 >
 > `eklenti/pencere.html` + `pencere.js` + `bicim.js`; manifest `browser_action.default_popup`
 > bildiriyor. **İzin eklenmedi** — Y14 karşıt deneyi: izinsizken `tabs.query` sekme kimliğini
@@ -37,8 +66,9 @@
 > `eklenti/` — MV2, **hiçbir host izni yok**, içerik betiği yalnız YouTube'a enjekte olur.
 > Sayaç mantığı ikinci kez yazılmadı: `eklenti/sayac.js`, `mantik/sayac.mjs`'ten **üretilir**
 > ve senkronluk SHA-256 ile kanıtlanır (`npm run eklenti:kontrol` → çıkış 0).
-> **Ölçüm:** `npm run eklenti:test` → **çıkış 0** · on hücrenin **sekizi YEŞİL**, ikisi
-> "ölçülemedi" (Y4 arka plan sekmesi · Y10 LibreWolf), **hiçbiri KIRMIZI değil**.
+> **Ölçüm (005'te güncellendi):** `npm run eklenti:test` → **çıkış 0** · **16 hücre:
+> 10 YEŞİL · 5 ölçülemedi (Y4 · Y16 · Y11 · Y12 · Y13) · 1 atlandı (Y10)**,
+> **hiçbiri KIRMIZI değil**. Y10 ayrıca elle koşuldu ve **YEŞİL** (LibreWolf'a kurulabilirlik).
 > Her yeşil hücrede sapma **tam 0** (Δkova = Δan; tolerans 250 ms, koşumdan önce sabit).
 > Gerçek YouTube duman testi de geçti (Y9). Ayrıntı: `EKLENTI.md`.
 >
@@ -101,7 +131,7 @@
 
 | # | İş | Durum | Not |
 |---|---|---|---|
-| 1 | Madde 5 — private GitHub deposu, README, etiket, gizli taraması | 🔵 bugün | `git push` yalnız burada, önceden yetkili. Açıklar: Y10 (LibreWolf kurulumu, `EKLENTI.md` 7b) · Y4 (arka plandaki sekme) · gerçek araç çubuğu paneli bağlamı (`ARAYUZ.md`) |
+| 1 | Madde 5 — private GitHub deposu, README, etiket, gizli taraması | 🔵 bugün | `git push` yalnız burada, önceden yetkili. **Y10 ve panel bağlamı 005'te kapandı.** README'ye girecek kurulum yolu ölçülü: imzasız XPI'yi `<profil>\extensions\sayac@sayac.local.xpi` olarak düşür. Kalan açık: Y4 (arka plandaki sekme, üç yol da `visible` ölçtü) |
 
 **Biten:** madde 1 (`TEST_YOLU.md`) · madde 2 (`MANTIK.md`) · madde 3 (`EKLENTI.md`) ·
 madde 4 (`ARAYUZ.md`) —

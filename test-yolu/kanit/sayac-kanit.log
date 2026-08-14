@@ -1,0 +1,23 @@
+=== SAYAC — sayac kaniti (G26) ===
+komut: node test-yolu/eklenti-kosum.mjs --kanit
+node=v26.5.0 platform=win32
+========================================================================
+
+========================================================================
+SAYAC KANITI (G26) — 'artik dogru sayiyor' demek yetmez, BOZULARAK sinanir
+========================================================================
+
+BACAK 1 — sentetik tablo (4 satir: kanonik / ASCII / zorunlu degil / YESIL)
+   yeni sayac = 2 (beklenen 2) · eski sayac = 1 (beklenen 1) → TAMAM
+
+BACAK 2 — gercek rapor, BELLEKTEKI kopyada bozuldu (disk DEGISMEZ)
+   hedef=Y4 "ölçülemedi" → "olculemedi" · yeni: 5→5 (ayni olmali) · eski: 5→4 (bir eksik olmali) → TAMAM
+
+BACAK 3 — negatif kontrol: sayac kor korune artmiyor
+   hedef=Y4 → "YESIL" · yeni sayac: 5→4 (bir eksik olmali) → TAMAM
+
+kanit/eklenti-rapor.json SHA-256 once : 5d77abd5fadba2c0efe6d0f5b3464a0792bee46bed0dadd0d076c96bf1fdf1cb
+kanit/eklenti-rapor.json SHA-256 sonra: 5d77abd5fadba2c0efe6d0f5b3464a0792bee46bed0dadd0d076c96bf1fdf1cb
+disk DEGISMEDI: true
+
+SONUC: ✓ sayac gercekten olcuyor

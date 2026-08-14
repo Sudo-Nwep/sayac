@@ -9,7 +9,7 @@
   },
   "olcumler": [],
   "sorunlar": [],
-  "sureMs": 35414,
+  "sureMs": 34677,
   "manifest": {
     "manifest_version": 2,
     "name": "Sayaç",
@@ -76,12 +76,12 @@
       "probe2Donen": "1",
       "probe2Izleniyor": "0",
       "bgSekmeId": "1",
-      "bgAn": "1786724470694",
+      "bgAn": "1786729233627",
       "bgIzleniyor": "0",
-      "bgDuraklatildi": "31994",
+      "bgDuraklatildi": "31883",
       "bgMola": "0",
       "bgDurum": "DURAKLATILDI",
-      "mfPopup": "moz-extension://ec811df3-3768-4922-8e01-1bd15dce0cea/pencere.html",
+      "mfPopup": "moz-extension://3d463310-be86-4e67-92dc-d669af6b2b3e/pencere.html",
       "mfBaslik": "Sayaç",
       "openPopup": "denenmedi",
       "sIzleniyor": "0:00:00",
@@ -94,7 +94,7 @@
       "sBaslik": "Sayaç",
       "sEtiketler": "İzleniyor|Duraklatıldı|Mola|Durum:",
       "uc": "/olay",
-      "ms": 1786724470698
+      "ms": 1786729233627
     }
   },
   "isaretSayisi": 215

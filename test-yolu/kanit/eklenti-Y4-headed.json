@@ -9,7 +9,7 @@
   },
   "olcumler": [],
   "sorunlar": [],
-  "sureMs": 8517,
+  "sureMs": 11094,
   "manifest": {
     "manifest_version": 2,
     "name": "Sayaç",
@@ -47,28 +47,50 @@
         "run_at": "document_idle",
         "all_frames": false
       }
+    ],
+    "permissions": [
+      "tabs"
     ]
   },
   "visibilityState": "visible",
+  "yollar": [
+    {
+      "yol": "Y4a window.open (ayni pencerede sekme)",
+      "komut": "window.open(url,\"_blank\")",
+      "donus": "pencere nesnesi dondu",
+      "olculenVisibilityState": "visible"
+    },
+    {
+      "yol": "Y4b sonda tabs.create({active:true})",
+      "komut": "data-sayac-sekme-ac ozniteligi",
+      "donus": "tabs.create tamam id=3",
+      "olculenVisibilityState": "visible"
+    },
+    {
+      "yol": "Y4c newPage + bringToFront",
+      "komut": "context.newPage() + bringToFront()",
+      "olculenVisibilityState": "visible"
+    }
+  ],
   "kismiOlcum": {
     "not": "visibilityState 'hidden' YAPILAMADI; asagidaki rakam yalnizca 'A sekmesi one alinmis DEGIL' kosulunda olculdu — 'arka plandaki sekme' kanIti DEGILDIR",
     "ad": "onde olmayan sekmede oynuyor",
-    "dAn": 2771,
+    "dAn": 2761,
     "d": {
-      "izleniyor": 2771,
+      "izleniyor": 2761,
       "duraklatildi": 0,
       "mola": 0
     },
     "cetvelB": {
       "video": "v1",
       "paused": false,
-      "currentTime": 3.883,
+      "currentTime": 7.456,
       "readyState": 4,
       "visibilityState": "visible",
       "icerikBetigi": "1"
     },
     "sorunlar": []
   },
-  "onSekmeSayisi": 2,
-  "isaretSayisi": 19
+  "onSekmeSayisi": 4,
+  "isaretSayisi": 83
 }

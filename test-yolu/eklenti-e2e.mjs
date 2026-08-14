@@ -2,7 +2,7 @@
 //   node test-yolu/eklenti-e2e.mjs Y1 [headed]
 import {
   tarayiciliHucre, hazirBekle, faz, fazKontrol, fazYaz, anlik, yeniAnlik,
-  cetvelB, bekle, FAZ_MS, TOLERANS_MS,
+  cetvelB, bekle, hataMetni, FAZ_MS, TOLERANS_MS,
 } from "./ortak/hucre.mjs";
 
 const HUCRE = (process.argv[2] || "Y1").toUpperCase();
@@ -147,14 +147,78 @@ async function y4(ctx) {
   const on = await cetvelB(a.sayfa);
   yaz(`arkaya almadan once visibilityState=${on.visibilityState}`);
 
-  const b = await context.newPage();
-  await b.goto("about:blank", { waitUntil: "load", timeout: 15000 });
-  await b.bringToFront();
-  await bekle(600);
+  // ── ÜÇ YOL, SIRAYLA — ilki "hidden" verince dur. Taklit YASAK: visibilityState
+  // ezilmez, visibilitychange elle dispatch edilmez. Her yolun ÖLÇÜLEN değeri yazılır.
+  const yollar = [];
+  const gorunurlukOku = () =>
+    a.sayfa.evaluate(() => document.visibilityState).catch((e) => "okunamadi: " + hataMetni(e));
 
-  const gorunurluk = await a.sayfa.evaluate(() => document.visibilityState).catch(() => "okunamadi");
+  // Y4a — AYNI PENCEREDE ikinci sekme (sayfadan window.open).
+  // Firefox varsayılanı browser.link.open_newwindow=3 → yeni SEKME, odak ona geçer.
+  // Bu düzenek bu depoda çalışıyor: arayuz-e2e.mjs:186 ve arayuz-izin.mjs:60.
+  let gorunurluk = "denenmedi";
+  try {
+    const acRet = await a.sayfa.evaluate((u) => {
+      try {
+        window.__y4 = window.open(u, "_blank");
+        return window.__y4 ? "pencere nesnesi dondu" : "null — engellendi";
+      } catch (e) {
+        return "istisna: " + (e && e.message ? e.message : String(e));
+      }
+    }, sunucu.url + "?bos=1");
+    await bekle(1200);
+    gorunurluk = await gorunurlukOku();
+    yollar.push({ yol: "Y4a window.open (ayni pencerede sekme)", komut: 'window.open(url,"_blank")', donus: acRet, olculenVisibilityState: gorunurluk });
+    yaz(`Y4a window.open → ${acRet} · OLCULEN visibilityState="${gorunurluk}"`);
+  } catch (e) {
+    yollar.push({ yol: "Y4a window.open (ayni pencerede sekme)", birebirHata: hataMetni(e), olculenVisibilityState: "olculemedi" });
+    yaz(`Y4a DUSTU — birebir hata: ${hataMetni(e)}`);
+  }
+
+  // Y4b — sondadan tabs.create({active:true}). İzin YALNIZ test kopyasına verildi
+  // (eklenti-testi.mjs ekIzinler); eklenti/manifest.json DEĞİŞMEDİ.
+  if (gorunurluk !== "hidden") {
+    try {
+      await a.sayfa.evaluate((u) => {
+        document.documentElement.setAttribute("data-sayac-sekme-ac", u);
+      }, sunucu.url + "?bos=2");
+      await bekle(2000);
+      gorunurluk = await gorunurlukOku();
+      const komutSonuc = await a.sayfa
+        .evaluate(() => document.documentElement.getAttribute("data-sayac-sekme-sonuc") || "yanit yok")
+        .catch(() => "okunamadi");
+      yollar.push({ yol: "Y4b sonda tabs.create({active:true})", komut: "data-sayac-sekme-ac ozniteligi", donus: komutSonuc, olculenVisibilityState: gorunurluk });
+      yaz(`Y4b tabs.create → ${komutSonuc} · OLCULEN visibilityState="${gorunurluk}"`);
+    } catch (e) {
+      yollar.push({ yol: "Y4b sonda tabs.create({active:true})", birebirHata: hataMetni(e), olculenVisibilityState: "olculemedi" });
+      yaz(`Y4b DUSTU — birebir hata: ${hataMetni(e)}`);
+    }
+  } else {
+    yollar.push({ yol: "Y4b sonda tabs.create({active:true})", atlandi: "Y4a zaten hidden verdi" });
+  }
+
+  // Y4c — eski yol: ayrı pencere + bringToFront. headed tekrarı eklenti-kosum.mjs:102-108
+  // kelepçesiyle yapılır; sebep dizesindeki "arka plana alinamadi" ifadesi KORUNUR.
+  if (gorunurluk !== "hidden") {
+    try {
+      const b = await context.newPage();
+      await b.goto("about:blank", { waitUntil: "load", timeout: 15000 });
+      await b.bringToFront();
+      await bekle(600);
+      gorunurluk = await gorunurlukOku();
+      yollar.push({ yol: "Y4c newPage + bringToFront", komut: "context.newPage() + bringToFront()", olculenVisibilityState: gorunurluk });
+      yaz(`Y4c newPage+bringToFront → OLCULEN visibilityState="${gorunurluk}"`);
+    } catch (e) {
+      yollar.push({ yol: "Y4c newPage + bringToFront", birebirHata: hataMetni(e), olculenVisibilityState: "olculemedi" });
+      yaz(`Y4c DUSTU — birebir hata: ${hataMetni(e)}`);
+    }
+  } else {
+    yollar.push({ yol: "Y4c newPage + bringToFront", atlandi: "onceki yol zaten hidden verdi" });
+  }
+
   yaz(`OLCULEN document.visibilityState (A sekmesi) = "${gorunurluk}" · headless=${!HEADED}`);
   sonuc.visibilityState = gorunurluk;
+  sonuc.yollar = yollar;
 
   if (gorunurluk !== "hidden") {
     // Kutu ÖLÇÜLEMEDİ — ama boş bırakılmaz: ölçülebilen kısım yine kaydedilir.
@@ -340,7 +404,9 @@ const TANIM = {
   Y1: { hazirlik: { manifestSurumu: 2 }, calistir: (c) => y1(c, 2) },
   Y2: { hazirlik: { manifestSurumu: 2 }, calistir: y2 },
   Y3: { hazirlik: { manifestSurumu: 2 }, calistir: y3 },
-  Y4: { hazirlik: { manifestSurumu: 2 }, calistir: y4 },
+  // ekIzinler YALNIZ test kopyasina girer (eklenti-testi.mjs); eklenti/manifest.json
+  // DEGISMEZ. Y4b'nin tabs.create'i icin gerekli.
+  Y4: { hazirlik: { manifestSurumu: 2, ekIzinler: ["tabs"] }, calistir: y4 },
   Y5: { hazirlik: { manifestSurumu: 2, kaymaMs: KAYMA_Y5 }, calistir: y5 },
   Y6: { hazirlik: { manifestSurumu: 2 }, calistir: y6 },
   Y7: { hazirlik: { manifestSurumu: 3 }, calistir: (c) => y1(c, 3) },

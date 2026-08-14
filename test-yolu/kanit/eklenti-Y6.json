@@ -10,78 +10,6 @@
   "olcumler": [
     {
       "ad": "mola oncesi oynuyor",
-      "dAn": 2753,
-      "d": {
-        "izleniyor": 2753,
-        "duraklatildi": 0,
-        "mola": 0
-      },
-      "durum": "İZLENİYOR",
-      "cetvelB": {
-        "video": "v1",
-        "paused": false,
-        "currentTime": 3.211,
-        "readyState": 4,
-        "visibilityState": "visible",
-        "icerikBetigi": "1"
-      }
-    },
-    {
-      "ad": "mola acik",
-      "dAn": 2754,
-      "d": {
-        "izleniyor": 0,
-        "duraklatildi": 0,
-        "mola": 2754
-      },
-      "durum": "MOLA",
-      "cetvelB": {
-        "video": "v1",
-        "paused": true,
-        "currentTime": 3.456,
-        "readyState": 4,
-        "visibilityState": "visible",
-        "icerikBetigi": "1"
-      }
-    },
-    {
-      "ad": "mola kapali",
-      "dAn": 2753,
-      "d": {
-        "izleniyor": 0,
-        "duraklatildi": 2753,
-        "mola": 0
-      },
-      "durum": "DURAKLATILDI",
-      "cetvelB": {
-        "video": "v1",
-        "paused": true,
-        "currentTime": 3.456,
-        "readyState": 4,
-        "visibilityState": "visible",
-        "icerikBetigi": "1"
-      }
-    },
-    {
-      "ad": "ana kapali",
-      "dAn": 2766,
-      "d": {
-        "izleniyor": 0,
-        "duraklatildi": 0,
-        "mola": 0
-      },
-      "durum": "KAPALI",
-      "cetvelB": {
-        "video": "v1",
-        "paused": false,
-        "currentTime": 7.701,
-        "readyState": 4,
-        "visibilityState": "visible",
-        "icerikBetigi": "1"
-      }
-    },
-    {
-      "ad": "ana tekrar acik",
       "dAn": 2754,
       "d": {
         "izleniyor": 2754,
@@ -92,7 +20,79 @@
       "cetvelB": {
         "video": "v1",
         "paused": false,
-        "currentTime": 11.467,
+        "currentTime": 3.232,
+        "readyState": 4,
+        "visibilityState": "visible",
+        "icerikBetigi": "1"
+      }
+    },
+    {
+      "ad": "mola acik",
+      "dAn": 2758,
+      "d": {
+        "izleniyor": 0,
+        "duraklatildi": 0,
+        "mola": 2758
+      },
+      "durum": "MOLA",
+      "cetvelB": {
+        "video": "v1",
+        "paused": true,
+        "currentTime": 3.467,
+        "readyState": 4,
+        "visibilityState": "visible",
+        "icerikBetigi": "1"
+      }
+    },
+    {
+      "ad": "mola kapali",
+      "dAn": 2754,
+      "d": {
+        "izleniyor": 0,
+        "duraklatildi": 2754,
+        "mola": 0
+      },
+      "durum": "DURAKLATILDI",
+      "cetvelB": {
+        "video": "v1",
+        "paused": true,
+        "currentTime": 3.467,
+        "readyState": 4,
+        "visibilityState": "visible",
+        "icerikBetigi": "1"
+      }
+    },
+    {
+      "ad": "ana kapali",
+      "dAn": 2755,
+      "d": {
+        "izleniyor": 0,
+        "duraklatildi": 0,
+        "mola": 0
+      },
+      "durum": "KAPALI",
+      "cetvelB": {
+        "video": "v1",
+        "paused": false,
+        "currentTime": 7.776,
+        "readyState": 4,
+        "visibilityState": "visible",
+        "icerikBetigi": "1"
+      }
+    },
+    {
+      "ad": "ana tekrar acik",
+      "dAn": 2753,
+      "d": {
+        "izleniyor": 2753,
+        "duraklatildi": 0,
+        "mola": 0
+      },
+      "durum": "İZLENİYOR",
+      "cetvelB": {
+        "video": "v1",
+        "paused": false,
+        "currentTime": 11.531,
         "readyState": 4,
         "visibilityState": "visible",
         "icerikBetigi": "1"
@@ -100,7 +100,7 @@
     }
   ],
   "sorunlar": [],
-  "sureMs": 21551,
+  "sureMs": 21186,
   "manifest": {
     "manifest_version": 2,
     "name": "Sayaç",
@@ -142,18 +142,18 @@
   },
   "videoDuraklatma": {
     "paused": true,
-    "currentTime": 3.456
+    "currentTime": 3.467
   },
   "anaKapatKumulatif": {
     "T1": {
-      "izleniyor": 3909,
-      "duraklatildi": 3602,
-      "mola": 3754
+      "izleniyor": 3971,
+      "duraklatildi": 3538,
+      "mola": 3762
     },
     "T2": {
-      "izleniyor": 7414,
-      "duraklatildi": 3602,
-      "mola": 3754
+      "izleniyor": 7475,
+      "duraklatildi": 3538,
+      "mola": 3762
     },
     "sifirlanmadi": true
   },

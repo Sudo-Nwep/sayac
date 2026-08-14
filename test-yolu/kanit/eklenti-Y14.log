@@ -2,25 +2,25 @@
 ne olcer: izin bütçesi — karşıt deney (izinsiz ↔ tabs izinli)
 komut: "C:\Program Files\nodejs\node.exe" "C:\Users\kadio\Documents\Claude\Projects\Sayac\test-yolu\arayuz-izin.mjs"
 node=v26.5.0 platform=win32
-sure=8101 ms · cikis kodu=0 · sinyal=null
+sure=5702 ms · cikis kodu=0 · sinyal=null
 ======================================================================
 
 [+000000ms] Y14 — izin butcesi karsit deneyi (urunun KENDI penceresiyle)
 [+000000ms] OLCULEN: pencerenin kendi baglamindan tabs yuzeyi ve url suzgeci
-[+003051ms] A izinsiz              manifest.permissions=null
-[+003051ms]    tabsTipi=object · sorguUzunluk=1 · sorguId=2 · urlTipi=string
-[+003051ms]    url suzgeci (tabs.query({url:"*://*.youtube.com/*"})) → sonuc:0
-[+003051ms]    getCurrent=2 · pencereHedef=yok · #uyari="Hedef sekme belirlenemedi."
-[+006760ms] B tabs izinli          manifest.permissions=["tabs"]
-[+006760ms]    tabsTipi=object · sorguUzunluk=1 · sorguId=2 · urlTipi=string
-[+006760ms]    url suzgeci (tabs.query({url:"*://*.youtube.com/*"})) → sonuc:0
-[+006760ms]    getCurrent=2 · pencereHedef=yok · #uyari="Hedef sekme belirlenemedi."
-[+007428ms] 
-[+007429ms] === Y14 TABLOSU ===
-[+007429ms] | kosu | manifest.permissions | tabsTipi | sorguUzunluk | sorguId | urlTipi | url suzgeci |
-[+007429ms] |---|---|---|---|---|---|---|
-[+007429ms] | A izinsiz | null | object | 1 | 2 | string | sonuc:0 |
-[+007429ms] | B tabs izinli | ["tabs"] | object | 1 | 2 | string | sonuc:0 |
-[+007429ms] 
-[+007429ms] YORUM: Arayuz YENI IZIN GEREKTIRMEDI: izinsiz manifestle tabs.query sekme kimligini DONDURDU (sorguId=2). IZNIN NE SATIN ALDIGI: urlTipi A=string → B=string; url suzgeci A=sonuc:0 → B=sonuc:0.
-[+007430ms] SONUC YESIL
+[+002205ms] A izinsiz              manifest.permissions=null
+[+002205ms]    tabsTipi=object · sorguUzunluk=1 · sorguId=2 · urlTipi=string
+[+002205ms]    url suzgeci (tabs.query({url:"*://*.youtube.com/*"})) → sonuc:0
+[+002205ms]    getCurrent=2 · pencereHedef=yok · #uyari="Hedef sekme belirlenemedi."
+[+004752ms] B tabs izinli          manifest.permissions=["tabs"]
+[+004752ms]    tabsTipi=object · sorguUzunluk=1 · sorguId=2 · urlTipi=string
+[+004752ms]    url suzgeci (tabs.query({url:"*://*.youtube.com/*"})) → sonuc:0
+[+004752ms]    getCurrent=2 · pencereHedef=yok · #uyari="Hedef sekme belirlenemedi."
+[+005087ms] 
+[+005087ms] === Y14 TABLOSU ===
+[+005087ms] | kosu | manifest.permissions | tabsTipi | sorguUzunluk | sorguId | urlTipi | url suzgeci |
+[+005087ms] |---|---|---|---|---|---|---|
+[+005087ms] | A izinsiz | null | object | 1 | 2 | string | sonuc:0 |
+[+005087ms] | B tabs izinli | ["tabs"] | object | 1 | 2 | string | sonuc:0 |
+[+005087ms] 
+[+005087ms] YORUM: Arayuz YENI IZIN GEREKTIRMEDI: izinsiz manifestle tabs.query sekme kimligini DONDURDU (sorguId=2). IZNIN NE SATIN ALDIGI: urlTipi A=string → B=string; url suzgeci A=sonuc:0 → B=sonuc:0.
+[+005088ms] SONUC YESIL

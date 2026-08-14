@@ -2,60 +2,81 @@
 ne olcer: LibreWolf taşınabilir (Aday B yolu) → ya kanıt ya ölçülemedi
 komut: "C:\Program Files\nodejs\node.exe" "C:\Users\kadio\Documents\Claude\Projects\Sayac\test-yolu\librewolf.mjs"
 node=v26.5.0 platform=win32
-sure=50044 ms · cikis kodu=0 · sinyal=null
+sure=61496 ms · cikis kodu=0 · sinyal=null
 ======================================================================
 
-[+000000ms] Y10 — LibreWolf (tasinabilir) uzerinde eklenti yukleme denemesi
-[+000001ms] YOL: Aday B (web-ext Node API). Aday A uygulanamaz — Playwright'in Firefox'u yamali.
-[+000004ms] onbellekten kullaniliyor: C:\Users\kadio\AppData\Local\Temp\sayac-librewolf-onbellek\librewolf-153.0.4-1-x86_64-portable.zip (162887896 bayt)
-[+001117ms] ikili bulundu: C:\Users\kadio\AppData\Local\Temp\sayac-librewolf-BJcDH9\librewolf-153.0.4-1\LibreWolf\librewolf.exe (512040 bayt)
-[+001117ms] kurulum dizini: C:\Users\kadio\AppData\Local\Temp\sayac-librewolf-BJcDH9\librewolf-153.0.4-1\LibreWolf
-[+001117ms] kurulum icerigi (ust duzey): ["AccessibleMarshal.dll","application.ini","browser","CoreMessagingXP.dll","defaults","dependentlibs.list","desktop-launcher","distribution","dxcompiler.dll","firefox.VisualElementsManifest.xml","fonts","freebl3.dll","gkcodecs.dll","gmp-clearkey","InstallationDirLayout.dll","installation_dir_layout","lgpllibs.dll","libEGL.dll","libGLESv2.dll","librewolf.cfg","librewolf.exe","librewolf.ico","marshal.dll","Microsoft.InputStateManager.dll","Microsoft.Internal.FrameworkUdk.dll","Microsoft.UI.Composition.OSSupport.dll","Microsoft.UI.Input.dll","Microsoft.UI.Windowing.Core.dll","Microsoft.UI.Windowing.dll","mozavcodec.dll","mozavutil.dll","mozglue.dll","mozinference.dll","msvcp140.dll","msvcp140_atomic_wait.dll","nmhproxy.exe","notificationserver.dll","nss3.dll","omni.ja","platform.ini"]
-[+001118ms] distribution/: ["policies.json"]
-[+001118ms] policies.json (2888 bayt): {
-    "__COMMENT__ More Information": "https://github.com/mozilla/policy-templates/blob/master/README.md",
-    "policies": {
-        "AIControls": {
-            "Translations": {
-                "Value": "available"
-            },
-            "PDFAltText": {
-                "Value": "blocked"
-            },
-            "SmartTabGroups": {
-                "Value": "blocked"
-            },
-            "LinkPreviewKeyPoints": {
-                "Value": "blocked"
-            },
-            "SidebarChatbot": {
-                "Value": "blocked"
-            },
-            "SmartWindow": {
-          
-[+001118ms] kurulumda .cfg dosyalari: ["librewolf.cfg"]
-[+001120ms] policies.json yamalandi (gecici kopya): HttpsOnlyMode "enabled" → "disabled" · WebsiteFilter silindi · LocalNetworkAccess.EnablePrompting=false
-[+001126ms] isaret sunucusu ayakta: http://127.0.0.1:57876
-[+001138ms] test kopyasi: C:\Users\kadio\AppData\Local\Temp\sayac-ekl-Y10-Bf3xz5
-[+001138ms] yamali manifest: {"manifest_version":2,"name":"Sayaç","version":"0.1.0","description":"YouTube izleme süresini üç kalemde ayırır: izleniyor · duraklatıldı · mola.","browser_specific_settings":{"gecko":{"id":"sayac@sayac.local"}},"background":{"scripts":["sonda-ayar.js","sonda-arkaplan.js","sayac.js","arkaplan.js"],"persistent":true},"content_scripts":[{"matches":["*://*.youtube.com/*","http://127.0.0.1/*"],"js":["sonda-ayar.js","icerik.js","sonda-icerik.js"],"run_at":"document_idle","all_frames":false}]}
-[+001138ms] web-ext ile aciliyor · startUrl=http://127.0.0.1:57876/sayac.html?otomatik=1
-[+001138ms] librewolf.overrides.cfg PROFILE yazildi: C:\Users\kadio\AppData\Local\Temp\sayac-librewolf-profil-lsO2hg\librewolf.overrides.cfg
-Running web extension from C:\Users\kadio\AppData\Local\Temp\sayac-ekl-Y10-Bf3xz5
-Profile directory C:\Users\kadio\AppData\Local\Temp\sayac-librewolf-profil-lsO2hg already exists
-Setting custom Firefox preferences: {
-  "media.autoplay.default": 0,
-  "xpinstall.signatures.required": false,
-  "devtools.debugger.remote-enabled": true,
-  "devtools.debugger.prompt-connection": false
-}
-Use --verbose or --devtools to see logging
-[+032726ms] DUSTU — BIREBIR HATA: [adim: web-ext ile yukleme] Error: connect ECONNREFUSED 127.0.0.1:57877
-[+032727ms] isaret sunucusu kapatildi
-[+049254ms] 
-[+049255ms] KUTU OLCULEMEDI — sebep yukarida. Secilen yolun LibreWolf'a uygulanmasi:
-[+049255ms]   · Aday A (playwright-webextext) UYGULANAMAZ — Playwright'in Firefox'u Juggler
-[+049255ms]     protokollu yamali bir yapidir; stok Gecko ikilisi o yolla surulemez.
-[+049255ms]   · Aday B (web-ext Node API) UYGULANABILIR — firefox:'<librewolf yolu>' ile
-[+049255ms]     herhangi bir Gecko ikilisine yonlenir (TEST_YOLU.md:126-128).
-[+049255ms]   'Kurulabilir' iddiasi KANITSIZ YAZILMAZ (HEDEF.md:146-147).
-[+049256ms] SONUC ölçülemedi — [adim: web-ext ile yukleme] Error: connect ECONNREFUSED 127.0.0.1:57877
+[+000992ms] EMNIYET — kurulu LibreWolf (C:\Program Files\LibreWolf) PID kumesi ONCE: [] (adet 0)
+[+000992ms] Bu kumeye DOKUNULMAYACAK. Tum LibreWolf cagrilari: tasinabilir kopya + -no-remote + MOZ_NO_REMOTE=1 + kendi profil.
+[+000996ms] onbellekten kullaniliyor: C:\Users\kadio\AppData\Local\Temp\sayac-librewolf-onbellek\librewolf-153.0.4-1-x86_64-portable.zip (162887896 bayt)
+[+002010ms] TASINABILIR ikili: C:\Users\kadio\AppData\Local\Temp\sayac-librewolf-8Fku7y\librewolf-153.0.4-1\LibreWolf\librewolf.exe (512040 bayt)
+[+002011ms] librewolf.cfg → xpinstall.signatures.required satirlari (0):
+[+002011ms] librewolf.cfg → extensions.* satirlari (9):
+[+002011ms]    defaultPref("extensions.getAddons.langpacks.url", "");
+[+002011ms]    defaultPref("extensions.ui.mlmodel.hidden", true);
+[+002011ms]    defaultPref("extensions.webextensions.restrictedDomains", "");
+[+002011ms]    defaultPref("extensions.enabledScopes", 5); // hidden
+[+002011ms]    defaultPref("extensions.postDownloadThirdPartyPrompt", false);
+[+002011ms]    defaultPref("extensions.formautofill.addresses.enabled", false);
+[+002011ms]    defaultPref("extensions.formautofill.creditCards.enabled", false);
+[+002011ms]    defaultPref("extensions.htmlaboutaddons.recommendations.enabled", false);
+[+002011ms]    defaultPref("extensions.getAddons.showPane", false);
+[+002012ms] policies.json (2888 bayt) anahtarlari: AIControls, AppUpdateURL, DisableAppUpdate, DisableDefaultBrowserAgent, DisableFeedbackCommands, DisableFirefoxStudies, DisableRemoteImprovements, DisableSetDesktopBackground, DisableTelemetry, DontCheckDefaultBrowser, WebsiteFilter, EncryptedMediaExtensions, ExtensionSettings, FirefoxHome, FirefoxSuggest, HttpsOnlyMode, LocalNetworkAccess, NoDefaultBookmarks, OverridePostUpdatePage, SkipTermsOfUse, SupportMenu, UserMessaging
+[+002018ms] isaret sunucusu ayakta: http://127.0.0.1:53969
+[+002030ms] test kopyasi: C:\Users\kadio\AppData\Local\Temp\sayac-ekl-Y10-Q940JX
+[+002030ms] yamali manifest: {"manifest_version":2,"name":"Sayaç","version":"0.1.0","description":"YouTube izleme süresini üç kalemde ayırır: izleniyor · duraklatıldı · mola.","browser_specific_settings":{"gecko":{"id":"sayac@sayac.local"}},"browser_action":{"default_popup":"pencere.html","default_title":"Sayaç"},"background":{"scripts":["sonda-ayar.js","sonda-arkaplan.js","sayac.js","arkaplan.js"],"persistent":true},"content_scripts":[{"matches":["*://*.youtube.com/*","http://127.0.0.1/*"],"js":["sonda-ayar.js","icerik.js","sonda-icerik.js"],"run_at":"document_idle","all_frames":false}]}
+[+047151ms] ── DENEME Aday A / A1 (duz Playwright, RDP YOK) · adim=launchPersistentContext
+[+047151ms]    komut: firefox.launchPersistentContext(profil, { executablePath: "C:\Users\kadio\AppData\Local\Temp\sayac-librewolf-8Fku7y\librewolf-153.0.4-1\LibreWolf\librewolf.exe", args: ["-no-remote"], headless: true })
+[+047151ms]    sonuc: FIRLATTI — iddia OLCULEREK dogrulandi. RDP'ye HIC dokunulmadi, ECONNREFUSED sayaci ARTMADI.
+[+047151ms]    BIREBIR HATA: TimeoutError: browserType.launchPersistentContext: Timeout 45000ms exceeded.
+Call log:
+[2m  - <launching> C:\Users\kadio\AppData\Local\Temp\sayac-librewolf-8Fku7y\librewolf-153.0.4-1\LibreWolf\librewolf.exe -no-remote -headless -profile C:\Users\kadio\AppData\Local\Temp\sayac-lw-profil-A1-9iqah6 -juggler-pipe -no-remote about:blank[22m
+[2m  - <launched> pid=27404[22m
+[2m  - [pid=27404][err] *** You are running in headless mode.[22m
+[2m  - [pid=27404][out] Crash Annotation GraphicsCriticalError: |[0][GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt (t=1.22149) [GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt[22m
+[2m  - [pid=27404][err] *** You are running in background task mode. ***[22m
+[2m  - [pid=27404][err] *** You are running in headless mode.[22m
+
+[+047151ms] ── DENEME Aday A / A2 (withExtension, RDP devrede) · adim=atlandi
+[+047152ms]    komut: -
+[+047152ms]    sonuc: A1 firlattigi icin girilmedi — RDP'ye HIC dokunulmadi
+Building web extension from C:\Users\kadio\AppData\Local\Temp\sayac-ekl-Y10-Q940JX
+[+047363ms] XPI uretildi: C:\Users\kadio\AppData\Local\Temp\sayac-lw-xpi-NUyDm3\sayac.xpi (14238 bayt)
+[+047370ms] policies.json yamalandi (gecici kopya): HttpsOnlyMode "enabled" → "disabled" · WebsiteFilter silindi
+[+047371ms] XPI dusuruldu: C:\Users\kadio\AppData\Local\Temp\sayac-lw-profil-B-eRpDGj\extensions\sayac@sayac.local.xpi
+[+047371ms] BASLAT: "C:\Users\kadio\AppData\Local\Temp\sayac-librewolf-8Fku7y\librewolf-153.0.4-1\LibreWolf\librewolf.exe" -no-remote -profile C:\Users\kadio\AppData\Local\Temp\sayac-lw-profil-B-eRpDGj -headless http://127.0.0.1:53969/sayac.html?otomatik=1   (env MOZ_NO_REMOTE=1)
+[+052438ms] YOKLA: 60000 ms icinde BU BASLATMADAN gelen isaret sayisi = 15 (taban 0)
+[+053367ms] ARTEFAKT extensions.json: {"yol":"C:\\Users\\kadio\\AppData\\Local\\Temp\\sayac-lw-profil-B-eRpDGj\\extensions.json","var":true,"bulundu":true,"kayit":{"id":"sayac@sayac.local","active":true,"location":"app-profile","signedState":0,"appDisabled":false,"userDisabled":false,"type":"extension"}}
+[+053368ms] ── DENEME Y10-B (RDP YOK — profile imzasiz XPI sideload) · adim=extensions.json kaydi VAR
+[+053368ms]    komut: "C:\Users\kadio\AppData\Local\Temp\sayac-librewolf-8Fku7y\librewolf-153.0.4-1\LibreWolf\librewolf.exe" -no-remote -profile C:\Users\kadio\AppData\Local\Temp\sayac-lw-profil-B-eRpDGj -headless http://127.0.0.1:53969/sayac.html?otomatik=1   (env MOZ_NO_REMOTE=1)
+[+053368ms]    sonuc: KAYIT: {"id":"sayac@sayac.local","active":true,"location":"app-profile","signedState":0,"appDisabled":false,"userDisabled":false,"type":"extension"} · sondadan isaret=15
+[+053368ms] OLCUM: isaret=15 durumlar=["DURAKLATILDI","İZLENİYOR"] gecen=11 kalan=0
+[+053368ms]    ornek: durum=İZLENİYOR Δan=248 Δ={"izleniyor":248,"duraklatildi":0,"mola":0} → TAMAM
+[+053368ms]    ornek: durum=İZLENİYOR Δan=280 Δ={"izleniyor":280,"duraklatildi":0,"mola":0} → TAMAM
+[+053368ms]    ornek: durum=İZLENİYOR Δan=220 Δ={"izleniyor":220,"duraklatildi":0,"mola":0} → TAMAM
+[+053368ms]    ornek: durum=İZLENİYOR Δan=251 Δ={"izleniyor":251,"duraklatildi":0,"mola":0} → TAMAM
+[+053368ms]    ornek: durum=İZLENİYOR Δan=250 Δ={"izleniyor":250,"duraklatildi":0,"mola":0} → TAMAM
+[+053368ms]    ornek: durum=İZLENİYOR Δan=970 Δ={"izleniyor":970,"duraklatildi":0,"mola":0} → TAMAM
+Building web extension from C:\Users\kadio\AppData\Local\Temp\sayac-ekl-Y10-panel-Hr8NbR
+[+053432ms] BASLAT: "C:\Users\kadio\AppData\Local\Temp\sayac-librewolf-8Fku7y\librewolf-153.0.4-1\LibreWolf\librewolf.exe" -no-remote -profile C:\Users\kadio\AppData\Local\Temp\sayac-lw-profil-panel-9dhqLN -headless http://127.0.0.1:53969/sayac.html?otomatik=1&panel=1   (env MOZ_NO_REMOTE=1)
+[+058474ms] YOKLA: 45000 ms icinde BU BASLATMADAN gelen isaret sayisi = 16 (taban 15)
+[+059409ms] FAZ 4 KARSIT DENEY (GERCEK PANEL): 999999 -> 999999 · 888888 -> 888888
+[+059409ms]    golgeleme: YOK — msg.sekmeId yolu GECERLI · getCurrent=yok · sorguId=1 · pencereHedef=1
+[+059409ms]    panel DOM: 0:00:02 durum="DURAKLATILDI" btnMola="MOLA" btnAna="DUR" uyari=""
+[+059409ms] ── DENEME FAZ 4 — gercek arac cubugu paneli (browserAction.openPopup) · adim=panel baglamindan rapor DUSTU
+[+059409ms]    komut: "C:\Users\kadio\AppData\Local\Temp\sayac-librewolf-8Fku7y\librewolf-153.0.4-1\LibreWolf\librewolf.exe" -no-remote -profile C:\Users\kadio\AppData\Local\Temp\sayac-lw-profil-panel-9dhqLN -headless http://127.0.0.1:53969/sayac.html?otomatik=1&panel=1   (env MOZ_NO_REMOTE=1)
+[+059409ms]    sonuc: PANEL ACILDI — 4 rapor; sender.tab olcumu icin rapor icerigi kanit dosyasinda
+[+059412ms] ── DENEME web-ext RDP · adim=DENENMEDI
+[+059412ms]    komut: -
+[+059412ms]    sonuc: 005 kritik yasak 2: ayni ECONNREFUSED 4 kez alindi, 5. kez durma esigi (HEDEF.md:156). Bilerek denenmedi.
+[+059412ms] ── DENEME about:debugging ile elle yukleme · adim=DENENMEDI
+[+059412ms]    komut: -
+[+059412ms]    sonuc: Makine kanali yok — ELLE gezinme gerektirir. Otomatiklestirilemedigi icin OLCULEMEDI; 'calismiyor' DEGIL.
+[+059412ms] ── DENEME AMO imzalatma · adim=DENENMEDI
+[+059412ms]    komut: -
+[+059412ms]    sonuc: Ag + hesap gerektirir, kapsam disi (SAYAC_TEKLIF.md).
+[+059413ms] isaret sunucusu kapatildi
+[+060715ms] 
+[+060715ms] EMNIYET — kurulu LibreWolf PID kumesi ONCE : []
+[+060715ms] EMNIYET — kurulu LibreWolf PID kumesi SONRA: []
+[+060715ms] KUME AYNI MI: EVET — Mustafa'nin tarayicisina DOKUNULMADI
+[+060716ms] SONUC YESIL

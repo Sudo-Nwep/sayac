@@ -43,7 +43,56 @@
     } catch (e) {}
   }
 
+  // Y4b — testin istediği sekmeyi AKTİF olarak açar. ÜRÜNE AİT DEĞİLDİR; "tabs" izni
+  // yalnız test kopyasına verilir (eklenti-testi.mjs ekIzinler), eklenti/manifest.json
+  // DEĞİŞMEZ. Amaç: A sekmesini gerçekten arka plana düşürmek (taklit değil).
+  function sekmeAcKomutu() {
+    var u;
+    try {
+      u = document.documentElement.getAttribute("data-sayac-sekme-ac");
+    } catch (e) {
+      return;
+    }
+    if (!u) return;
+    try {
+      document.documentElement.removeAttribute("data-sayac-sekme-ac");
+    } catch (e) {}
+    // AYRI ADLI PORT — ürünün onMessage dinleyicisi bu kanala hiç uğramaz.
+    try {
+      var kanal = API.runtime.connect({ name: "sonda" });
+      kanal.onMessage.addListener(function (c) {
+        document.documentElement.setAttribute(
+          "data-sayac-sekme-sonuc",
+          c && c.tamam ? "tabs.create tamam id=" + c.id : "yanit: " + JSON.stringify(c)
+        );
+      });
+      kanal.postMessage({ tur: "sekme-ac", url: u });
+    } catch (e) {
+      document.documentElement.setAttribute("data-sayac-sekme-sonuc", "istisna: " + e.message);
+    }
+  }
+
+  // Faz 4 — panel acma komutu (yalniz test kopyasi).
+  var panelDenendi = false;
+  function panelKomutu() {
+    if (panelDenendi) return;
+    // Tetikleyici URL parametresi — sunucu sayfasina dokunmadan.
+    if (String(location.search || "").indexOf("panel=1") === -1) return;
+    panelDenendi = true;
+    try {
+      var k2 = API.runtime.connect({ name: "sonda" });
+      k2.onMessage.addListener(function (c) {
+        document.documentElement.setAttribute("data-sayac-panel-sonuc", JSON.stringify(c));
+      });
+      k2.postMessage({ tur: "panel-ac" });
+    } catch (e) {
+      document.documentElement.setAttribute("data-sayac-panel-sonuc", "istisna: " + e.message);
+    }
+  }
+
   function tur() {
+    sekmeAcKomutu();
+    panelKomutu();
     // Testin gönderdiği komutu ürünün olay API'sine çevir (arayüz değil, API çağrısı).
     try {
       var k = document.documentElement.getAttribute("data-sayac-komut");

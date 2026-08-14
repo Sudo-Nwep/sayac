@@ -302,7 +302,7 @@ kökenli hem karışık içeriktir. **Ürüne veya test kopyasına YouTube host 
 Üç katman da adreslendi; RDP yine bağlantı kabul etmedi (**4 deneme**). Bütçe (G24) doldu.
 
 **⛔ *"LibreWolf'a kurulabilir"* iddiası KANITSIZ YAZILMIYOR** (`HEDEF.md:146-147`).
-**Seçilen yolun LibreWolf'a uygulanması:**
+**Seçilen yolun LibreWolf'a uygulanması (tur 003'ün o günkü hâli):**
 - **Aday A (`playwright-webextext`) UYGULANAMAZ** — Playwright'ın Firefox'u Juggler protokollü
   **yamalı** bir yapıdır; stok bir Gecko ikilisi o yolla sürülemez.
 - **Aday B (`web-ext` Node API) uygulanabilir yoldur** — `firefox: "<librewolf yolu>"` ile
@@ -310,6 +310,33 @@ kökenli hem karışık içeriktir. **Ürüne veya test kopyasına YouTube host 
 - **Sıradaki somut adım (madde 5'e girdi):** RDP'siz yol — eklentiyi imzalatıp (AMO) ya da
   `xpinstall.signatures.required=false` ile `<profil>\extensions\` üzerinden kurmak; ya da
   LibreWolf'un `about:debugging` arayüzünden **elle** yüklemek. Hiçbiri bu turda ölçülmedi.
+
+> ### ✅ DÜZELTME (madde 3'ün Y10 kutusu, tur 005'te ÖLÇÜLDÜ)
+>
+> Yukarıdaki iki madde **kanıtsız olgu kipindeydi**; ikisi de artık ölçüme bağlandı.
+> Özgün metin silinmedi (G09 — iki hafıza).
+>
+> **⑴ *"Aday A UYGULANAMAZ"* — ÖLÇÜLEREK DOĞRULANDI, ama gerekçesi farklı.**
+> Düz Playwright'a taşınabilir LibreWolf ikilisi verildi (`playwright-webextext`
+> **kullanılmadan**, yani RDP'ye hiç varmadan):
+> `firefox.launchPersistentContext(profil, { executablePath: "<taşınabilir librewolf.exe>", args:["-no-remote"], headless:true })`
+> → **`TimeoutError: browserType.launchPersistentContext: Timeout 45000ms exceeded.`**
+> Yani engel **launch adımındadır**, RDP'de değil. `ECONNREFUSED` sayacı **artmadı**.
+> *(Not: `firefox_browser.js:41-54` `...options`'ı aynen yaydığı için `executablePath`
+> teknik olarak **desteklenir** — "verilemez" demek yanlış olurdu; verildi ve launch düştü.)*
+>
+> **⑵ *"LibreWolf'a kurulabilir"* — ARTIK KANITLI.** RDP'siz yol tuttu:
+> imzasız XPI `<profil>\extensions\sayac@sayac.local.xpi` olarak düşürüldü, LibreWolf
+> `-no-remote -profile <profil> -headless` ile başlatıldı. **Artefakt (G11):**
+> ```
+> extensions.json → { id: "sayac@sayac.local", active: true, location: "app-profile",
+>                     signedState: 0, appDisabled: false, userDisabled: false, type: "extension" }
+> ```
+> `signedState: 0` (imzasız) **ve** `appDisabled: false` → LibreWolf imzasız eklentiyi
+> **kabul etti**. Sondadan **15 işaret** düştü; ölçüm `gecen=11 · kalan=0`,
+> görülen durumlar `["DURAKLATILDI","İZLENİYOR"]`.
+> **`web-ext` RDP bu turda BİLEREK denenmedi** (aynı hata 4 kez, 5. kez durma eşiği).
+> Ayrıntı: `test-yolu/kanit/eklenti-Y10.json` → `denemeler[]`.
 
 **Sistem geneline kurulum YAPILMADI:** `.msi`/`.exe` kurucu çalıştırılmadı, PATH değişmedi,
 kayıt defterine dokunulmadı. Zip `os.tmpdir()` altına açıldı.

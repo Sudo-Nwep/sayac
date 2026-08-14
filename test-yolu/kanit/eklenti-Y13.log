@@ -2,30 +2,30 @@
 ne olcer: DUR/DEVAM ET — üç durum + birikmiş toplam sıfırlanmadı
 komut: "C:\Program Files\nodejs\node.exe" "C:\Users\kadio\Documents\Claude\Projects\Sayac\test-yolu\arayuz-e2e.mjs" Y13
 node=v26.5.0 platform=win32
-sure=36103 ms · cikis kodu=0 · sinyal=null
+sure=35290 ms · cikis kodu=0 · sinyal=null
 ======================================================================
 
 [+000000ms] hucre=Y13 · TOLERANS=250 ms · FAZ=2500 ms (koşumdan ÖNCE sabit)
 [+000000ms] firefox ikilisi: C:\Users\kadio\AppData\Local\ms-playwright\firefox-1538\firefox\firefox.exe
-[+000007ms] isaret sunucusu ayakta: http://127.0.0.1:50372
-[+000026ms] pencere sondasi enjekte edildi (YALNIZ test kopyasina)
-[+000026ms] test kopyasi: C:\Users\kadio\AppData\Local\Temp\sayac-ekl-Y13-5Y5xKl
-[+000026ms] yamali manifest: {"manifest_version":2,"name":"Sayaç","version":"0.1.0","description":"YouTube izleme süresini üç kalemde ayırır: izleniyor · duraklatıldı · mola.","browser_specific_settings":{"gecko":{"id":"sayac@sayac.local"}},"browser_action":{"default_popup":"pencere.html","default_title":"Sayaç"},"background":{"scripts":["sonda-ayar.js","sonda-arkaplan.js","sayac.js","arkaplan.js"],"persistent":true},"content_scripts":[{"matches":["*://*.youtube.com/*","http://127.0.0.1/*"],"js":["sonda-ayar.js","icerik.js","sonda-icerik.js"],"run_at":"document_idle","all_frames":false}],"web_accessible_resources":["pencere.html"]}
-[+000027ms] tek kullanimlik profil: C:\Users\kadio\AppData\Local\Temp\sayac-profil-Y13-z855Nt
-[+002218ms] EKLENTI YUKLENDI — launchPersistentContext cozuldu (_BrowserContext) headless=true
-[+002318ms] ilk anlik goruntu: {"sekmeId":1,"durumAdi":"DURAKLATILDI","toplam":{"izleniyor":0,"duraklatildi":0,"mola":0},"anMs":1786724438700,"arkaPlanBaslangicMs":1786724438602,"gunBasiMs":1786654800000,"kelepceSayisi":0,"sekmeSayisi":1}
-[+002335ms] pencere adresi (sondadan OKUNDU, sabitlenmedi): moz-extension://ec811df3-3768-4922-8e01-1bd15dce0cea/pencere.html
-[+002590ms] CERCEVE BULUNDU ve #btn-mola gorunur  birincil yol acik
-[+012780ms] YOL 1 tutmadi  birebir hata: TimeoutError: page.goto: Timeout 10000ms exceeded.
+[+000006ms] isaret sunucusu ayakta: http://127.0.0.1:52438
+[+000021ms] pencere sondasi enjekte edildi (YALNIZ test kopyasina)
+[+000022ms] test kopyasi: C:\Users\kadio\AppData\Local\Temp\sayac-ekl-Y13-3ChsEr
+[+000022ms] yamali manifest: {"manifest_version":2,"name":"Sayaç","version":"0.1.0","description":"YouTube izleme süresini üç kalemde ayırır: izleniyor · duraklatıldı · mola.","browser_specific_settings":{"gecko":{"id":"sayac@sayac.local"}},"browser_action":{"default_popup":"pencere.html","default_title":"Sayaç"},"background":{"scripts":["sonda-ayar.js","sonda-arkaplan.js","sayac.js","arkaplan.js"],"persistent":true},"content_scripts":[{"matches":["*://*.youtube.com/*","http://127.0.0.1/*"],"js":["sonda-ayar.js","icerik.js","sonda-icerik.js"],"run_at":"document_idle","all_frames":false}],"web_accessible_resources":["pencere.html"]}
+[+000022ms] tek kullanimlik profil: C:\Users\kadio\AppData\Local\Temp\sayac-profil-Y13-L17j58
+[+001604ms] EKLENTI YUKLENDI — launchPersistentContext cozuldu (_BrowserContext) headless=true
+[+001670ms] ilk anlik goruntu: {"sekmeId":1,"durumAdi":"DURAKLATILDI","toplam":{"izleniyor":0,"duraklatildi":0,"mola":0},"anMs":1786729201744,"arkaPlanBaslangicMs":1786729201681,"gunBasiMs":1786654800000,"kelepceSayisi":0,"sekmeSayisi":1}
+[+001683ms] pencere adresi (sondadan OKUNDU, sabitlenmedi): moz-extension://3d463310-be86-4e67-92dc-d669af6b2b3e/pencere.html
+[+001927ms] CERCEVE BULUNDU ve #btn-mola gorunur  birincil yol acik
+[+012066ms] YOL 1 tutmadi  birebir hata: TimeoutError: page.goto: Timeout 10000ms exceeded.
 Call log:
-[2m  - navigating to "moz-extension://ec811df3-3768-4922-8e01-1bd15dce0cea/pencere.html", waiting until "commit"[22m
+[2m  - navigating to "moz-extension://3d463310-be86-4e67-92dc-d669af6b2b3e/pencere.html", waiting until "commit"[22m
 
-[+012842ms] window.open donusu: pencere nesnesi dondu
-[+020796ms] YOL 2: Playwright sayfaya BAGLANAMADI (context 'page' olayi yok). context.pages(): ["http://127.0.0.1:50372/sayac.html","about:blank"]
-[+020796ms]   ->  sayfa yine de KOSUYOR; olcum ve tiklama sondanin kendi kanalindan yapilacak
-[+020796ms] pencere sekmesi kostu mu: EVET (sonda raporu dustu)
-[+022613ms] pencere sondaya ICERIDEN yeniletildi (__yenile komutu)
-[+034767ms] YEDEK YOL B  cerceve surulemedi: urunun kelepcesi tetiklendi  pencere hedef sekmeyi cozemedi. Son rapor: #uyari="Hedef sekme belirlenemedi." getCurrent=3 sorguId=1
-[+034767ms]   sonda raporu (pencerenin KENDI baglamindan): {"deney":"pencere","tur":"32","ust":"0","getCurrent":"hata:can't access property \"getCurrent\", API.tabs is undefined","baglam":"iframe","tabsTipi":"undefined","sorguUzunluk":"yok","sorguId":"yok","urlTipi":"yok","sorguHata":"can't access property \"query\", API.tabs is undefined","urlSuzgec":"hata:can't access property \"query\", API.tabs is undefined","pencereHedef":"yok","bicimTipi":"function","yoklamaVar":"0","probe1Gonderilen":"999999","probe1Donen":"1","probe1Izleniyor":"0","probe2Gonderilen":"888888","probe2Donen":"1","probe2Izleniyor":"0","bgSekmeId":"1","bgAn":"1786724470694","bgIzleniyor":"0","bgDuraklatildi":"31994","bgMola":"0","bgDurum":"DURAKLATILDI","mfPopup":"moz-extension://ec811df3-3768-4922-8e01-1bd15dce0cea/pencere.html","mfBaslik":"Sayaç","openPopup":"denenmedi","sIzleniyor":"0:00:00","sDuraklatildi":"0:00:00","sMola":"0:00:00","sDurum":"","sBtnMola":"MOLA","sBtnAna":"DUR","sUyari":"Hedef sekme belirlenemedi.","sBaslik":"Sayaç","sEtiketler":"İzleniyor|Duraklatıldı|Mola|Durum:","uc":"/olay","ms":1786724470698}
-[+035364ms] isaret sunucusu kapatildi
-[+035415ms] SONUC ölçülemedi — DUR/DEVAM ET butonuna tiklanamadi: urunun kelepcesi tetiklendi  pencere hedef sekmeyi cozemedi. Son rapor: #uyari="Hedef sekme belirlenemedi." getCurrent=3 sorguId=1
+[+012117ms] window.open donusu: pencere nesnesi dondu
+[+020072ms] YOL 2: Playwright sayfaya BAGLANAMADI (context 'page' olayi yok). context.pages(): ["http://127.0.0.1:52438/sayac.html","about:blank"]
+[+020072ms]   ->  sayfa yine de KOSUYOR; olcum ve tiklama sondanin kendi kanalindan yapilacak
+[+020072ms] pencere sekmesi kostu mu: EVET (sonda raporu dustu)
+[+021893ms] pencere sondaya ICERIDEN yeniletildi (__yenile komutu)
+[+034077ms] YEDEK YOL B  cerceve surulemedi: urunun kelepcesi tetiklendi  pencere hedef sekmeyi cozemedi. Son rapor: #uyari="Hedef sekme belirlenemedi." getCurrent=3 sorguId=1
+[+034077ms]   sonda raporu (pencerenin KENDI baglamindan): {"deney":"pencere","tur":"32","ust":"0","getCurrent":"hata:can't access property \"getCurrent\", API.tabs is undefined","baglam":"iframe","tabsTipi":"undefined","sorguUzunluk":"yok","sorguId":"yok","urlTipi":"yok","sorguHata":"can't access property \"query\", API.tabs is undefined","urlSuzgec":"hata:can't access property \"query\", API.tabs is undefined","pencereHedef":"yok","bicimTipi":"function","yoklamaVar":"0","probe1Gonderilen":"999999","probe1Donen":"1","probe1Izleniyor":"0","probe2Gonderilen":"888888","probe2Donen":"1","probe2Izleniyor":"0","bgSekmeId":"1","bgAn":"1786729233627","bgIzleniyor":"0","bgDuraklatildi":"31883","bgMola":"0","bgDurum":"DURAKLATILDI","mfPopup":"moz-extension://3d463310-be86-4e67-92dc-d669af6b2b3e/pencere.html","mfBaslik":"Sayaç","openPopup":"denenmedi","sIzleniyor":"0:00:00","sDuraklatildi":"0:00:00","sMola":"0:00:00","sDurum":"","sBtnMola":"MOLA","sBtnAna":"DUR","sUyari":"Hedef sekme belirlenemedi.","sBaslik":"Sayaç","sEtiketler":"İzleniyor|Duraklatıldı|Mola|Durum:","uc":"/olay","ms":1786729233627}
+[+034657ms] isaret sunucusu kapatildi
+[+034677ms] SONUC ölçülemedi — DUR/DEVAM ET butonuna tiklanamadi: urunun kelepcesi tetiklendi  pencere hedef sekmeyi cozemedi. Son rapor: #uyari="Hedef sekme belirlenemedi." getCurrent=3 sorguId=1
