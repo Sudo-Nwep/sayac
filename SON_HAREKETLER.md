@@ -9,14 +9,19 @@
 
 ## 📌 GÜNCEL DURUM (her zaman en güncel — önce bunu oku)
 
-- **Versiyon:** v2.0
+- **Versiyon:** v2.1
 - **Aşama:** {{ASAMA}} — fiilen: madde 1 · 2 · 3 · 4 kapandı; **arayüzlü, kurulabilir eklenti var**, madde 5 (teslim) sırada
 - **Amaç:** {{AMAC}}
 - **Kapsam:** {{KAPSAM}}
 - **Depo/çalışır mı:** **evet — kurulabilir bir Firefox eklentisi var.** Üretilebilir kanıtlar:
-  `npm run eklenti:test` → çıkış 0 (on hücre, **sekizi yeşil**, gerçek YouTube dâhil) ·
-  `npm run eklenti:kontrol` → çıkış 0 (üretim senkron) · `npm test` → `KALAN: 0`, çıkış 0 ·
-  `npm run mutasyon` → 7/7, çıkış 0.
+  `npm run eklenti:test` → çıkış 0 · **16 hücre: 10 YEŞİL · 5 ölçülemedi · 1 atlandı**
+  (gerçek YouTube dâhil; ölçülemeyenler: Y4 · Y16 · Y11 · Y12 · Y13; atlanan: Y10, gerekçesi
+  tabloda) · `npm run eklenti:kontrol` → çıkış 0 (üretim senkron) · `npm test` → `KALAN: 0`,
+  çıkış 0 · `npm run mutasyon` → 7/7, çıkış 0 ·
+  `npm run eklenti:sayac-kanit` → çıkış 0 (sayacın kendisi bozularak sınandı, 3/3).
+- **LibreWolf'a kurulabilirlik KANITLANDI** (`node test-yolu/eklenti-kosum.mjs Y10` → YEŞİL):
+  imzasız XPI profile düşürüldü, `extensions.json` → `active:true · signedState:0 ·
+  appDisabled:false`; sondadan 15 işaret, `gecen=11 · kalan=0`. **RDP kullanılmadı.**
 - **Arayüz VAR:** açılır pencerede üç sayaç (`İzleniyor · Duraklatıldı · Mola`), **MOLA** ve
   **DUR / DEVAM ET** butonları, Türkçe. MOLA oynayan videoyu **gerçekten duraklatıyor**
   (ölçüldü: `video.paused=true`). İzin eklenmedi. Ayrıntı `ARAYUZ.md`.
@@ -28,25 +33,28 @@
   enjekte olur. `eklenti/sayac.js` çekirdekten **üretilir**, senkronluk SHA-256'yla kanıtlı.
   Ayrıntı `EKLENTI.md`.
 - **Açık işler:** `PROJE_KUNYESI.md`'deki boyutlar + doldurulmamış ELDE yer tutucuları.
-  **ürün** boyutu ⛔ → 🟡 oldu (kod ve doğrulaması var; arayüz yok, LibreWolf kurulumu ölçülemedi).
+  **ürün** boyutu ⛔ → 🟡 oldu: kod, **arayüz** ve doğrulaması var; LibreWolf'a kurulabilirlik
+  de kanıtlandı. Kalan engel teslimdir (madde 5: depo · README · etiket · gizli taraması).
 - **Sıradaki adım:** `HEDEF.md` madde 5 — private GitHub deposu, README, ilk sürüm etiketi,
   gizli taraması. `git push` yalnız orada, önceden yetkili.
-- **⚠️ Bilinen açıklar:** ⑴ **LibreWolf'a kurulum ÖLÇÜLEMEDİ** (RDP `ECONNREFUSED` ×4) — teslim
-  ölçütü LibreWolf, madde 5'in işi · ⑵ **arka plandaki sekme kutusu ÖLÇÜLEMEDİ**
-  (`visibilityState` `hidden` yapılamadı) · ⑶ tarayıcı yeniden başlarsa sayaçlar **kaybolur**
-  (durum bellekte, depolama eklenmedi) · ⑷ **butonların ARAYÜZDEN çalıştığı ölçülemedi** —
-  Playwright `moz-extension://` sayfasını süremiyor (dört yol birebir hata metniyle elendi);
-  davranışları mesaj API'si yolundan **yeşil ölçüldü** (`ARAYUZ.md` → Y6) · ⑸ **sekme kimliği
-  zinciri ölçülemedi** — `arkaplan.js:73-78` önceliği `msg.sekmeId`'yi **gölgeliyor**
-  (`999999` gönderildi, `1` döndü). *"Pencere hedef sekmeyi kendiliğinden buluyor"* cümlesi
-  **yazılmadı.**
-- **🔧 DÜZELTME — LibreWolf bu makinede KURULU.** Tur 001 *"kurulu değil"* diye ölçmüştü
-  (`TEST_YOLU.md:286-290`); madde 3 turunda `C:\Program Files\LibreWolf\librewolf.exe` bulundu
-  ve o yoldan çalışan 10 süreç ölçüldü (Mustafa'nın açık tarayıcısı). Kurulu ikiliye karşı test
-  **koşulmadı**: tarayıcı açıktı ve ikinci örnek Mustafa'nın oturum açmış profiline
-  iliştirebilirdi (`HEDEF.md:121-123`). Madde 5'e girdi — ayrıntı `EKLENTI.md` → Y10.
-- **⚠️ Madde 3 için bilinen engel:** LibreWolf bu makinede **kurulu değil** — *"LibreWolf'a
-  kurulur"* kanıtı bugün üretilemez. Kararı madde 3'ün turu verecek.
+- **✅ 005'te KAPANANLAR:** ⑴ **LibreWolf'a kurulabilirlik** — RDP'siz yolla kanıtlandı
+  (yukarıda) · ⑵ **sekme kimliği zinciri** — **gerçek araç çubuğu panelinde** ölçüldü:
+  karşıt deney `999999 → 999999`, `888888 → 888888`, `getCurrent=yok` → panelde `sender.tab`
+  **yok**, `msg.sekmeId` yolu **geçerli**; `pencereHedef=1 = sorguId=1`; panel DOM canlı
+  (`0:00:02`, `#uyari` boş). *"Pencere hedef sekmeyi kendiliğinden buluyor"* cümlesi artık
+  **ölçüme dayanıyor** — ama yalnız **panel** bağlamı için.
+- **⚠️ Bilinen açıklar:** ⑴ **arka plandaki sekme kutusu ÖLÇÜLEMEDİ** — Y4a/Y4b/Y4c üç yol da
+  denendi, üçünde de `visibilityState="visible"` ölçüldü (Y4b'de `tabs.create` gerçekten
+  yeni aktif sekme açtı) · ⑵ tarayıcı yeniden başlarsa sayaçlar **kaybolur** (durum bellekte,
+  depolama eklenmedi) · ⑶ **butonların Playwright'tan ARAYÜZDEN sürülmesi ölçülemedi** —
+  `moz-extension://` sayfası sürülemiyor (dört yol birebir hata metniyle elendi); davranışları
+  mesaj API'si yolundan **yeşil ölçüldü** (`ARAYUZ.md` → Y6) ve panel DOM'u LibreWolf'ta
+  **canlı görüldü**.
+- **🔧 LibreWolf bu makinede KURULU** (`C:\Program Files\LibreWolf\`). Tur 001 *"kurulu değil"*
+  diye ölçmüştü (`TEST_YOLU.md:286-292`), tur 003 bunu düzeltti. **005'teki ölçümlerde o kurulu
+  ikiliye HİÇ dokunulmadı**: her çağrı taşınabilir geçici kopya + `-no-remote` +
+  `MOZ_NO_REMOTE=1` + kendi tek kullanımlık profille yapıldı; kurulu LibreWolf PID kümesi
+  tur başı ve tur sonu **aynı** ölçüldü.
 
 ---
 
@@ -240,6 +248,54 @@
      Sıradaki adım: madde 5 — private depo, README, etiket, gizli taraması. Madde 5'e giren
      açıklar: LibreWolf kurulumu (Y10) · arka plandaki sekme (Y4) · gerçek araç çubuğu paneli
      bağlamı · butonların arayüzden ölçümü.
+
+* **v2.1 · 14/08/2026** — madde 3'ün iki açık kutusu kapandı; ölçüm kaydındaki beş yanlış düzeltildi.
+   > **✅ Y10 YEŞİL — LibreWolf'a kurulabilirlik KANITLANDI, RDP kullanılmadan.** İmzasız XPI
+   > `<profil>\extensions\sayac@sayac.local.xpi` olarak düşürüldü; taşınabilir LibreWolf
+   > `-no-remote -profile … -headless` ile başlatıldı. **Artefakt (G11):** `extensions.json` →
+   > `active:true · location:"app-profile" · signedState:0 · appDisabled:false`.
+   > `signedState 0` (imzasız) **ve** `appDisabled false` → LibreWolf imzasız eklentiyi **kabul
+   > etti**. Sondadan **15 işaret**, ölçüm `gecen=11 · kalan=0`, iki durum görüldü.
+   > **Aday A ölçülerek elendi, RDP'ye HİÇ VARILMADAN:** düz Playwright'a taşınabilir LibreWolf
+   > `executablePath`'i verildi (`playwright-webextext` **kullanılmadı** → `installAddons`/RDP
+   > hiç çağrılmadı) → `TimeoutError: browserType.launchPersistentContext: Timeout 45000ms
+   > exceeded.` Engel **launch adımındadır**. `ECONNREFUSED` sayacı **artmadı** (4/5'te kaldı);
+   > `web-ext` RDP yolu **bilerek denenmedi** (`HEDEF.md:156`).
+   > **✅ BONUS — gerçek araç çubuğu paneli ÖLÇÜLDÜ.** LibreWolf kanalı açıldığı için mümkün
+   > oldu: karşıt deney `999999 → 999999` · `888888 → 888888` · `getCurrent=yok` → panelde
+   > `sender.tab` **YOK**, `msg.sekmeId` yolu **geçerli**; `sorguId=1 = pencereHedef=1`; panel
+   > DOM canlı (`0:00:02`, `#uyari` boş). `EKLENTI.md:380`'in doğrulanmamış iddiası **kapandı**.
+   > Gölgeleme yalnız **sekme** bağlamlarına özgüymüş.
+   > **⚠️ Y4 ÖLÇÜLEMEDİ — üç yol da denendi, üçünün de ölçülen değeri yazıldı:** Y4a
+   > `window.open` · Y4b sondadan `tabs.create({active:true})` (**gerçekten** yeni aktif sekme
+   > açtı, `id=3`) · Y4c `newPage+bringToFront` → **üçünde de `visibilityState="visible"`**.
+   > Taklit yapılmadı (ezme/dispatch yok). Y4b'nin ilk denemesi **geçersizdi ve öyle sayılmadı**:
+   > ürünün `onMessage` dinleyicisi sondanınkini gölgeliyordu → ayrı adlı **port** kanalına
+   > geçildi; **ürün değişmedi**, `ekIzinler:["tabs"]` yalnız test kopyasına girdi.
+   > **🔧 Sayaç hatası:** `ZORUNLU OLCULEMEDI` satırı Y16'yı **saymıyordu** (tam dize
+   > karşılaştırması; Y16 ASCII yazıyordu). Basılan `4 → Y4, Y11, Y12, Y13` idi; doğrusu
+   > **`5 → Y4, Y16, Y11, Y12, Y13`**. `test-yolu/ortak/durum.mjs` tek kaynak oldu (bilerek
+   > bağımlılıksız); sessiz normalleştirme **yok**, sapma `YAZIM SAPMASI` satırıyla **bağırılıyor**.
+   > **Sayacın kendisi bozularak sınandı (G26):** `npm run eklenti:sayac-kanit` → **çıkış 0**,
+   > üç bacak — sentetik (yeni 2 / eski 1) · gerçek rapor **bellekte** bozuldu (yeni 5→5, eski
+   > 4→3) · negatif kontrol (5→4). Disk **değişmedi** (SHA-256 önce = sonra).
+   > **Çelişen kalıcı cümleler ölçüme bağlandı** (özgün metin **silinmedi**, G09):
+   > `EKLENTI.md:306-307` · `TEST_YOLU.md:293-294` · `librewolf.mjs` baştan yazıldı.
+   > **📌 GÜNCEL DURUM kutusunun iç çelişkileri düzeltildi:** *"on hücre sekizi yeşil"* → gerçek
+   > rakamlar (**16 hücre: 10 YEŞİL · 5 ölçülemedi · 1 atlandı**) · *"arayüz yok"* (aynı kutunun
+   > *"Arayüz VAR"* satırıyla çelişiyordu) · *"LibreWolf kurulu değil"* (aynı kutunun DÜZELTME
+   > satırıyla çelişiyordu). `KONTROL_DOSYASI.md:40` aynı eskime. **📜 GÜNLÜK'ün eski
+   > maddelerine dokunulmadı** — orası tarihtir.
+   > **EMNİYET:** Mustafa'nın LibreWolf'una dokunulmadı — her çağrı taşınabilir geçici kopya +
+   > `-no-remote` + `MOZ_NO_REMOTE=1` + kendi profil; kurulu PID kümesi tur başı `[]` = tur sonu `[]`.
+   > **Çekirdek donmuş:** `mantik/sayac.mjs` SHA-256 tur başı = tur sonu = `ad848d21…38ac`.
+   > `eklenti/` ve `mantik/` **değişmedi**. Yeni bağımlılık **yok**.
+   > **`commit: 28695a1`**
+   - **Güncel durum:** madde 1-4 kapalı; LibreWolf'a kurulabilirlik ve gerçek panel bağlamı
+     artık **kanıtlı**. Kalan tek açık: **Y4** (arka plandaki sekme — üç yol da `visible` ölçtü)
+     ve depolama yokluğu (tarayıcı yeniden başlarsa sayaçlar kaybolur). Sıradaki adım:
+     **madde 5** — private GitHub deposu, README (kurulum yolu ölçülü), ilk sürüm etiketi,
+     gizli taraması.
 
 * *(Bir sonraki madde buraya eklenecek — aşağıdaki kurallara göre.)*
 
