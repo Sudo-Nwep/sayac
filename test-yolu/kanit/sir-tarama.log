@@ -1,0 +1,20 @@
+=== SAYAC — sir taramasi (arac/sir-tarama.mjs) ===
+node=v26.5.0 platform=win32
+========================================================================
+
+========================================================================
+SIR TARAMASI — desen tabanli (entropi tabanli DEGIL, gerekcesi kaynakta)
+========================================================================
+takip edilen dosya : 110
+taranan metin dosya: 110
+atlanan ikili      : 0
+taranan desen ailesi: 9 + 1 dar atama kurali
+
+git check-ignore -v dogrulamasi (git-rehberi §2.4'un gercek dogrulamasi):
+   .env           → .gitignore:5:.env	.env
+   bildirim.json  → .gitignore:36:bildirim.json	bildirim.json
+   node_modules   → .gitignore:19:node_modules/	node_modules
+
+BULGU: 0 — temiz
+
+SONUC: TEMIZ · cikis 0

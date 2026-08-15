@@ -1,0 +1,26 @@
+=== SAYAC — urun XPI paketleme (arac/paketle.mjs) ===
+node=v26.5.0 platform=win32
+========================================================================
+
+========================================================================
+URUN XPI PAKETLEME — eklenti/ (surum 1.0.0)
+========================================================================
+XPI      : C:\Users\kadio\Documents\Claude\Projects\Sayac\web-ext-artifacts\sayac-1.0.0.xpi
+bayt     : 10835
+SHA-256  : f86744de3080aefb49ba4cef4ca2b40052e41dc7e3fc552f00d6a1cc13e6fbee
+zip icerigi (7 dosya):
+   arkaplan.js
+   bicim.js
+   icerik.js
+   manifest.json
+   pencere.html
+   pencere.js
+   sayac.js
+
+KELEPCE — beklenen 7 urun dosyasi: arkaplan.js, bicim.js, icerik.js, manifest.json, pencere.html, pencere.js, sayac.js
+   uret.mjs pakete girdi mi : false (beklenen false)
+   fazla dosya              : yok
+   eksik dosya              : yok
+   liste tam esit mi        : true
+
+SONUC: TAMAM — paket urunun tam olarak yedi dosyasini iceriyor · cikis 0

@@ -10,7 +10,10 @@
     "eklenti:kontrol": "node eklenti/uret.mjs --kontrol",
     "eklenti:kanit": "node eklenti/uret.mjs --kanit",
     "eklenti:test": "node test-yolu/eklenti-kosum.mjs",
-    "eklenti:sayac-kanit": "node test-yolu/eklenti-kosum.mjs --kanit"
+    "eklenti:sayac-kanit": "node test-yolu/eklenti-kosum.mjs --kanit",
+    "eklenti:paketle": "node arac/paketle.mjs",
+    "sir-tarama": "node arac/sir-tarama.mjs",
+    "sir-tarama:kanit": "node arac/sir-tarama.mjs --kanit"
   },
   "keywords": [],
   "author": "",
