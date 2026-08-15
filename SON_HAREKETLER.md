@@ -427,6 +427,40 @@
      ölçüm açığı kapsam dışı: Y4 (arka plandaki sekme) ve depolama yokluğu. Bu HEDEF.md'nin
      genel kapanışına dair bir iddia değildir — o karar döngünün planlayıcısınındır.
 
+* **v3.2 · 15/08/2026** — Madde 5'in `commit sayısı` kalemi sha-ankrajlı bir rakamla kapandı.
+   > **✅ Commit sayısı ölçüldü, çıplak rakam yok.** `007`'de `TESLIM.md:245` iki ayrı kusur
+   > taşıyordu: ⑴ `17` **ölçülmemişti** — gerçek tur başı ucu (`5d471c8`) `git rev-list
+   > --count` ile **16**'dır; ⑵ tur sonu için attıfta bulunduğu iki kaynağın ikisi de kesin
+   > sayıyı vermiyordu (**erteleme**, ölçüm değil). Bu tur ikisini de düzeltti: `c4af8a9`
+   > itibarıyla **19** (`git rev-list --count c4af8a9`), 007'nin tur başı `5d471c8` itibarıyla
+   > **16**. Her iki rakam da **hangi sha'da** ölçüldüğüyle birlikte yazıldı — sha'ya bağlı
+   > rakam hiçbir zaman eskimez.
+   > **✅ Uzak senkron bugün tekrar ölçüldü** — `git ls-remote origin refs/heads/main` = yerel
+   > `HEAD`, ayrışma `main...origin/main` → `0	0`. Kanıt: `test-yolu/kanit/uzak-depo.log`
+   > **Blok 2** (özgün Blok 1 — 007'nin tur başı anı — silinmedi, dosyada yalnız ekleme var).
+   > **✅ Belgeler G09'a uyularak düzeltildi.** `TESLIM.md` §6'daki `Commit sayısı` satırı
+   > yeniden yazıldı; özgün metin hemen altına DÜZELTME blockquote'unda **birebir**
+   > alıntılandı, iki kusur da adıyla yazıldı. `KONTROL_DOSYASI.md`'de yeni bir **`008`** bloğu
+   > eklendi, `007` bloğunun başlığına `(kapandı)` eklendi — **gövdesi (`:31` dahil) tek bayt
+   > değişmedi**; `git diff` yalnız başlık satırını gösteriyor.
+   > **⚠️ Tur sonu kesin rakam bu maddede YOK — bilerek.** Rakam ancak kapanış commit'inde
+   > kesinleşir (bir commit kendi sha'sını içeremez). Bu günlük maddesinden **SONRA** ayrı bir
+   > kapanış commit'i atılacak (`TESLIM.md` §6 ve `KONTROL_DOSYASI.md` 008 bloğuna tur sonu
+   > rakamı orada eklenecek); bu, altın kuralın *(günlük maddesi varsa commit'i vardır)*
+   > **madde → commit** yönünü ihlal etmiyor, yalnız kapanış rakamının doğası gereği bir
+   > istisnası.
+   > **Regresyon yok:** `npm test` → `KALAN: 0` · `npm run mutasyon` → 7/7 ·
+   > `npm run eklenti:kontrol` → SENKRON — üçü de çıkış 0. `mantik/sayac.mjs`,
+   > `eklenti/sayac.js`, `arac/sir-tarama.mjs`, `.gitignore` SHA-256 tur başı = tur sonu.
+   > **Kod dokunuşu yok:** `mantik/` · `eklenti/` · `arac/` · `.gitignore` · `package.json` ·
+   > hücre matrisi tek bayt değişmedi. Bu tur yalnız ölçüm + belge + kanıt dosyası turu.
+   > **EMNİYET:** LibreWolf açılmadı, PID kümesi tur başı `[]`. `DEVIR.md` hiç açılmadı.
+   > **`commit: 23e419f`**
+   - **Güncel durum:** madde 5'in yazılı dört kutusu da kapalı; `commit sayısı` kalemi artık
+     sha-ankrajlı (`c4af8a9` → 19). Tur sonu kesin sayı bu maddeden sonraki kapanış commit'inde
+     `TESLIM.md` §6'ya ve `KONTROL_DOSYASI.md` 008 bloğuna eklenecek. Yazılı, zorunlu başka bir
+     sonraki iş yok.
+
 * *(Bir sonraki madde buraya eklenecek — aşağıdaki kurallara göre.)*
 
 ---
