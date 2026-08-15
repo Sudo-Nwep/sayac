@@ -375,6 +375,55 @@
      → `git push origin v1.0.0`. **Push'tan önce** `npm run sir-tarama` çıkış 0 vermelidir.
      Kalan ölçüm açığı (kapsam dışı): Y4 arka plandaki sekme · depolama yok.
 
+* **v3.1 · 15/08/2026** — Uzak depo kendi ölçümüyle kapandı; madde 5'in yazılı dört kutusu
+  da kapandı.
+   > **✅ Uzak depo bağlı ve doğrulandı.** Tur başında zaten bağlıydı ve `origin/main` yerel
+   > `HEAD` ile zaten birebir eşti (bu turdan önce yapılmış); bu tur bunu **kendi ölçümüyle**
+   > doğruladı: `git ls-remote origin` → `refs/heads/main` = `HEAD` (`5d471c8…`, birebir eşit),
+   > `refs/tags/v1.0.0^{}` = `git rev-list -n1 v1.0.0` (birebir eşit), `git rev-list
+   > --left-right --count main...origin/main` → `0	0`. Kanıt: `test-yolu/kanit/uzak-depo.log`.
+   > **✅ Görünürlük ölçüldü: private.** İki anonim (kimliksiz) HTTP isteği —
+   > `api.github.com/repos/Sudo-Nwep/sayac` ve `github.com/Sudo-Nwep/sayac` — **ikisi de 404**;
+   > kimlikli `git ls-remote` gerçek ref döndürdü. Depo var (ls-remote) + anonim erişim yok
+   > (iki 404) = private.
+   > **✅ Sır taraması push edilmiş ağaç üzerinde tekrar koşuldu** — kod dokunuşundan **önce**,
+   > `npm run sir-tarama` → **çıkış 0** (110 dosya, 0 bulgu).
+   > **✅ Kanıt modu artık kendi log dosyasına yazıyor.** `arac/sir-tarama.mjs`'e birebir 5
+   > satırlık değişiklik (`LOG_KANIT` sabiti + `logYaz` ikinci parametre) — commit edildikten
+   > SONRA `npm run sir-tarama:kanit` koşuldu (sıra kritikti: dosya commit edilmeden koşulsa
+   > `agacTemiz` false olur, çıkış 1 verirdi). Sonuç: **çıkış 0**, üç bacak TAMAM, invaryant
+   > (`:241-251`) `git diff` ile **yalnız 5 satır** değiştiği doğrulandı. **Yok-etmeme kanıtı:**
+   > kanıt log'unun SHA-256'sı kanıt koşumundan hemen sonra (K1), normal koşumdan sonra (K2)
+   > ve son taramadan sonra (K3) **birebir aynı** (`a557c638…`). Not: normal log'un içeriği
+   > (S1/S2/S3) de birebir aynı çıktı — plan *"farklı olacak"* diye tahmin etmişti ama içerik
+   > deterministik olduğu için (aynı 110 dosya, 0 bulgu, aynı Node sürümü) üç ayrı koşum bayt
+   > bayt aynı sonucu üretti; bu bir çelişki değil, dürüst bir ölçüm sapmasıdır.
+   > **✅ Kanıt yutulmadı:** çıplak `git check-ignore` iki log için de **boş + çıkış 1**;
+   > `git ls-files` ikisini de listeliyor (git add sonrası).
+   > **✅ Madde 5'in dört kanıt kalemi** artık `TESLIM.md` §6'da tek yerde: depo adresi ·
+   > commit sayısı · etiket adı (`v1.0.0`) · sır taraması çıkış 0.
+   > **✅ Eskimiş cümleler düzeltildi:** beş canlı aralıkta (`KONTROL_DOSYASI.md` 007 katmanı +
+   > Aktif işler tablosu, `SON_HAREKETLER.md` GÜNCEL DURUM kutusu, `PROJE_KUNYESI.md` ÇEVRE
+   > BOYUTLARI tablosu, `TESLIM.md` Sonuç + §6) DESEN_E isabeti **sıfıra indi**. Tarihi
+   > metinlerde isabet **kalıyor ve bu bir başarısızlık değil** (G09): DESEN_T tur başı → tur
+   > sonu `KONTROL_DOSYASI.md` 3→2 · `SON_HAREKETLER.md` 4→2 · `TESLIM.md` 3→1 ·
+   > `TEST_YOLU.md` 1→1; kalan her satır ya `(kapandı)` katmanında ya tarihi kayıt, hiçbiri
+   > **silinmedi**. Yer tutucu: `CLAUDE.md` 6→5 (`{{DEPO_URL}}` dolduruldu) ·
+   > `PROJE_KUNYESI.md` 6→6 (yalnız kutu sembolü değişti) · `SON_HAREKETLER.md` 4→4
+   > (değişmedi) — izlenen toplam 16→15. Yöntem: satır sayımı (`git grep -c`); `DEVIR.md`
+   > izlenmiyor, kapsam dışı, toplama girmedi.
+   > **Regresyon yok:** `npm test` → `KALAN: 0` · `npm run mutasyon` → 7/7 ·
+   > `npm run eklenti:kontrol` → SENKRON — üçü de çıkış 0. `mantik/sayac.mjs`,
+   > `eklenti/sayac.js`, `.gitignore` SHA-256 tur başı = tur sonu.
+   > **EMNİYET:** LibreWolf açılmadı (bu tur tarayıcı gerektirmiyordu); kurulu LibreWolf PID
+   > kümesi tur başı `[]` = tur sonu `[]`. `DEVIR.md` hiç açılmadı — `git grep` yapısal olarak
+   > görmüyor.
+   > **`commit: f7671aa`**
+   - **Güncel durum:** madde 1-5 kapalı; madde 5'in yazılı dört kutusu da (README · sır
+     taraması · etiket/sürüm · uzak depo) kapandı. Yazılı, zorunlu bir sonraki iş yok. Kalan
+     ölçüm açığı kapsam dışı: Y4 (arka plandaki sekme) ve depolama yokluğu. Bu HEDEF.md'nin
+     genel kapanışına dair bir iddia değildir — o karar döngünün planlayıcısınındır.
+
 * *(Bir sonraki madde buraya eklenecek — aşağıdaki kurallara göre.)*
 
 ---
