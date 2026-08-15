@@ -8,7 +8,35 @@
 
 ## 🔵 Şu ANKİ TEK İŞ
 
-> **005 — madde 3'ün iki açık kutusu kapandı, ölçüm kaydı düzeltildi.**
+> **006 — TESLİM. Madde 5'in üç kutusu kapandı, biri `bekliyor`.**
+>
+> ✅ **README.md** — kurulum (A ölçüldü · B ölçülmedi, ayrı etiketli), kullanım, üç sayacın
+> anlamı, **bilinen üç açık gizlenmeden**, geliştirici komutları. Kelepçe: arayüzün dokuz
+> Türkçe dizesi **9/9** birebir.
+> ✅ **Sır taraması** (`arac/sir-tarama.mjs`) — `npm run sir-tarama` → **çıkış 0**
+> (103 dosya tarandı, 0 bulgu, `git check-ignore` üç ad için de satır döndü).
+> **Desen tabanlı, entropi tabanlı DEĞİL** — sebep ölçüldü: bu depoda ~50 kanıt dosyası
+> SHA-256 hex ve UUID dolu, entropi kuralı temiz ağaçta kırmızı yanardı (G22).
+> `npm run sir-tarama:kanit` → **çıkış 0**, üç bacak: temiz **0** · sahte sırla **1**
+> (bulgu maskelenmiş: `ghp_…(40 karakter)`) · SHA-256+UUID ile **0**.
+> ✅ **Etiket `v1.0.0`** — HEAD'e düştü. Sürüm dört yerde `1.0.0`'a eşitlendi
+> (`eklenti/manifest.json` `0.1.0` → `1.0.0`; gerekçe `TESLIM.md`).
+> ✅ **Ürün paketi ölçüldü** — `npm run eklenti:paketle` → `sayac-1.0.0.xpi`,
+> **tam 7 ürün dosyası**, `uret.mjs` pakete **girmiyor** (kelepçe), SHA-256 kayıtlı.
+> ⏳ **Uzak depo `bekliyor`** — `git remote -v` **boş**; depoyu açma adımı Mustafa'nındır.
+> Push **denenmedi**, `<<<DUR>>>` yazılmadı — bu bir durma sebebi değil.
+>
+> ✅ **`git-rehberi` KISMİ taşındı** (Mustafa'nın kararı): §2.4 ve §2.6.
+> `.gitignore` **değişmedi** (SHA-256 tur başı = tur sonu) — ölçüldü: §2.4 gövdesi bu
+> projeninkinden **zayıf** (20 kural eksik, `*.log` muafiyeti yok). `kur-sistem.ps1`
+> **kullanılmadı** (Kilit B + tam-taşıma varsayımı). `teslim-disiplini` **taşınmadı**.
+>
+> **Sıradaki tek iş:** Mustafa private depoyu açar; sonra `git push -u origin main` ve
+> `git push origin v1.0.0`. Push'tan **önce** `npm run sir-tarama` çıkış 0 vermelidir.
+>
+> ---
+>
+> **005 (kapandı) — madde 3'ün iki açık kutusu kapandı, ölçüm kaydı düzeltildi.**
 >
 > **✅ Y10 YEŞİL — LibreWolf'a kurulabilirlik KANITLANDI.** RDP kullanılmadan: imzasız XPI
 > `<profil>\extensions\sayac@sayac.local.xpi` olarak düşürüldü, taşınabilir LibreWolf
@@ -131,7 +159,10 @@
 
 | # | İş | Durum | Not |
 |---|---|---|---|
-| 1 | Madde 5 — private GitHub deposu, README, etiket, gizli taraması | 🔵 bugün | `git push` yalnız burada, önceden yetkili. **Y10 ve panel bağlamı 005'te kapandı.** README'ye girecek kurulum yolu ölçülü: imzasız XPI'yi `<profil>\extensions\sayac@sayac.local.xpi` olarak düşür. Kalan açık: Y4 (arka plandaki sekme, üç yol da `visible` ölçtü) |
+| 1 | Madde 5 — **uzak depo** (README · etiket · sır taraması 006'da kapandı) | ⏳ bekliyor | **Mustafa'nın adımı:** GitHub'da private `sayac` deposu aç. Sonra `git remote add origin https://github.com/Sudo-Nwep/sayac.git` → `git push -u origin main` → `git push origin v1.0.0`. **Push'tan ÖNCE** `npm run sir-tarama` çıkış 0 vermeli. Adımların tamamı `TESLIM.md` §2.6'da |
+
+**Kalan ölçüm açığı (kapsam dışı, iş değil):** Y4 — arka plandaki sekme; üç yol da
+`visibilityState="visible"` ölçtü, ürün kusuru **ölçülmedi**.
 
 **Biten:** madde 1 (`TEST_YOLU.md`) · madde 2 (`MANTIK.md`) · madde 3 (`EKLENTI.md`) ·
 madde 4 (`ARAYUZ.md`) —
@@ -173,7 +204,7 @@ Sürümler `npm ls --depth=0` çıktısından okundu, tahmin edilmedi. Hepsi `de
 | `playwright-webextext` | `0.0.5` | **Seçilen test yolu.** Playwright'ın başlattığı Firefox'un RDP'sine bağlanıp geçici eklenti yükler; Playwright eli korunur. ⚠️ `tslib` ve `@playwright/test`'i bağımlılık olarak **bildirmiyor** — ikisi elle eklendi. |
 | `tslib` | `2.8.1` | `playwright-webextext@0.0.5`'in bildirilmemiş çalışma-zamanı bağımlılığı. Yoksa `Cannot find module 'tslib'` ile düşer (`TEST_YOLU.md`'de birebir hata metni). |
 | `@playwright/test` | `1.62.1` | `playwright-webextext`'in `dist/index.js`'i `fixtures.js`'i koşulsuz yüklüyor, o da bunu `require` ediyor. Yoksa `Cannot find module '@playwright/test'`. Sürüm `playwright` ile eşitlendi. |
-| `web-ext` | `10.6.0` | **Yedek test yolu (Aday B)** — Mozilla'nın referans uygulaması. Ayrıca Aday C'nin ölçümünde imzasız XPI üretmek için `cmd.build` kullanıldı. Yalnız Node API ile koşulur, CLI olarak **asla** (G24). |
+| `web-ext` | `10.6.0` | **Yedek test yolu (Aday B)** — Mozilla'nın referans uygulaması. Ayrıca Aday C'nin ölçümünde imzasız XPI üretmek için `cmd.build` kullanıldı. Yalnız Node API ile koşulur, CLI olarak **asla** (G24). **006'dan beri ÜRÜN paketleyicisi:** `arac/paketle.mjs` yalnız `cmd.build` ile `sayac-<sürüm>.xpi` üretir (RDP yok, ağ yok) — teslim edilen XPI budur. |
 
 ---
 

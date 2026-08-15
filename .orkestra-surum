@@ -1,0 +1,17 @@
+{
+  "sema": 1,
+  "kurulumlar": [
+    {
+      "sistem": "git-rehberi",
+      "surum": 1,
+      "banka": "D:\\Yönetim\\SISTEMLER",
+      "kuran": "006",
+      "yazilan": [],
+      "eklenen": [],
+      "yaratilan_dizin": [],
+      "kismi": true,
+      "alinan_bolumler": ["2.4", "2.6"],
+      "not": "KISMI tasima (Mustafa'nin 14 Agustos karari). Bankadan HICBIR dosya bayt bayt kopyalanmadi - bu yuzden yazilan/eklenen/yaratilan_dizin bos. Rehberin 2.4 (.gitignore) ve 2.6 (private repo ac ve bagla) bolumleri YENIDEN YAZILARAK TESLIM.md'ye girdi; 2.4 referans olarak alindi, mevcut .gitignore'un uzerine YAZILMADI (olculdu: 2.4 govdesi bu projenin .gitignore'undan zayif - *.log muafiyeti yok, 20 kural eksik). Tasinmayanlar ve gerekceleri TESLIM.md'de tablo halinde. D:\\Yonetim\\kur-sistem.ps1 KULLANILMADI: (1) betigin Kilit B'si hedef <MyDocuments>\\Claude\\Projects agacinin icindeyse exit 16 veriyor, Sayac tam olarak orada; (2) betik dosyalar\\ altindaki her dosyayi kopyalar, yani TAM tasima yapar - karar ise KISMI. Bu dosya elle yazildi, semasi kur-sistem.ps1'den alindi. surum:1 uydurulmadi, git-rehberi/TASIMA.md'den okundu."
+    }
+  ]
+}
