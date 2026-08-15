@@ -22,6 +22,7 @@ const PROJE = path.resolve(KOK, "..");
 // :55 !test-yolu/kanit/*.log ve :56 !mantik/kanit/*.log — ve muafiyetteki `*` `/` GEÇMEZ.
 // arac/kanit/ açmak ya kanıtı yutardı ya .gitignore değişikliği gerektirirdi.
 const LOG = path.join(PROJE, "test-yolu", "kanit", "sir-tarama.log");
+const LOG_KANIT = path.join(PROJE, "test-yolu", "kanit", "sir-tarama-kanit.log");
 
 const satirlar = [];
 const yaz = (s = "") => {
@@ -124,10 +125,10 @@ function ignoreDogrula() {
   return sonuc;
 }
 
-function logYaz(baslik) {
-  fs.mkdirSync(path.dirname(LOG), { recursive: true });
+function logYaz(baslik, yol = LOG) {
+  fs.mkdirSync(path.dirname(yol), { recursive: true });
   fs.writeFileSync(
-    LOG,
+    yol,
     `=== SAYAC — ${baslik} ===\nnode=${process.version} platform=${process.platform}\n` +
       "=".repeat(72) + "\n\n" + satirlar.join("\n") + "\n",
     "utf8"
@@ -257,7 +258,7 @@ function kanit() {
 // ═══════════════════════════════════════════════════════════════════════════════
 if (process.argv.includes("--kanit")) {
   const kod = kanit();
-  logYaz("sir taramasi KANITI (arac/sir-tarama.mjs --kanit)");
+  logYaz("sir taramasi KANITI (arac/sir-tarama.mjs --kanit)", LOG_KANIT);
   process.exit(kod);
 } else {
   const { kod } = gercekTarama();
