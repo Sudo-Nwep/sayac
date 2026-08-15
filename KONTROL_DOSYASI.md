@@ -8,7 +8,24 @@
 
 ## 🔵 Şu ANKİ TEK İŞ
 
-> **007 — UZAK DEPO KENDİ ÖLÇÜMÜYLE KAPANDI. Madde 5'in yazılı dört kutusu da kapandı.**
+> **008 — Madde 5'in `commit sayısı` kalemi sha-ankrajlı bir rakamla kapandı.**
+>
+> ✅ **Commit sayısı ölçüldü:** `c4af8a9` itibarıyla **19** (ölçüm: `git rev-list --count
+> c4af8a9`). 007'nin kendi tur başı ucu `5d471c8` itibarıyla **16** (`git rev-list --count
+> 5d471c8`). Tur sonu kesin sayı (bu turun kapanış commit'i dahil) `TESLIM.md` §6'da,
+> kendisini doğrulayan ölçümle birlikte.
+> ✅ **Uzak senkron bugün tekrar ölçüldü** — `git ls-remote origin refs/heads/main` = yerel
+> `HEAD`, `git rev-list --left-right --count main...origin/main` → `0	0`. Kanıt:
+> `test-yolu/kanit/uzak-depo.log` Blok 2 (ve kapanışta Blok 3).
+> **G09 notu:** aşağıdaki `007 (kapandı)` bloğundaki `(16 → tur sonunda güncellenir)` ifadesi
+> **007'nin kendi kaydıdır ve silinmedi**; güncelleme burada (008'de) ve `TESLIM.md` §6'da
+> yapıldı.
+>
+> **Sıradaki adım kararı döngünün planlayıcısınındır.**
+>
+> ---
+>
+> **007 (kapandı) — UZAK DEPO KENDİ ÖLÇÜMÜYLE KAPANDI. Madde 5'in yazılı dört kutusu da kapandı.**
 >
 > ✅ **Uzak depo bağlı ve doğrulandı** — `origin` → `https://github.com/Sudo-Nwep/sayac.git`.
 > Bu turun başında zaten bağlıydı ve `main` yerel `HEAD` ile birebir eşti (turdan önce yapılmış).

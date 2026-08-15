@@ -57,3 +57,42 @@ görünürlük: private — dayanak: iki anonim (kimliksiz) HTTP isteği de 404 
   kimlikli `git ls-remote origin` gerçek ref'leri (main, v1.0.0) başarıyla döndürdü.
   Tek başına anonim 404, "depo yok" anlamına da gelebilirdi — bu yüzden iki ayak birlikte
   okunuyor: depo VAR (ls-remote kanıtlıyor) + anonim erişim YOK (iki 404) = private.
+
+=== SAYAC — 008: PUSH SONRASI SENKRON KANITI (Blok 2, 15/08/2026) ===
+(Blok 1 yukarıda duruyor ve SİLİNMEDİ: 007'nin TUR BAŞI anını, 5d471c804c37661243225c20f51cdcfc95762dd3'ü kaydeder.
+ Bu blok, madde 5'in kapandığı ucu — 007'nin push'undan SONRAKİ durumu — ölçer.)
+
+$ git fetch origin
+(çıktı yok — sessiz başarı, çıkış 0)
+
+$ git ls-remote origin
+c4af8a993decff9f041d52f28321b7c2cee1b43d	HEAD
+c4af8a993decff9f041d52f28321b7c2cee1b43d	refs/heads/main
+ef5ba0d736ab66176fcd95d382edc91ff92118a1	refs/tags/v1.0.0
+5d471c804c37661243225c20f51cdcfc95762dd3	refs/tags/v1.0.0^{}
+
+$ git rev-parse HEAD
+c4af8a993decff9f041d52f28321b7c2cee1b43d
+
+$ git rev-parse origin/main
+c4af8a993decff9f041d52f28321b7c2cee1b43d
+
+$ git rev-list --left-right --count main...origin/main
+0	0
+
+$ git rev-list -n1 v1.0.0
+5d471c804c37661243225c20f51cdcfc95762dd3
+
+$ git rev-list --count HEAD
+19
+
+$ git rev-list --count 5d471c8
+16
+
+--- sonuç cümleleri ---
+yerel HEAD = uzak refs/heads/main : EVET (sha: c4af8a993decff9f041d52f28321b7c2cee1b43d)
+ayrisma (main...origin/main)      : 0	0
+commit sayisi (git rev-list --count HEAD, c4af8a9 itibariyla) : 19
+007 tur basi (git rev-list --count 5d471c8)                  : 16
+(not: v1.0.0^{} hâlâ 5d471c804c37661243225c20f51cdcfc95762dd3'e peel ediyor — etiket
+ 007'den beri hareket etmedi, bu beklenen; yalnız main ilerledi.)

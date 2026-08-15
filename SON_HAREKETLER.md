@@ -9,7 +9,7 @@
 
 ## 📌 GÜNCEL DURUM (her zaman en güncel — önce bunu oku)
 
-- **Versiyon:** v3.1 · **Sürüm:** `1.0.0` (dört yerde eşit) · **Etiket:** `v1.0.0` · **Uzak depo:** `github.com/Sudo-Nwep/sayac` (private, bağlı, `main` senkron)
+- **Versiyon:** v3.2 · **Sürüm:** `1.0.0` (dört yerde eşit) · **Etiket:** `v1.0.0` · **Uzak depo:** `github.com/Sudo-Nwep/sayac` (private, bağlı, `main` senkron) · **Commit sayısı:** `c4af8a9` itibarıyla `19` (`git rev-list --count c4af8a9`); tur sonu kesin sayı `TESLIM.md` §6'da
 - **Aşama:** {{ASAMA}} — fiilen: madde 1 · 2 · 3 · 4 · 5 kapandı; **arayüzlü, kurulabilir eklenti var**, madde 5 (teslim) dört kutusu da ölçülüp kapandı
 - **Amaç:** {{AMAC}}
 - **Kapsam:** {{KAPSAM}}
@@ -49,6 +49,9 @@
   ✅ **Uzak depo bağlı ve doğrulandı** — `git ls-remote origin`: `main` sha = yerel `HEAD`,
   `v1.0.0^{}` sha = `git rev-list -n1 v1.0.0`, ikisi de birebir eşit. Görünürlük **private**
   ölçüldü (iki anonim istek 404, kimlikli ls-remote başarılı). Kanıt: `test-yolu/kanit/uzak-depo.log`.
+  ✅ **Commit sayısı sha-ankrajlı ölçüldü (008):** `c4af8a9` itibarıyla `19` (`git rev-list
+  --count c4af8a9`); 007'nin kendi tur başı `5d471c8` itibarıyla `16`. Tur sonu kesin sayı
+  (kapanış commit'i dahil) `TESLIM.md` §6'da.
 - **Ürün paketi ölçüldü:** `npm run eklenti:paketle` → `sayac-1.0.0.xpi`, **tam 7 ürün
   dosyası** (`uret.mjs` pakete girmiyor — kelepçe), SHA-256 kayıtlı.
 - **Sıradaki adım:** yazılı, zorunlu bir sonraki iş yok — madde 5'in dört kutusu da kapandı.

@@ -242,9 +242,18 @@ bayt kopyalanmadı; §2.4 ve §2.6 yeniden yazılarak bu rapora girdi. Şema dı
 | Kalem | Değer | Dayanak |
 |---|---|---|
 | Depo adresi | `https://github.com/Sudo-Nwep/sayac.git` | `git remote -v` |
-| Commit sayısı | tur başında `17` (bu belgenin ve kalan 007 commit'lerinin kendisi hariç); tur sonu kesin sayı `test-yolu/kanit/uzak-depo.log` ve FAZ 6 doğrulamasında | `git rev-list --count HEAD` |
+| Commit sayısı | **`c4af8a9` itibarıyla `19`** — 007'nin kapandığı uç. Ölçüm: `git rev-list --count c4af8a9` (= `git rev-list --count HEAD`, 008'in FAZ 0'ında ölçüldü). (007'nin kendi tur başı `5d471c8` itibarıyla `16`, ölçüm: `git rev-list --count 5d471c8`.) | `test-yolu/kanit/uzak-depo.log` Blok 2 |
 | Etiket adı | `v1.0.0`, `HEAD`'e düşüyor | `git rev-list -n1 v1.0.0` = `git rev-parse HEAD` |
 | Sır taraması | `npm run sir-tarama` → **çıkış 0** (push edilmiş ağaç üzerinde, düzenlemeden önce tekrar koşuldu) | `test-yolu/kanit/sir-tarama.log` |
+
+> ⚠️ **DÜZELTME (008, 15/08/2026):** Bu satır önceki hâlde şöyle yazıyordu: *"tur başında `17`
+> (bu belgenin ve kalan 007 commit'lerinin kendisi hariç); tur sonu kesin sayı
+> `test-yolu/kanit/uzak-depo.log` ve FAZ 6 doğrulamasında"*. İki ayrı kusur vardı: ⑴ `17`
+> **ölçülmemişti** — 007'nin gerçek tur başı ucu (`5d471c8`) `git rev-list --count` ile **16**'dır,
+> `17` diye yazılan rakamın hangi sha'da geçerli olduğu hiç belirtilmemişti; ⑵ tur sonu için
+> attıfta bulunduğu iki kaynağın **ikisi de** kesin sayıyı vermiyordu — bu bir **erteleme**ydi
+> (deferral), ölçüm değil. 008'in FAZ 6'sı tur sonu rakamını kapanış commit'i dahil olarak
+> aşağıya (bu satırın devamına) ekleyecek. *(Özgün metin silinmedi — G09: iki hafıza.)*
 
 **Bağlantı ve senkron kanıtı** (007, `test-yolu/kanit/uzak-depo.log`):
 
