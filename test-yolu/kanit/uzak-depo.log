@@ -96,3 +96,18 @@ commit sayisi (git rev-list --count HEAD, c4af8a9 itibariyla) : 19
 007 tur basi (git rev-list --count 5d471c8)                  : 16
 (not: v1.0.0^{} hâlâ 5d471c804c37661243225c20f51cdcfc95762dd3'e peel ediyor — etiket
  007'den beri hareket etmedi, bu beklenen; yalnız main ilerledi.)
+
+=== SAYAC — 008: KAPANIS OLCUMU (Blok 3, 15/08/2026) ===
+(1. push SONRASI ölçüldü; Blok 1 ve Blok 2 SİLİNMEDİ.)
+$ git rev-parse HEAD
+d6884af9114dc5573791fd9e0b1f221fa9c93eec
+$ git ls-remote origin refs/heads/main
+d6884af9114dc5573791fd9e0b1f221fa9c93eec (yerel HEAD ile EVET)
+$ git rev-list --left-right --count main...origin/main
+0	0
+$ git rev-list --count HEAD
+21
+TUR SONU: bu bloğu taşıyan commit turun KAPANIŞ commit'idir; onunla birlikte
+sayım M+1 = 22 olur. Doğrulama: `git rev-list --count HEAD` (raporda, FAZ 6.6).
+NOT: bir dosya, kendisini getiren commit'in sha'sını İÇEREMEZ (sha o dosyanın
+içeriğine bağlıdır) — son halka bu yüzden raporda kapatıldı, uydurulmadı.

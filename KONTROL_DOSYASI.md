@@ -12,8 +12,8 @@
 >
 > ✅ **Commit sayısı ölçüldü:** `c4af8a9` itibarıyla **19** (ölçüm: `git rev-list --count
 > c4af8a9`). 007'nin kendi tur başı ucu `5d471c8` itibarıyla **16** (`git rev-list --count
-> 5d471c8`). Tur sonu kesin sayı (bu turun kapanış commit'i dahil) `TESLIM.md` §6'da,
-> kendisini doğrulayan ölçümle birlikte.
+> 5d471c8`). **Tur sonu (008'in kapanış commit'i dahil): 22** — doğrulama `git rev-list
+> --count HEAD`, `test-yolu/kanit/uzak-depo.log` Blok 3, ayrıca `TESLIM.md` §6.
 > ✅ **Uzak senkron bugün tekrar ölçüldü** — `git ls-remote origin refs/heads/main` = yerel
 > `HEAD`, `git rev-list --left-right --count main...origin/main` → `0	0`. Kanıt:
 > `test-yolu/kanit/uzak-depo.log` Blok 2 (ve kapanışta Blok 3).

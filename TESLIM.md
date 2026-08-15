@@ -242,7 +242,7 @@ bayt kopyalanmadı; §2.4 ve §2.6 yeniden yazılarak bu rapora girdi. Şema dı
 | Kalem | Değer | Dayanak |
 |---|---|---|
 | Depo adresi | `https://github.com/Sudo-Nwep/sayac.git` | `git remote -v` |
-| Commit sayısı | **`c4af8a9` itibarıyla `19`** — 007'nin kapandığı uç. Ölçüm: `git rev-list --count c4af8a9` (= `git rev-list --count HEAD`, 008'in FAZ 0'ında ölçüldü). (007'nin kendi tur başı `5d471c8` itibarıyla `16`, ölçüm: `git rev-list --count 5d471c8`.) | `test-yolu/kanit/uzak-depo.log` Blok 2 |
+| Commit sayısı | **`c4af8a9` itibarıyla `19`** — 007'nin kapandığı uç. Ölçüm: `git rev-list --count c4af8a9` (= `git rev-list --count HEAD`, 008'in FAZ 0'ında ölçüldü). (007'nin kendi tur başı `5d471c8` itibarıyla `16`, ölçüm: `git rev-list --count 5d471c8`.) **Tur sonu (008'in kapanış commit'i dahil): `22`** — doğrulama `git rev-list --count HEAD`, `test-yolu/kanit/uzak-depo.log` Blok 3. | `test-yolu/kanit/uzak-depo.log` Blok 2 + Blok 3 |
 | Etiket adı | `v1.0.0`, `HEAD`'e düşüyor | `git rev-list -n1 v1.0.0` = `git rev-parse HEAD` |
 | Sır taraması | `npm run sir-tarama` → **çıkış 0** (push edilmiş ağaç üzerinde, düzenlemeden önce tekrar koşuldu) | `test-yolu/kanit/sir-tarama.log` |
 
