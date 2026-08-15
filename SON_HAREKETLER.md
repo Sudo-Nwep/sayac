@@ -9,8 +9,8 @@
 
 ## 📌 GÜNCEL DURUM (her zaman en güncel — önce bunu oku)
 
-- **Versiyon:** v3.0 · **Sürüm:** `1.0.0` (dört yerde eşit) · **Etiket:** `v1.0.0`
-- **Aşama:** {{ASAMA}} — fiilen: madde 1 · 2 · 3 · 4 kapandı; **arayüzlü, kurulabilir eklenti var**, madde 5 (teslim) sırada
+- **Versiyon:** v3.1 · **Sürüm:** `1.0.0` (dört yerde eşit) · **Etiket:** `v1.0.0` · **Uzak depo:** `github.com/Sudo-Nwep/sayac` (private, bağlı, `main` senkron)
+- **Aşama:** {{ASAMA}} — fiilen: madde 1 · 2 · 3 · 4 · 5 kapandı; **arayüzlü, kurulabilir eklenti var**, madde 5 (teslim) dört kutusu da ölçülüp kapandı
 - **Amaç:** {{AMAC}}
 - **Kapsam:** {{KAPSAM}}
 - **Depo/çalışır mı:** **evet — kurulabilir bir Firefox eklentisi var.** Üretilebilir kanıtlar:
@@ -33,22 +33,26 @@
   enjekte olur. `eklenti/sayac.js` çekirdekten **üretilir**, senkronluk SHA-256'yla kanıtlı.
   Ayrıntı `EKLENTI.md`.
 - **Açık işler:** `PROJE_KUNYESI.md`'deki boyutlar + doldurulmamış ELDE yer tutucuları.
-  **ürün** boyutu ⛔ → 🟡 oldu: kod, **arayüz** ve doğrulaması var; LibreWolf'a kurulabilirlik
-  de kanıtlandı. Kalan engel teslimdir (madde 5: depo · README · etiket · gizli taraması).
-- **Madde 5 (teslim) — üç kutu kapandı, biri `bekliyor`:**
+  **ürün** boyutu ⛔ → 🟡 → ✅ oldu: kod, **arayüz**, doğrulaması ve teslimi (madde 5) var.
+  Diğer altı çevre boyutu (veri/gizlilik · maliyet · operasyon · para · hukuk · dağıtımın
+  "gerçek kullanıcı" ölçütü) hâlâ ⛔/🟡 — bunlar bu turun kapsamı dışıdır.
+- **Madde 5 (teslim) — yazılı dört kutu da kapandı:**
   ✅ **README.md** var — kurulum (ölçülmüş yol + ölçülmemiş yol ayrı etiketli), kullanım,
   üç sayacın anlamı, bilinen sınırlar, geliştirici komutları. Arayüzün dokuz Türkçe dizesi
   **9/9** birebir.
   ✅ **Sır taraması** — `npm run sir-tarama` → çıkış 0 (desen tabanlı; entropi tabanlı
   **değil**, gerekçesi ölçülü). `npm run sir-tarama:kanit` → çıkış 0, üç bacak: temiz **0** ·
-  sahte sırla **1** (maskelenmiş bulgu) · SHA-256+UUID ile **0**.
+  sahte sırla **1** (maskelenmiş bulgu) · SHA-256+UUID ile **0**. **007'den beri kanıt modu
+  kendi log dosyasına yazıyor** (`sir-tarama-kanit.log`) — normal modla artık kanıtları
+  birbirini silmiyor.
   ✅ **Etiket** `v1.0.0` — HEAD'e düştü. Sürüm dört yerde `1.0.0`.
-  ⏳ **Uzak depo `bekliyor`** — `git remote -v` boş; depoyu açma adımı Mustafa'nındır.
-  Adımlar `TESLIM.md` §2.6'da, yer tutucuları doldurulmuş hâlde.
+  ✅ **Uzak depo bağlı ve doğrulandı** — `git ls-remote origin`: `main` sha = yerel `HEAD`,
+  `v1.0.0^{}` sha = `git rev-list -n1 v1.0.0`, ikisi de birebir eşit. Görünürlük **private**
+  ölçüldü (iki anonim istek 404, kimlikli ls-remote başarılı). Kanıt: `test-yolu/kanit/uzak-depo.log`.
 - **Ürün paketi ölçüldü:** `npm run eklenti:paketle` → `sayac-1.0.0.xpi`, **tam 7 ürün
   dosyası** (`uret.mjs` pakete girmiyor — kelepçe), SHA-256 kayıtlı.
-- **Sıradaki adım:** Mustafa private depoyu açar → `git remote add` + `git push -u origin main`
-  + `git push origin v1.0.0`. Push'tan **önce** `npm run sir-tarama` çıkış 0 vermelidir.
+- **Sıradaki adım:** yazılı, zorunlu bir sonraki iş yok — madde 5'in dört kutusu da kapandı.
+  Kalan tek ölçüm açığı kapsam dışı: Y4 (arka plandaki sekme) ve depolama yokluğu.
 - **✅ 005'te KAPANANLAR:** ⑴ **LibreWolf'a kurulabilirlik** — RDP'siz yolla kanıtlandı
   (yukarıda) · ⑵ **sekme kimliği zinciri** — **gerçek araç çubuğu panelinde** ölçüldü:
   karşıt deney `999999 → 999999`, `888888 → 888888`, `getCurrent=yok` → panelde `sender.tab`
@@ -84,8 +88,12 @@
 - **`TESLIM.md`** — **madde 5'in raporu:** sır taraması tasarımı ve üç bacaklı kanıtı ·
   paketleme ölçümü · README dayanak tablosu · sürüm kararı · **`git-rehberi` kısmi taşıması**
   (§2.4 fark tablosu, §2.6 doldurulmuş adımlar, taşınmayanlar ve neden) · uzak depo durumu.
-- **`arac/`** — teslim araçları: `sir-tarama.mjs` (desen tabanlı sır taraması + `--kanit`) ·
+- **`arac/`** — teslim araçları: `sir-tarama.mjs` (desen tabanlı sır taraması + `--kanit`;
+  007'den beri normal mod `test-yolu/kanit/sir-tarama.log`'a, kanıt modu ayrı
+  `test-yolu/kanit/sir-tarama-kanit.log`'a yazıyor — ikisi artık birbirini silmiyor) ·
   `paketle.mjs` (ürün XPI'si, yedi dosya kelepçesi).
+- **`test-yolu/kanit/uzak-depo.log`** — 007'nin uzak depo ölçümü: `ls-remote` ham çıktısı,
+  sha karşılaştırmaları, görünürlük (iki anonim istek).
 - **`.orkestra-surum`** — `git-rehberi`'nin **kısmi** kurulum kaydı (`sema:1`, `surum:1`,
   `kismi:true`, `alinan_bolumler:["2.4","2.6"]`). Bankadan dosya kopyalanmadı → `yazilan:[]`.
 - **`ARAYUZ.md`** — **madde 4'ün raporu:** hücre tablosu · **sekme kimliği zinciri** (karşıt

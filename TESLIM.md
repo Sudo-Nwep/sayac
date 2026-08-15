@@ -11,7 +11,8 @@
 README yazıldı (arayüzün dokuz Türkçe dizesi **9/9** birebir), ürün XPI'si **ölçülerek**
 paketlendi (tam 7 dosya), sır taraması **çıkış 0** verdi **ve kırmızıya dönebildiği
 kanıtlandı**, sürüm dört yerde `1.0.0`'a eşitlenip `v1.0.0` etiketlendi;
-**uzak depo `bekliyor`** — depoyu açma adımı Mustafa'nındır.
+**uzak depo bağlı ve doğrulandı** (007) — `git ls-remote origin` gerçek ref döndürüyor,
+`main` sha = yerel `HEAD`, `v1.0.0^{}` sha eşleşti, görünürlük **private** ölçüldü.
 
 ---
 
@@ -234,18 +235,61 @@ bayt kopyalanmadı; §2.4 ve §2.6 yeniden yazılarak bu rapora girdi. Şema dı
 
 ---
 
-## 6 · Uzak depo
+## 6 · Uzak depo (007'de kendi ölçümüyle kapandı)
+
+**Madde 5'in dört kanıt kalemi — tek yerde:**
+
+| Kalem | Değer | Dayanak |
+|---|---|---|
+| Depo adresi | `https://github.com/Sudo-Nwep/sayac.git` | `git remote -v` |
+| Commit sayısı | tur başında `17` (bu belgenin ve kalan 007 commit'lerinin kendisi hariç); tur sonu kesin sayı `test-yolu/kanit/uzak-depo.log` ve FAZ 6 doğrulamasında | `git rev-list --count HEAD` |
+| Etiket adı | `v1.0.0`, `HEAD`'e düşüyor | `git rev-list -n1 v1.0.0` = `git rev-parse HEAD` |
+| Sır taraması | `npm run sir-tarama` → **çıkış 0** (push edilmiş ağaç üzerinde, düzenlemeden önce tekrar koşuldu) | `test-yolu/kanit/sir-tarama.log` |
+
+**Bağlantı ve senkron kanıtı** (007, `test-yolu/kanit/uzak-depo.log`):
 
 ```
-git remote -v
-(çıktı boş)
+$ git remote -v
+origin	https://github.com/Sudo-Nwep/sayac.git (fetch)
+origin	https://github.com/Sudo-Nwep/sayac.git (push)
+
+$ git ls-remote origin
+5d471c804c37661243225c20f51cdcfc95762dd3	HEAD
+5d471c804c37661243225c20f51cdcfc95762dd3	refs/heads/main
+ef5ba0d736ab66176fcd95d382edc91ff92118a1	refs/tags/v1.0.0
+5d471c804c37661243225c20f51cdcfc95762dd3	refs/tags/v1.0.0^{}
 ```
 
-**Durum: `bekliyor`.** Depoyu açma adımı Mustafa'nındır; tur remote'u hazır bulamadı.
-Push **denenmedi**. §2.6'daki adımlar yukarıda, yer tutucuları doldurulmuş hâlde.
+`refs/heads/main` = yerel `HEAD` (007'nin tur başı ölçümünde, sha `5d471c8…` — **birebir
+eşit**). `refs/tags/v1.0.0^{}` = `git rev-list -n1 v1.0.0` (**birebir eşit**; `refs/tags/v1.0.0`
+kendisi annotated etiket nesnesinin ayrı SHA'sıdır, `ef5ba0d…` — bu normaldir, `^{}` onu peel
+edip işaret ettiği commit'i verir). `git rev-list --left-right --count main...origin/main` →
+`0	0` — ayrışma yok.
 
-⚠️ Deponun private olduğunu tur **ölçemez** (ağ/API çağrısı yok) — açıldığında bunu
-doğrulamak Mustafa'nın adımıdır.
+Bu senkronun **bu turdan önce** kurulduğu ölçüldü: 007'nin FAZ 0 taban ölçümünde `origin`
+zaten tanımlıydı ve `origin/main` yerel `HEAD` ile zaten birebir eşti. Yani `git remote add`
++ ilk `git push` bu turdan önce yapılmış; bu tur onu **doğruladı**, push edilmiş ağaç
+üzerinde sır taramasını **tekrar koştu**, ve kendi yeni commit'lerini (FAZ 6'da) uca gönderdi.
+
+**Görünürlük — ölçüldü: private.** İki anonim (kimliksiz) HTTP isteği:
+
+```
+$ node -e "fetch('https://api.github.com/repos/Sudo-Nwep/sayac')…"
+status=404
+
+$ node -e "fetch('https://github.com/Sudo-Nwep/sayac')…"
+status=404
+```
+
+Tek başına bir anonim 404, "depo yok" anlamına da gelebilirdi. Bu yüzden iki ayak birlikte
+okunur: kimlikli `git ls-remote origin` gerçek ref'ler döndürdü → depo **var**; iki anonim
+istek de 404 → anonim erişim **yok**. İkisi birlikte = **private**.
+
+> ⚠️ **DÜZELTME (007, 15/08/2026):** Önceki hâlde şu yazıyordu: *"Deponun private olduğunu
+> tur ölçemez (ağ/API çağrısı yok) — açıldığında bunu doğrulamak Mustafa'nın adımıdır."*
+> Bu cümle **silinmedi** (G09: iki hafıza — özgün ölçüm/karar metni korunur, düzeltme altına
+> eklenir). 007'de görev tanımı ağ çağrısını açıkça izin verdi (`fetch`, Node yerleşik) ve
+> görünürlük yukarıdaki iki anonim istekle **ölçüldü**: **private**.
 
 ---
 
@@ -257,4 +301,8 @@ doğrulamak Mustafa'nın adımıdır.
 | **Deponun private olduğu** | Ağ/API çağrısı yok; tur ölçemez |
 | **`about:debugging` ile geçici kurulum** | Makine kanalı yok — elle gezinme gerektirir (005'te de ölçülememişti) |
 | **Kurulu LibreWolf'un mevcut profilinde kurulum** | Mustafa'nın profili yasak (`HEDEF.md`); ölçüm boş, tek kullanımlık profille yapıldı |
+
+> ⚠️ **DÜZELTME (007, 15/08/2026):** Yukarıdaki tablonun ilk iki satırı — *"Uzak depoya push"*
+> ve *"Deponun private olduğu"* — bu turda **ölçüldü** ve §6'ya işlendi. Tablo satırları
+> **silinmedi** (G09: iki hafıza); 006 turunda gerçekten ölçülememişti, bu doğrudur ve kalır.
 | **"En az bir gerçek kullanıcı denedi"** (dağıtım boyutu ölçütü) | Kurulum yolu yazılı ve ölçülü, ama gerçek kullanıcı denemesi yapılmadı |

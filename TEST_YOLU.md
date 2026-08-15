@@ -333,4 +333,8 @@ sunucusu, 13/08 22:10'da başlamış) — **bu turun ürünü değildir, dokunul
 - Sistem geneline tarayıcı kurulmadı: `.msi`/`.exe` kurulumu, PATH değişikliği, kayıt defteri
   dokunuşu **yok**. Firefox yalnız Playwright önbelleğine indi.
 - `git push` **yapılmadı** (uzak depo yok — madde 5'in işi).
+
+> ⚠️ **DÜZELTME (007, 15/08/2026):** Uzak depo bu turdan sonra ölçülerek doğrulandı — bağlı,
+> `main` senkron, `v1.0.0` etiketi HEAD'e düşüyor, görünürlük private. Ayrıntı `TESLIM.md` §6.
+> *(Özgün ölçüm silinmedi — G09: iki hafıza.)*
 - `D:\Yönetim` yalnız **okundu** (`DERSLER\INDEKS.md`).

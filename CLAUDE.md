@@ -37,7 +37,7 @@ Katmanlar duvar değil etikettir: `TIP\kod` dersleri bir üretim projesinde de g
 - **Kapsam/yapı:** {{KAPSAM}}
 - **Şu anki aşama:** {{ASAMA}}
 - **Stack:** {{STACK}}
-- **Depo:** {{DEPO_URL}} · ana dal: `main`
+- **Depo:** https://github.com/Sudo-Nwep/sayac (private, 15/08/2026'da ölçüldü) · ana dal: `main`
 - **Sırlar:** `.env` dosyasında, **repoya asla girmez**. Hangi anahtarların gerektiği `KONTROL_DOSYASI.md`'de listelidir (değerleri değil, adları).
 - **Değişken verinin kaynağı:** `KONTROL_DOSYASI.md` — değişiklik SADECE orada yapılır.
 

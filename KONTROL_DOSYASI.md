@@ -8,7 +8,36 @@
 
 ## 🔵 Şu ANKİ TEK İŞ
 
-> **006 — TESLİM. Madde 5'in üç kutusu kapandı, biri `bekliyor`.**
+> **007 — UZAK DEPO KENDİ ÖLÇÜMÜYLE KAPANDI. Madde 5'in yazılı dört kutusu da kapandı.**
+>
+> ✅ **Uzak depo bağlı ve doğrulandı** — `origin` → `https://github.com/Sudo-Nwep/sayac.git`.
+> Bu turun başında zaten bağlıydı ve `main` yerel `HEAD` ile birebir eşti (turdan önce yapılmış).
+> `git ls-remote origin`: `refs/heads/main` = yerel `HEAD` (`5d471c8…`) — **birebir eşit**;
+> `refs/tags/v1.0.0^{}` = `git rev-list -n1 v1.0.0` — **birebir eşit**.
+> `git rev-list --left-right --count main...origin/main` → `0	0` (ayrışma yok).
+> Kanıt: `test-yolu/kanit/uzak-depo.log`.
+> ✅ **Görünürlük ölçüldü: private.** İki anonim (kimliksiz) istek — `api.github.com` ve
+> `github.com` — **ikisi de 404**; kimlikli `git ls-remote` gerçek ref döndürdü. Depo **var**
+> (ls-remote kanıtlıyor) + anonim erişim **yok** (iki 404) = **private**.
+> ✅ **Sır taraması push edilmiş ağaç üzerinde tekrar koşuldu** — `npm run sir-tarama` →
+> **çıkış 0** (110 dosya, 0 bulgu) — düzenlemeden ÖNCE, yani push'lu içeriğin taraması.
+> ✅ **Kanıt modu artık kendi log dosyasına yazıyor** — `arac/sir-tarama.mjs`'e 5 satırlık
+> log-yolu ayrımı eklendi (`LOG_KANIT` sabiti, `logYaz` ikinci parametre aldı). Artık
+> `npm run sir-tarama:kanit` → `test-yolu/kanit/sir-tarama-kanit.log`, normal mod →
+> `sir-tarama.log`. İkisi artık birbirinin kanıtını **silmiyor**: kanıt log'unun SHA-256'sı
+> kanıt koşumundan hemen sonra (K1) ve ardından normal koşumdan sonra (K2) **birebir aynı**
+> ölçüldü. **İnvaryant (`:241-251` bloğu) değişmedi** — `git diff` yalnız bu 5 satırı gösteriyor.
+> ✅ **Madde 5'in dört kanıt kalemi** artık `TESLIM.md` §6'da tek yerde, okunabilir: depo
+> adresi · commit sayısı (`16` → tur sonunda güncellenir) · etiket adı (`v1.0.0`) · sır
+> taraması çıkış 0.
+>
+> **Sıradaki tek iş yok** — madde 5'in yazılı dört kutusundan hiçbiri açık değil. Bu
+> HEDEF.md'nin genel kapanışına dair bir iddia değildir, o karar planlayıcınındır; bu
+> yalnız madde 5'in kendi durumudur.
+>
+> ---
+>
+> **006 (kapandı) — TESLİM. Madde 5'in üç kutusu kapandı, biri `bekliyor`.**
 >
 > ✅ **README.md** — kurulum (A ölçüldü · B ölçülmedi, ayrı etiketli), kullanım, üç sayacın
 > anlamı, **bilinen üç açık gizlenmeden**, geliştirici komutları. Kelepçe: arayüzün dokuz
@@ -159,7 +188,9 @@
 
 | # | İş | Durum | Not |
 |---|---|---|---|
-| 1 | Madde 5 — **uzak depo** (README · etiket · sır taraması 006'da kapandı) | ⏳ bekliyor | **Mustafa'nın adımı:** GitHub'da private `sayac` deposu aç. Sonra `git remote add origin https://github.com/Sudo-Nwep/sayac.git` → `git push -u origin main` → `git push origin v1.0.0`. **Push'tan ÖNCE** `npm run sir-tarama` çıkış 0 vermeli. Adımların tamamı `TESLIM.md` §2.6'da |
+
+_(boş)_ — 007'de madde 5'in son kutusu (uzak depo) kendi ölçümüyle kapandı; şu an açık
+madde-5 işi yok. Sıradaki adım kararı döngünün planlayıcısınındır.
 
 **Kalan ölçüm açığı (kapsam dışı, iş değil):** Y4 — arka plandaki sekme; üç yol da
 `visibilityState="visible"` ölçtü, ürün kusuru **ölçülmedi**.
@@ -222,4 +253,4 @@ Sürümler `npm ls --depth=0` çıktısından okundu, tahmin edilmedi. Hepsi `de
 
 | Tarih | İş | Not |
 |---|---|---|
-| — | — | — |
+| 15/08/2026 | Madde 5 — uzak depo | 007'de kendi ölçümüyle kapandı: `git ls-remote origin` gerçek ref döndürdü, `main` sha = yerel `HEAD`, `v1.0.0^{}` sha eşleşti, görünürlük private ölçüldü (iki anonim istek 404), push edilmiş ağaçta sır taraması çıkış 0. Kanıt `test-yolu/kanit/uzak-depo.log` + `TESLIM.md` §6 |

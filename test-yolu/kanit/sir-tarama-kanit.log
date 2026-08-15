@@ -1,0 +1,31 @@
+=== SAYAC — sir taramasi KANITI (arac/sir-tarama.mjs --kanit) ===
+node=v26.5.0 platform=win32
+========================================================================
+
+========================================================================
+SIR TARAMASI KANITI (G26/K04) — koruma KIRMIZIYA DONEBILDIGI gosterilmeden
+yesil sayilmaz. Uc bacak; biri tutmazsa cikis 1.
+========================================================================
+arac/sir-tarama.mjs SHA-256 once : 80684402b30d4b89c545df73cf84a99c02031a2b31d89764b5ca0d29bc2a42ce
+
+BACAK 1 — temiz agac (agaca DOKUNULMADI)
+   cikis=0 (beklenen 0) → TAMAM
+   taranan metin dosya: 110
+
+BACAK 2 — sahte sir kendi kaynagimizin sonuna // yorumu olarak yazildi
+   cikis=1 (beklenen 1) · bulgu kendi dosyasinda mi: true → TAMAM
+   arac/sir-tarama.mjs:269 — GitHub klasik token — ghp_…(40 karakter)
+   (sahte sir MASKELENMIS bicimde gorunuyor; duz metin hicbir yere yazilmadi)
+
+BACAK 3 — negatif kontrol: 64 karakterlik SHA-256 hex + moz-extension://<uuid>
+   cikis=0 (beklenen 0) → TAMAM — uzun dizeye kor korune ates etmiyor
+
+arac/sir-tarama.mjs SHA-256 sonra: 80684402b30d4b89c545df73cf84a99c02031a2b31d89764b5ca0d29bc2a42ce
+geri alindi (once = sonra): true
+geri alma sonrasi gercek tarama cikis=0 (beklenen 0)
+git status --porcelain:
+   ?? DEVIR.md
+   ?? test-yolu/kanit/uzak-depo.log
+arac/sir-tarama.mjs DEGISMIS olarak gorunuyor mu: false (beklenen false)
+
+SONUC: ✓ koruma gercekten kirmiziya donebiliyor

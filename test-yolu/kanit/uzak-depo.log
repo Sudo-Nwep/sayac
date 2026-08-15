@@ -1,0 +1,59 @@
+=== SAYAC — uzak depo ölçümü (007, 15/08/2026) ===
+
+$ git remote -v
+origin	https://github.com/Sudo-Nwep/sayac.git (fetch)
+origin	https://github.com/Sudo-Nwep/sayac.git (push)
+
+$ git fetch origin
+(çıktı yok — sessiz başarı, çıkış 0)
+
+$ git ls-remote origin
+5d471c804c37661243225c20f51cdcfc95762dd3	HEAD
+5d471c804c37661243225c20f51cdcfc95762dd3	refs/heads/main
+ef5ba0d736ab66176fcd95d382edc91ff92118a1	refs/tags/v1.0.0
+5d471c804c37661243225c20f51cdcfc95762dd3	refs/tags/v1.0.0^{}
+
+$ git rev-parse HEAD
+5d471c804c37661243225c20f51cdcfc95762dd3
+
+$ git rev-parse origin/main
+5d471c804c37661243225c20f51cdcfc95762dd3
+
+$ git rev-list --left-right --count main...origin/main
+0	0
+
+$ git rev-list -n1 v1.0.0
+5d471c804c37661243225c20f51cdcfc95762dd3
+
+$ git rev-list --count HEAD
+16
+
+=== görünürlük — iki anonim (kimliksiz) istek ===
+
+$ node -e "fetch('https://api.github.com/repos/Sudo-Nwep/sayac')..."
+status=404
+
+$ node -e "fetch('https://github.com/Sudo-Nwep/sayac')..."
+status=404
+(not: bu komut Bash aracının 25 saniyelik varsayılan zaman aşımını aştı ve arka plana
+alındı; script'in kendi 20 saniyelik iç zaman aşımı hiç tetiklenmedi — arka plan çıktı
+dosyası "status=404" bastığını gösteriyor, yani istek normal şekilde yanıtlandı, ağ
+zaman aşımına uğramadı. Gecikme Bash aracının kendi sarmalayıcısındandı, ağ isteğinden
+değil.)
+
+=== sonuç cümleleri ===
+
+refs/heads/main = yerel HEAD: EVET (sha: 5d471c804c37661243225c20f51cdcfc95762dd3)
+
+refs/tags/v1.0.0^{} = v1.0.0'ın işaret ettiği commit: EVET
+  (refs/tags/v1.0.0^{} = 5d471c804c37661243225c20f51cdcfc95762dd3,
+   git rev-list -n1 v1.0.0 = 5d471c804c37661243225c20f51cdcfc95762dd3 — birebir eşit)
+  (not: refs/tags/v1.0.0 — annotated etiket nesnesinin kendi SHA'sı — ayrıdır:
+   ef5ba0d736ab66176fcd95d382edc91ff92118a1. Bu normaldir; annotated tag bir nesnedir,
+   ^{} onu peel edip işaret ettiği commit'i verir.)
+
+görünürlük: private — dayanak: iki anonim (kimliksiz) HTTP isteği de 404 döndü
+  (api.github.com/repos/Sudo-Nwep/sayac → 404, github.com/Sudo-Nwep/sayac → 404) VE
+  kimlikli `git ls-remote origin` gerçek ref'leri (main, v1.0.0) başarıyla döndürdü.
+  Tek başına anonim 404, "depo yok" anlamına da gelebilirdi — bu yüzden iki ayak birlikte
+  okunuyor: depo VAR (ls-remote kanıtlıyor) + anonim erişim YOK (iki 404) = private.
