@@ -9,7 +9,7 @@
 
 ## 📌 GÜNCEL DURUM (her zaman en güncel — önce bunu oku)
 
-- **Versiyon:** v2.1
+- **Versiyon:** v3.0 · **Sürüm:** `1.0.0` (dört yerde eşit) · **Etiket:** `v1.0.0`
 - **Aşama:** {{ASAMA}} — fiilen: madde 1 · 2 · 3 · 4 kapandı; **arayüzlü, kurulabilir eklenti var**, madde 5 (teslim) sırada
 - **Amaç:** {{AMAC}}
 - **Kapsam:** {{KAPSAM}}
@@ -35,8 +35,20 @@
 - **Açık işler:** `PROJE_KUNYESI.md`'deki boyutlar + doldurulmamış ELDE yer tutucuları.
   **ürün** boyutu ⛔ → 🟡 oldu: kod, **arayüz** ve doğrulaması var; LibreWolf'a kurulabilirlik
   de kanıtlandı. Kalan engel teslimdir (madde 5: depo · README · etiket · gizli taraması).
-- **Sıradaki adım:** `HEDEF.md` madde 5 — private GitHub deposu, README, ilk sürüm etiketi,
-  gizli taraması. `git push` yalnız orada, önceden yetkili.
+- **Madde 5 (teslim) — üç kutu kapandı, biri `bekliyor`:**
+  ✅ **README.md** var — kurulum (ölçülmüş yol + ölçülmemiş yol ayrı etiketli), kullanım,
+  üç sayacın anlamı, bilinen sınırlar, geliştirici komutları. Arayüzün dokuz Türkçe dizesi
+  **9/9** birebir.
+  ✅ **Sır taraması** — `npm run sir-tarama` → çıkış 0 (desen tabanlı; entropi tabanlı
+  **değil**, gerekçesi ölçülü). `npm run sir-tarama:kanit` → çıkış 0, üç bacak: temiz **0** ·
+  sahte sırla **1** (maskelenmiş bulgu) · SHA-256+UUID ile **0**.
+  ✅ **Etiket** `v1.0.0` — HEAD'e düştü. Sürüm dört yerde `1.0.0`.
+  ⏳ **Uzak depo `bekliyor`** — `git remote -v` boş; depoyu açma adımı Mustafa'nındır.
+  Adımlar `TESLIM.md` §2.6'da, yer tutucuları doldurulmuş hâlde.
+- **Ürün paketi ölçüldü:** `npm run eklenti:paketle` → `sayac-1.0.0.xpi`, **tam 7 ürün
+  dosyası** (`uret.mjs` pakete girmiyor — kelepçe), SHA-256 kayıtlı.
+- **Sıradaki adım:** Mustafa private depoyu açar → `git remote add` + `git push -u origin main`
+  + `git push origin v1.0.0`. Push'tan **önce** `npm run sir-tarama` çıkış 0 vermelidir.
 - **✅ 005'te KAPANANLAR:** ⑴ **LibreWolf'a kurulabilirlik** — RDP'siz yolla kanıtlandı
   (yukarıda) · ⑵ **sekme kimliği zinciri** — **gerçek araç çubuğu panelinde** ölçüldü:
   karşıt deney `999999 → 999999`, `888888 → 888888`, `getCurrent=yok` → panelde `sender.tab`
@@ -66,6 +78,16 @@
 - **`PROJE_KUNYESI.md`** — **ne YOK** dosyası: ⛔ çevre boyutları + doldurulmamış ELDE yer tutucuları.
 - **`.gitignore`** — repoya girmeyecekler (secret dahil). `test-yolu/kanit/*.log` bilerek
   **muaf** tutuldu: kanıt depoya girer.
+- **`README.md`** — **kullanıcının okuyacağı dosya.** LibreWolf'a kurulum (A: ölçüldü ·
+  B: ölçülmedi, ikisi de etiketli), kullanım, üç sayacın anlamı, **bilinen üç açık gizlenmeden**,
+  geliştirici komut tablosu.
+- **`TESLIM.md`** — **madde 5'in raporu:** sır taraması tasarımı ve üç bacaklı kanıtı ·
+  paketleme ölçümü · README dayanak tablosu · sürüm kararı · **`git-rehberi` kısmi taşıması**
+  (§2.4 fark tablosu, §2.6 doldurulmuş adımlar, taşınmayanlar ve neden) · uzak depo durumu.
+- **`arac/`** — teslim araçları: `sir-tarama.mjs` (desen tabanlı sır taraması + `--kanit`) ·
+  `paketle.mjs` (ürün XPI'si, yedi dosya kelepçesi).
+- **`.orkestra-surum`** — `git-rehberi`'nin **kısmi** kurulum kaydı (`sema:1`, `surum:1`,
+  `kismi:true`, `alinan_bolumler:["2.4","2.6"]`). Bankadan dosya kopyalanmadı → `yazilan:[]`.
 - **`ARAYUZ.md`** — **madde 4'ün raporu:** hücre tablosu · **sekme kimliği zinciri** (karşıt
   deney + pozitif kontrol) · MOLA↔KAPALI tablosu · on bir Türkçe dize · altı karar · izin
   bütçesi · ürün↔test kopyası farkı · **arayüzden ölçümün neden yapılamadığı** (dört yol,
@@ -296,6 +318,54 @@
      ve depolama yokluğu (tarayıcı yeniden başlarsa sayaçlar kaybolur). Sıradaki adım:
      **madde 5** — private GitHub deposu, README (kurulum yolu ölçülü), ilk sürüm etiketi,
      gizli taraması.
+
+* **v3.0 · 14/08/2026** — TESLİM. Madde 5'in üç kutusu kapandı, biri `bekliyor`; hedefin son maddesi.
+   > **✅ README.md** — altı başlık. Kurulum **iki yol, ikisi de etiketli**: A kalıcı kurulum
+   > **ÖLÇÜLDÜ** (dayanağı `eklenti-Y10.json`: `active:true` · `signedState:0` ·
+   > `appDisabled:false`; 15 işaret; `geçen=11 kalan=0`), B `about:debugging` **ÖLÇÜLMEDİ**
+   > (*"elle gezinme gerektirir"* — *"çalışmıyor"* demek değil). **Ölçümün sınırı aynı
+   > bölümde yazılı:** taşınabilir LibreWolf 153.0.4-1, boş tek kullanımlık profil, headless.
+   > **Kelepçe:** arayüzün dokuz Türkçe dizesi README'de **9/9** birebir — alıntı ürün
+   > dosyalarından yapıldı, kanıt log'undan değil. **Bilinen üç açık gizlenmedi**, olmayan
+   > özellik **vaat edilmedi**.
+   > **✅ Sır taraması** (`arac/sir-tarama.mjs`) — `npm run sir-tarama` → **çıkış 0**
+   > (110 dosya, 0 bulgu, `git check-ignore` üç ad için de satır döndürdü).
+   > **Desen tabanlı, entropi tabanlı DEĞİL** — sebep ölçüldü: takip edilen dosyaların yarısı
+   > SHA-256 hex ve UUID dolu kanıt dosyası; entropi kuralı **temiz ağaçta kırmızı yanardı**
+   > (G22). Yerine 9 sır öneki ailesi + 1 dar atama kuralı (beş daraltma).
+   > **✅ Koruma kırmızıya dönebiliyor (G26/K04):** `npm run sir-tarama:kanit` → **çıkış 0**,
+   > üç bacak — temiz **0** · sahte sırla **1** (bulgu kendi dosyasında ve **maskelenmiş**:
+   > `ghp_…(40 karakter)`) · SHA-256+UUID ile **0**. SHA-256 önce = sonra.
+   > Sahte sır üç şartlı: gerçek token değil (`SAHTE` geçer) · kaynakta **bütün hâlde yok**
+   > (çalışma zamanında kurulur) · log'a **maskelenmiş** girer.
+   > **Bir ölçüm düzeltmesi:** ilk `--kanit` koşumunda bacak 2 çıkış 0 verdi; sebep ölçüldü —
+   > dosya o an **izlenmiyordu**, tarama `git ls-files`'a bakıyor. İndekse alınınca beklendiği
+   > gibi çıkış 1. **Kural gevşetilmedi**, kapsamın ne olduğu doğru anlaşıldı.
+   > **✅ Ürün paketi ölçüldü** — `npm run eklenti:paketle` → `sayac-1.0.0.xpi`, **tam 7 ürün
+   > dosyası**, `uret.mjs` pakete **girmiyor** (kelepçe), SHA-256 kayıtlı. Tur 005'te Y10 XPI'yi
+   > **test kopyasından** üretmişti; ürünün kendisinden paketleme **ölçülmemişti** — o boşluk kapandı.
+   > **✅ Sürüm `1.0.0`, etiket `v1.0.0`** — tur başında dört yerde çelişiyordu; `manifest.json`
+   > `0.1.0` → `1.0.0` (tek satır). Gerekçe ve elenen seçenek `TESLIM.md`'de. Değişiklik
+   > **hiçbir hücreyi kırmadı**: `eklenti:test` → çıkış 0, 16 hücre 10 YEŞİL / 5 ölçülemedi /
+   > 1 atlandı (005 ile aynı tablo).
+   > **⏳ Uzak depo `bekliyor`** — `git remote -v` **boş**; depoyu açma adımı Mustafa'nındır.
+   > Push **denenmedi**, `<<<DUR>>>` **yazılmadı** — bu bir durma sebebi değil.
+   > **✅ `git-rehberi` KISMİ taşındı** (§2.4 + §2.6). `.gitignore` **DEĞİŞMEDİ** — ölçüldü:
+   > §2.4 gövdesi bu projeninkinden **zayıf** (20 kural eksik ve `*.log` muafiyeti **yok**;
+   > körü körüne uygulansaydı bütün kanıt dosyaları yoksayılırdı). `data/` ve `*.sqlite`
+   > eklenmedi — depoda karşılığı yok (ölçüldü). **§2.5 taşınmadı**: gövdesi `git add -A`,
+   > bu projede yasak. `kur-sistem.ps1` **kullanılmadı** (Kilit B + tam-taşıma varsayımı).
+   > `teslim-disiplini` **taşınmadı** (Mustafa'nın kararı). `.orkestra-surum` elle yazıldı.
+   > **Regresyon yok:** `npm test` → `KALAN: 0` · `mutasyon` → 7/7 · `eklenti:kontrol` →
+   > SENKRON · `eklenti:test` → çıkış 0 · `eklenti:sayac-kanit` → çıkış 0.
+   > `mantik/sayac.mjs` SHA-256 tur başı = tur sonu = `ad848d21…38ac`;
+   > `.gitignore` SHA-256 tur başı = tur sonu.
+   > **`commit: 9a98745`**
+   - **Güncel durum:** madde 1–5 kapalı; **hedefin beş maddesi de bitti**, tek açık kutu
+     uzak depodur ve o **Mustafa'nın adımıdır**. Sıradaki adım: private `sayac` deposunu aç →
+     `git remote add origin https://github.com/Sudo-Nwep/sayac.git` → `git push -u origin main`
+     → `git push origin v1.0.0`. **Push'tan önce** `npm run sir-tarama` çıkış 0 vermelidir.
+     Kalan ölçüm açığı (kapsam dışı): Y4 arka plandaki sekme · depolama yok.
 
 * *(Bir sonraki madde buraya eklenecek — aşağıdaki kurallara göre.)*
 
