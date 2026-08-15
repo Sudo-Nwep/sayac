@@ -9,11 +9,11 @@
   },
   "olcumler": [],
   "sorunlar": [],
-  "sureMs": 11094,
+  "sureMs": 11167,
   "manifest": {
     "manifest_version": 2,
     "name": "Sayaç",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "description": "YouTube izleme süresini üç kalemde ayırır: izleniyor · duraklatıldı · mola.",
     "browser_specific_settings": {
       "gecko": {
@@ -75,16 +75,16 @@
   "kismiOlcum": {
     "not": "visibilityState 'hidden' YAPILAMADI; asagidaki rakam yalnizca 'A sekmesi one alinmis DEGIL' kosulunda olculdu — 'arka plandaki sekme' kanIti DEGILDIR",
     "ad": "onde olmayan sekmede oynuyor",
-    "dAn": 2761,
+    "dAn": 2544,
     "d": {
-      "izleniyor": 2761,
+      "izleniyor": 2544,
       "duraklatildi": 0,
       "mola": 0
     },
     "cetvelB": {
       "video": "v1",
       "paused": false,
-      "currentTime": 7.456,
+      "currentTime": 7.627,
       "readyState": 4,
       "visibilityState": "visible",
       "icerikBetigi": "1"
@@ -92,5 +92,5 @@
     "sorunlar": []
   },
   "onSekmeSayisi": 4,
-  "isaretSayisi": 83
+  "isaretSayisi": 85
 }

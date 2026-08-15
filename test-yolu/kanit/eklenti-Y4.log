@@ -2,26 +2,26 @@
 ne olcer: arka plandaki sekme — visibilityState hidden
 komut: "C:\Program Files\nodejs\node.exe" "C:\Users\kadio\Documents\Claude\Projects\Sayac\test-yolu\eklenti-e2e.mjs" Y4 headed
 node=v26.5.0 platform=win32
-sure=11713 ms · cikis kodu=0 · sinyal=null
+sure=11809 ms · cikis kodu=0 · sinyal=null
 ======================================================================
 
 [+000000ms] hucre=Y4-headed · TOLERANS=250 ms · FAZ=2500 ms (koşumdan ÖNCE sabit)
-[+000001ms] firefox ikilisi: C:\Users\kadio\AppData\Local\ms-playwright\firefox-1538\firefox\firefox.exe
-[+000006ms] isaret sunucusu ayakta: http://127.0.0.1:55480
-[+000020ms] test kopyasi: C:\Users\kadio\AppData\Local\Temp\sayac-ekl-Y4-headed-d7Hp4p
-[+000020ms] yamali manifest: {"manifest_version":2,"name":"Sayaç","version":"0.1.0","description":"YouTube izleme süresini üç kalemde ayırır: izleniyor · duraklatıldı · mola.","browser_specific_settings":{"gecko":{"id":"sayac@sayac.local"}},"browser_action":{"default_popup":"pencere.html","default_title":"Sayaç"},"background":{"scripts":["sonda-ayar.js","sonda-arkaplan.js","sayac.js","arkaplan.js"],"persistent":true},"content_scripts":[{"matches":["*://*.youtube.com/*","http://127.0.0.1/*"],"js":["sonda-ayar.js","icerik.js","sonda-icerik.js"],"run_at":"document_idle","all_frames":false}],"permissions":["tabs"]}
-[+000020ms] tek kullanimlik profil: C:\Users\kadio\AppData\Local\Temp\sayac-profil-Y4-headed-nP57Ut
-[+002692ms] EKLENTI YUKLENDI — launchPersistentContext cozuldu (_BrowserContext) headless=false
-[+002815ms] sayfa A: http://127.0.0.1:55480/sayac.html · hazir=true
-[+002815ms]    ilk anlik goruntu: {"sekmeId":1,"durumAdi":"DURAKLATILDI","toplam":{"izleniyor":0,"duraklatildi":0,"mola":0},"anMs":1786729003819,"arkaPlanBaslangicMs":1786729003701,"gunBasiMs":1786654800000,"kelepceSayisi":0,"sekmeSayisi":1}
-[+002960ms] arkaya almadan once visibilityState=visible
-[+004202ms] Y4a window.open → pencere nesnesi dondu · OLCULEN visibilityState="visible"
-[+006211ms] Y4b tabs.create → tabs.create tamam id=3 · OLCULEN visibilityState="visible"
-[+007085ms] Y4c newPage+bringToFront → OLCULEN visibilityState="visible"
-[+007085ms] OLCULEN document.visibilityState (A sekmesi) = "visible" · headless=false
-[+010440ms]   FAZ onde olmayan sekmede oynuyor Δan= 2761 ms | Δizleniyor= 2761 Δduraklatildi=    0 Δmola=    0 | durum=İZLENİYOR sekme=1 | ilerleyen: izleniyor
-[+010440ms]       CETVEL B (sayfa gerçeği): {"video":"v1","paused":false,"currentTime":7.456,"readyState":4,"visibilityState":"visible","icerikBetigi":"1"}
-[+010440ms] KUTU OLCULEMEDI: sekme arka plana alinamadi — olculen visibilityState: "visible" (headless=false)
-[+010440ms]   KISMI OLCUM (kanit DEGIL): one alinmamis sekmede Δizleniyor=2761 Δan=2761 · tolerans sorunu: yok
-[+011012ms] isaret sunucusu kapatildi
-[+011095ms] SONUC ölçülemedi — sekme arka plana alinamadi — olculen visibilityState: "visible" (headless=false)
+[+000000ms] firefox ikilisi: C:\Users\kadio\AppData\Local\ms-playwright\firefox-1538\firefox\firefox.exe
+[+000007ms] isaret sunucusu ayakta: http://127.0.0.1:50061
+[+000023ms] test kopyasi: C:\Users\kadio\AppData\Local\Temp\sayac-ekl-Y4-headed-E2en5n
+[+000023ms] yamali manifest: {"manifest_version":2,"name":"Sayaç","version":"1.0.0","description":"YouTube izleme süresini üç kalemde ayırır: izleniyor · duraklatıldı · mola.","browser_specific_settings":{"gecko":{"id":"sayac@sayac.local"}},"browser_action":{"default_popup":"pencere.html","default_title":"Sayaç"},"background":{"scripts":["sonda-ayar.js","sonda-arkaplan.js","sayac.js","arkaplan.js"],"persistent":true},"content_scripts":[{"matches":["*://*.youtube.com/*","http://127.0.0.1/*"],"js":["sonda-ayar.js","icerik.js","sonda-icerik.js"],"run_at":"document_idle","all_frames":false}],"permissions":["tabs"]}
+[+000024ms] tek kullanimlik profil: C:\Users\kadio\AppData\Local\Temp\sayac-profil-Y4-headed-aLW6YP
+[+002577ms] EKLENTI YUKLENDI — launchPersistentContext cozuldu (_BrowserContext) headless=false
+[+002690ms] sayfa A: http://127.0.0.1:50061/sayac.html · hazir=true
+[+002690ms]    ilk anlik goruntu: {"sekmeId":1,"durumAdi":"DURAKLATILDI","toplam":{"izleniyor":0,"duraklatildi":0,"mola":0},"anMs":1786794934746,"arkaPlanBaslangicMs":1786794934634,"gunBasiMs":1786741200000,"kelepceSayisi":0,"sekmeSayisi":1}
+[+002712ms] arkaya almadan once visibilityState=visible
+[+004140ms] Y4a window.open → pencere nesnesi dondu · OLCULEN visibilityState="visible"
+[+006151ms] Y4b tabs.create → tabs.create tamam id=3 · OLCULEN visibilityState="visible"
+[+007388ms] Y4c newPage+bringToFront → OLCULEN visibilityState="visible"
+[+007388ms] OLCULEN document.visibilityState (A sekmesi) = "visible" · headless=false
+[+010532ms]   FAZ onde olmayan sekmede oynuyor Δan= 2544 ms | Δizleniyor= 2544 Δduraklatildi=    0 Δmola=    0 | durum=İZLENİYOR sekme=1 | ilerleyen: izleniyor
+[+010532ms]       CETVEL B (sayfa gerçeği): {"video":"v1","paused":false,"currentTime":7.627,"readyState":4,"visibilityState":"visible","icerikBetigi":"1"}
+[+010532ms] KUTU OLCULEMEDI: sekme arka plana alinamadi — olculen visibilityState: "visible" (headless=false)
+[+010532ms]   KISMI OLCUM (kanit DEGIL): one alinmamis sekmede Δizleniyor=2544 Δan=2544 · tolerans sorunu: yok
+[+011113ms] isaret sunucusu kapatildi
+[+011168ms] SONUC ölçülemedi — sekme arka plana alinamadi — olculen visibilityState: "visible" (headless=false)

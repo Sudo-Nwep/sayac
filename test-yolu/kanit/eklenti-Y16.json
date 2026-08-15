@@ -9,11 +9,11 @@
   },
   "olcumler": [],
   "sorunlar": [],
-  "sureMs": 15650,
+  "sureMs": 15945,
   "manifest": {
     "manifest_version": 2,
     "name": "Sayaç",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "description": "YouTube izleme süresini üç kalemde ayırır: izleniyor · duraklatıldı · mola.",
     "browser_specific_settings": {
       "gecko": {
@@ -59,16 +59,16 @@
         "gonderilen": "999999",
         "donen": "1",
         "esit": false,
-        "izleniyor": "1826"
+        "izleniyor": "1818"
       },
       "probe2": {
         "gonderilen": "888888",
         "donen": "1",
         "esit": false,
-        "izleniyor": "1827"
+        "izleniyor": "1820"
       },
       "gercekSekmeId": "1",
-      "gercekIzleniyor": "2479",
+      "gercekIzleniyor": "2484",
       "golgeleme": true,
       "hamRapor": {
         "deney": "pencere",
@@ -87,17 +87,17 @@
         "yoklamaVar": "0",
         "probe1Gonderilen": "999999",
         "probe1Donen": "1",
-        "probe1Izleniyor": "1826",
+        "probe1Izleniyor": "1818",
         "probe2Gonderilen": "888888",
         "probe2Donen": "1",
-        "probe2Izleniyor": "1827",
+        "probe2Izleniyor": "1820",
         "bgSekmeId": "1",
-        "bgAn": "1786729117075",
-        "bgIzleniyor": "1828",
-        "bgDuraklatildi": "283",
+        "bgAn": "1786795052800",
+        "bgIzleniyor": "1820",
+        "bgDuraklatildi": "295",
         "bgMola": "0",
         "bgDurum": "İZLENİYOR",
-        "mfPopup": "moz-extension://578e8ed8-e2bd-458f-b8dc-7cb2163726dd/pencere.html",
+        "mfPopup": "moz-extension://fe2bbbad-a0e0-43af-942c-e4fd8a7d5b43/pencere.html",
         "mfBaslik": "Sayaç",
         "openPopup": "denenmedi",
         "sIzleniyor": "0:00:00",
@@ -110,7 +110,7 @@
         "sBaslik": "Sayaç",
         "sEtiketler": "İzleniyor|Duraklatıldı|Mola|Durum:",
         "uc": "/olay",
-        "ms": 1786729117078
+        "ms": 1786795052802
       }
     },
     "16b": {
@@ -155,12 +155,12 @@
         "probe2Donen": "2",
         "probe2Izleniyor": "0",
         "bgSekmeId": "2",
-        "bgAn": "1786729118294",
+        "bgAn": "1786795054042",
         "bgIzleniyor": "0",
-        "bgDuraklatildi": "1",
+        "bgDuraklatildi": "2",
         "bgMola": "0",
         "bgDurum": "DURAKLATILDI",
-        "mfPopup": "moz-extension://578e8ed8-e2bd-458f-b8dc-7cb2163726dd/pencere.html",
+        "mfPopup": "moz-extension://fe2bbbad-a0e0-43af-942c-e4fd8a7d5b43/pencere.html",
         "mfBaslik": "Sayaç",
         "openPopup": "denenmedi",
         "sIzleniyor": "0:00:00",
@@ -173,7 +173,7 @@
         "sBaslik": "Sayaç",
         "sEtiketler": "İzleniyor|Duraklatıldı|Mola|Durum:",
         "uc": "/olay",
-        "ms": 1786729118295
+        "ms": 1786795054045
       }
     },
     "16d": {

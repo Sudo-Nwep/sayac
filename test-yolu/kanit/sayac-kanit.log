@@ -16,8 +16,8 @@ BACAK 2 — gercek rapor, BELLEKTEKI kopyada bozuldu (disk DEGISMEZ)
 BACAK 3 — negatif kontrol: sayac kor korune artmiyor
    hedef=Y4 → "YESIL" · yeni sayac: 5→4 (bir eksik olmali) → TAMAM
 
-kanit/eklenti-rapor.json SHA-256 once : 5d77abd5fadba2c0efe6d0f5b3464a0792bee46bed0dadd0d076c96bf1fdf1cb
-kanit/eklenti-rapor.json SHA-256 sonra: 5d77abd5fadba2c0efe6d0f5b3464a0792bee46bed0dadd0d076c96bf1fdf1cb
+kanit/eklenti-rapor.json SHA-256 once : 9c179acf809f51a149a79ffb92334d7a37473cf84cd7a3f6c4888567a3498963
+kanit/eklenti-rapor.json SHA-256 sonra: 9c179acf809f51a149a79ffb92334d7a37473cf84cd7a3f6c4888567a3498963
 disk DEGISMEDI: true
 
 SONUC: ✓ sayac gercekten olcuyor

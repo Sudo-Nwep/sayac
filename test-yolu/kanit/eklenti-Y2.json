@@ -10,9 +10,9 @@
   "olcumler": [
     {
       "ad": "A: oynuyor",
-      "dAn": 2522,
+      "dAn": 2754,
       "d": {
-        "izleniyor": 2522,
+        "izleniyor": 2754,
         "duraklatildi": 0,
         "mola": 0
       },
@@ -20,7 +20,7 @@
       "cetvelB": {
         "video": "v1",
         "paused": false,
-        "currentTime": 7.051,
+        "currentTime": 7.264,
         "readyState": 4,
         "visibilityState": "visible",
         "icerikBetigi": "1"
@@ -46,11 +46,11 @@
     }
   ],
   "sorunlar": [],
-  "sureMs": 9697,
+  "sureMs": 9887,
   "manifest": {
     "manifest_version": 2,
     "name": "Sayaç",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "description": "YouTube izleme süresini üç kalemde ayırır: izleniyor · duraklatıldı · mola.",
     "browser_specific_settings": {
       "gecko": {
@@ -90,8 +90,8 @@
     "A": {
       "sekmeId": 1,
       "toplam": {
-        "izleniyor": 7006,
-        "duraklatildi": 24,
+        "izleniyor": 7227,
+        "duraklatildi": 28,
         "mola": 0
       }
     },
@@ -99,10 +99,10 @@
       "sekmeId": 2,
       "toplam": {
         "izleniyor": 0,
-        "duraklatildi": 3750,
+        "duraklatildi": 3732,
         "mola": 0
       }
     }
   },
-  "isaretSayisi": 45
+  "isaretSayisi": 46
 }

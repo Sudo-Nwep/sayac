@@ -2,7 +2,7 @@
 ne olcer: sureBicim doğruluk tablosu (tarayıcısız, node:vm)
 komut: "C:\Program Files\nodejs\node.exe" "C:\Users\kadio\Documents\Claude\Projects\Sayac\test-yolu\bicim-testi.mjs"
 node=v26.5.0 platform=win32
-sure=46 ms · cikis kodu=0 · sinyal=null
+sure=51 ms · cikis kodu=0 · sinyal=null
 ======================================================================
 
 ==================================================================

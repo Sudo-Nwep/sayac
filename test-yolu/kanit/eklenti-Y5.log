@@ -2,26 +2,26 @@
 ne olcer: gece yarısı — üç sayaç sıfırlanıyor mu
 komut: "C:\Program Files\nodejs\node.exe" "C:\Users\kadio\Documents\Claude\Projects\Sayac\test-yolu\eklenti-e2e.mjs" Y5
 node=v26.5.0 platform=win32
-sure=29756 ms · cikis kodu=0 · sinyal=null
+sure=29925 ms · cikis kodu=0 · sinyal=null
 ======================================================================
 
 [+000000ms] hucre=Y5 · TOLERANS=250 ms · FAZ=2500 ms (koşumdan ÖNCE sabit)
-[+000000ms] firefox ikilisi: C:\Users\kadio\AppData\Local\ms-playwright\firefox-1538\firefox\firefox.exe
-[+000006ms] isaret sunucusu ayakta: http://127.0.0.1:55491
-[+000022ms] test kopyasi: C:\Users\kadio\AppData\Local\Temp\sayac-ekl-Y5-mFPaDi
-[+000022ms] yamali manifest: {"manifest_version":2,"name":"Sayaç","version":"0.1.0","description":"YouTube izleme süresini üç kalemde ayırır: izleniyor · duraklatıldı · mola.","browser_specific_settings":{"gecko":{"id":"sayac@sayac.local"}},"browser_action":{"default_popup":"pencere.html","default_title":"Sayaç"},"background":{"scripts":["sonda-ayar.js","sonda-arkaplan.js","sayac.js","arkaplan.js"],"persistent":true},"content_scripts":[{"matches":["*://*.youtube.com/*","http://127.0.0.1/*"],"js":["sonda-ayar.js","icerik.js","sonda-icerik.js"],"run_at":"document_idle","all_frames":false}]}
-[+000022ms] tek kullanimlik profil: C:\Users\kadio\AppData\Local\Temp\sayac-profil-Y5-95BDGa
-[+001704ms] EKLENTI YUKLENDI — launchPersistentContext cozuldu (_BrowserContext) headless=true
-[+001779ms] sayfa A: http://127.0.0.1:55491/sayac.html · hazir=true
-[+001779ms]    ilk anlik goruntu: {"sekmeId":1,"durumAdi":"DURAKLATILDI","toplam":{"izleniyor":0,"duraklatildi":0,"mola":0},"anMs":1786741176770,"arkaPlanBaslangicMs":1786741176698,"gunBasiMs":1786654800000,"kelepceSayisi":0,"sekmeSayisi":1}
-[+005081ms]   FAZ devir oncesi oynuyor   Δan= 2753 ms | Δizleniyor= 2753 Δduraklatildi=    0 Δmola=    0 | durum=İZLENİYOR sekme=1 | ilerleyen: izleniyor
-[+005081ms]       CETVEL B (sayfa gerçeği): {"video":"v1","paused":false,"currentTime":3.275,"readyState":4,"visibilityState":"visible","icerikBetigi":"1"}
-[+005081ms] ONCESI: toplam={"izleniyor":3228,"duraklatildi":25,"mola":0} gunBasiMs=1786654800000 (2026-08-13T21:00:00.000Z) anMs=1786741180023 (2026-08-14T20:59:40.023Z)
-[+005081ms] gun donumu bekleniyor (gunBasiMs degisimi)...
-[+025256ms] SONRASI: toplam={"izleniyor":60,"duraklatildi":0,"mola":0} gunBasiMs=1786741200000 (2026-08-14T21:00:00.000Z) anMs=1786741200060
-[+025256ms] gunBasiMs degisimi: 86400000 ms (86400000 = 1 gun)
-[+025256ms] kelepceSayisi: once=0 sonra=0
-[+028608ms]   FAZ devir sonrasi oynuyor  Δan= 2755 ms | Δizleniyor= 2755 Δduraklatildi=    0 Δmola=    0 | durum=İZLENİYOR sekme=1 | ilerleyen: izleniyor
-[+028608ms]       CETVEL B (sayfa gerçeği): {"video":"v1","paused":false,"currentTime":26.795,"readyState":4,"visibilityState":"visible","icerikBetigi":"1"}
-[+029136ms] isaret sunucusu kapatildi
-[+029152ms] SONUC YESIL
+[+000001ms] firefox ikilisi: C:\Users\kadio\AppData\Local\ms-playwright\firefox-1538\firefox\firefox.exe
+[+000008ms] isaret sunucusu ayakta: http://127.0.0.1:50074
+[+000028ms] test kopyasi: C:\Users\kadio\AppData\Local\Temp\sayac-ekl-Y5-Im2Ksj
+[+000028ms] yamali manifest: {"manifest_version":2,"name":"Sayaç","version":"1.0.0","description":"YouTube izleme süresini üç kalemde ayırır: izleniyor · duraklatıldı · mola.","browser_specific_settings":{"gecko":{"id":"sayac@sayac.local"}},"browser_action":{"default_popup":"pencere.html","default_title":"Sayaç"},"background":{"scripts":["sonda-ayar.js","sonda-arkaplan.js","sayac.js","arkaplan.js"],"persistent":true},"content_scripts":[{"matches":["*://*.youtube.com/*","http://127.0.0.1/*"],"js":["sonda-ayar.js","icerik.js","sonda-icerik.js"],"run_at":"document_idle","all_frames":false}]}
+[+000028ms] tek kullanimlik profil: C:\Users\kadio\AppData\Local\Temp\sayac-profil-Y5-T1iGKk
+[+001840ms] EKLENTI YUKLENDI — launchPersistentContext cozuldu (_BrowserContext) headless=true
+[+001921ms] sayfa A: http://127.0.0.1:50074/sayac.html · hazir=true
+[+001921ms]    ilk anlik goruntu: {"sekmeId":1,"durumAdi":"DURAKLATILDI","toplam":{"izleniyor":0,"duraklatildi":0,"mola":0},"anMs":1786827576911,"arkaPlanBaslangicMs":1786827576835,"gunBasiMs":1786741200000,"kelepceSayisi":0,"sekmeSayisi":1}
+[+005174ms]   FAZ devir oncesi oynuyor   Δan= 2755 ms | Δizleniyor= 2755 Δduraklatildi=    0 Δmola=    0 | durum=İZLENİYOR sekme=1 | ilerleyen: izleniyor
+[+005174ms]       CETVEL B (sayfa gerçeği): {"video":"v1","paused":false,"currentTime":3.232,"readyState":4,"visibilityState":"visible","icerikBetigi":"1"}
+[+005174ms] ONCESI: toplam={"izleniyor":3229,"duraklatildi":26,"mola":0} gunBasiMs=1786741200000 (2026-08-14T21:00:00.000Z) anMs=1786827580166 (2026-08-15T20:59:40.166Z)
+[+005174ms] gun donumu bekleniyor (gunBasiMs degisimi)...
+[+025405ms] SONRASI: toplam={"izleniyor":212,"duraklatildi":0,"mola":0} gunBasiMs=1786827600000 (2026-08-15T21:00:00.000Z) anMs=1786827600212
+[+025405ms] gunBasiMs degisimi: 86400000 ms (86400000 = 1 gun)
+[+025405ms] kelepceSayisi: once=0 sonra=0
+[+028754ms]   FAZ devir sonrasi oynuyor  Δan= 2755 ms | Δizleniyor= 2755 Δduraklatildi=    0 Δmola=    0 | durum=İZLENİYOR sekme=1 | ilerleyen: izleniyor
+[+028754ms]       CETVEL B (sayfa gerçeği): {"video":"v1","paused":false,"currentTime":26.805,"readyState":4,"visibilityState":"visible","icerikBetigi":"1"}
+[+029226ms] isaret sunucusu kapatildi
+[+029269ms] SONUC YESIL

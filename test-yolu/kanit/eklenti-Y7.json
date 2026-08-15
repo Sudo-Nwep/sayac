@@ -20,7 +20,7 @@
       "cetvelB": {
         "video": "v1",
         "paused": false,
-        "currentTime": 3.221,
+        "currentTime": 3.264,
         "readyState": 4,
         "visibilityState": "visible",
         "icerikBetigi": "1"
@@ -28,17 +28,17 @@
     },
     {
       "ad": "duraklat",
-      "dAn": 2753,
+      "dAn": 2755,
       "d": {
         "izleniyor": 0,
-        "duraklatildi": 2753,
+        "duraklatildi": 2755,
         "mola": 0
       },
       "durum": "DURAKLATILDI",
       "cetvelB": {
         "video": "v1",
         "paused": true,
-        "currentTime": 3.221,
+        "currentTime": 3.264,
         "readyState": 4,
         "visibilityState": "visible",
         "icerikBetigi": "1"
@@ -46,9 +46,9 @@
     },
     {
       "ad": "tekrar oynat",
-      "dAn": 2755,
+      "dAn": 2754,
       "d": {
-        "izleniyor": 2755,
+        "izleniyor": 2754,
         "duraklatildi": 0,
         "mola": 0
       },
@@ -56,7 +56,7 @@
       "cetvelB": {
         "video": "v1",
         "paused": false,
-        "currentTime": 6.453,
+        "currentTime": 6.496,
         "readyState": 4,
         "visibilityState": "visible",
         "icerikBetigi": "1"
@@ -64,11 +64,11 @@
     }
   ],
   "sorunlar": [],
-  "sureMs": 12048,
+  "sureMs": 12302,
   "manifest": {
     "manifest_version": 3,
     "name": "Sayaç",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "description": "YouTube izleme süresini üç kalemde ayırır: izleniyor · duraklatıldı · mola.",
     "browser_specific_settings": {
       "gecko": {

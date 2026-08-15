@@ -10,9 +10,9 @@
   "olcumler": [
     {
       "ad": "oynat",
-      "dAn": 2755,
+      "dAn": 2756,
       "d": {
-        "izleniyor": 2755,
+        "izleniyor": 2756,
         "duraklatildi": 0,
         "mola": 0
       },
@@ -28,10 +28,10 @@
     },
     {
       "ad": "duraklat",
-      "dAn": 2755,
+      "dAn": 2759,
       "d": {
         "izleniyor": 0,
-        "duraklatildi": 2755,
+        "duraklatildi": 2759,
         "mola": 0
       },
       "durum": "DURAKLATILDI",
@@ -46,9 +46,9 @@
     },
     {
       "ad": "tekrar oynat",
-      "dAn": 2754,
+      "dAn": 2755,
       "d": {
-        "izleniyor": 2754,
+        "izleniyor": 2755,
         "duraklatildi": 0,
         "mola": 0
       },
@@ -64,11 +64,11 @@
     }
   ],
   "sorunlar": [],
-  "sureMs": 12088,
+  "sureMs": 12522,
   "manifest": {
     "manifest_version": 2,
     "name": "Sayaç",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "description": "YouTube izleme süresini üç kalemde ayırır: izleniyor · duraklatıldı · mola.",
     "browser_specific_settings": {
       "gecko": {

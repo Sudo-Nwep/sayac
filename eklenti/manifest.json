@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Sayaç",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "YouTube izleme süresini üç kalemde ayırır: izleniyor · duraklatıldı · mola.",
   "browser_specific_settings": {
     "gecko": {

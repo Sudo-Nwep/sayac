@@ -1,7 +1,7 @@
 {
   "hucre": "Y12",
   "durum": "ölçülemedi",
-  "sebep": "MOLA butonuna tiklanamadi: urunun kelepcesi tetiklendi \u001d pencere hedef sekmeyi cozemedi. Son rapor: #uyari=\"Hedef sekme belirlenemedi.\" getCurrent=3 sorguId=1",
+  "sebep": "MOLA butonuna tiklanamadi: pencere sekme 1 numarali sekmeyi HEDEFLIYOR ama arka plan sekme 3 icin yanit veriyor (arkaplan.js:73-78 golgelemesi). Bu baglamda arayuzden okunan rakam urunun amacladigi yolu OLCMEZ.",
   "tolerans": {
     "TOLERANS_MS": 250,
     "FAZ_MS": 2500,
@@ -9,11 +9,11 @@
   },
   "olcumler": [],
   "sorunlar": [],
-  "sureMs": 34540,
+  "sureMs": 23597,
   "manifest": {
     "manifest_version": 2,
     "name": "Sayaç",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "description": "YouTube izleme süresini üç kalemde ayırır: izleniyor · duraklatıldı · mola.",
     "browser_specific_settings": {
       "gecko": {
@@ -53,10 +53,10 @@
     ]
   },
   "yedekYolB": {
-    "sebep": "urunun kelepcesi tetiklendi \u001d pencere hedef sekmeyi cozemedi. Son rapor: #uyari=\"Hedef sekme belirlenemedi.\" getCurrent=3 sorguId=1",
+    "sebep": "pencere sekme 1 numarali sekmeyi HEDEFLIYOR ama arka plan sekme 3 icin yanit veriyor (arkaplan.js:73-78 golgelemesi). Bu baglamda arayuzden okunan rakam urunun amacladigi yolu OLCMEZ.",
     "rapor": {
       "deney": "pencere",
-      "tur": "32",
+      "tur": "21",
       "ust": "0",
       "getCurrent": "hata:can't access property \"getCurrent\", API.tabs is undefined",
       "baglam": "iframe",
@@ -76,12 +76,12 @@
       "probe2Donen": "1",
       "probe2Izleniyor": "0",
       "bgSekmeId": "1",
-      "bgAn": "1786729198512",
+      "bgAn": "1786795112352",
       "bgIzleniyor": "0",
-      "bgDuraklatildi": "31929",
+      "bgDuraklatildi": "20870",
       "bgMola": "0",
       "bgDurum": "DURAKLATILDI",
-      "mfPopup": "moz-extension://14fafa4a-bdb0-45cc-aab6-292a6a56b411/pencere.html",
+      "mfPopup": "moz-extension://16b4d872-3e8a-4601-bbe2-1d32080be7d7/pencere.html",
       "mfBaslik": "Sayaç",
       "openPopup": "denenmedi",
       "sIzleniyor": "0:00:00",
@@ -94,8 +94,8 @@
       "sBaslik": "Sayaç",
       "sEtiketler": "İzleniyor|Duraklatıldı|Mola|Durum:",
       "uc": "/olay",
-      "ms": 1786729198515
+      "ms": 1786795112356
     }
   },
-  "isaretSayisi": 215
+  "isaretSayisi": 137
 }

@@ -1,7 +1,7 @@
 {
   "hucre": "Y13",
   "durum": "ölçülemedi",
-  "sebep": "DUR/DEVAM ET butonuna tiklanamadi: urunun kelepcesi tetiklendi \u001d pencere hedef sekmeyi cozemedi. Son rapor: #uyari=\"Hedef sekme belirlenemedi.\" getCurrent=3 sorguId=1",
+  "sebep": "DUR/DEVAM ET butonuna tiklanamadi: urunun kelepcesi tetiklendi \u001d pencere hedef sekmeyi cozemedi. Son rapor: #uyari=\"Hedef sekme belirlenemedi.\" getCurrent=2 sorguId=2",
   "tolerans": {
     "TOLERANS_MS": 250,
     "FAZ_MS": 2500,
@@ -9,11 +9,11 @@
   },
   "olcumler": [],
   "sorunlar": [],
-  "sureMs": 34677,
+  "sureMs": 35312,
   "manifest": {
     "manifest_version": 2,
     "name": "Sayaç",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "description": "YouTube izleme süresini üç kalemde ayırır: izleniyor · duraklatıldı · mola.",
     "browser_specific_settings": {
       "gecko": {
@@ -53,10 +53,10 @@
     ]
   },
   "yedekYolB": {
-    "sebep": "urunun kelepcesi tetiklendi \u001d pencere hedef sekmeyi cozemedi. Son rapor: #uyari=\"Hedef sekme belirlenemedi.\" getCurrent=3 sorguId=1",
+    "sebep": "urunun kelepcesi tetiklendi \u001d pencere hedef sekmeyi cozemedi. Son rapor: #uyari=\"Hedef sekme belirlenemedi.\" getCurrent=2 sorguId=2",
     "rapor": {
       "deney": "pencere",
-      "tur": "32",
+      "tur": "13",
       "ust": "0",
       "getCurrent": "hata:can't access property \"getCurrent\", API.tabs is undefined",
       "baglam": "iframe",
@@ -76,12 +76,12 @@
       "probe2Donen": "1",
       "probe2Izleniyor": "0",
       "bgSekmeId": "1",
-      "bgAn": "1786729233627",
+      "bgAn": "1786795148243",
       "bgIzleniyor": "0",
-      "bgDuraklatildi": "31883",
+      "bgDuraklatildi": "32397",
       "bgMola": "0",
       "bgDurum": "DURAKLATILDI",
-      "mfPopup": "moz-extension://3d463310-be86-4e67-92dc-d669af6b2b3e/pencere.html",
+      "mfPopup": "moz-extension://226d29b0-0113-4485-968c-9f7543de9502/pencere.html",
       "mfBaslik": "Sayaç",
       "openPopup": "denenmedi",
       "sIzleniyor": "0:00:00",
@@ -94,8 +94,8 @@
       "sBaslik": "Sayaç",
       "sEtiketler": "İzleniyor|Duraklatıldı|Mola|Durum:",
       "uc": "/olay",
-      "ms": 1786729233627
+      "ms": 1786795148244
     }
   },
-  "isaretSayisi": 215
+  "isaretSayisi": 216
 }

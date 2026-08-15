@@ -1,7 +1,7 @@
 {
   "hucre": "Y11",
   "durum": "ölçülemedi",
-  "sebep": "pencere CANLI baglamda acilamadi: urunun kelepcesi tetiklendi \u001d pencere hedef sekmeyi cozemedi. Son rapor: #uyari=\"Hedef sekme belirlenemedi.\" getCurrent=3 sorguId=1",
+  "sebep": "pencere CANLI baglamda acilamadi: pencere sekme 1 numarali sekmeyi HEDEFLIYOR ama arka plan sekme 3 icin yanit veriyor (arkaplan.js:73-78 golgelemesi). Bu baglamda arayuzden okunan rakam urunun amacladigi yolu OLCMEZ.",
   "tolerans": {
     "TOLERANS_MS": 250,
     "FAZ_MS": 2500,
@@ -9,11 +9,11 @@
   },
   "olcumler": [],
   "sorunlar": [],
-  "sureMs": 34819,
+  "sureMs": 23470,
   "manifest": {
     "manifest_version": 2,
     "name": "Sayaç",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "description": "YouTube izleme süresini üç kalemde ayırır: izleniyor · duraklatıldı · mola.",
     "browser_specific_settings": {
       "gecko": {
@@ -53,10 +53,10 @@
     ]
   },
   "yedekYolB": {
-    "sebep": "urunun kelepcesi tetiklendi \u001d pencere hedef sekmeyi cozemedi. Son rapor: #uyari=\"Hedef sekme belirlenemedi.\" getCurrent=3 sorguId=1",
+    "sebep": "pencere sekme 1 numarali sekmeyi HEDEFLIYOR ama arka plan sekme 3 icin yanit veriyor (arkaplan.js:73-78 golgelemesi). Bu baglamda arayuzden okunan rakam urunun amacladigi yolu OLCMEZ.",
     "rapor": {
       "deney": "pencere",
-      "tur": "13",
+      "tur": "21",
       "ust": "0",
       "getCurrent": "hata:can't access property \"getCurrent\", API.tabs is undefined",
       "baglam": "iframe",
@@ -76,12 +76,12 @@
       "probe2Donen": "1",
       "probe2Izleniyor": "0",
       "bgSekmeId": "1",
-      "bgAn": "1786729163596",
+      "bgAn": "1786795088142",
       "bgIzleniyor": "0",
-      "bgDuraklatildi": "32323",
+      "bgDuraklatildi": "20870",
       "bgMola": "0",
       "bgDurum": "DURAKLATILDI",
-      "mfPopup": "moz-extension://4fc994c1-70b4-48a4-8012-b366008345b7/pencere.html",
+      "mfPopup": "moz-extension://38f06d87-2328-4342-920c-7b7c475819b0/pencere.html",
       "mfBaslik": "Sayaç",
       "openPopup": "denenmedi",
       "sIzleniyor": "0:00:00",
@@ -94,7 +94,7 @@
       "sBaslik": "Sayaç",
       "sEtiketler": "İzleniyor|Duraklatıldı|Mola|Durum:",
       "uc": "/olay",
-      "ms": 1786729163603
+      "ms": 1786795088144
     }
   },
   "dizeler": [
@@ -154,7 +154,7 @@
     }
   ],
   "manifestBildirimi": {
-    "mfPopup": "moz-extension://4fc994c1-70b4-48a4-8012-b366008345b7/pencere.html",
+    "mfPopup": "moz-extension://38f06d87-2328-4342-920c-7b7c475819b0/pencere.html",
     "mfBaslik": "Sayaç",
     "popupTamam": true
   },
@@ -174,5 +174,5 @@
     "kriter 4 — DUR/DEVAM ET'in uc durumu": "ayni sebep",
     "kriter 5 — MOLA videoyu duraklatti mi (arayuzden)": "ayni sebep; DAVRANIS olcumu Y6'da"
   },
-  "isaretSayisi": 215
+  "isaretSayisi": 137
 }
