@@ -20,7 +20,7 @@
 | `node -v` | `v26.5.0` | komut çıktısı |
 | `npm -v` | `11.17.0` | komut çıktısı |
 | `npx playwright --version` | `Version 1.62.1` | komut çıktısı |
-| Firefox ikilisi | `C:\Users\kadio\AppData\Local\ms-playwright\firefox-1538\firefox\firefox.exe` | `firefox.executablePath()` |
+| Firefox ikilisi | `C:\Users\<kullanıcı>\AppData\Local\ms-playwright\firefox-1538\firefox\firefox.exe` | `firefox.executablePath()` |
 | İkili diskte var mı | **evet** (721.920 bayt) | `fs.existsSync()` + `fs.statSync()` — **G11: artefakta bakıldı** |
 | Firefox sürümü | 153.0 (playwright firefox v1538) | `npx playwright install firefox` çıktısı |
 | İkili nereden geldi | **Playwright indirmesi** (`npx playwright install firefox`) | yedek `@puppeteer/browsers` yoluna **gerek kalmadı** |
@@ -28,7 +28,7 @@
 `npm ls --depth=0`:
 
 ```
-sayac@1.0.0 C:\Users\kadio\Documents\Claude\Projects\Sayac
+sayac@1.0.0 C:\Users\<kullanıcı>\Documents\Claude\Projects\Sayac
 +-- @playwright/test@1.62.1
 +-- playwright-webextext@0.0.5
 +-- playwright@1.62.1
@@ -246,10 +246,10 @@ node test-yolu\kanit-kosusu.mjs mv2
 
 ```
 [+000000ms] KANIT KOSUSU — secilen yol: playwright-webextext · manifest=mv2
-[+000000ms] firefox ikilisi: C:\Users\kadio\AppData\Local\ms-playwright\firefox-1538\firefox\firefox.exe
+[+000000ms] firefox ikilisi: C:\Users\<kullanıcı>\AppData\Local\ms-playwright\firefox-1538\firefox\firefox.exe
 [+000007ms] isaret sunucusu ayakta: http://127.0.0.1:51213
-[+000014ms] bos sinama eklentisi (gecici kopya): C:\Users\kadio\AppData\Local\Temp\sayac-ekl-kanit-mv2-NvFge3
-[+000014ms] tek kullanimlik profil: C:\Users\kadio\AppData\Local\Temp\sayac-profil-kanit-mv2-jraezM
+[+000014ms] bos sinama eklentisi (gecici kopya): C:\Users\<kullanıcı>\AppData\Local\Temp\sayac-ekl-kanit-mv2-NvFge3
+[+000014ms] tek kullanimlik profil: C:\Users\<kullanıcı>\AppData\Local\Temp\sayac-profil-kanit-mv2-jraezM
 [+001770ms] EKLENTI YUKLENDI — launchPersistentContext cozuldu (_BrowserContext)
 [+001773ms] ISARET <- {"aday":"kanit","manifest":"mv2","kutu":"2","kaynak":"arkaplan","ms":1786655634139}
 [+001823ms] sayfa acildi: http://127.0.0.1:51213/test.html
@@ -323,12 +323,12 @@ video gerçekten oynuyor ve Playwright sayfa durumunu doğrudan okuyabiliyor.
 ## Süreç hijyeni (G23)
 
 Tur bitiminde kontrol edildi: **firefox veya geckodriver artık süreci yok.**
-Ayakta kalan tek `node` süreci `D:\Yönetim\ORKESTRA\sunucu.mjs --port 4318` (ORKESTRA panel
+Ayakta kalan tek `node` süreci `<harici yönetim aracı>\sunucu.mjs --port 4318` (harici panel
 sunucusu, 13/08 22:10'da başlamış) — **bu turun ürünü değildir, dokunulmadı.**
 
 ## Sınırlar — uyuldu
 
-- `C:\Users\kadio\AppData\Roaming\Mozilla` ve `...\LibreWolf`: **ne okundu ne yazıldı.**
+- `C:\Users\<kullanıcı>\AppData\Roaming\Mozilla` ve `...\LibreWolf`: **ne okundu ne yazıldı.**
   Her koşu kendi tek kullanımlık profiliyle koştu (`os.tmpdir()` altında `mkdtemp`).
 - Sistem geneline tarayıcı kurulmadı: `.msi`/`.exe` kurulumu, PATH değişikliği, kayıt defteri
   dokunuşu **yok**. Firefox yalnız Playwright önbelleğine indi.
@@ -337,4 +337,4 @@ sunucusu, 13/08 22:10'da başlamış) — **bu turun ürünü değildir, dokunul
 > ⚠️ **DÜZELTME (007, 15/08/2026):** Uzak depo bu turdan sonra ölçülerek doğrulandı — bağlı,
 > `main` senkron, `v1.0.0` etiketi HEAD'e düşüyor, görünürlük private. Ayrıntı `TESLIM.md` §6.
 > *(Özgün ölçüm silinmedi — G09: iki hafıza.)*
-- `D:\Yönetim` yalnız **okundu** (`DERSLER\INDEKS.md`).
+- `<harici yönetim aracı>` yalnız **okundu** (`DERSLER\INDEKS.md`).

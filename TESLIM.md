@@ -155,7 +155,7 @@ iddiasını zayıflatması. **Elendi çünkü:** üç açığın hiçbiri kapsam
 **Karar Mustafa'nındır (14 Ağustos): `git-rehberi` kısmi taşınır, `teslim-disiplini`
 taşınmaz.** Yeniden sorulmadı.
 
-`D:\Yönetim\kur-sistem.ps1` **kullanılmadı**, iki bağımsız sebeple:
+`<harici yönetim aracı>\kur-sistem.ps1` **kullanılmadı**, iki bağımsız sebeple:
 ① betiğin **Kilit B**'si hedef `<MyDocuments>\Claude\Projects` ağacının içindeyse
 `exit 16` veriyor — Sayaç tam olarak orada; ② betik `dosyalar\` altındaki **her** dosyayı
 kopyalar, yani **tam** taşıma yapar — Mustafa'nın kararı ise **kısmi**.

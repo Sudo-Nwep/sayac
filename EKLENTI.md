@@ -470,9 +470,9 @@ Tur bitiminde kontrol edildi. **Bu turun başlattığı hiçbir süreç ayakta d
 
 | Süreç | Neden dokunulmadı |
 |---|---|
-| 10 × `C:\Program Files\LibreWolf\librewolf.exe` | **Mustafa'nın kendi tarayıcısı.** Başlangıç 00:40:42 — bu turun LibreWolf koşularından ~1.5 saat önce. Yolu benim geçici kopyam değil. Öldürmek kullanıcının açık tarayıcısını kapatırdı. |
-| `node … ORKESTRA\sunucu.mjs --port 4318` | ORKESTRA panel sunucusu |
-| `node … ORKESTRA/defter-denetim.mjs` | ORKESTRA defter denetimi |
+| 10 × `C:\Program Files\LibreWolf\librewolf.exe` | **Kullanıcının kendi tarayıcısı.** Başlangıç 00:40:42 — bu turun LibreWolf koşularından ~1.5 saat önce. Yolu benim geçici kopyam değil. Öldürmek kullanıcının açık tarayıcısını kapatırdı. |
+| `node … <harici araç>\sunucu.mjs --port 4318` | harici panel sunucusu |
+| `node … <harici araç>/defter-denetim.mjs` | harici defter denetimi |
 
 ⚠️ **Öldürmeden önce yol doğrulandı.** İlk bakışta bu 10 süreç Y10'un artığı sanılabilirdi;
 `ExecutablePath` ve `StartTime` ölçülmeden kapatılsaydı kullanıcının tarayıcısı kapanacaktı.

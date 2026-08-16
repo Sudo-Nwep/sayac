@@ -1,5 +1,5 @@
 # Sayac — repoya girmeyecekler
-# ORKESTRA kod şablonundan kuruldu (13/08/2026).
+# Kod projesi şablonundan kuruldu (13/08/2026).
 
 # --- sırlar (ASLA commit'lenmez) ---
 .env
@@ -32,10 +32,10 @@ npm-debug.log*
 tmp/
 .cache/
 
-# sir tasir - ORKESTRA bildirim ayari
+# sir tasir - bildirim ayari
 bildirim.json
 
-# --- ORKESTRA otonom dongu calisma durumu (makineye ozel, proje kaynagi degil) ---
+# --- otonom dongu calisma durumu (makineye ozel, proje kaynagi degil) ---
 .claude/loop/
 
 # --- Firefox eklenti test yolu ---
@@ -54,3 +54,9 @@ test-log/
 # degil YOKLUGUNU olcer (G22).
 !test-yolu/kanit/*.log
 !mantik/kanit/*.log
+
+# --- ic calisma dosyalari (public depoda yer almaz; diskte durur) ---
+CLAUDE.md
+PROJE_KUNYESI.md
+KONTROL_DOSYASI.md
+SON_HAREKETLER.md
